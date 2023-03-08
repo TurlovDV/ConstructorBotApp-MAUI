@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:ConstructorBot.ViewModel.ConstructorPageViewModel"
+             xmlns:vmActionConnection="clr-namespace:ConstructorBot.ViewModel.ConstructorPageViewModel.Action.ConnectionElement"
+             xmlns:vmActionCoverters="clr-namespace:ConstructorBot.ViewModel.ConstructorPageViewModel.Action.ConnectionElement.Converters"             
+             xmlns:vmAction="clr-namespace:ConstructorBot.ViewModel.ConstructorPageViewModel.Action"
+             xmlns:ctm="clr-namespace:CommunityToolkit.Maui.Behaviors;assembly=CommunityToolkit.Maui"
+             x:Class="ConstructorBot.ConstructorPage"
+             x:DataType="vm:ConstructorViewModel"
+             BackgroundColor="#1D2733"
+             Title="">
+
+    <Shell.NavBarIsVisible>
+        <x:Boolean></x:Boolean>
+    </Shell.NavBarIsVisible>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <vmActionCoverters:IsAnyToColorConverter x:Key="isAnyToColorConverter"></vmActionCoverters:IsAnyToColorConverter>
+            <vmActionCoverters:TextKeyboardConverter x:Key="textKeyboardConverter"></vmActionCoverters:TextKeyboardConverter>
+            <vmActionCoverters:IsAnyToStringConverter x:Key="isAnyToStringConverter"></vmActionCoverters:IsAnyToStringConverter>
+            <vmActionCoverters:IsEnabledKeyboardToColorConverter x:Key="IsEnabledKeyboardToColorConverter"></vmActionCoverters:IsEnabledKeyboardToColorConverter>
+            <vmActionCoverters:BoolInversionConverter x:Key="boolInversionConverter"></vmActionCoverters:BoolInversionConverter>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid RowDefinitions="*, Auto">
+
+        <Image Grid.RowSpan="2" Source="grid_lines.svg" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="Fill"></Image>
+        <ActivityIndicator Grid.RowSpan="2" x:Name="LoadingIndicator" IsRunning="True" IsVisible="True" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="50" HeightRequest="50" Color="White"></ActivityIndicator>
+
+        <Grid x:Name="MainMatrix" Grid.RowSpan="2">
+
+            <Grid BindableLayout.ItemsSource="{Binding ActionBoxes}">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate x:DataType="vmAction:ActionBox">
+                        <Grid BindableLayout.ItemsSource="{Binding ConnectionActions}">
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate x:DataType="vmActionConnection:ConnectionActionBox">
+                                    <Grid>
+                                        <Image Source="white.jpg" Aspect="Fill" Rotation="{Binding Line.Rotation}" TranslationX="{Binding Line.TranslationX}" HorizontalOptions="Center" 
+                                               VerticalOptions="Center" HeightRequest="{Binding Line.HeightRequest}" TranslationY="{Binding Line.TranslationY}" WidthRequest="2.5"></Image>
+                                        <Image TranslationX="{Binding Arrow.TranslationX}" TranslationY="{Binding Arrow.TranslationY}" Rotation="{Binding Arrow.Rotation}" 
+                                               Source="back_icon.png" WidthRequest="20" HeightRequest="20" HorizontalOptions="Center" VerticalOptions="Center"></Image>
+                                    </Grid>
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+                        </Grid>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </Grid>
+
+            <Grid Grid.RowSpan="2" BindableLayout.ItemsSource="{Binding ActionBoxes}">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate x:DataType="vmAction:ActionBox">
+                        <Frame BackgroundColor="{Binding Color}" BorderColor="Transparent" CornerRadius="3" Padding="5,0,5,5" TranslationX="{Binding TranslationX}" TranslationY="{Binding TranslationY}" WidthRequest="120" HorizontalOptions="Center" VerticalOptions="Center">
+                            <Grid>
+                                <StackLayout Spacing="3">
+                                    <Label Margin="5,3,0,0" FontSize="Micro" VerticalOptions="Start" TextColor="Black" Text="{Binding Naming}"></Label>
+                                    <StackLayout Spacing="3">
+                                        <Frame IsVisible="{Binding IsMainAction, Converter={StaticResource boolInversionConverter}}" CornerRadius="3" Padding="0" HeightRequest="25" BorderColor="Black" 
+                                               BackgroundColor="{Binding Question,Converter={StaticResource isAnyToColorConverter}}" HorizontalOptions="FillAndExpand">
+                                            <StackLayout Orientation="Horizontal" Spacing="0">
+                                                <Image WidthRequest="16" Aspect="AspectFit" Source="notes_icone.svg" Margin="3"></Image>
+                                                <Label FontSize="Micro" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" 
+                                                       Text="{Binding Question, Converter={StaticResource isAnyToStringConverter}}"></Label>
+                                            </StackLayout>
+                                        </Frame>
+                                        <Frame CornerRadius="3" Padding="0" HeightRequest="25" BorderColor="Black" BackgroundColor="Transparent" HorizontalOptions="FillAndExpand">
+                                            <StackLayout Orientation="Horizontal" Spacing="0">
+                                                <Image WidthRequest="16" Aspect="AspectFit" Source="message_icone.svg" Margin="3"></Image>
+                                                <Label FontSize="Micro" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" Text="{Binding MessageText}"></Label>
+                                            </StackLayout>
+                                        </Frame>
+                                    </StackLayout>
+                                </StackLayout>
+
+                                <Frame BackgroundColor="Transparent" BorderColor="Transparent" Padding="0">
+                                    <Grid IsVisible="{Binding IsMainAction, Converter={StaticResource boolInversionConverter}}" BackgroundColor="Transparent" HeightRequest="18" WidthRequest="18" HorizontalOptions="End" VerticalOptions="Start">
+                                        <Image BackgroundColor="Transparent" HeightRequest="12" WidthRequest="12" Aspect="AspectFit" Source="cross.png" Margin="0,5,1.5,0" VerticalOptions="Start" HorizontalOptions="End"></Image>
+                                        <Button BackgroundColor="Transparent" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Command="{Binding Path=BindingContext.RemoveActionCommand, Source={RelativeSource Mode=FindAncestor, AncestorType={x:Type ContentPage}}}" CommandParameter="{Binding .}"></Button>
+                                    </Grid>
+                                    <Frame.GestureRecognizers>
+                                        <PanGestureRecognizer PanUpdated="MoveActionBox_PanUpdated" BindingContext="{Binding .}"></PanGestureRecognizer>
+                                        <TapGestureRecognizer NumberOfTapsRequired="1" x:DataType="vm:ConstructorViewModel" Command="{Binding Path=BindingContext.TapActionCommand, Source={RelativeSource Mode=FindAncestor, AncestorType={x:Type ContentPage}}}" CommandParameter="{Binding .}"></TapGestureRecognizer>
+                                        <TapGestureRecognizer NumberOfTapsRequired="2" x:DataType="vm:ConstructorViewModel" Command="{Binding Path=BindingContext.TapOptionsActionCommand, Source={RelativeSource Mode=FindAncestor, AncestorType={x:Type ContentPage}}}" CommandParameter="{Binding .}"></TapGestureRecognizer>
+                                    </Frame.GestureRecognizers>
+                                </Frame>
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </Grid>
+
+        </Grid>
+
+
+        <!--<ImageButton Grid.RowSpan="2" HorizontalOptions="Start" VerticalOptions="Start" Margin="15" WidthRequest="30" Command="{Binding AddActionCommand}" HeightRequest="30" Source="back_icon.png"></ImageButton>
+        <ImageButton Grid.RowSpan="2" HorizontalOptions="Start" VerticalOptions="End" Margin="15" WidthRequest="50" Command="{Binding AddActionCommand}" HeightRequest="50" Source="plus.png"></ImageButton>-->
+
+        <Frame IsVisible="{Binding IsPutBoxAction}" Grid.RowSpan="2" BackgroundColor="Transparent" CornerRadius="0" BorderColor="Black"></Frame>
+
+        <Frame IsVisible="{Binding IsPutBoxAction}" Grid.Row="1" BackgroundColor="#1D2733">
+            <Grid>
+                <!--Clicked="OptionsMessage_Clicked"-->
+                <ImageButton Command="{Binding ClosePutActionBox}" HeightRequest="25" WidthRequest="25" Aspect="AspectFit" Source="cross2.png" VerticalOptions="Start" HorizontalOptions="End"></ImageButton>
+                <StackLayout Spacing="20">
+                    <Label Text="Ответное сообщение" TextColor="White" FontSize="Medium"></Label>
+                    <StackLayout Spacing="10">
+                        <Frame Padding="0" BorderColor="Gray" BackgroundColor="Transparent" CornerRadius="5">
+                            <StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <StackLayout Spacing="0">
+                                        <ImageButton Command="{Binding OpenPutKeyboard}" Margin="5,8,5,0" Source="keyboard1" WidthRequest="25" HeightRequest="25" BackgroundColor="Transparent"></ImageButton>
+                                        <ImageButton Command="{Binding AddMediaCommand}" Margin="5" Source="menu.png" WidthRequest="25" HeightRequest="25" BackgroundColor="Transparent"></ImageButton>
+                                    </StackLayout>
+                                    <Editor HorizontalOptions="FillAndExpand" Text="{Binding TapLastAction.MessageText}" Placeholder="Сообщение" TextColor="White" HeightRequest="80"></Editor>
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+
+                        <ScrollView Orientation="Horizontal">
+                            <StackLayout Spacing="10" Orientation="Horizontal" BindableLayout.ItemsSource="{Binding TapLastAction.MediaItems}">
+                                <BindableLayout.ItemTemplate>
+                                    <DataTemplate x:DataType="vmAction:MediaItem">
+                                        <Grid>
+                                            <StackLayout>
+                                                <Image Source="{Binding Source}" WidthRequest="40" HeightRequest="40" HorizontalOptions="Center"></Image>
+                                                <Label Text="{Binding Name}" MaximumWidthRequest="60" MaximumHeightRequest="30" FontSize="Micro" TextColor="White" HorizontalOptions="Center"></Label>
+                                            </StackLayout>
+                                            <ImageButton x:DataType="vm:ConstructorViewModel" Source="cross2.png" CommandParameter="{Binding .}" Command="{Binding Path=BindingContext.RemoveMediaCommand, Source={RelativeSource Mode=FindAncestor, AncestorType={x:Type ContentPage}}}" WidthRequest="16" HeightRequest="16" HorizontalOptions="End" VerticalOptions="Start" Margin="5"></ImageButton>
+                                        </Grid>
+                                    </DataTemplate>
+                                </BindableLayout.ItemTemplate>
+                            </StackLayout>
+                        </ScrollView>
+                    </StackLayout>
+                    <StackLayout Spacing="15" IsVisible="{Binding TapLastAction.IsMainAction, Converter={StaticResource boolInversionConverter}}">
+                        <Label Text="Условие ответа" TextColor="White" FontSize="Medium"></Label>
+                        <StackLayout Spacing="10">
+                            <Frame Padding="0" BorderColor="Gray" BackgroundColor="Transparent" CornerRadius="5">
+                                <Entry Text="{Binding TapLastAction.Question}" VerticalOptions="End" Placeholder="Любая фраза" TextColor="White"></Entry>
+                            </Frame>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+            </Grid>
+        </Frame>
+
+        <Frame IsVisible="{Binding IsAddButtons}" Grid.RowSpan="2" BackgroundColor="Transparent" CornerRadius="0" BorderColor="Black"></Frame>
+        <Frame IsVisible="{Binding IsAddButtons}" Grid.Row="1" BackgroundColor="#1D2733">
+            <StackLayout Spacing="10">
+                <StackLayout Spacing="10" Orientation="Horizontal">
+                    <ImageButton Command="{Binding OpenPutKeyboard}" HeightRequest="45" WidthRequest="45" Aspect="AspectFit" Source="back.svg" VerticalOptions="Center"></ImageButton>
+                    <Label Text="Настройка клавиатуры" TextColor="White" VerticalOptions="Center"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <StackLayout Orientation="Horizontal" Spacing="5">
+                        <Label Text="Встроенные" VerticalOptions="Center"></Label>
+                        <CheckBox Color="#4D8CC1" VerticalOptions="Center" IsChecked="{Binding TapLastAction.Keyboard.IsInline, Mode=TwoWay}"></CheckBox>
+                    </StackLayout>
+                    <Grid ColumnSpacing="10" RowSpacing="10" Margin="0, 10, 0, 0" RowDefinitions="*,*,*" ColumnDefinitions="*,*,*" BindableLayout.ItemsSource="{Binding TapLastAction.Keyboard.KeyboardItems}">
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate x:DataType="vmAction:KeyboardItem">
+                                <Frame HeightRequest="45" CornerRadius="5" Padding="0" BorderColor="White" Grid.Row="{Binding Row}" Grid.Column="{Binding Column}" BackgroundColor="{Binding IsEnabled, Converter={StaticResource IsEnabledKeyboardToColorConverter}}">
+                                    <Label Text="{Binding Text, Converter={StaticResource textKeyboardConverter}}" HorizontalOptions="Center" VerticalOptions="Center" TextColor="White"></Label>
+                                    <Frame.GestureRecognizers>
+                                        <TapGestureRecognizer NumberOfTapsRequired="1" x:DataType="vm:ConstructorViewModel" Command="{Binding Path=BindingContext.AddKeyboardCommand, Source={RelativeSource Mode=FindAncestor, AncestorType={x:Type ContentPage}}}" CommandParameter="{Binding .}"></TapGestureRecognizer>
+                                        <TapGestureRecognizer NumberOfTapsRequired="2" x:DataType="vm:ConstructorViewModel" Command="{Binding Path=BindingContext.PutKeyboardCommand, Source={RelativeSource Mode=FindAncestor, AncestorType={x:Type ContentPage}}}" CommandParameter="{Binding .}"></TapGestureRecognizer>
+                                    </Frame.GestureRecognizers>
+                                </Frame>
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </Grid>
+                </StackLayout>
+            </StackLayout>
+        </Frame>
+
+        <Frame IsVisible="{Binding IsPutButton}" Grid.RowSpan="2" BackgroundColor="Transparent" CornerRadius="0" BorderColor="Black"></Frame>
+        <Frame IsVisible="{Binding IsPutButton}" Grid.Row="1" BackgroundColor="#1D2733">
+            <StackLayout Spacing="20">
+                <StackLayout Spacing="10" Orientation="Horizontal">
+                    <ImageButton Command="{Binding PutKeyboardCommand}" HeightRequest="35" WidthRequest="35" Aspect="AspectFit" Source="back.png" VerticalOptions="Start" HorizontalOptions="End"></ImageButton>
+                    <Label Text="Настройка клавиатуры" TextColor="White" VerticalOptions="Center"></Label>
+                </StackLayout>
+                <StackLayout Spacing="20" Margin="0, 0, 0, 0">
+                    <StackLayout Spacing="0">
+                        <Label Text="Сообщение кнопки" TextColor="White"></Label>
+                        <Entry Text="{Binding KeyboardItem.Text}"></Entry>
+                    </StackLayout>
+                    <StackLayout Spacing="0">
+                        <Label Text="Url сыллка" TextColor="White"></Label>
+                        <Entry Text="{Binding KeyboardItem.Url}"></Entry>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </Frame>
+
+        <!--Добавление нового бокса => ввоод названия-->
+        <Frame IsVisible="{Binding IsAddAction}" Grid.RowSpan="2" BackgroundColor="Transparent" CornerRadius="0" BorderColor="Black"></Frame>
+        <Frame IsVisible="{Binding IsAddAction}" Grid.Row="1" BackgroundColor="#1D2733">
+            <Grid>
+                <StackLayout Spacing="20">
+                    <Label Margin="5, 0, 0, 0" Text="Название бокса" TextColor="White" FontSize="Medium"></Label>
+                    <Frame Padding="3,0,3,0" BackgroundColor="Transparent" BorderColor="White">
+                        <Entry x:Name="entryNaming" Placeholder="Сообщение 1" TextColor="White" HorizontalOptions="FillAndExpand"></Entry>
+                    </Frame>
+                    <Button Text="Создать" CommandParameter="{Reference entryNaming}" Command="{Binding AddActionCreateCommand}" TextColor="White" BackgroundColor="#2B3A62" HorizontalOptions="FillAndExpand"></Button>
+                </StackLayout>
+                <ImageButton Command="{Binding AddActionCommand}" HeightRequest="25" WidthRequest="25" Aspect="AspectFit" Source="cross2.png" VerticalOptions="Start" HorizontalOptions="End"></ImageButton>
+            </Grid>
+        </Frame>
+
+        <Frame VerticalOptions="Start" BackgroundColor="#344B6D" Padding="0" CornerRadius="0" BorderColor="#344B6D">
+            <StackLayout Spacing="10" VerticalOptions="Start" HorizontalOptions="Start" Orientation="Horizontal" Margin="20,3,3,3">
+                <Grid Padding="0" BackgroundColor="Transparent">
+                    <Image VerticalOptions="Center" WidthRequest="45"  HeightRequest="45" Source="back.svg"></Image>
+                    <Button BackgroundColor="Transparent" HorizontalOptions="Fill" VerticalOptions="Fill" Clicked="ToolbarItem_Clicked"></Button>
+                </Grid>
+                <BoxView HeightRequest="35" VerticalOptions="Center" WidthRequest="1" Color="White"></BoxView>
+                <Grid Padding="0" BackgroundColor="Transparent">
+                    <Image HorizontalOptions="Center" WidthRequest="40" HeightRequest="40" Source="plus.png"></Image>
+                    <Button BackgroundColor="Transparent" HorizontalOptions="Fill" VerticalOptions="Fill" Command="{Binding AddActionCommand}"></Button>
+                </Grid>
+            </StackLayout>
+        </Frame>
+
+        <Grid.GestureRecognizers>
+            <PinchGestureRecognizer PinchUpdated="ZoomMatrix__PinchUpdated"></PinchGestureRecognizer>
+            <PanGestureRecognizer PanUpdated="MoveAllActionBox_PanUpdated"></PanGestureRecognizer>
+        </Grid.GestureRecognizers>
+    </Grid>
+
+</ContentPage>

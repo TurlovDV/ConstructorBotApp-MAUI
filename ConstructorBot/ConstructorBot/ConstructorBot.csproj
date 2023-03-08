@@ -1,0 +1,106 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net7.0-android;net7.0-ios;net7.0-maccatalyst</TargetFrameworks>
+		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net7.0-windows10.0.19041.0</TargetFrameworks>
+		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
+		<!-- <TargetFrameworks>$(TargetFrameworks);net7.0-tizen</TargetFrameworks> -->
+		<OutputType>Exe</OutputType>
+		<RootNamespace>ConstructorBot</RootNamespace>
+		<UseMaui>true</UseMaui>
+		<SingleProject>true</SingleProject>
+		<ImplicitUsings>enable</ImplicitUsings>
+
+		<!-- Display name -->
+		<ApplicationTitle>ConstructorBot</ApplicationTitle>
+
+		<!-- App Identifier -->
+		<ApplicationId>com.companyname.constructorbot</ApplicationId>
+		<ApplicationIdGuid>9e9fc9e1-74a4-4bb1-b9c6-62b32862a766</ApplicationIdGuid>
+
+		<!-- Versions -->
+		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+		<ApplicationVersion>1</ApplicationVersion>
+
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">11.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">13.1</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
+		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<!-- App Icon -->
+		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\app_icone.png" Color="#512BD4" />
+
+		<!-- Splash Screen -->
+		<MauiSplashScreen Include="Resources\Splash\qwer.svg" Color="#344B6D" BaseSize="128,128" />
+
+		<!-- Images -->
+		<MauiImage Include="Resources\Images\*" />
+
+		<!-- Custom Fonts -->
+		<MauiFont Include="Resources\Fonts\*" />
+
+		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
+		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="Resources\Images\account.png" />
+	  <None Remove="Resources\Images\back.svg" />
+	  <None Remove="Resources\Images\background_vector.svg" />
+	  <None Remove="Resources\Images\back_icon.png" />
+	  <None Remove="Resources\Images\back_icon_black.png" />
+	  <None Remove="Resources\Images\chat.png" />
+	  <None Remove="Resources\Images\constructor.svg" />
+	  <None Remove="Resources\Images\cross.png" />
+	  <None Remove="Resources\Images\cross2.png" />
+	  <None Remove="Resources\Images\document_icon.png" />
+	  <None Remove="Resources\Images\elipse_loading.svg" />
+	  <None Remove="Resources\Images\grid_lines.svg" />
+	  <None Remove="Resources\Images\info.svg" />
+	  <None Remove="Resources\Images\keyboard1.png" />
+	  <None Remove="Resources\Images\menu.png" />
+	  <None Remove="Resources\Images\message_icone.svg" />
+	  <None Remove="Resources\Images\music_icon.png" />
+	  <None Remove="Resources\Images\notes.png" />
+	  <None Remove="Resources\Images\notes_icone.svg" />
+	  <None Remove="Resources\Images\options.svg" />
+	  <None Remove="Resources\Images\plus.png" />
+	  <None Remove="Resources\Images\plus_black.png" />
+	  <None Remove="Resources\Images\question.png" />
+	  <None Remove="Resources\Images\question2.png" />
+	  <None Remove="Resources\Images\settings.png" />
+	  <None Remove="Resources\Images\Subtract.svg" />
+	  <None Remove="Resources\Images\Subtract1.svg" />
+	  <None Remove="Resources\Images\vector2.png" />
+	  <None Remove="Resources\Images\vector3.png" />
+	  <None Remove="Resources\Images\video_icon.png" />
+	  <None Remove="Resources\Images\watch.png" />
+	  <None Remove="Resources\Images\white.jpg" />
+	  <None Remove="Resources\Images\wifi.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="CommunityToolkit.Maui" Version="4.0.0" />
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.1.0" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\ConstructorBotCore\ConstructorBotCore.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="View\ConstructorPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\MainPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+
+</Project>

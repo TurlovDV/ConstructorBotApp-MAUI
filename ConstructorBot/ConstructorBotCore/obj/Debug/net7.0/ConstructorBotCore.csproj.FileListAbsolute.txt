@@ -1,0 +1,12 @@
+C:\ConstructorBotProject\ConstructorBot\ConstructorBotCore\bin\Debug\net7.0\ConstructorBotCore.deps.json
+C:\ConstructorBotProject\ConstructorBot\ConstructorBotCore\bin\Debug\net7.0\ConstructorBotCore.dll
+C:\ConstructorBotProject\ConstructorBot\ConstructorBotCore\bin\Debug\net7.0\ConstructorBotCore.pdb
+C:\ConstructorBotProject\ConstructorBot\ConstructorBotCore\obj\Debug\net7.0\ConstructorBotCore.csproj.AssemblyReference.cache
+C:\ConstructorBotProject\ConstructorBot\ConstructorBotCore\obj\Debug\net7.0\ConstructorBotCore.GeneratedMSBuildEditorConfig.editorconfig
+C:\ConstructorBotProject\ConstructorBot\ConstructorBotCore\obj\Debug\net7.0\ConstructorBotCore.AssemblyInfoInputs.cache
+C:\ConstructorBotProject\ConstructorBot\ConstructorBotCore\obj\Debug\net7.0\ConstructorBotCore.AssemblyInfo.cs
+C:\ConstructorBotProject\ConstructorBot\ConstructorBotCore\obj\Debug\net7.0\ConstructorBotCore.csproj.CoreCompileInputs.cache
+C:\ConstructorBotProject\ConstructorBot\ConstructorBotCore\obj\Debug\net7.0\ConstructorBotCore.dll
+C:\ConstructorBotProject\ConstructorBot\ConstructorBotCore\obj\Debug\net7.0\refint\ConstructorBotCore.dll
+C:\ConstructorBotProject\ConstructorBot\ConstructorBotCore\obj\Debug\net7.0\ConstructorBotCore.pdb
+C:\ConstructorBotProject\ConstructorBot\ConstructorBotCore\obj\Debug\net7.0\ref\ConstructorBotCore.dll

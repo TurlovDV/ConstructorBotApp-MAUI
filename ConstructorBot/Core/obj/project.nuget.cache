@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "iyg6eCQ7//AGulC25LCkJntn/ed8KInMYflos4h+e0V8CvAo/RDcdwjw7RPO6v/H1BoldSTB75eOmU5WocAVmw==",
+  "success": true,
+  "projectFilePath": "C:\\ConstructorBotProject\\ConstructorBot\\Core\\Core.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Даня\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\Даня\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\Даня\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
+    "C:\\Users\\Даня\\.nuget\\packages\\telegram.bot\\18.0.0\\telegram.bot.18.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

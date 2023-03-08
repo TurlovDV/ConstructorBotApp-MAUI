@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vmConverter="clr-namespace:ConstructorBot.ViewModel.MainPageViewModel.Converters"
+             xmlns:vm="clr-namespace:ConstructorBot.ViewModel.MainPageViewModel"
+             xmlns:vmConstructorCoverter="clr-namespace:ConstructorBot.ViewModel.ConstructorPageViewModel.Action.ConnectionElement.Converters"
+             x:DataType="vm:MainViewModel"
+             x:Class="ConstructorBot.MainPage"
+             Title=""
+             xmlns:ctm="clr-namespace:CommunityToolkit.Maui.Behaviors;assembly=CommunityToolkit.Maui"
+             BackgroundColor="#3A547B">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <vmConverter:DateTimeToStringConverter x:Key="dateTimeToStringConverter"></vmConverter:DateTimeToStringConverter>
+            <vmConverter:IsStartToStringConverter x:Key="isStartToStringConverter"></vmConverter:IsStartToStringConverter>
+            <vmConstructorCoverter:BoolInversionConverter x:Key="boolInversionConverter"></vmConstructorCoverter:BoolInversionConverter>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
+    <ContentPage.Behaviors>
+        <ctm:StatusBarBehavior StatusBarColor="#344B6D" StatusBarStyle="LightContent"></ctm:StatusBarBehavior>
+    </ContentPage.Behaviors>
+
+    <Shell.NavBarIsVisible>
+        <x:Boolean>False</x:Boolean>
+    </Shell.NavBarIsVisible>
+
+    <Grid RowDefinitions="*, Auto, Auto, 1.5*">
+        <Frame Grid.Row="2" Grid.RowSpan="2" BackgroundColor="#1D2733" CornerRadius="20" BorderColor="Transparent"></Frame>
+        <Frame Padding="0" Grid.Row="2" Grid.RowSpan="2" IsVisible="{Binding IsPageMain}" BackgroundColor="Transparent" CornerRadius="0" BorderColor="Transparent">
+            <Grid Padding="10" RowDefinitions="*,*" ColumnDefinitions="*,*" ColumnSpacing="20">
+                <Frame Padding="10, 60, 0, 20" BorderColor="Transparent" BackgroundColor="Transparent" Grid.Row="0" Grid.Column="0">
+                    <Grid RowDefinitions="*, *">
+                        <Frame Grid.RowSpan="2" Padding="0" CornerRadius="10" BackgroundColor="Transparent">
+                            <Grid RowDefinitions="*, *">
+                                <Frame CornerRadius="00" Padding="15" Grid.Row="0" BackgroundColor="#4074A0" BorderColor="#4074A0">
+                                    <Image Source="constructor.svg" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="35" HeightRequest="35"></Image>
+                                </Frame>
+                                <Frame CornerRadius="0" Padding="0" Grid.Row="1" BackgroundColor="#E8E8E8" BorderColor="#E8E8E8">
+                                    <StackLayout Margin="0, 5, 0, 0" Spacing="2">
+                                        <Label Margin="7,0,0,0" TextColor="Black" FontAttributes="Bold" Text="Конструктор"></Label>
+                                        <Label Margin="7,0,0,0" TextColor="Gray" FontSize="Micro" Text="Сборка бота с&#10;помощью блоков"></Label>
+                                    </StackLayout>
+                                </Frame>
+                            </Grid>
+                        </Frame>
+                        <Button Grid.RowSpan="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Transparent" Clicked="Button_Clicked"></Button>
+                    </Grid>
+                </Frame>
+                <Frame Padding="0, 60, 10, 20" BorderColor="Transparent" BackgroundColor="Transparent" Grid.Row="0" Grid.Column="1">
+                    <Grid RowDefinitions="*, *">
+                        <Frame Grid.RowSpan="2" Padding="0" CornerRadius="10" BackgroundColor="Transparent">
+                            <Grid RowDefinitions="*, *">
+                                <Frame CornerRadius="00" Padding="20" Grid.Row="0" BackgroundColor="#4074A0" BorderColor="#4074A0">
+                                    <Image Source="options.svg" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="35" HeightRequest="35"></Image>
+                                </Frame>
+                                <Frame CornerRadius="0" Padding="0" Grid.Row="1" BackgroundColor="#E8E8E8" BorderColor="#E8E8E8">
+                                    <StackLayout Margin="0, 5, 0, 0" Spacing="2">
+                                        <Label Margin="7,0,0,0" TextColor="Black" FontAttributes="Bold" Text="Настройки"></Label>
+                                        <Label Margin="7,0,0,0" TextColor="Gray" FontSize="Micro" Text="Настройки&#10;подключения"></Label>
+                                    </StackLayout>
+                                </Frame>
+                            </Grid>
+                        </Frame>
+                        <Button Command="{Binding OpenOptionsTokenCommand}" Grid.RowSpan="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Transparent"></Button>
+                    </Grid>
+                </Frame>
+                <Frame Padding="10, 0, 0, 80" BorderColor="Transparent" BackgroundColor="Transparent" Grid.Row="1" Grid.Column="0">
+                    <Grid RowDefinitions="*, *">
+                        <Frame Grid.RowSpan="2" Padding="0" CornerRadius="10" BackgroundColor="Transparent">
+                            <Grid RowDefinitions="*, *">
+                                <Frame CornerRadius="00" Padding="20" Grid.Row="0" BackgroundColor="#4074A0" BorderColor="#4074A0">
+                                    <Image Source="info.svg" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="35" HeightRequest="35"></Image>
+                                </Frame>
+                                <Frame CornerRadius="0" Padding="0" Grid.Row="1" BackgroundColor="#E8E8E8" BorderColor="#E8E8E8">
+                                    <StackLayout Margin="0, 5, 0, 0" Spacing="2">
+                                        <Label Margin="7,0,0,0" TextColor="Black" FontAttributes="Bold" Text="Помощь"></Label>
+                                        <Label Margin="7,0,0,0" TextColor="Gray" FontSize="Micro" Text="Туториал в эксплуатации&#10;приложения"></Label>
+                                    </StackLayout>
+                                </Frame>
+                            </Grid>
+                        </Frame>
+                        <Button Grid.RowSpan="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Transparent"></Button>
+                    </Grid>
+                </Frame>
+            </Grid>
+        </Frame>
+
+        <!--Проблемный блок-->
+        <Frame Grid.Row="2" Padding="20, 50, 20, 20" Grid.RowSpan="2" IsVisible="{Binding IsPageOptionsToken}" BackgroundColor="Transparent" BorderColor="Transparent" CornerRadius="0">
+            <StackLayout Spacing="35" VerticalOptions="Start">
+                <StackLayout HorizontalOptions="Start" VerticalOptions="Start" Spacing="10" Orientation="Horizontal">
+                    <Image Source="options.svg" VerticalOptions="Center" WidthRequest="40" HeightRequest="40" BackgroundColor="Transparent"></Image>
+                    <StackLayout Spacing="2" VerticalOptions="Center">
+                        <Label FontAttributes="Bold" Text="Настройки" FontSize="Small" TextColor="White"></Label>
+                        <Label Text="Настройки&#10;подключения" FontSize="Micro" TextColor="Gray"></Label>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Spacing="15">
+                    <Label Text="Для работы с приложений введите&#10;токен подключения бота" FontSize="Small" TextColor="White"></Label>
+                    <Frame Padding="3" BorderColor="Black" BackgroundColor="Transparent" CornerRadius="10">
+                        <!--Вылет фонового приложения из-за Entry-->
+                        <!--<Editor Placeholder="Токен" HorizontalOptions="FillAndExpand" Margin="5,0,5,0"></Editor>-->
+                    </Frame>
+                    <Button Command="{Binding SaveOptionsTokenCommand}" HorizontalOptions="FillAndExpand" Text="Сохранить" TextColor="White" BackgroundColor="#2B3A62"></Button>
+                </StackLayout>
+
+            </StackLayout>
+        </Frame>
+        
+        <Frame Grid.Row="0" BackgroundColor="Transparent" Padding="0" BorderColor="Transparent">
+            <Grid>
+                <Image Source="background_vector.svg" HorizontalOptions="FillAndExpand" VerticalOptions="Start"></Image>
+                <Image IsVisible="{Binding IsStart}" x:Name="elipse_loading" Source="elipse_loading.svg" WidthRequest="145" HeightRequest="145" HorizontalOptions="Center" VerticalOptions="Center"></Image>
+                
+                <Frame BorderColor="White" BackgroundColor="Transparent" CornerRadius="100" Padding="0" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="117" HeightRequest="117"></Frame>
+                <Frame BorderColor="White" BackgroundColor="Transparent" CornerRadius="100" Padding="0" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="116" HeightRequest="116"></Frame>
+                <Frame BorderColor="White" BackgroundColor="Transparent" CornerRadius="100" Padding="0" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="115" HeightRequest="115">
+                    <Grid>
+                        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                            <Label Text="{Binding IsStart, Converter={StaticResource isStartToStringConverter}}" HorizontalOptions="Center" TextColor="White" FontAttributes="Bold" FontSize="Medium" ></Label>
+                            <Label IsVisible="{Binding IsStart}" Text="{Binding NamingBot}" TextColor="Gray" FontSize="Small" HorizontalOptions="Center"></Label>
+                        </StackLayout>
+                        <Button Command="{Binding OnStartCommand}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Transparent"></Button>
+                    </Grid>
+                </Frame>
+            </Grid>
+        </Frame>
+
+
+        <Frame IsVisible="{Binding IsStart}" Margin="20,0,20,0" Padding="10" Grid.Row="1" Grid.RowSpan="2" BackgroundColor="#2C3B4D" HorizontalOptions="FillAndExpand" VerticalOptions="Start" CornerRadius="20" BorderColor="Transparent">
+            <StackLayout Margin="0, 5, 0, 5" Orientation="Horizontal" Spacing="100" HorizontalOptions="Center" VerticalOptions="Center">
+                <StackLayout>
+                    <StackLayout Orientation="Horizontal" Spacing="5">
+                        <Image VerticalOptions="Center" Source="watch.png" WidthRequest="16" HeightRequest="16"></Image>
+                        <Label VerticalOptions="Center" Text="{Binding OnStartTiming, Converter={StaticResource dateTimeToStringConverter}}" FontAttributes="Bold"></Label>
+                    </StackLayout>
+                    <BoxView HorizontalOptions="FillAndExpand" Margin="0,5,0,5" HeightRequest="1" Color="White"></BoxView>
+                    <StackLayout Orientation="Horizontal" Spacing="5">
+                        <Image VerticalOptions="Center" Source="chat.png" WidthRequest="16" HeightRequest="16"></Image>
+                        <Label VerticalOptions="Center" Text="{Binding CountMessage}" FontAttributes="Bold"></Label>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout>
+                    <StackLayout Orientation="Horizontal" Spacing="5">
+                        <Image VerticalOptions="Center" Source="wifi.png" WidthRequest="16" HeightRequest="16"></Image>
+                        <Label VerticalOptions="Center" Text="{Binding SpeedInternet}" FontAttributes="Bold"></Label>
+                    </StackLayout>
+                    <BoxView HorizontalOptions="FillAndExpand" Margin="0,5,0,5" HeightRequest="1" Color="White"></BoxView>
+                    <StackLayout Orientation="Horizontal" Spacing="5">
+                        <Image VerticalOptions="Center" Source="account.png" WidthRequest="16" HeightRequest="16"></Image>
+                        <Label VerticalOptions="Center" Text="{Binding CountProfile}" FontAttributes="Bold"></Label>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </Frame>
+
+
+        <Frame IsVisible="{Binding IsStart, Converter={StaticResource boolInversionConverter}}" Grid.Row="2" BackgroundColor="Transparent" BorderColor="Transparent" Padding="0">
+            <StackLayout Spacing="0" VerticalOptions="Start" HorizontalOptions="Center" Padding="30, 0, 30, 0">
+                <Image Source="subtract1.svg" HorizontalOptions="FillAndExpand"></Image>
+                <Image Source="subtract.svg" HorizontalOptions="FillAndExpand"></Image>
+            </StackLayout>
+        </Frame>
+    </Grid>
+
+</ContentPage>
