@@ -46,7 +46,7 @@
                                 </Frame>
                             </Grid>
                         </Frame>
-                        <Button Grid.RowSpan="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Transparent" Clicked="Button_Clicked"></Button>
+                        <Button Grid.RowSpan="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Transparent" Clicked="Button_PushToConstructor"></Button>
                     </Grid>
                 </Frame>
                 <Frame Padding="0, 60, 10, 20" BorderColor="Transparent" BackgroundColor="Transparent" Grid.Row="0" Grid.Column="1">
@@ -82,13 +82,12 @@
                                 </Frame>
                             </Grid>
                         </Frame>
-                        <Button Grid.RowSpan="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Transparent"></Button>
+                        <Button Grid.RowSpan="2" Clicked="Button_PushToInfo" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Transparent"></Button>
                     </Grid>
                 </Frame>
             </Grid>
         </Frame>
 
-        <!--Проблемный блок-->
         <Frame Grid.Row="2" Padding="20, 50, 20, 20" Grid.RowSpan="2" IsVisible="{Binding IsPageOptionsToken}" BackgroundColor="Transparent" BorderColor="Transparent" CornerRadius="0">
             <StackLayout Spacing="35" VerticalOptions="Start">
                 <StackLayout HorizontalOptions="Start" VerticalOptions="Start" Spacing="10" Orientation="Horizontal">
@@ -102,14 +101,15 @@
                 <StackLayout Spacing="15">
                     <Label Text="Для работы с приложений введите&#10;токен подключения бота" FontSize="Small" TextColor="White"></Label>
                     <!--<Frame Padding="3" BorderColor="Black" BackgroundColor="Transparent" CornerRadius="10">-->
-                        <!--Вылет фонового приложения из-за Entry-->
+                    <!--</Frame>-->
+                    <!--Вылет фонового приложения из-за Entry во Frame-->
                     <Border BackgroundColor="Transparent" Stroke="Gray">
                         <Border.StrokeShape>
-                            <RoundRectangle CornerRadius="10,10,10,10" />
+                            <RoundRectangle CornerRadius="5,5,5,5" />
                         </Border.StrokeShape>
                         <Editor Placeholder="Токен" HorizontalOptions="FillAndExpand" Margin="5,0,5,0"></Editor>
                     </Border>
-                    <!--</Frame>-->
+
                     <Button Command="{Binding SaveOptionsTokenCommand}" HorizontalOptions="FillAndExpand" Text="Сохранить" TextColor="White" BackgroundColor="#2B3A62"></Button>
                 </StackLayout>
 

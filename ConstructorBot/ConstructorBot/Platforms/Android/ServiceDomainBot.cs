@@ -27,12 +27,12 @@ namespace ConstructorBot
         {
             if (intent.Action == "START_SERVICE")
             {
-                System.Diagnostics.Debug.WriteLine("Se ha iniciado el servicio");
+                System.Diagnostics.Debug.WriteLine("Фоновая работа включена");
                 RegisterNotification();
             }
             else if (intent.Action == "STOP_SERVICE")
             {
-                System.Diagnostics.Debug.WriteLine("Se ha detenido el servicio");
+                System.Diagnostics.Debug.WriteLine("Фоновая работа выключена");
                 StopForeground(true);
                 StopSelfResult(startId);
             }

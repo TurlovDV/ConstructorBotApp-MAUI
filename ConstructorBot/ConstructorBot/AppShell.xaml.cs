@@ -1,4 +1,6 @@
-﻿namespace ConstructorBot;
+﻿using ConstructorBot.View;
+
+namespace ConstructorBot;
 
 public partial class AppShell : Shell
 {
@@ -7,6 +9,7 @@ public partial class AppShell : Shell
 		InitializeComponent();
 
         Routing.RegisterRoute(nameof(ConstructorPage), typeof(ConstructorPage));
+        Routing.RegisterRoute(nameof(InfoPage), typeof(InfoPage));
 
         //Routing.RegisterRoute(nameof(MainPage), typeof(MainPage));
     }

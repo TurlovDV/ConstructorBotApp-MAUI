@@ -255,7 +255,12 @@ namespace ConstructorBot.ViewModel.ConstructorPageViewModel
                     if (file == null)
                         return;
 
-                    var stream = await file.OpenReadAsync();
+                    if (new FileInfo(file.FullPath).Length / 1024 / 1024 > 10)
+                    {
+                        await messageService.ShowAsync("Ограничение", "Файлы более 10МБ добавить невозможно");
+                        return;
+                    }
+                    //var stream = await file.OpenReadAsync();                    
 
                     if (file.ContentType.Split('/')[0] == "image")
                     {

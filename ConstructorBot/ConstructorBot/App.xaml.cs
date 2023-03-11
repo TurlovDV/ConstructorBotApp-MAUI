@@ -1,4 +1,5 @@
-﻿using ConstructorBot.ViewModel.ConstructorPageViewModel;
+﻿using ConstructorBot.View;
+using ConstructorBot.ViewModel.ConstructorPageViewModel;
 using ConstructorBot.ViewModel.ConstructorPageViewModel.Action;
 using System.Collections.ObjectModel;
 
@@ -14,7 +15,7 @@ public partial class App : Application
 
         //Routing.RegisterRoute(nameof(ConstructorPage), typeof(ConstructorPage));
         MainPage = new AppShell();
-         
+
         //Получение сохраненных actionBoxes
         ServiceProvider.GetService<ConstructorViewModel>().ActionBoxes
             = new ObservableCollection<ActionBox>(SaveSettingOrActionBoxes.Get());

@@ -12,11 +12,9 @@ public partial class MainPage : ContentPage
     public MainViewModel MainViewModel { get; set; }    
     public MainPage()
 	{
-        
         MainViewModel = ServiceProvider.GetService<MainViewModel>();
 
         InitializeComponent();
-
         
         BindingContext = MainViewModel;
 
@@ -37,7 +35,7 @@ public partial class MainPage : ContentPage
         });
     }
 
-    private async void Button_Clicked(object sender, EventArgs e)
+    private async void Button_PushToConstructor(object sender, EventArgs e)
     {
         /*
         //await Shell.Current.GoToAsync("ConstructorPage");
@@ -47,6 +45,11 @@ public partial class MainPage : ContentPage
         //_backGround.Start();
         */
         await Shell.Current.GoToAsync("ConstructorPage");               
+    }
+
+    private async void Button_PushToInfo(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync("InfoPage");
     }
 
     protected override bool OnBackButtonPressed()

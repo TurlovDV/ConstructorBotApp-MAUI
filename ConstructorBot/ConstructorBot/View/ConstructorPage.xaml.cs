@@ -11,7 +11,6 @@ public partial class ConstructorPage : ContentPage
 {
     public ConstructorViewModel ConstructorViewModel { get; set; }
 
-
     public ConstructorPage()
 	{
         ConstructorViewModel = new ConstructorViewModel();//ServiceProvider.GetService<ConstructorViewModel>();
