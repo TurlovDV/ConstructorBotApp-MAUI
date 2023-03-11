@@ -113,7 +113,9 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
         }
 
         //Запуск бара с инфо о боте в 1_сек
-        public async void StartTimer()
+
+        bool isNotInternetToRestart;
+        public async void UpdateInfoTable()
         {
             OnStartTiming = new DateTime();
             while(IsStart)
@@ -124,44 +126,56 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
                 CountMessage = logger.CountMessage;
                 CountProfile = logger.CountProfile;
                 SpeedInternet = new Random().Next(30, 70);
-            }
-        }
 
-        //private double rotationElipse_loading;
-        //public double RotationElipse_loading
-        //{
-        //    get => rotationElipse_loading;
-        //    set
-        //    {
-        //        rotationElipse_loading = value;
-        //        OnPropertyChanged();
-        //    }
-        //}
+                if (Connectivity.Current.NetworkAccess == NetworkAccess.Internet)
+                {
+                    if(!isNotInternetToRestart)
+                    {
+                        await MessagerCore.OnStartRestart();
+                        isNotInternetToRestart = true;
+                    }
+                }
+                else
+                    isNotInternetToRestart = false;
+
+                if (OnStartTiming.Minute % 5 == 0 && OnStartTiming.Second == 0 && OnStartTiming.Minute != 0)
+                {
+                    await MessagerCore.OnStartRestart();
+                }
+            }            
+        }
 
         //Кнопка старт/стоп
         public ICommand OnStartCommand
         {
             get
             {
-                return new Command(() =>
+                return new Command(async () =>
                 {
-                    IsStart = !IsStart;
-                    if (IsStart)
+                    if (!IsStart)
                     {
-
                         _actions = ServiceProvider.GetService<ConstructorViewModel>().ActionBoxes.ToList();
-                        MessagerCore.UpdateBot(GetParentActions()).OnStart();
-                        NamingBot = MessagerCore.GetNamingBot();
-                        Task.Run(StartTimer);
-
-                        var _backGround = ServiceProvider.GetService<IServiceDomainBot>();                        
-                        _backGround.Start();
+                        var resultOnStart = await MessagerCore.UpdateBot(GetParentActions()).OnStart();
+                        if (resultOnStart)
+                        {
+                            NamingBot = MessagerCore.GetNamingBot();
+                            var _backGround = ServiceProvider.GetService<IServiceDomainBot>();
+                            _backGround.Start();
+                            IsStart = !IsStart;
+                            await Task.Run(UpdateInfoTable);
+                            isNotInternetToRestart = true;
+                        }
+                        else
+                        {
+                            await DependencyService.Get<App.IMessageService>().ShowAsync("Ошибка", "Убедитесь в достоверности токена и подключения к интрнету");
+                        }
                     }
                     else
                     {
                         MessagerCore.OnStop();
                         var _backGround = ServiceProvider.GetService<IServiceDomainBot>();
                         _backGround.Stop();
+                        IsStart = !IsStart;
                     }
 
                 });
@@ -315,6 +329,10 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
         }
         private void GetMedia(ActionBox actionBox, ref DomainChildAction domainChild)
         {
+            actionBox.MediaItems = 
+                new System.Collections.ObjectModel.ObservableCollection<MediaItem>(
+                    actionBox.MediaItems.ToList().Where(x => File.Exists(x.PathMediaSource)));
+
             if (actionBox.MediaItems.Count == 0)
                 return;
             if(actionBox.MediaItems.Count == 1)
@@ -325,27 +343,31 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
                         domainChild.MessageAnswer.MessageType = ConstructorBotCore.DomainMessageModel.MessageType.Photo;
                         domainChild.MessageAnswer.Photo = new ConstructorBotCore.DomainMessagModel.ElementMessage.DomainPhoto()
                         {
-                            File = actionBox.MediaItems[0].Bytes                           
+                            //File = actionBox.MediaItems[0].Bytes                           
+                            File = File.ReadAllBytes(actionBox.MediaItems[0].PathMediaSource)
                         };
                         return;                        
                     case ConstructorPageViewModel.Action.MediaType.Video:
                         domainChild.MessageAnswer.MessageType = ConstructorBotCore.DomainMessageModel.MessageType.Video;
                         domainChild.MessageAnswer.Video = new ConstructorBotCore.DomainMessageModel.ElementMessage.DomainVideo()
                         {
-                            File = actionBox.MediaItems[0].Bytes
+                            //File = actionBox.MediaItems[0].Bytes
+                            File = File.ReadAllBytes(actionBox.MediaItems[0].PathMediaSource)
                         };
                         return;
                     case ConstructorPageViewModel.Action.MediaType.Audio:
                         domainChild.MessageAnswer.MessageType = ConstructorBotCore.DomainMessageModel.MessageType.Audio;
                         domainChild.MessageAnswer.Audio = new ConstructorBotCore.DomainMessageModel.ElementMessage.DomainAudio()
                         {
-                            File = actionBox.MediaItems[0].Bytes
+                            File = File.ReadAllBytes(actionBox.MediaItems[0].PathMediaSource)
+                            //    File = actionBox.MediaItems[0].Bytes
                         };
                         return;
                     case ConstructorPageViewModel.Action.MediaType.Document:
                         domainChild.MessageAnswer.Document = new ConstructorBotCore.DomainMessageModel.ElementMessage.DomainDocument()
                         {
-                            File = actionBox.MediaItems[0].Bytes
+                            File = File.ReadAllBytes(actionBox.MediaItems[0].PathMediaSource)
+                            //    File = actionBox.MediaItems[0].Bytes
                         };
                         domainChild.MessageAnswer.MessageType = ConstructorBotCore.DomainMessageModel.MessageType.Audio;
                         return;
@@ -357,7 +379,8 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
             {
                 domainChild.MessageAnswer.MediaGroups.Add(new ConstructorBotCore.DomainMessagModel.ElementMessage.DomainMediaGroup()
                 {
-                    File = item.Bytes,
+                    File = File.ReadAllBytes(item.PathMediaSource),
+                    //File = item.Bytes,
                     type = item.Type switch
                     {
                         ConstructorPageViewModel.Action.MediaType.Photo 
@@ -377,7 +400,7 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
             domainChild.Question = actionBox.Question;
             domainChild.MessageAnswer = new ConstructorBotCore.DomainMessageModel.DomainMessage()
             {
-                Text = actionBox.MessageText                
+                Text = actionBox.MessageText
             };
 
             if (actionBox.Keyboard.IsInline)
@@ -398,9 +421,7 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
             var logic = new List<DomainParentAction>();
             List<ActionBox> acts = new List<ActionBox>(_actions);
 
-
             //acts = Actions.Select(x => new Action(x));
-
 
             var c = GetChildAction(acts[0]);
             c.Id = acts[0].Id;

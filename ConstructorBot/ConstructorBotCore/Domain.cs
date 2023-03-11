@@ -26,10 +26,19 @@ namespace ConstructorBotCore
             return _handlerMessanger!.MessengerApi.NamingBot;
         }
 
-        public void OnStart()
+        public async Task<bool> OnStart()
         {
-                if(_parentActions != null)
-            _handlerMessanger = new Handler(_parentActions!);
+            if (_parentActions != null)
+            {
+                _handlerMessanger = new Handler(_parentActions!);
+                return await _handlerMessanger.StartMessenger();
+            }
+            return false;
+        }
+
+        public async Task<bool> OnStartRestart()
+        {
+            return await _handlerMessanger!.StartMessenger();
         }
 
         public void OnStop()

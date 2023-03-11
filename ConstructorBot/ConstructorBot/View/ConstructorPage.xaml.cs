@@ -23,10 +23,11 @@ public partial class ConstructorPage : ContentPage
 
         MainMatrix.IsVisible = false;
 
-        Disappearing += (object sender, EventArgs e) =>
+        Disappearing += async (object sender, EventArgs e) =>
         {
             //SaveSettingOrActionBoxes.Save(ServiceProvider.GetService<ConstructorViewModel>().ActionBoxes.ToList());
             SaveSettingOrActionBoxes.Save(ConstructorViewModel.ActionBoxes.ToList());
+            //ConstructorViewModel.ActionBoxes.Clear();
         };
 
         this.Loaded += Loading;
@@ -201,6 +202,10 @@ public partial class ConstructorPage : ContentPage
     {
         var list = SaveSettingOrActionBoxes.Get();
 
+        CommunityToolkit.Maui.Core.Platform.StatusBar.SetColor(Color.FromArgb("344B6D"));
+        CommunityToolkit.Maui.Core.Platform.StatusBar.SetStyle(CommunityToolkit.Maui.Core.StatusBarStyle.LightContent);
+
+        ConstructorViewModel.ActionBoxes.Clear(); //New
         list.ToList().ForEach(x => ConstructorViewModel.ActionBoxes.Add(x));
 
         LoadingIndicator.IsRunning = false;

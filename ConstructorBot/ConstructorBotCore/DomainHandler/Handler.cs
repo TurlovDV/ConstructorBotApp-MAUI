@@ -32,6 +32,12 @@ namespace ConstructorBotCore.DomainHandler
                 new TelegramApi("5639252625:AAEc8NZlurYXxejvHW9MXsK6yvEp8tZ1nSM",
                 GetAnswerMessage,
                 MessageRequest);
+
+        }
+
+        public async Task<bool> StartMessenger()
+        {
+            return await MessengerApi.Start();
         }
         public void MessageRequest(DomainMessage message)
         {

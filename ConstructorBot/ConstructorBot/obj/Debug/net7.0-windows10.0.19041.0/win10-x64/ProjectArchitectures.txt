@@ -1,0 +1,1 @@
+C:\ConstructorBotProject\ConstructorBot\ConstructorBot\ConstructorBot.csproj;x64

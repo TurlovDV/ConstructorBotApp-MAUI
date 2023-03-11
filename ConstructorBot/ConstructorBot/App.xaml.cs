@@ -18,9 +18,14 @@ public partial class App : Application
         //Получение сохраненных actionBoxes
         ServiceProvider.GetService<ConstructorViewModel>().ActionBoxes
             = new ObservableCollection<ActionBox>(SaveSettingOrActionBoxes.Get());
-
-
     }
+
+    //Выход из приложения
+    //protected async override void OnSleep()
+    //{
+    //    await Shell.Current.GoToAsync("..");
+    //    base.OnSleep();
+    //}
 
     public interface IMessageService
     {

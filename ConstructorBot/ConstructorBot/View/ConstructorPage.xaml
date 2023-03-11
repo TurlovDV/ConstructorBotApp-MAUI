@@ -139,9 +139,15 @@
                     <StackLayout Spacing="15" IsVisible="{Binding TapLastAction.IsMainAction, Converter={StaticResource boolInversionConverter}}">
                         <Label Text="Условие ответа" TextColor="White" FontSize="Medium"></Label>
                         <StackLayout Spacing="10">
-                            <Frame Padding="0" BorderColor="Gray" BackgroundColor="Transparent" CornerRadius="5">
+                            <!--<Frame Padding="0" BorderColor="Gray" BackgroundColor="Transparent" CornerRadius="5">
                                 <Entry Text="{Binding TapLastAction.Question}" VerticalOptions="End" Placeholder="Любая фраза" TextColor="White"></Entry>
-                            </Frame>
+                            </Frame>-->
+                            <Border Padding="0" BackgroundColor="Transparent" Stroke="Gray">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="10,10,10,10" />
+                                </Border.StrokeShape>
+                                <Entry Text="{Binding TapLastAction.Question}" VerticalOptions="End" Placeholder="Любая фраза" TextColor="White"></Entry>
+                            </Border>
                         </StackLayout>
                     </StackLayout>
                 </StackLayout>
@@ -203,9 +209,15 @@
             <Grid>
                 <StackLayout Spacing="20">
                     <Label Margin="5, 0, 0, 0" Text="Название бокса" TextColor="White" FontSize="Medium"></Label>
-                    <Frame Padding="3,0,3,0" BackgroundColor="Transparent" BorderColor="White">
+                    <!--<Frame Padding="3,0,3,0" BackgroundColor="Transparent" BorderColor="White">
                         <Entry x:Name="entryNaming" Placeholder="Сообщение 1" TextColor="White" HorizontalOptions="FillAndExpand"></Entry>
-                    </Frame>
+                    </Frame>-->
+                    <Border Padding="3,0,3,0" BackgroundColor="Transparent" Stroke="White">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="10,10,10,10" />
+                        </Border.StrokeShape>
+                        <Entry x:Name="entryNaming" Placeholder="Сообщение 1" TextColor="White" HorizontalOptions="FillAndExpand"></Entry>
+                    </Border>
                     <Button Text="Создать" CommandParameter="{Reference entryNaming}" Command="{Binding AddActionCreateCommand}" TextColor="White" BackgroundColor="#2B3A62" HorizontalOptions="FillAndExpand"></Button>
                 </StackLayout>
                 <ImageButton Command="{Binding AddActionCommand}" HeightRequest="25" WidthRequest="25" Aspect="AspectFit" Source="cross2.png" VerticalOptions="Start" HorizontalOptions="End"></ImageButton>

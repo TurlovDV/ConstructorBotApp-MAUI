@@ -16,6 +16,8 @@ namespace ConstructorBot.ViewModel.ConstructorPageViewModel.Action
 
         public MediaType Type { get; set; }
 
+        public string PathMediaSource { get; set; }
+
         public string Source { get; set; }
 
         public MediaItem()

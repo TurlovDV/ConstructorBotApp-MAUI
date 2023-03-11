@@ -59,13 +59,13 @@ namespace ConstructorBot
             NotificationManager manager = (NotificationManager)MainActivity.ActivityCurrent.GetSystemService(Context.NotificationService);
             manager.CreateNotificationChannel(channel);
             Notification notification = new Notification.Builder(this, "ServicioChannel")
-                .SetContentTitle("Servicio trabajando")
-                .SetSmallIcon(Resource.Drawable.abc_ab_share_pack_mtrl_alpha)
+                .SetContentTitle("Бот включен")
+                .SetSmallIcon(Resource.Drawable.constructor)
+                //.SetSmallIcon(Resource.Drawable.abc_ab_share_pack_mtrl_alpha)
                 .SetOngoing(true)
                 .Build();
 
             StartForeground(100, notification);
-
         }
     }
 }

@@ -4,6 +4,7 @@ using ConstructorBotCore.DomainMessagModel.ElementMessage;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Data;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -63,30 +64,38 @@ namespace ConstructorBotCore.MessengerModel.TelegramBot
 
             bot = new TelegramBotClient(token);
 
-            Start();
+            //Start();
         }
 
-        public void Start()
+        public async Task<bool> Start()
         {
-            var name = bot.GetMeAsync();
-            NamingBot = name.Result.FirstName + " " + name.Result.LastName;
-            //Console.WriteLine("\tBot start: " + Name, ConsoleColor.Red);
-
-            var cts = new CancellationTokenSource();
-            CancellationToken = cts.Token;
-            var receiverOptions = new ReceiverOptions
+            try
             {
-                Limit = 1,
-                ThrowPendingUpdates = true,
-            };
+                var name = await bot.GetMeAsync();
+                NamingBot = name.FirstName + " " + name.LastName;
+                //Console.WriteLine("\tBot start: " + Name, ConsoleColor.Red);
 
-            bot.CloseAsync();
+                var cts = new CancellationTokenSource();
+                CancellationToken = cts.Token;
+                var receiverOptions = new ReceiverOptions
+                {
+                    Limit = 1,
+                    ThrowPendingUpdates = true,
+                };
 
-            bot.StartReceiving(
-                HandleUpdateAsync,
-                HandleErrorAsync,
-                receiverOptions,
-                CancellationToken);
+                //await bot.CloseAsync();
+
+                bot.StartReceiving(
+                    HandleUpdateAsync,
+                    HandleErrorAsync,
+                    receiverOptions,
+                    CancellationToken);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         public async Task HandleUpdateAsync(ITelegramBotClient botClient, Update update, CancellationToken cancellationToken)

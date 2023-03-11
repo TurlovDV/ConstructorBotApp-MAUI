@@ -267,10 +267,11 @@ namespace ConstructorBot.ViewModel.ConstructorPageViewModel
                         }
                         TapLastAction.MediaItems.Add(new MediaItem()
                         {
-                            Bytes = stream.ReadFully(),
+                            //Bytes = stream.ReadFully(),
                             Name = file.FileName,
                             Type = MediaType.Photo,
-                            Source = file.FullPath
+                            Source = file.FullPath,
+                            PathMediaSource = file.FullPath,
                         });
                     }
                     else if (file.ContentType.Split('/')[0] == "video")
@@ -283,10 +284,11 @@ namespace ConstructorBot.ViewModel.ConstructorPageViewModel
                         }
                         TapLastAction.MediaItems.Add(new MediaItem()
                         {
-                            Bytes = stream.ReadFully(),
+                            //Bytes = stream.ReadFully(),
                             Name = file.FileName,
                             Type = MediaType.Video,
-                            Source = "video_icon.png"
+                            Source = "video_icon.png",
+                            PathMediaSource = file.FullPath,
                         });
                     }
                     else if (file.ContentType.Split('/')[0] == "application")
@@ -301,10 +303,11 @@ namespace ConstructorBot.ViewModel.ConstructorPageViewModel
                         }
                         TapLastAction.MediaItems.Add(new MediaItem()
                         {
-                            Bytes = stream.ReadFully(),
+                            //Bytes = stream.ReadFully(),
                             Name = file.FileName,
                             Type = MediaType.Document,
-                            Source = "document_icon.png"
+                            Source = "document_icon.png",
+                            PathMediaSource = file.FullPath,
                         });
                     }
                     else if (file.ContentType.Split('/')[0] == "audio")
@@ -319,10 +322,11 @@ namespace ConstructorBot.ViewModel.ConstructorPageViewModel
                         }
                         TapLastAction.MediaItems.Add(new MediaItem()
                         {
-                            Bytes = stream.ReadFully(),
+                            //Bytes = stream.ReadFully(),
                             Name = file.FileName,
                             Type = MediaType.Audio,
-                            Source = "music_icon.png"
+                            Source = "music_icon.png",
+                            PathMediaSource = file.FullPath,
                         });
                     }
                 });
@@ -353,7 +357,6 @@ namespace ConstructorBot.ViewModel.ConstructorPageViewModel
                 });
             }
         }
-
 
         private KeyboardItem keyboardItem { get; set; }
 
