@@ -107,7 +107,7 @@
                         <Border.StrokeShape>
                             <RoundRectangle CornerRadius="5,5,5,5" />
                         </Border.StrokeShape>
-                        <Editor Placeholder="Токен" HorizontalOptions="FillAndExpand" Margin="5,0,5,0"></Editor>
+                        <Entry Placeholder="Токен" HorizontalOptions="FillAndExpand" Margin="10,0,10,0"></Entry>
                     </Border>
 
                     <Button Command="{Binding SaveOptionsTokenCommand}" HorizontalOptions="FillAndExpand" Text="Сохранить" TextColor="White" BackgroundColor="#2B3A62"></Button>
@@ -152,7 +152,8 @@
                 <StackLayout>
                     <StackLayout Orientation="Horizontal" Spacing="5">
                         <Image VerticalOptions="Center" Source="wifi.png" WidthRequest="16" HeightRequest="16"></Image>
-                        <Label VerticalOptions="Center" Text="{Binding SpeedInternet}" FontAttributes="Bold"></Label>
+                        <Label VerticalOptions="Center" Text="0" IsVisible="{Binding IsInternetConnection, Converter={StaticResource boolInversionConverter}}" FontAttributes="Bold"></Label>
+                        <Label VerticalOptions="Center" Text="{Binding SpeedInternet}" IsVisible="{Binding IsInternetConnection}" FontAttributes="Bold"></Label>
                     </StackLayout>
                     <BoxView HorizontalOptions="FillAndExpand" Margin="0,5,0,5" HeightRequest="1" Color="White"></BoxView>
                     <StackLayout Orientation="Horizontal" Spacing="5">

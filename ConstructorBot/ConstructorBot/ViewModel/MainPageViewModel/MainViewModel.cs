@@ -29,6 +29,7 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
         private int speedInternet;
         private bool isPageOptionsToken;
         private bool isPageMain = true;
+        private bool isInternetConnection = true;
 
 
         private List<ActionBox> _actions;
@@ -55,6 +56,16 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
         }
 
         public Domain MessagerCore { get; set; }
+
+        public bool IsInternetConnection
+        {
+            get => isInternetConnection;
+            set
+            {
+                isInternetConnection = value;
+                OnPropertyChanged();
+            }
+        }
 
         public int CountMessage
         { 
@@ -114,7 +125,6 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
 
         //Запуск бара с инфо о боте в 1_сек
 
-        bool isNotInternetToRestart;
         public async void UpdateInfoTable()
         {
             OnStartTiming = new DateTime();
@@ -129,14 +139,14 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
 
                 if (Connectivity.Current.NetworkAccess == NetworkAccess.Internet)
                 {
-                    if(!isNotInternetToRestart)
+                    if(!IsInternetConnection)
                     {
                         await MessagerCore.OnStartRestart();
-                        isNotInternetToRestart = true;
+                        IsInternetConnection = true;
                     }
                 }
                 else
-                    isNotInternetToRestart = false;
+                    IsInternetConnection = false;
 
                 if (OnStartTiming.Minute % 5 == 0 && OnStartTiming.Second == 0 && OnStartTiming.Minute != 0)
                 {
@@ -163,11 +173,14 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
                             _backGround.Start();
                             IsStart = !IsStart;
                             await Task.Run(UpdateInfoTable);
-                            isNotInternetToRestart = true;
+                            isInternetConnection = true;
                         }
                         else
                         {
-                            await DependencyService.Get<App.IMessageService>().ShowAsync("Ошибка", "Убедитесь в достоверности токена и подключения к интрнету");
+                            if (Connectivity.Current.NetworkAccess != NetworkAccess.Internet)
+                                await DependencyService.Get<App.IMessageService>().ShowAsync("Ошибка", "Убедитесь в достоверности подключения к интернету");
+                            else
+                            await DependencyService.Get<App.IMessageService>().ShowAsync("Ошибка", "Убедитесь в достоверности токена");
                         }
                     }
                     else

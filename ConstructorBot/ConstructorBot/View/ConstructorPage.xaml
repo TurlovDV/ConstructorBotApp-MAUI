@@ -92,7 +92,6 @@
                     </DataTemplate>
                 </BindableLayout.ItemTemplate>
             </Grid>
-
         </Grid>
 
 
@@ -113,7 +112,7 @@
                                 <StackLayout Orientation="Horizontal">
                                     <StackLayout Spacing="0">
                                         <ImageButton Command="{Binding OpenPutKeyboard}" Margin="5,8,5,0" Source="keyboard1" WidthRequest="25" HeightRequest="25" BackgroundColor="Transparent"></ImageButton>
-                                        <ImageButton Command="{Binding AddMediaCommand}" Margin="5" Source="menu.png" WidthRequest="25" HeightRequest="25" BackgroundColor="Transparent"></ImageButton>
+                                        <ImageButton Command="{Binding AddMediaCommand}" Margin="5" Source="addmedia.png" WidthRequest="20" HeightRequest="20" BackgroundColor="Transparent"></ImageButton>
                                     </StackLayout>
                                     <Editor HorizontalOptions="FillAndExpand" Text="{Binding TapLastAction.MessageText}" Placeholder="Сообщение" TextColor="White" HeightRequest="80"></Editor>
                                 </StackLayout>
@@ -144,9 +143,9 @@
                             </Frame>-->
                             <Border Padding="0" BackgroundColor="Transparent" Stroke="Gray">
                                 <Border.StrokeShape>
-                                    <RoundRectangle CornerRadius="10,10,10,10" />
+                                    <RoundRectangle CornerRadius="5,5,5,5" />
                                 </Border.StrokeShape>
-                                <Entry Text="{Binding TapLastAction.Question}" VerticalOptions="End" Placeholder="Любая фраза" TextColor="White"></Entry>
+                                <Entry Margin="10, 0, 10, 0" Text="{Binding TapLastAction.Question}" VerticalOptions="End" Placeholder="Любая фраза" TextColor="White"></Entry>
                             </Border>
                         </StackLayout>
                     </StackLayout>
@@ -191,13 +190,23 @@
                     <Label Text="Настройка клавиатуры" TextColor="White" VerticalOptions="Center"></Label>
                 </StackLayout>
                 <StackLayout Spacing="20" Margin="0, 0, 0, 0">
-                    <StackLayout Spacing="0">
+                    <StackLayout Spacing="2">
                         <Label Text="Сообщение кнопки" TextColor="White"></Label>
-                        <Entry Text="{Binding KeyboardItem.Text}"></Entry>
+                        <Border Stroke="White" BackgroundColor="Transparent">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="5, 5, 5, 5"></RoundRectangle>
+                            </Border.StrokeShape>
+                            <Entry Placeholder="Кнопка" Margin="10, 0, 10, 0" Text="{Binding KeyboardItem.Text}"></Entry>
+                        </Border>
                     </StackLayout>
-                    <StackLayout Spacing="0">
+                    <StackLayout Spacing="2">
                         <Label Text="Url сыллка" TextColor="White"></Label>
-                        <Entry Text="{Binding KeyboardItem.Url}"></Entry>
+                        <Border Stroke="White" BackgroundColor="Transparent">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="5, 5, 5, 5"></RoundRectangle>
+                            </Border.StrokeShape>
+                            <Entry Placeholder="Url" Margin="10, 0, 10, 0" Text="{Binding KeyboardItem.Url}"></Entry>
+                        </Border>
                     </StackLayout>
                 </StackLayout>
             </StackLayout>
@@ -214,7 +223,7 @@
                     </Frame>-->
                     <Border Padding="3,0,3,0" BackgroundColor="Transparent" Stroke="White">
                         <Border.StrokeShape>
-                            <RoundRectangle CornerRadius="10,10,10,10" />
+                            <RoundRectangle CornerRadius="5,5,5,5" />
                         </Border.StrokeShape>
                         <Entry x:Name="entryNaming" Placeholder="Сообщение 1" TextColor="White" HorizontalOptions="FillAndExpand"></Entry>
                     </Border>

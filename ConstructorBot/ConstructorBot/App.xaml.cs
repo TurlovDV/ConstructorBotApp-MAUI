@@ -19,6 +19,13 @@ public partial class App : Application
         //Получение сохраненных actionBoxes
         ServiceProvider.GetService<ConstructorViewModel>().ActionBoxes
             = new ObservableCollection<ActionBox>(SaveSettingOrActionBoxes.Get());
+
+//#if ANDROID
+//Microsoft.Maui.Handlers.EntryHandler.Mapper.ModifyMapping("NoUnderline", (h,v) =>
+//{
+
+        //});
+        //#endif
     }
 
     //Выход из приложения

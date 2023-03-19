@@ -4,6 +4,7 @@ using ConstructorBot.ViewModel.ConstructorPageViewModel.Action;
 using ConstructorBot.ViewModel.MainPageViewModel;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microsoft.Maui.Controls.PlatformConfiguration;
 
 namespace ConstructorBot;
 
@@ -22,9 +23,15 @@ public static class MauiProgram
 			builder.Services.AddSingleton<IServiceDomainBot, ConstructorBot.ServiceDomainBot>();
 #endif
 
-        builder
-            .UseMauiApp<App>()
+		builder
+			.UseMauiApp<App>()
 			.UseMauiCommunityToolkit()
+			.ConfigureMauiHandlers(handlers =>
+			{
+#if ANDROID
+                handlers.AddHandler(typeof(Entry), typeof(ConstructorBot.Platforms.Android.MyEntryHandler));
+#endif
+            })
 			.ConfigureFonts(fonts =>
 			{
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
@@ -39,8 +46,8 @@ public static class MauiProgram
 #if DEBUG
         builder.Logging.AddDebug();
 #endif
-		
-		return builder.Build();
+
+        return builder.Build();
 	}
 
 }
