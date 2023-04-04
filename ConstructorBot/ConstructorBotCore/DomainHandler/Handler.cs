@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Dynamic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -21,7 +22,7 @@ namespace ConstructorBotCore.DomainHandler
 
         public Logger Logger { get; set; }
         
-        public Handler(List<DomainParentAction> domainParents)
+        public Handler(List<DomainParentAction> domainParents, string token)
         {
             Logger = new Logger();
             BotLogic = domainParents;
@@ -29,7 +30,7 @@ namespace ConstructorBotCore.DomainHandler
             LogicUsers = new List<LogicUser>();
 
             MessengerApi = 
-                new TelegramApi("5639252625:AAEc8NZlurYXxejvHW9MXsK6yvEp8tZ1nSM",
+                new TelegramApi(token, //"5639252625:AAEc8NZlurYXxejvHW9MXsK6yvEp8tZ1nSM",
                 GetAnswerMessage,
                 MessageRequest);
 

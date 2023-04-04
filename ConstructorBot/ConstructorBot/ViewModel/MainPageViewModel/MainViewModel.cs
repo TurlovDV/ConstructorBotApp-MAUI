@@ -12,6 +12,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using System.Xml.Linq;
 using static ConstructorBot.App;
 
 namespace ConstructorBot.ViewModel.MainPageViewModel
@@ -30,7 +31,7 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
         private bool isPageOptionsToken;
         private bool isPageMain = true;
         private bool isInternetConnection = true;
-
+        private string telegramToken;
 
         private List<ActionBox> _actions;
         public ScoreboardMessagerInfo MessagerInfo { get; set; }
@@ -97,6 +98,15 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
             }
         }
 
+        public string TelegramToken
+        { 
+            get => telegramToken; 
+            set
+            {
+                telegramToken = value;
+            }
+        }
+
         public DateTime OnStartTiming
         {
             get => onStartTiming;
@@ -121,6 +131,7 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
         {
             MessagerCore = new Domain();
             MessagerInfo = new ScoreboardMessagerInfo();
+            TelegramToken = SaveSettings.GetKeyTelegram();
         }
 
         //Запуск бара с инфо о боте в 1_сек
@@ -165,7 +176,7 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
                     if (!IsStart)
                     {
                         _actions = ServiceProvider.GetService<ConstructorViewModel>().ActionBoxes.ToList();
-                        var resultOnStart = await MessagerCore.UpdateBot(GetParentActions()).OnStart();
+                        var resultOnStart = await MessagerCore.UpdateBot(GetParentActions()).OnStart(TelegramToken);
                         if (resultOnStart)
                         {
                             NamingBot = MessagerCore.GetNamingBot();
@@ -243,6 +254,8 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
             {
                 return new Command(() =>
                 {
+                    if(TelegramToken.Trim() != "" || TelegramToken.Trim() != null)
+                        SaveSettings.SetKeyTelegram(TelegramToken.Trim());
                     IsPageMain = true;
                     IsPageOptionsToken = false;
                 });

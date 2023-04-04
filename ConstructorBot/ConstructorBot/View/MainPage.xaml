@@ -27,8 +27,15 @@
         <x:Boolean>False</x:Boolean>
     </Shell.NavBarIsVisible>
 
-    <Grid RowDefinitions="*, Auto, Auto, 1.5*">
-        <Frame Grid.Row="2" Grid.RowSpan="2" BackgroundColor="#1D2733" CornerRadius="20" BorderColor="Transparent"></Frame>
+    <Grid RowDefinitions="*, Auto, Auto, 1.5*" Padding="0">
+        <!--New-->
+        <!--<Frame HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="#1D2733" CornerRadius="0" BorderColor="#1D2733"></Frame>-->
+        <Border Grid.Row="2" Grid.RowSpan="2" Padding="0" Margin="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" StrokeThickness="-0.1" BackgroundColor="#1D2733" Stroke="Black">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="20,20,0,0" Margin="0"/>
+            </Border.StrokeShape>
+        </Border>
+
         <Frame Padding="0" Grid.Row="2" Grid.RowSpan="2" IsVisible="{Binding IsPageMain}" BackgroundColor="Transparent" CornerRadius="0" BorderColor="Transparent">
             <Grid Padding="10" RowDefinitions="*,*" ColumnDefinitions="*,*" ColumnSpacing="20">
                 <Frame Padding="10, 60, 0, 20" BorderColor="Transparent" BackgroundColor="Transparent" Grid.Row="0" Grid.Column="0">
@@ -88,6 +95,7 @@
             </Grid>
         </Frame>
 
+        <!--Изменение ключа подключения телеграм-->
         <Frame Grid.Row="2" Padding="20, 50, 20, 20" Grid.RowSpan="2" IsVisible="{Binding IsPageOptionsToken}" BackgroundColor="Transparent" BorderColor="Transparent" CornerRadius="0">
             <StackLayout Spacing="35" VerticalOptions="Start">
                 <StackLayout HorizontalOptions="Start" VerticalOptions="Start" Spacing="10" Orientation="Horizontal">
@@ -100,14 +108,12 @@
 
                 <StackLayout Spacing="15">
                     <Label Text="Для работы с приложений введите&#10;токен подключения бота" FontSize="Small" TextColor="White"></Label>
-                    <!--<Frame Padding="3" BorderColor="Black" BackgroundColor="Transparent" CornerRadius="10">-->
-                    <!--</Frame>-->
                     <!--Вылет фонового приложения из-за Entry во Frame-->
                     <Border BackgroundColor="Transparent" Stroke="Gray">
                         <Border.StrokeShape>
                             <RoundRectangle CornerRadius="5,5,5,5" />
                         </Border.StrokeShape>
-                        <Entry Placeholder="Токен" HorizontalOptions="FillAndExpand" Margin="10,0,10,0"></Entry>
+                        <Entry Text="{Binding TelegramToken, Mode=TwoWay}" Placeholder="Токен" HorizontalOptions="FillAndExpand" Margin="10,0,10,0"></Entry>
                     </Border>
 
                     <Button Command="{Binding SaveOptionsTokenCommand}" HorizontalOptions="FillAndExpand" Text="Сохранить" TextColor="White" BackgroundColor="#2B3A62"></Button>

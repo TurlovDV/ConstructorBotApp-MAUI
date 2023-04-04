@@ -351,7 +351,11 @@ namespace ConstructorBotCore.MessengerModel.TelegramBot
                         inlineKeyboardButtons.Add(new Telegram.Bot.Types.ReplyMarkups.KeyboardButton(i));
                     list.Add(inlineKeyboardButtons);
                 }
-                return new Telegram.Bot.Types.ReplyMarkups.ReplyKeyboardMarkup(list);
+                return new Telegram.Bot.Types.ReplyMarkups.ReplyKeyboardMarkup(list)
+                {
+                    ResizeKeyboard = true,
+                    OneTimeKeyboard = true
+                };
             }
 
             return null!;

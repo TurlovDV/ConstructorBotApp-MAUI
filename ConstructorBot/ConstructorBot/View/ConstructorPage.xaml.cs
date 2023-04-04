@@ -24,13 +24,10 @@ public partial class ConstructorPage : ContentPage
 
         Disappearing += async (object sender, EventArgs e) =>
         {
-            //SaveSettingOrActionBoxes.Save(ServiceProvider.GetService<ConstructorViewModel>().ActionBoxes.ToList());
             SaveSettingOrActionBoxes.Save(ConstructorViewModel.ActionBoxes.ToList());
-            //ConstructorViewModel.ActionBoxes.Clear();
         };
 
         this.Loaded += Loading;
-        //BindingContext = ConstructorViewModel;
     }
 
     private void MoveActionBox_PanUpdated(object sender, PanUpdatedEventArgs e)
@@ -179,13 +176,8 @@ public partial class ConstructorPage : ContentPage
 
     private async void ToolbarItem_Clicked(object sender, EventArgs e)
     {
-        //MainViewModel._actions = ConstructorViewModel.ActionBoxes.ToList();
-        //await Navigation.PopAsync();
         ServiceProvider.GetService<ConstructorViewModel>().ActionBoxes = ConstructorViewModel.ActionBoxes;
         await Shell.Current.GoToAsync("..");
-        //await Shell.Current.GoToAsync("MainPage");
-
-        //Navigation.PushAsync(new MainPage(), false);
     }
 
     protected override bool OnBackButtonPressed()
@@ -204,7 +196,7 @@ public partial class ConstructorPage : ContentPage
         CommunityToolkit.Maui.Core.Platform.StatusBar.SetColor(Color.FromArgb("344B6D"));
         CommunityToolkit.Maui.Core.Platform.StatusBar.SetStyle(CommunityToolkit.Maui.Core.StatusBarStyle.LightContent);
 
-        ConstructorViewModel.ActionBoxes.Clear(); //New
+        ConstructorViewModel.ActionBoxes.Clear();
         list.ToList().ForEach(x => ConstructorViewModel.ActionBoxes.Add(x));
 
         LoadingIndicator.IsRunning = false;
