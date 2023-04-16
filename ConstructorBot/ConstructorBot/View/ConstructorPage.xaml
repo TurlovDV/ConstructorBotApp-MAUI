@@ -22,6 +22,7 @@
             <vmActionCoverters:IsAnyToStringConverter x:Key="isAnyToStringConverter"></vmActionCoverters:IsAnyToStringConverter>
             <vmActionCoverters:IsEnabledKeyboardToColorConverter x:Key="IsEnabledKeyboardToColorConverter"></vmActionCoverters:IsEnabledKeyboardToColorConverter>
             <vmActionCoverters:BoolInversionConverter x:Key="boolInversionConverter"></vmActionCoverters:BoolInversionConverter>
+            <vmActionCoverters:IsNullConverter x:Key="isNullConverter"></vmActionCoverters:IsNullConverter>
         </ResourceDictionary>
     </ContentPage.Resources>
 
@@ -73,6 +74,15 @@
                                                 <Label FontSize="Micro" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" Text="{Binding MessageText}"></Label>
                                             </StackLayout>
                                         </Frame>
+                                        <StackLayout Margin="5, 0, 0, 0" Spacing="5" Orientation="Horizontal" BindableLayout.ItemsSource="{Binding IncludedAttachments}">
+                                            <BindableLayout.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Frame CornerRadius="2" Padding="1" BorderColor="Black" BackgroundColor="Transparent">
+                                                        <Image Source="{Binding}" WidthRequest="15" HeightRequest="15"></Image>
+                                                    </Frame>
+                                                </DataTemplate>
+                                            </BindableLayout.ItemTemplate>
+                                        </StackLayout>
                                     </StackLayout>
                                 </StackLayout>
 
@@ -98,9 +108,10 @@
         <!--<ImageButton Grid.RowSpan="2" HorizontalOptions="Start" VerticalOptions="Start" Margin="15" WidthRequest="30" Command="{Binding AddActionCommand}" HeightRequest="30" Source="back_icon.png"></ImageButton>
         <ImageButton Grid.RowSpan="2" HorizontalOptions="Start" VerticalOptions="End" Margin="15" WidthRequest="50" Command="{Binding AddActionCommand}" HeightRequest="50" Source="plus.png"></ImageButton>-->
 
-        <Frame IsVisible="{Binding IsPutBoxAction}" Grid.RowSpan="2" BackgroundColor="Transparent" CornerRadius="0" BorderColor="Black"></Frame>
+        <Frame IsVisible="{Binding IsPutBoxAction}" Grid.RowSpan="2" BackgroundColor="Transparent" CornerRadius="0" BorderColor="Transparent"></Frame>
 
-        <Frame IsVisible="{Binding IsPutBoxAction}" Grid.Row="1" BackgroundColor="#1D2733">
+
+        <Frame CornerRadius="0" IsVisible="{Binding IsPutBoxAction}" Grid.Row="1" BorderColor="#253242" BackgroundColor="#253242">
             <Grid>
                 <!--Clicked="OptionsMessage_Clicked"-->
                 <ImageButton Command="{Binding ClosePutActionBox}" HeightRequest="25" WidthRequest="25" Aspect="AspectFit" Source="cross2.png" VerticalOptions="Start" HorizontalOptions="End"></ImageButton>
@@ -118,7 +129,6 @@
                                 </StackLayout>
                             </StackLayout>
                         </Frame>
-
                         <ScrollView Orientation="Horizontal">
                             <StackLayout Spacing="10" Orientation="Horizontal" BindableLayout.ItemsSource="{Binding TapLastAction.MediaItems}">
                                 <BindableLayout.ItemTemplate>
@@ -138,9 +148,6 @@
                     <StackLayout Spacing="15" IsVisible="{Binding TapLastAction.IsMainAction, Converter={StaticResource boolInversionConverter}}">
                         <Label Text="Условие ответа" TextColor="White" FontSize="Medium"></Label>
                         <StackLayout Spacing="10">
-                            <!--<Frame Padding="0" BorderColor="Gray" BackgroundColor="Transparent" CornerRadius="5">
-                                <Entry Text="{Binding TapLastAction.Question}" VerticalOptions="End" Placeholder="Любая фраза" TextColor="White"></Entry>
-                            </Frame>-->
                             <Border Padding="0" BackgroundColor="Transparent" Stroke="Gray">
                                 <Border.StrokeShape>
                                     <RoundRectangle CornerRadius="5,5,5,5" />
@@ -149,26 +156,36 @@
                             </Border>
                         </StackLayout>
                     </StackLayout>
+                    <StackLayout IsVisible="{Binding TapLastAction.NameSaveMessage, Converter={StaticResource isNullConverter}, ConverterParameter=1}" Orientation="Horizontal" Spacing="5">
+                        <Button Text="Не сохранять" Command="{Binding SaveRequestCommand}" TextColor="White" VerticalOptions="Center" HorizontalOptions="FillAndExpand" BackgroundColor="#622B2B"></Button>
+                        <Frame HeightRequest="45" VerticalOptions="Center" Padding="0" BackgroundColor="#2B3A62" BorderColor="#2B3A62">
+                            <Grid>
+                                <Image Source="options.svg" WidthRequest="25" HeightRequest="25"></Image>
+                                <Button Command="{Binding OpenOrExitRequestCommand}" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent" VerticalOptions="FillAndExpand"></Button>
+                            </Grid>
+                        </Frame>
+                    </StackLayout>
+                    <Button Text="Сохранить ответ" IsVisible="{Binding TapLastAction.NameSaveMessage, Converter={StaticResource isNullConverter}, ConverterParameter=0}" Command="{Binding OpenOrExitRequestCommand}" TextColor="White" VerticalOptions="Center" HorizontalOptions="FillAndExpand" BackgroundColor="#2B3A62"></Button>
                 </StackLayout>
             </Grid>
         </Frame>
 
-        <Frame IsVisible="{Binding IsAddButtons}" Grid.RowSpan="2" BackgroundColor="Transparent" CornerRadius="0" BorderColor="Black"></Frame>
-        <Frame IsVisible="{Binding IsAddButtons}" Grid.Row="1" BackgroundColor="#1D2733">
+        <Frame IsVisible="{Binding IsAddButtons}" Grid.RowSpan="2" BackgroundColor="Transparent" CornerRadius="0" BorderColor="Transparent"></Frame>
+        <Frame CornerRadius="0" IsVisible="{Binding IsAddButtons}" BorderColor="#253242" Grid.Row="1" BackgroundColor="#253242">
             <StackLayout Spacing="10">
                 <StackLayout Spacing="10" Orientation="Horizontal">
                     <ImageButton Command="{Binding OpenPutKeyboard}" HeightRequest="45" WidthRequest="45" Aspect="AspectFit" Source="back.svg" VerticalOptions="Center"></ImageButton>
                     <Label Text="Настройка клавиатуры" TextColor="White" VerticalOptions="Center"></Label>
                 </StackLayout>
                 <StackLayout>
-                    <StackLayout Orientation="Horizontal" Spacing="5">
-                        <Label Text="Встроенные" VerticalOptions="Center"></Label>
-                        <CheckBox Color="#4D8CC1" VerticalOptions="Center" IsChecked="{Binding TapLastAction.Keyboard.IsInline, Mode=TwoWay}"></CheckBox>
+                    <StackLayout Orientation="Horizontal" Spacing="0">
+                        <Label Text="Встроенные" TextColor="White" VerticalOptions="Center"></Label>
+                        <!--Color="#4D8CC1"--> <CheckBox Color="WhiteSmoke" VerticalOptions="Center" IsChecked="{Binding TapLastAction.Keyboard.IsInline, Mode=TwoWay}"></CheckBox>
                     </StackLayout>
                     <Grid ColumnSpacing="10" RowSpacing="10" Margin="0, 10, 0, 0" RowDefinitions="*,*,*" ColumnDefinitions="*,*,*" BindableLayout.ItemsSource="{Binding TapLastAction.Keyboard.KeyboardItems}">
                         <BindableLayout.ItemTemplate>
                             <DataTemplate x:DataType="vmAction:KeyboardItem">
-                                <Frame HeightRequest="45" CornerRadius="5" Padding="0" BorderColor="White" Grid.Row="{Binding Row}" Grid.Column="{Binding Column}" BackgroundColor="{Binding IsEnabled, Converter={StaticResource IsEnabledKeyboardToColorConverter}}">
+                                <Frame HeightRequest="45" CornerRadius="5" Padding="0" BorderColor="Gray" Grid.Row="{Binding Row}" Grid.Column="{Binding Column}" BackgroundColor="{Binding IsEnabled, Converter={StaticResource IsEnabledKeyboardToColorConverter}}">
                                     <Label Text="{Binding Text, Converter={StaticResource textKeyboardConverter}}" HorizontalOptions="Center" VerticalOptions="Center" TextColor="White"></Label>
                                     <Frame.GestureRecognizers>
                                         <TapGestureRecognizer NumberOfTapsRequired="1" x:DataType="vm:ConstructorViewModel" Command="{Binding Path=BindingContext.AddKeyboardCommand, Source={RelativeSource Mode=FindAncestor, AncestorType={x:Type ContentPage}}}" CommandParameter="{Binding .}"></TapGestureRecognizer>
@@ -182,17 +199,17 @@
             </StackLayout>
         </Frame>
 
-        <Frame IsVisible="{Binding IsPutButton}" Grid.RowSpan="2" BackgroundColor="Transparent" CornerRadius="0" BorderColor="Black"></Frame>
-        <Frame IsVisible="{Binding IsPutButton}" Grid.Row="1" BackgroundColor="#1D2733">
+        <Frame IsVisible="{Binding IsPutButton}" Grid.RowSpan="2" BackgroundColor="Transparent" CornerRadius="0" BorderColor="Transparent"></Frame>
+        <Frame CornerRadius="0" IsVisible="{Binding IsPutButton}" BorderColor="#253242" Grid.Row="1" BackgroundColor="#253242">
             <StackLayout Spacing="20">
                 <StackLayout Spacing="10" Orientation="Horizontal">
-                    <ImageButton Command="{Binding PutKeyboardCommand}" HeightRequest="35" WidthRequest="35" Aspect="AspectFit" Source="back.png" VerticalOptions="Start" HorizontalOptions="End"></ImageButton>
+                    <ImageButton Command="{Binding PutKeyboardCommand}" HeightRequest="45" WidthRequest="45" Aspect="AspectFit" Source="back.png" VerticalOptions="Start" HorizontalOptions="End"></ImageButton>
                     <Label Text="Настройка клавиатуры" TextColor="White" VerticalOptions="Center"></Label>
                 </StackLayout>
                 <StackLayout Spacing="20" Margin="0, 0, 0, 0">
                     <StackLayout Spacing="2">
                         <Label Text="Сообщение кнопки" TextColor="White"></Label>
-                        <Border Stroke="White" BackgroundColor="Transparent">
+                        <Border Stroke="Gray" BackgroundColor="Transparent">
                             <Border.StrokeShape>
                                 <RoundRectangle CornerRadius="5, 5, 5, 5"></RoundRectangle>
                             </Border.StrokeShape>
@@ -201,7 +218,7 @@
                     </StackLayout>
                     <StackLayout Spacing="2">
                         <Label Text="Url сыллка" TextColor="White"></Label>
-                        <Border Stroke="White" BackgroundColor="Transparent">
+                        <Border Stroke="Gray" BackgroundColor="Transparent">
                             <Border.StrokeShape>
                                 <RoundRectangle CornerRadius="5, 5, 5, 5"></RoundRectangle>
                             </Border.StrokeShape>
@@ -212,16 +229,35 @@
             </StackLayout>
         </Frame>
 
-        <!--Добавление нового бокса => ввоод названия-->
-        <Frame IsVisible="{Binding IsAddAction}" Grid.RowSpan="2" BackgroundColor="Transparent" CornerRadius="0" BorderColor="Black"></Frame>
-        <Frame IsVisible="{Binding IsAddAction}" Grid.Row="1" BackgroundColor="#1D2733">
+
+        <!--Сохранение ответов => ввоод имя ответа-->
+        <Frame Grid.RowSpan="2" IsVisible="{Binding IsAddRequest}" BackgroundColor="Transparent" CornerRadius="0" BorderColor="Transparent"></Frame>
+        <Frame CornerRadius="0" IsVisible="{Binding IsAddRequest}" Grid.Row="1" BorderColor="#253242" BackgroundColor="#253242">
             <Grid>
-                <StackLayout Spacing="20">
+                <StackLayout Spacing="15">
+                    <Label Margin="5, 0, 0, 0" Text="Добавление заявки" TextColor="White" FontSize="Medium"></Label>
+                    <Border Padding="6,0,3,0" BackgroundColor="Transparent" Stroke="Gray">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="5,5,5,5" />
+                        </Border.StrokeShape>
+                        <Entry x:Name="entryNameRequest" Text="{Binding TapLastAction.NameSaveMessage, Mode=TwoWay}" Placeholder="Ответ" TextColor="White" HorizontalOptions="FillAndExpand"></Entry>
+                    </Border>
+                    <Button Text="Сохранить" Command="{Binding SaveRequestCommand}" CommandParameter="{Reference entryNameRequest}" TextColor="White" BackgroundColor="#2B3A62" HorizontalOptions="FillAndExpand"></Button>
+                </StackLayout>
+                <ImageButton HeightRequest="25" Command="{Binding OpenOrExitRequestCommand}" WidthRequest="25" Aspect="AspectFit" Source="cross2.png" VerticalOptions="Start" HorizontalOptions="End"></ImageButton>
+            </Grid>
+        </Frame>
+
+        <!--Добавление нового бокса => ввоод названия-->
+        <Frame IsVisible="{Binding IsAddAction}" Grid.RowSpan="2" BackgroundColor="Transparent" CornerRadius="0" BorderColor="Transparent"></Frame>
+        <Frame CornerRadius="0" IsVisible="{Binding IsAddAction}" Grid.Row="1" BorderColor="#253242" BackgroundColor="#253242">
+            <Grid>
+                <StackLayout Spacing="15">
                     <Label Margin="5, 0, 0, 0" Text="Название бокса" TextColor="White" FontSize="Medium"></Label>
                     <!--<Frame Padding="3,0,3,0" BackgroundColor="Transparent" BorderColor="White">
                         <Entry x:Name="entryNaming" Placeholder="Сообщение 1" TextColor="White" HorizontalOptions="FillAndExpand"></Entry>
                     </Frame>-->
-                    <Border Padding="3,0,3,0" BackgroundColor="Transparent" Stroke="White">
+                    <Border Padding="6,0,3,0" BackgroundColor="Transparent" Stroke="Gray">
                         <Border.StrokeShape>
                             <RoundRectangle CornerRadius="5,5,5,5" />
                         </Border.StrokeShape>

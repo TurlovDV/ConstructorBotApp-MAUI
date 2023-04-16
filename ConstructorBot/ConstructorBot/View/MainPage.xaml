@@ -92,6 +92,24 @@
                         <Button Grid.RowSpan="2" Clicked="Button_PushToInfo" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Transparent"></Button>
                     </Grid>
                 </Frame>
+                <Frame Padding="0, 0, 10, 80" BorderColor="Transparent" BackgroundColor="Transparent" Grid.Row="1" Grid.Column="1">
+                    <Grid RowDefinitions="*, *">
+                        <Frame Grid.RowSpan="2" Padding="0" CornerRadius="10" BackgroundColor="Transparent">
+                            <Grid RowDefinitions="*, *">
+                                <Frame CornerRadius="0" Padding="0" Grid.Row="0" BackgroundColor="#4074A0" BorderColor="#4074A0">
+                                    <Image Source="icone_notes.svg" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="40" HeightRequest="40"></Image>
+                                </Frame>
+                                <Frame CornerRadius="0" Padding="0" Grid.Row="1" BackgroundColor="#E8E8E8" BorderColor="#E8E8E8">
+                                    <StackLayout Margin="0, 5, 0, 0" Spacing="2">
+                                        <Label Margin="7,0,0,0" TextColor="Black" FontAttributes="Bold" Text="Заявки"></Label>
+                                        <Label Margin="7,0,0,0" TextColor="Gray" FontSize="Micro" Text="Просмотр сохраненных&#10;заявок"></Label>
+                                    </StackLayout>
+                                </Frame>
+                            </Grid>
+                        </Frame>
+                        <Button Grid.RowSpan="2" Command="{Binding OpenOrExitPageViewRequest}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Transparent"></Button>
+                    </Grid>
+                </Frame>
             </Grid>
         </Frame>
 
@@ -121,7 +139,23 @@
 
             </StackLayout>
         </Frame>
-        
+
+        <!--Просмотр схраненных заявок-->
+        <Frame Grid.Row="2" Padding="20, 50, 20, 20" Grid.RowSpan="2" IsVisible="{Binding IsPageViewRequest}" BackgroundColor="Transparent" BorderColor="Transparent" CornerRadius="0">
+            <Grid>
+                <ImageButton Command="{Binding OpenOrExitPageViewRequest}" HorizontalOptions="End" VerticalOptions="Start" HeightRequest="30" WidthRequest="30" Source="cross2.png"></ImageButton>
+                <StackLayout Spacing="35" VerticalOptions="Start">
+                    <StackLayout HorizontalOptions="Start" VerticalOptions="Start" Spacing="10" Orientation="Horizontal">
+                        <Image Source="icone_notes.svg" VerticalOptions="Center" WidthRequest="45" HeightRequest="45" BackgroundColor="Transparent"></Image>
+                        <StackLayout Spacing="2" VerticalOptions="Center">
+                            <Label FontAttributes="Bold" Text="Заявки" FontSize="Small" TextColor="White"></Label>
+                            <Label Text="Просмотр сохраненных&#10;заявок" FontSize="Micro" TextColor="Gray"></Label>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+            </Grid>
+        </Frame>
+
         <Frame Grid.Row="0" BackgroundColor="Transparent" Padding="0" BorderColor="Transparent">
             <Grid>
                 <Image Source="background_vector.svg" HorizontalOptions="FillAndExpand" VerticalOptions="Start"></Image>

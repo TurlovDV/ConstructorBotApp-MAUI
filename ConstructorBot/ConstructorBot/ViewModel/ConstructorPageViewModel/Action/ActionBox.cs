@@ -16,17 +16,53 @@ namespace ConstructorBot.ViewModel.ConstructorPageViewModel.Action
         private string question;
         private string naming;
         private string messageText;
+        private string nameSaveMessage;
         private Color color;
         private ObservableCollection<ConnectionActionBox> connectionActions;
         private bool isMainAction = false;
         private ObservableCollection<MediaItem> mediaItems;
         private Keyboard keyboard;
+        private ObservableCollection<string> includedAttachments;
+
+        public ObservableCollection<string> IncludedAttachments
+        {
+            get
+            {
+                ObservableCollection<string> result = new();
+                if (mediaItems.Count > 0)
+                    result.Add("video_icon.png");
+                if (nameSaveMessage != null)
+                    result.Add("message_icone.svg");
+                if (Keyboard.KeyboardItems.ToList()
+                    .Any(x => x.IsEnabled == true))
+                    result.Add("keyboard_black.png");
+
+                return result;
+            }
+            set
+            {
+                includedAttachments = value;
+                OnPropertyChanged();
+            }
+        }
 
         public bool IsMainAction
         {
             get => isMainAction;
             set
-                { isMainAction = value; OnPropertyChanged(); }
+            {
+                isMainAction = value; OnPropertyChanged();
+            }
+        }
+
+        public string NameSaveMessage
+        {
+            get => nameSaveMessage;
+            set
+            {
+                nameSaveMessage = value;
+                OnPropertyChanged();
+            }
         }
 
         public Color ColorNone { get; set; } = Colors.White;

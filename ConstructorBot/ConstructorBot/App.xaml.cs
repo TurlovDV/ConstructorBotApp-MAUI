@@ -1,4 +1,5 @@
-﻿using ConstructorBot.View;
+﻿using ConstructorBot.SaveData;
+using ConstructorBot.View;
 using ConstructorBot.ViewModel.ConstructorPageViewModel;
 using ConstructorBot.ViewModel.ConstructorPageViewModel.Action;
 using System.Collections.ObjectModel;
@@ -10,22 +11,15 @@ public partial class App : Application
     public App()
 	{
         DependencyService.Register<IMessageService, MessageService>();
-        
+        //DependencyService.Register<IStorage, Storage>();
+
         InitializeComponent();
 
-        //Routing.RegisterRoute(nameof(ConstructorPage), typeof(ConstructorPage));
         MainPage = new AppShell();
 
-        //Получение сохраненных actionBoxes
+        var actions = Storage.GetActions();
         ServiceProvider.GetService<ConstructorViewModel>().ActionBoxes
-            = new ObservableCollection<ActionBox>(SaveSettingOrActionBoxes.Get());
-
-//#if ANDROID
-//Microsoft.Maui.Handlers.EntryHandler.Mapper.ModifyMapping("NoUnderline", (h,v) =>
-//{
-
-        //});
-        //#endif
+            = new ObservableCollection<ActionBox>(actions);
     }
 
     //Выход из приложения
@@ -52,12 +46,5 @@ public partial class App : Application
         {
             return await App.Current.MainPage.DisplayPromptAsync(title, message, "Да", "Нет");
         }
-
-        //public async Task ShowSheetAsync(string title, string message)
-        //{
-        //    await App.Current.MainPage.DisplayPromptAsync(title, message, "Ok");
-        //}
-
-
     }
 }

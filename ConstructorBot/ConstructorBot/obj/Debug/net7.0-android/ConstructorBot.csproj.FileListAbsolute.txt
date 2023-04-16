@@ -1108,3 +1108,10 @@ C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-android\
 C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-android\android\compressed_assemblies.arm64-v8a.o
 C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-android\android\jni_remap.arm64-v8a.o
 C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-android\app_shared_libraries\arm64-v8a\libxamarin-app.so
+C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-android\resizetizer\r\drawable-hdpi\icone_notes.png
+C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-android\resizetizer\r\drawable-mdpi\icone_notes.png
+C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-android\resizetizer\r\drawable-xhdpi\icone_notes.png
+C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-android\resizetizer\r\drawable-xxhdpi\icone_notes.png
+C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-android\resizetizer\r\drawable-xxxhdpi\icone_notes.png
+C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-android\android\assets\AutoMapper.dll
+C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-android\resizetizer\r\drawable\keyboard_black.png

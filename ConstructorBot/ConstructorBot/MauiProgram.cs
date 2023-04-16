@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Maui;
+using ConstructorBot.SaveData;
 using ConstructorBot.ViewModel.ConstructorPageViewModel;
 using ConstructorBot.ViewModel.ConstructorPageViewModel.Action;
 using ConstructorBot.ViewModel.MainPageViewModel;
@@ -16,21 +17,21 @@ public static class MauiProgram
 
         //builder.Services.AddSingleton<MainViewModel>();
         builder.Services.AddSingleton<MainViewModel>();
-
         builder.Services.AddSingleton<ConstructorViewModel>();
+        builder.Services.AddSingleton<Storage>();
 
 #if ANDROID
-			builder.Services.AddSingleton<IServiceDomainBot, ConstructorBot.ServiceDomainBot>();
+		builder.Services.AddSingleton<IServiceDomainBot, ConstructorBot.ServiceDomainBot>();
 #endif
 
-		builder
+        builder
 			.UseMauiApp<App>()
 			.UseMauiCommunityToolkit()
 			.ConfigureMauiHandlers(handlers =>
 			{
-#if ANDROID
+		#if ANDROID
                 handlers.AddHandler(typeof(Entry), typeof(ConstructorBot.Platforms.Android.MyEntryHandler));
-#endif
+		#endif
             })
 			.ConfigureFonts(fonts =>
 			{

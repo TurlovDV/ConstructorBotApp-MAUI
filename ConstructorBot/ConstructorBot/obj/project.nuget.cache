@@ -1,13 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "fDCQ9Sx1cUWZReMf5uZ9lK+B71xAx7g+ChvKyjf4gOuhTvSOcueO2slpbBX0xTzx4oore5yjLOFrCgN3LimyQg==",
+  "dgSpecHash": "GAUg5/fHYBe127ZMx6PxXhLDmOLHwRaXmXVc6pwj7BXXNPZEw/iTH/n5S0ocKfqlFzZCepntocwqx0rbMuHTeA==",
   "success": true,
   "projectFilePath": "C:\\ConstructorBotProject\\ConstructorBot\\ConstructorBot\\ConstructorBot.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Даня\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Даня\\.nuget\\packages\\communitytoolkit.maui\\4.0.0\\communitytoolkit.maui.4.0.0.nupkg.sha512",
     "C:\\Users\\Даня\\.nuget\\packages\\communitytoolkit.maui.core\\4.0.0\\communitytoolkit.maui.core.4.0.0.nupkg.sha512",
     "C:\\Users\\Даня\\.nuget\\packages\\communitytoolkit.mvvm\\8.1.0\\communitytoolkit.mvvm.8.1.0.nupkg.sha512",
     "C:\\Users\\Даня\\.nuget\\packages\\googlegson\\2.9.1.1\\googlegson.2.9.1.1.nupkg.sha512",
+    "C:\\Users\\Даня\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Даня\\.nuget\\packages\\microsoft.extensions.configuration\\7.0.0\\microsoft.extensions.configuration.7.0.0.nupkg.sha512",
     "C:\\Users\\Даня\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\7.0.0\\microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\Даня\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\7.0.0\\microsoft.extensions.dependencyinjection.7.0.0.nupkg.sha512",

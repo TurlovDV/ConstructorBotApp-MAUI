@@ -2,6 +2,22 @@
   "version": 3,
   "targets": {
     "net7.0-android33.0": {
+      "AutoMapper/12.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "CommunityToolkit.Maui/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -58,6 +74,15 @@
           "lib/net6.0-android31.0/GoogleGson.dll": {
             "related": ".aar;.xml"
           }
+        }
+      },
+      "Microsoft.CSharp/4.7.0": {
+        "type": "package",
+        "compile": {
+          "ref/MonoAndroid10/_._": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid10/_._": {}
         }
       },
       "Microsoft.Extensions.Configuration/7.0.0": {
@@ -2014,6 +2039,22 @@
       }
     },
     "net7.0-android33.0/android-arm": {
+      "AutoMapper/12.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "CommunityToolkit.Maui/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -2070,6 +2111,15 @@
           "lib/net6.0-android31.0/GoogleGson.dll": {
             "related": ".aar;.xml"
           }
+        }
+      },
+      "Microsoft.CSharp/4.7.0": {
+        "type": "package",
+        "compile": {
+          "ref/MonoAndroid10/_._": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid10/_._": {}
         }
       },
       "Microsoft.Extensions.Configuration/7.0.0": {
@@ -4026,6 +4076,22 @@
       }
     },
     "net7.0-android33.0/android-arm64": {
+      "AutoMapper/12.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "CommunityToolkit.Maui/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -4082,6 +4148,15 @@
           "lib/net6.0-android31.0/GoogleGson.dll": {
             "related": ".aar;.xml"
           }
+        }
+      },
+      "Microsoft.CSharp/4.7.0": {
+        "type": "package",
+        "compile": {
+          "ref/MonoAndroid10/_._": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid10/_._": {}
         }
       },
       "Microsoft.Extensions.Configuration/7.0.0": {
@@ -6038,6 +6113,22 @@
       }
     },
     "net7.0-android33.0/android-x64": {
+      "AutoMapper/12.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "CommunityToolkit.Maui/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -6094,6 +6185,15 @@
           "lib/net6.0-android31.0/GoogleGson.dll": {
             "related": ".aar;.xml"
           }
+        }
+      },
+      "Microsoft.CSharp/4.7.0": {
+        "type": "package",
+        "compile": {
+          "ref/MonoAndroid10/_._": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid10/_._": {}
         }
       },
       "Microsoft.Extensions.Configuration/7.0.0": {
@@ -8050,6 +8150,22 @@
       }
     },
     "net7.0-android33.0/android-x86": {
+      "AutoMapper/12.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "CommunityToolkit.Maui/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -8106,6 +8222,15 @@
           "lib/net6.0-android31.0/GoogleGson.dll": {
             "related": ".aar;.xml"
           }
+        }
+      },
+      "Microsoft.CSharp/4.7.0": {
+        "type": "package",
+        "compile": {
+          "ref/MonoAndroid10/_._": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid10/_._": {}
         }
       },
       "Microsoft.Extensions.Configuration/7.0.0": {
@@ -10062,6 +10187,22 @@
       }
     },
     "net7.0-android33.0/iossimulator-x64": {
+      "AutoMapper/12.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "CommunityToolkit.Maui/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -10118,6 +10259,15 @@
           "lib/net6.0-android31.0/GoogleGson.dll": {
             "related": ".aar;.xml"
           }
+        }
+      },
+      "Microsoft.CSharp/4.7.0": {
+        "type": "package",
+        "compile": {
+          "ref/MonoAndroid10/_._": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid10/_._": {}
         }
       },
       "Microsoft.Extensions.Configuration/7.0.0": {
@@ -12074,6 +12224,22 @@
       }
     },
     "net7.0-android33.0/maccatalyst-x64": {
+      "AutoMapper/12.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "CommunityToolkit.Maui/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -12130,6 +12296,15 @@
           "lib/net6.0-android31.0/GoogleGson.dll": {
             "related": ".aar;.xml"
           }
+        }
+      },
+      "Microsoft.CSharp/4.7.0": {
+        "type": "package",
+        "compile": {
+          "ref/MonoAndroid10/_._": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid10/_._": {}
         }
       },
       "Microsoft.Extensions.Configuration/7.0.0": {
@@ -14086,6 +14261,22 @@
       }
     },
     "net7.0-android33.0/win10-x64": {
+      "AutoMapper/12.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "CommunityToolkit.Maui/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -14142,6 +14333,15 @@
           "lib/net6.0-android31.0/GoogleGson.dll": {
             "related": ".aar;.xml"
           }
+        }
+      },
+      "Microsoft.CSharp/4.7.0": {
+        "type": "package",
+        "compile": {
+          "ref/MonoAndroid10/_._": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid10/_._": {}
         }
       },
       "Microsoft.Extensions.Configuration/7.0.0": {
@@ -16098,6 +16298,22 @@
       }
     },
     "net7.0-ios16.1": {
+      "AutoMapper/12.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "CommunityToolkit.Maui/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -16141,6 +16357,15 @@
         },
         "build": {
           "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
+        }
+      },
+      "Microsoft.CSharp/4.7.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
         }
       },
       "Microsoft.Extensions.Configuration/7.0.0": {
@@ -16369,6 +16594,22 @@
       }
     },
     "net7.0-ios16.1/android-arm": {
+      "AutoMapper/12.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "CommunityToolkit.Maui/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -16412,6 +16653,15 @@
         },
         "build": {
           "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
+        }
+      },
+      "Microsoft.CSharp/4.7.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
         }
       },
       "Microsoft.Extensions.Configuration/7.0.0": {
@@ -16640,6 +16890,22 @@
       }
     },
     "net7.0-ios16.1/android-arm64": {
+      "AutoMapper/12.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "CommunityToolkit.Maui/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -16683,6 +16949,15 @@
         },
         "build": {
           "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
+        }
+      },
+      "Microsoft.CSharp/4.7.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
         }
       },
       "Microsoft.Extensions.Configuration/7.0.0": {
@@ -16911,6 +17186,22 @@
       }
     },
     "net7.0-ios16.1/android-x64": {
+      "AutoMapper/12.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "CommunityToolkit.Maui/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -16954,6 +17245,15 @@
         },
         "build": {
           "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
+        }
+      },
+      "Microsoft.CSharp/4.7.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
         }
       },
       "Microsoft.Extensions.Configuration/7.0.0": {
@@ -17182,6 +17482,22 @@
       }
     },
     "net7.0-ios16.1/android-x86": {
+      "AutoMapper/12.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "CommunityToolkit.Maui/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -17225,6 +17541,15 @@
         },
         "build": {
           "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
+        }
+      },
+      "Microsoft.CSharp/4.7.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
         }
       },
       "Microsoft.Extensions.Configuration/7.0.0": {
@@ -17453,6 +17778,22 @@
       }
     },
     "net7.0-ios16.1/iossimulator-x64": {
+      "AutoMapper/12.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "CommunityToolkit.Maui/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -17496,6 +17837,15 @@
         },
         "build": {
           "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
+        }
+      },
+      "Microsoft.CSharp/4.7.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
         }
       },
       "Microsoft.Extensions.Configuration/7.0.0": {
@@ -17724,6 +18074,22 @@
       }
     },
     "net7.0-ios16.1/maccatalyst-x64": {
+      "AutoMapper/12.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "CommunityToolkit.Maui/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -17767,6 +18133,15 @@
         },
         "build": {
           "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
+        }
+      },
+      "Microsoft.CSharp/4.7.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
         }
       },
       "Microsoft.Extensions.Configuration/7.0.0": {
@@ -17995,6 +18370,22 @@
       }
     },
     "net7.0-ios16.1/win10-x64": {
+      "AutoMapper/12.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "CommunityToolkit.Maui/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -18038,6 +18429,15 @@
         },
         "build": {
           "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
+        }
+      },
+      "Microsoft.CSharp/4.7.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
         }
       },
       "Microsoft.Extensions.Configuration/7.0.0": {
@@ -18266,6 +18666,22 @@
       }
     },
     "net7.0-maccatalyst16.1": {
+      "AutoMapper/12.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "CommunityToolkit.Maui/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -18309,6 +18725,15 @@
         },
         "build": {
           "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
+        }
+      },
+      "Microsoft.CSharp/4.7.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
         }
       },
       "Microsoft.Extensions.Configuration/7.0.0": {
@@ -18537,6 +18962,22 @@
       }
     },
     "net7.0-maccatalyst16.1/android-arm": {
+      "AutoMapper/12.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "CommunityToolkit.Maui/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -18580,6 +19021,15 @@
         },
         "build": {
           "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
+        }
+      },
+      "Microsoft.CSharp/4.7.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
         }
       },
       "Microsoft.Extensions.Configuration/7.0.0": {
@@ -18808,6 +19258,22 @@
       }
     },
     "net7.0-maccatalyst16.1/android-arm64": {
+      "AutoMapper/12.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "CommunityToolkit.Maui/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -18851,6 +19317,15 @@
         },
         "build": {
           "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
+        }
+      },
+      "Microsoft.CSharp/4.7.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
         }
       },
       "Microsoft.Extensions.Configuration/7.0.0": {
@@ -19079,6 +19554,22 @@
       }
     },
     "net7.0-maccatalyst16.1/android-x64": {
+      "AutoMapper/12.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "CommunityToolkit.Maui/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -19122,6 +19613,15 @@
         },
         "build": {
           "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
+        }
+      },
+      "Microsoft.CSharp/4.7.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
         }
       },
       "Microsoft.Extensions.Configuration/7.0.0": {
@@ -19350,6 +19850,22 @@
       }
     },
     "net7.0-maccatalyst16.1/android-x86": {
+      "AutoMapper/12.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "CommunityToolkit.Maui/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -19393,6 +19909,15 @@
         },
         "build": {
           "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
+        }
+      },
+      "Microsoft.CSharp/4.7.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
         }
       },
       "Microsoft.Extensions.Configuration/7.0.0": {
@@ -19621,6 +20146,22 @@
       }
     },
     "net7.0-maccatalyst16.1/iossimulator-x64": {
+      "AutoMapper/12.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "CommunityToolkit.Maui/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -19664,6 +20205,15 @@
         },
         "build": {
           "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
+        }
+      },
+      "Microsoft.CSharp/4.7.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
         }
       },
       "Microsoft.Extensions.Configuration/7.0.0": {
@@ -19892,6 +20442,22 @@
       }
     },
     "net7.0-maccatalyst16.1/maccatalyst-x64": {
+      "AutoMapper/12.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "CommunityToolkit.Maui/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -19935,6 +20501,15 @@
         },
         "build": {
           "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
+        }
+      },
+      "Microsoft.CSharp/4.7.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
         }
       },
       "Microsoft.Extensions.Configuration/7.0.0": {
@@ -20163,6 +20738,22 @@
       }
     },
     "net7.0-maccatalyst16.1/win10-x64": {
+      "AutoMapper/12.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "CommunityToolkit.Maui/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -20206,6 +20797,15 @@
         },
         "build": {
           "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
+        }
+      },
+      "Microsoft.CSharp/4.7.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
         }
       },
       "Microsoft.Extensions.Configuration/7.0.0": {
@@ -20434,6 +21034,22 @@
       }
     },
     "net7.0-windows10.0.19041": {
+      "AutoMapper/12.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "CommunityToolkit.Maui/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -20477,6 +21093,15 @@
         },
         "build": {
           "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
+        }
+      },
+      "Microsoft.CSharp/4.7.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
         }
       },
       "Microsoft.Extensions.Configuration/7.0.0": {
@@ -20843,6 +21468,22 @@
       }
     },
     "net7.0-windows10.0.19041/android-arm": {
+      "AutoMapper/12.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "CommunityToolkit.Maui/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -20886,6 +21527,15 @@
         },
         "build": {
           "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
+        }
+      },
+      "Microsoft.CSharp/4.7.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
         }
       },
       "Microsoft.Extensions.Configuration/7.0.0": {
@@ -21224,6 +21874,22 @@
       }
     },
     "net7.0-windows10.0.19041/android-arm64": {
+      "AutoMapper/12.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "CommunityToolkit.Maui/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -21267,6 +21933,15 @@
         },
         "build": {
           "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
+        }
+      },
+      "Microsoft.CSharp/4.7.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
         }
       },
       "Microsoft.Extensions.Configuration/7.0.0": {
@@ -21605,6 +22280,22 @@
       }
     },
     "net7.0-windows10.0.19041/android-x64": {
+      "AutoMapper/12.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "CommunityToolkit.Maui/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -21648,6 +22339,15 @@
         },
         "build": {
           "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
+        }
+      },
+      "Microsoft.CSharp/4.7.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
         }
       },
       "Microsoft.Extensions.Configuration/7.0.0": {
@@ -21986,6 +22686,22 @@
       }
     },
     "net7.0-windows10.0.19041/android-x86": {
+      "AutoMapper/12.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "CommunityToolkit.Maui/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -22029,6 +22745,15 @@
         },
         "build": {
           "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
+        }
+      },
+      "Microsoft.CSharp/4.7.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
         }
       },
       "Microsoft.Extensions.Configuration/7.0.0": {
@@ -22367,6 +23092,22 @@
       }
     },
     "net7.0-windows10.0.19041/iossimulator-x64": {
+      "AutoMapper/12.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "CommunityToolkit.Maui/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -22410,6 +23151,15 @@
         },
         "build": {
           "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
+        }
+      },
+      "Microsoft.CSharp/4.7.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
         }
       },
       "Microsoft.Extensions.Configuration/7.0.0": {
@@ -22748,6 +23498,22 @@
       }
     },
     "net7.0-windows10.0.19041/maccatalyst-x64": {
+      "AutoMapper/12.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "CommunityToolkit.Maui/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -22791,6 +23557,15 @@
         },
         "build": {
           "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
+        }
+      },
+      "Microsoft.CSharp/4.7.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
         }
       },
       "Microsoft.Extensions.Configuration/7.0.0": {
@@ -23129,6 +23904,22 @@
       }
     },
     "net7.0-windows10.0.19041/win10-x64": {
+      "AutoMapper/12.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "CommunityToolkit.Maui/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -23172,6 +23963,15 @@
         },
         "build": {
           "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
+        }
+      },
+      "Microsoft.CSharp/4.7.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
         }
       },
       "Microsoft.Extensions.Configuration/7.0.0": {
@@ -23517,6 +24317,21 @@
     }
   },
   "libraries": {
+    "AutoMapper/12.0.1": {
+      "sha512": "hvV62vl6Hp/WfQ24yzo3Co9+OPl8wH8hApwVtgWpiAynVJkUcs7xvehnSftawL8Pe8FrPffBRM3hwzLQqWDNjA==",
+      "type": "package",
+      "path": "automapper/12.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "automapper.12.0.1.nupkg.sha512",
+        "automapper.nuspec",
+        "icon.png",
+        "lib/netstandard2.1/AutoMapper.dll",
+        "lib/netstandard2.1/AutoMapper.xml"
+      ]
+    },
     "CommunityToolkit.Maui/4.0.0": {
       "sha512": "76XJVmDRXoKooARQK7tuwvjAnOwF39nmNoRhHGU1cpElJuKZ4v5Y1QlkSJjxaNaubY4JyplZiDPXK60dsEoPRg==",
       "type": "package",
@@ -23617,6 +24432,75 @@
         "lib/net6.0-android31.0/GoogleGson.aar",
         "lib/net6.0-android31.0/GoogleGson.dll",
         "lib/net6.0-android31.0/GoogleGson.xml"
+      ]
+    },
+    "Microsoft.CSharp/4.7.0": {
+      "sha512": "pTj+D3uJWyN3My70i2Hqo+OXixq3Os2D1nJ2x92FFo6sk8fYS1m1WLNTs0Dc1uPaViH0YvEEwvzddQ7y4rhXmA==",
+      "type": "package",
+      "path": "microsoft.csharp/4.7.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net45/_._",
+        "lib/netcore50/Microsoft.CSharp.dll",
+        "lib/netcoreapp2.0/_._",
+        "lib/netstandard1.3/Microsoft.CSharp.dll",
+        "lib/netstandard2.0/Microsoft.CSharp.dll",
+        "lib/netstandard2.0/Microsoft.CSharp.xml",
+        "lib/portable-net45+win8+wp8+wpa81/_._",
+        "lib/uap10.0.16299/_._",
+        "lib/win8/_._",
+        "lib/wp80/_._",
+        "lib/wpa81/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "microsoft.csharp.4.7.0.nupkg.sha512",
+        "microsoft.csharp.nuspec",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net45/_._",
+        "ref/netcore50/Microsoft.CSharp.dll",
+        "ref/netcore50/Microsoft.CSharp.xml",
+        "ref/netcore50/de/Microsoft.CSharp.xml",
+        "ref/netcore50/es/Microsoft.CSharp.xml",
+        "ref/netcore50/fr/Microsoft.CSharp.xml",
+        "ref/netcore50/it/Microsoft.CSharp.xml",
+        "ref/netcore50/ja/Microsoft.CSharp.xml",
+        "ref/netcore50/ko/Microsoft.CSharp.xml",
+        "ref/netcore50/ru/Microsoft.CSharp.xml",
+        "ref/netcore50/zh-hans/Microsoft.CSharp.xml",
+        "ref/netcore50/zh-hant/Microsoft.CSharp.xml",
+        "ref/netcoreapp2.0/_._",
+        "ref/netstandard1.0/Microsoft.CSharp.dll",
+        "ref/netstandard1.0/Microsoft.CSharp.xml",
+        "ref/netstandard1.0/de/Microsoft.CSharp.xml",
+        "ref/netstandard1.0/es/Microsoft.CSharp.xml",
+        "ref/netstandard1.0/fr/Microsoft.CSharp.xml",
+        "ref/netstandard1.0/it/Microsoft.CSharp.xml",
+        "ref/netstandard1.0/ja/Microsoft.CSharp.xml",
+        "ref/netstandard1.0/ko/Microsoft.CSharp.xml",
+        "ref/netstandard1.0/ru/Microsoft.CSharp.xml",
+        "ref/netstandard1.0/zh-hans/Microsoft.CSharp.xml",
+        "ref/netstandard1.0/zh-hant/Microsoft.CSharp.xml",
+        "ref/netstandard2.0/Microsoft.CSharp.dll",
+        "ref/netstandard2.0/Microsoft.CSharp.xml",
+        "ref/portable-net45+win8+wp8+wpa81/_._",
+        "ref/uap10.0.16299/_._",
+        "ref/win8/_._",
+        "ref/wp80/_._",
+        "ref/wpa81/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "useSharedDesignerContext.txt",
+        "version.txt"
       ]
     },
     "Microsoft.Extensions.Configuration/7.0.0": {
@@ -26883,6 +27767,7 @@
   },
   "projectFileDependencyGroups": {
     "net7.0-android33.0": [
+      "AutoMapper >= 12.0.1",
       "CommunityToolkit.Maui >= 4.0.0",
       "CommunityToolkit.Mvvm >= 8.1.0",
       "ConstructorBotCore >= 1.0.0",
@@ -26906,6 +27791,7 @@
       "Xamarin.Google.Crypto.Tink.Android >= 1.7.0.1"
     ],
     "net7.0-ios16.1": [
+      "AutoMapper >= 12.0.1",
       "CommunityToolkit.Maui >= 4.0.0",
       "CommunityToolkit.Mvvm >= 8.1.0",
       "ConstructorBotCore >= 1.0.0",
@@ -26918,6 +27804,7 @@
       "Newtonsoft.Json >= 13.0.2"
     ],
     "net7.0-maccatalyst16.1": [
+      "AutoMapper >= 12.0.1",
       "CommunityToolkit.Maui >= 4.0.0",
       "CommunityToolkit.Mvvm >= 8.1.0",
       "ConstructorBotCore >= 1.0.0",
@@ -26930,6 +27817,7 @@
       "Newtonsoft.Json >= 13.0.2"
     ],
     "net7.0-windows10.0.19041": [
+      "AutoMapper >= 12.0.1",
       "CommunityToolkit.Maui >= 4.0.0",
       "CommunityToolkit.Mvvm >= 8.1.0",
       "ConstructorBotCore >= 1.0.0",
@@ -27022,6 +27910,10 @@
       "net7.0-android33.0": {
         "targetAlias": "net7.0-android",
         "dependencies": {
+          "AutoMapper": {
+            "target": "Package",
+            "version": "[12.0.1, )"
+          },
           "CommunityToolkit.Maui": {
             "target": "Package",
             "version": "[4.0.0, )"
@@ -27152,6 +28044,10 @@
       "net7.0-ios16.1": {
         "targetAlias": "net7.0-ios",
         "dependencies": {
+          "AutoMapper": {
+            "target": "Package",
+            "version": "[12.0.1, )"
+          },
           "CommunityToolkit.Maui": {
             "target": "Package",
             "version": "[4.0.0, )"
@@ -27227,6 +28123,10 @@
       "net7.0-maccatalyst16.1": {
         "targetAlias": "net7.0-maccatalyst",
         "dependencies": {
+          "AutoMapper": {
+            "target": "Package",
+            "version": "[12.0.1, )"
+          },
           "CommunityToolkit.Maui": {
             "target": "Package",
             "version": "[4.0.0, )"
@@ -27303,6 +28203,10 @@
       "net7.0-windows10.0.19041": {
         "targetAlias": "net7.0-windows10.0.19041.0",
         "dependencies": {
+          "AutoMapper": {
+            "target": "Package",
+            "version": "[12.0.1, )"
+          },
           "CommunityToolkit.Maui": {
             "target": "Package",
             "version": "[4.0.0, )"

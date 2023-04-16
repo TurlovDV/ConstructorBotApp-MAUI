@@ -1,3 +1,4 @@
+using ConstructorBot.SaveData;
 using ConstructorBot.ViewModel.ConstructorPageViewModel;
 using ConstructorBot.ViewModel.ConstructorPageViewModel.Action;
 using ConstructorBot.ViewModel.MainPageViewModel;
@@ -14,7 +15,15 @@ public partial class ConstructorPage : ContentPage
     public ConstructorPage()
 	{
         ConstructorViewModel = new ConstructorViewModel();//ServiceProvider.GetService<ConstructorViewModel>();
+
+        //ConstructorViewModel = ServiceProvider.GetService<ConstructorViewModel>();
+
         ConstructorViewModel.ActionBoxes = new ObservableCollection<ActionBox>();
+
+        ServiceProvider.GetService<ConstructorViewModel>().ActionBoxes.ToList()
+            .ForEach(x => ConstructorViewModel.ActionBoxes.Add(x));
+
+        //ConstructorViewModel.ActionBoxes = new ObservableCollection<ActionBox>();
 
         InitializeComponent();
 
@@ -24,7 +33,8 @@ public partial class ConstructorPage : ContentPage
 
         Disappearing += async (object sender, EventArgs e) =>
         {
-            SaveSettingOrActionBoxes.Save(ConstructorViewModel.ActionBoxes.ToList());
+            Storage.SaveActions(ConstructorViewModel.ActionBoxes.ToList());
+            //SaveSettingOrActionBoxes.Save(ConstructorViewModel.ActionBoxes.ToList());
         };
 
         this.Loaded += Loading;
@@ -178,6 +188,7 @@ public partial class ConstructorPage : ContentPage
     {
         ServiceProvider.GetService<ConstructorViewModel>().ActionBoxes = ConstructorViewModel.ActionBoxes;
         await Shell.Current.GoToAsync("..");
+        //await Navigation.PopAsync();
     }
 
     protected override bool OnBackButtonPressed()
@@ -191,13 +202,14 @@ public partial class ConstructorPage : ContentPage
 
     public void Loading(object sender, EventArgs e)
     {
-        var list = SaveSettingOrActionBoxes.Get();
+        //var list = SaveSettingOrActionBoxes.Get();
 
         CommunityToolkit.Maui.Core.Platform.StatusBar.SetColor(Color.FromArgb("344B6D"));
         CommunityToolkit.Maui.Core.Platform.StatusBar.SetStyle(CommunityToolkit.Maui.Core.StatusBarStyle.LightContent);
 
-        ConstructorViewModel.ActionBoxes.Clear();
-        list.ToList().ForEach(x => ConstructorViewModel.ActionBoxes.Add(x));
+        //ConstructorViewModel.ActionBoxes.Clear();
+        //list.ToList().ForEach(x => ConstructorViewModel.ActionBoxes.Add(x));
+        //ConstructorViewModel.ActionBoxes = ServiceProvider.GetService<ConstructorViewModel>().ActionBoxes;
 
         LoadingIndicator.IsRunning = false;
         MainMatrix.IsVisible = true;

@@ -12,6 +12,7 @@ obj\Debug\net7.0-android\resizetizer\r\drawable\document_icon.png
 obj\Debug\net7.0-android\resizetizer\r\drawable\info.png
 obj\Debug\net7.0-android\resizetizer\r\drawable\keyboard.png
 obj\Debug\net7.0-android\resizetizer\r\drawable\keyboard1.png
+obj\Debug\net7.0-android\resizetizer\r\drawable\keyboard_black.png
 obj\Debug\net7.0-android\resizetizer\r\drawable\menu.png
 obj\Debug\net7.0-android\resizetizer\r\drawable\message_icone.png
 obj\Debug\net7.0-android\resizetizer\r\drawable\music_icon.png
@@ -37,6 +38,7 @@ obj\Debug\net7.0-android\resizetizer\r\drawable-hdpi\constructor.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-hdpi\constructor_blue.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-hdpi\elipse_loading.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-hdpi\grid_lines.png
+obj\Debug\net7.0-android\resizetizer\r\drawable-hdpi\icone_notes.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-hdpi\info.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-hdpi\keyboard.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-hdpi\message_icone.png
@@ -54,6 +56,7 @@ obj\Debug\net7.0-android\resizetizer\r\drawable-mdpi\constructor.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-mdpi\constructor_blue.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-mdpi\elipse_loading.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-mdpi\grid_lines.png
+obj\Debug\net7.0-android\resizetizer\r\drawable-mdpi\icone_notes.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-mdpi\info.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-mdpi\keyboard.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-mdpi\message_icone.png
@@ -71,6 +74,7 @@ obj\Debug\net7.0-android\resizetizer\r\drawable-xhdpi\constructor.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xhdpi\constructor_blue.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xhdpi\elipse_loading.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xhdpi\grid_lines.png
+obj\Debug\net7.0-android\resizetizer\r\drawable-xhdpi\icone_notes.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xhdpi\info.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xhdpi\keyboard.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xhdpi\message_icone.png
@@ -88,6 +92,7 @@ obj\Debug\net7.0-android\resizetizer\r\drawable-xxhdpi\constructor.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xxhdpi\constructor_blue.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xxhdpi\elipse_loading.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xxhdpi\grid_lines.png
+obj\Debug\net7.0-android\resizetizer\r\drawable-xxhdpi\icone_notes.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xxhdpi\info.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xxhdpi\keyboard.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xxhdpi\message_icone.png
@@ -105,6 +110,7 @@ obj\Debug\net7.0-android\resizetizer\r\drawable-xxxhdpi\constructor.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xxxhdpi\constructor_blue.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xxxhdpi\elipse_loading.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xxxhdpi\grid_lines.png
+obj\Debug\net7.0-android\resizetizer\r\drawable-xxxhdpi\icone_notes.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xxxhdpi\info.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xxxhdpi\keyboard.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xxxhdpi\message_icone.png

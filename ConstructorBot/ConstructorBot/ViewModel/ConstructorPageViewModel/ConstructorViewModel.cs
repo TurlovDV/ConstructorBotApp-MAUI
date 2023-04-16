@@ -12,6 +12,7 @@ using ConstructorBot.ViewModel.ConstructorPageViewModel.Action.ConnectionElement
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using static ConstructorBot.App;
+using System.Reflection.Metadata.Ecma335;
 
 namespace ConstructorBot.ViewModel.ConstructorPageViewModel
 {
@@ -21,6 +22,7 @@ namespace ConstructorBot.ViewModel.ConstructorPageViewModel
         private bool isAddButtons = false;
         private bool isPutButton = false;
         private bool isAddAction = false;
+        private bool isAddRequest = false;
         public IMessageService messageService { get; set; }
 
         public bool IsPutBoxAction
@@ -39,6 +41,16 @@ namespace ConstructorBot.ViewModel.ConstructorPageViewModel
             set
             {
                 isAddButtons = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public bool IsAddRequest
+        {
+            get => isAddRequest;
+            set
+            {
+                isAddRequest = value;
                 OnPropertyChanged();
             }
         }
@@ -96,6 +108,7 @@ namespace ConstructorBot.ViewModel.ConstructorPageViewModel
             {
                 return new Command(() =>
                 {
+                    TapLastAction.IncludedAttachments = null;
                     IsPutBoxAction = false;
                     TapLastAction = null;
                 });
@@ -157,19 +170,19 @@ namespace ConstructorBot.ViewModel.ConstructorPageViewModel
                 return new Command((object sender) =>
                 {
                     var actionBox = sender as ActionBox;
-
-
+                    
                     //Проверка, что пользователь не пытается привязать один и тот же блок на себя
                     if (TapLastAction == sender as ActionBox)
                     {
                         TapLastAction.SetStatusActionType(ActionStatusType.None);
-                        TapLastAction = null;
+                        tapLastAction = null;
                         return;
                     }
-                    if (TapLastAction == null)
+                    else if (TapLastAction == null)
                     {
                         actionBox.SetStatusActionType(ActionStatusType.Tap);
-                        TapLastAction = actionBox;
+                        tapLastAction = actionBox;
+                        return; 
                     }                    
                     else if (TapLastAction != null)
                     {
@@ -186,6 +199,7 @@ namespace ConstructorBot.ViewModel.ConstructorPageViewModel
                                     x.ConnectionActions.Remove(y);
                                 }
                             }));
+
                         if (connection != null)
                         {
                             TapLastAction.SetStatusActionType(ActionStatusType.None);
@@ -403,13 +417,43 @@ namespace ConstructorBot.ViewModel.ConstructorPageViewModel
             }
         }
 
+        //Открыть заявку
+        public ICommand OpenOrExitRequestCommand
+        {
+            get
+            {
+                return new Command(() =>
+                {
+                    IsPutBoxAction = !IsPutBoxAction;
+                    IsAddRequest = !IsAddRequest;
+                });
+            }
+        }
+
+        //Сохранить заявки
+        public ICommand SaveRequestCommand
+        {
+            get
+            {
+                return new Command((object nameRequest) =>
+                {
+                    if (nameRequest is null)
+                    {
+                        TapLastAction.NameSaveMessage = null;
+                        return;
+                    }
+                    IsPutBoxAction = !IsPutBoxAction;
+                    IsAddRequest = !IsAddRequest;
+                    TapLastAction.NameSaveMessage = (nameRequest as Entry).Text; 
+                });
+            }
+        }
+
         public ConstructorViewModel()
         {
             ActionBoxBuilder = new ActionBoxBuilder();
 
             this.messageService = DependencyService.Get<App.IMessageService>();
-
-            //MatrixGridLines = new MatrixGrid(Colors.Black, 1);
         }
     }
 }
