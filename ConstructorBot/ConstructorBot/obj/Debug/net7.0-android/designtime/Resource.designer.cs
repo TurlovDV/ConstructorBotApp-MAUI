@@ -21795,13 +21795,16 @@ namespace ConstructorBot
 			public const int video_icon = 2131165435;
 			
 			// aapt resource value: 0x7F0700FC
-			public const int watch = 2131165436;
+			public const int view = 2131165436;
 			
 			// aapt resource value: 0x7F0700FD
-			public const int white = 2131165437;
+			public const int watch = 2131165437;
 			
 			// aapt resource value: 0x7F0700FE
-			public const int wifi = 2131165438;
+			public const int white = 2131165438;
+			
+			// aapt resource value: 0x7F0700FF
+			public const int wifi = 2131165439;
 			
 			static Drawable()
 			{

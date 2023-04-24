@@ -79,6 +79,7 @@
 	  <None Remove="Resources\Images\vector2.png" />
 	  <None Remove="Resources\Images\vector3.png" />
 	  <None Remove="Resources\Images\video_icon.png" />
+	  <None Remove="Resources\Images\view.png" />
 	  <None Remove="Resources\Images\watch.png" />
 	  <None Remove="Resources\Images\white.jpg" />
 	  <None Remove="Resources\Images\wifi.png" />

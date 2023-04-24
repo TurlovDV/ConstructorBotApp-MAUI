@@ -80,7 +80,7 @@
                                                     <Frame CornerRadius="2" Padding="1" BorderColor="Black" BackgroundColor="Transparent">
                                                         <Image Source="{Binding}" WidthRequest="15" HeightRequest="15"></Image>
                                                     </Frame>
-                                                </DataTemplate>
+                                                </DataTemplate> 
                                             </BindableLayout.ItemTemplate>
                                         </StackLayout>
                                     </StackLayout>

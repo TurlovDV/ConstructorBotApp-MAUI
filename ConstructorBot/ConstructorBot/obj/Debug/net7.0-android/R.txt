@@ -2740,9 +2740,10 @@ int drawable tooltip_frame_light 0x7f0700f8
 int drawable vector2 0x7f0700f9
 int drawable vector3 0x7f0700fa
 int drawable video_icon 0x7f0700fb
-int drawable watch 0x7f0700fc
-int drawable white 0x7f0700fd
-int drawable wifi 0x7f0700fe
+int drawable view 0x7f0700fc
+int drawable watch 0x7f0700fd
+int drawable white 0x7f0700fe
+int drawable wifi 0x7f0700ff
 int id ALT 0x7f080000
 int id BOTTOM_END 0x7f080001
 int id BOTTOM_START 0x7f080002

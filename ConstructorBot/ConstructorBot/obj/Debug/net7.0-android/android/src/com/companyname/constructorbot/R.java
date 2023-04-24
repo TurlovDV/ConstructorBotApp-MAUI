@@ -10856,9 +10856,10 @@ public final class R {
     public static final int vector2=0x7f0700f9;
     public static final int vector3=0x7f0700fa;
     public static final int video_icon=0x7f0700fb;
-    public static final int watch=0x7f0700fc;
-    public static final int white=0x7f0700fd;
-    public static final int wifi=0x7f0700fe;
+    public static final int view=0x7f0700fc;
+    public static final int watch=0x7f0700fd;
+    public static final int white=0x7f0700fe;
+    public static final int wifi=0x7f0700ff;
   }
   public static final class id {
     public static final int ALT=0x7f080000;

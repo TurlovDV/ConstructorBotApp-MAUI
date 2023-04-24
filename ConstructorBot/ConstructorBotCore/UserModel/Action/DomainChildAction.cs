@@ -10,6 +10,7 @@ namespace ConstructorBotCore.UserModel.Action
         public int ForwardAction { get; set; }
         public string? Question { get; set; }
         public DomainMessage? MessageAnswer { get; set; }
-        public Guid Id { get; set; } 
+        public Guid Id { get; set; }        
+        public string? SaveName { get; set; }
     }
 }

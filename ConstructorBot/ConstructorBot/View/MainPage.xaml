@@ -7,7 +7,8 @@
              x:DataType="vm:MainViewModel"
              x:Class="ConstructorBot.MainPage"
              Title=""
-             xmlns:ctm="clr-namespace:CommunityToolkit.Maui.Behaviors;assembly=CommunityToolkit.Maui"
+             xmlns:ctm="clr-namespace:CommunityToolkit.Maui.Behaviors;assembly=CommunityToolkit.Maui"             
+             xmlns:um="clr-namespace:ConstructorBotCore.UserModel;assembly=ConstructorBotCore"
              BackgroundColor="#3A547B">
 
     <ContentPage.Resources>
@@ -152,6 +153,45 @@
                             <Label Text="Просмотр сохраненных&#10;заявок" FontSize="Micro" TextColor="Gray"></Label>
                         </StackLayout>
                     </StackLayout>
+                    <ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand">
+                        <StackLayout BindableLayout.ItemsSource="{Binding SaveMesseges}">
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate x:DataType="vm:LogicUser">
+                                    <Frame BackgroundColor="#3A547B" BorderColor="Transparent" Padding="10, 10, 7, 10">
+                                        <Grid ColumnDefinitions="*, Auto">
+                                            <StackLayout Spacing="15" VerticalOptions="Center">
+                                                <StackLayout Orientation="Horizontal" Spacing="10">
+                                                    <Image Source="account.png" HeightRequest="20" WidthRequest="20"></Image>
+                                                    <StackLayout Orientation="Horizontal">
+                                                        <Label Text="{Binding FirstName}" TextColor="White"></Label>
+                                                        <Label Text="{Binding LastName}" TextColor="White"></Label>
+                                                    </StackLayout>
+                                                </StackLayout>
+                                                <!--<StackLayout Grid.ColumnSpan="2" IsVisible="{Binding IsView}" BindableLayout.ItemsSource="{Binding SaveAnswers}">
+                                                <BindableLayout.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <StackLayout Orientation="Horizontal" Spacing="15">
+                                                            <Label Text="{Binding SaveAnswers.Keys}"></Label>
+                                                            <Label Text="{Binding SaveAnswers.Values}"></Label>
+                                                        </StackLayout>
+                                                    </DataTemplate>
+                                                </BindableLayout.ItemTemplate>
+                                            </StackLayout>-->
+                                                <StackLayout Grid.ColumnSpan="2" IsVisible="false" x:Name="viewSaveMessage">
+                                                    <Frame BackgroundColor="Red"></Frame>
+                                                    <Frame BackgroundColor="Blue"></Frame>
+                                                    <Frame BackgroundColor="Yellow"></Frame>
+                                                </StackLayout>
+                                            </StackLayout>
+                                            <!--<ImageButton x:DataType="vm:MainViewModel" Command="{Binding Path=BindingContext.ViewSaveMessage, Source={RelativeSource Mode=FindAncestor, AncestorType={x:Type ContentPage}}}" CommandParameter="{Binding .}" Grid.Column="1" Source="view.png" HorizontalOptions="End" VerticalOptions="Center" HeightRequest="25" WidthRequest="25"></ImageButton>-->
+                                            <ImageButton x:DataType="vm:MainViewModel" Command="{Binding Path=BindingContext.ViewSaveMessage, Source={RelativeSource Mode=FindAncestor, AncestorType={x:Type ContentPage}}}" CommandParameter="{Reference viewSaveMessage}" Grid.Column="1" HorizontalOptions="End" Source="view.png" VerticalOptions="Start" HeightRequest="25" WidthRequest="25"></ImageButton>
+                                            <!--<ImageButton x:DataType="vm:MainViewModel" CommandParameter="{Reference qwe}" Clicked="ImageButton_Clicked" Grid.Column="1" HorizontalOptions="End" Source="view.png" VerticalOptions="Start" HeightRequest="25" WidthRequest="25"></ImageButton>-->
+                                        </Grid>
+                                    </Frame>
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+                        </StackLayout>
+                    </ScrollView>
                 </StackLayout>
             </Grid>
         </Frame>
@@ -160,7 +200,7 @@
             <Grid>
                 <Image Source="background_vector.svg" HorizontalOptions="FillAndExpand" VerticalOptions="Start"></Image>
                 <Image IsVisible="{Binding IsStart}" x:Name="elipse_loading" Source="elipse_loading.svg" WidthRequest="145" HeightRequest="145" HorizontalOptions="Center" VerticalOptions="Center"></Image>
-                
+
                 <Frame BorderColor="White" BackgroundColor="Transparent" CornerRadius="100" Padding="0" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="117" HeightRequest="117"></Frame>
                 <Frame BorderColor="White" BackgroundColor="Transparent" CornerRadius="100" Padding="0" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="116" HeightRequest="116"></Frame>
                 <Frame BorderColor="White" BackgroundColor="Transparent" CornerRadius="100" Padding="0" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="115" HeightRequest="115">

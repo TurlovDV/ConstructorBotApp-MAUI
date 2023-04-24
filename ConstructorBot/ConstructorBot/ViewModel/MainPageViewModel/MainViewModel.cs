@@ -6,6 +6,7 @@ using ConstructorBotCore.DomainMessagModel.ElementMessage;
 using ConstructorBotCore.UserModel.Action;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Linq;
@@ -32,10 +33,12 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
         private bool isInternetConnection = true;
         private string telegramToken;
 
-
         private List<ActionBox> _actions;
-        
+
         //public ScoreboardMessagerInfo MessagerInfo { get; set; }
+
+
+        public ObservableCollection<LogicUser> SaveMesseges { get; set; }        
 
         public bool IsPageOptionsToken
         { 
@@ -140,16 +143,52 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
 
         public MainViewModel()
         {
+            SaveMesseges = new ObservableCollection<LogicUser>();
+
             MessagerCore = new Domain();
             //MessagerInfo = new ScoreboardMessagerInfo();
             TelegramToken = Storage.GetKey();
         }
 
         //Запуск бара с инфо о боте в 1_сек
+        //public async void UpdateInfoTable()
+        //{
+        //    OnStartTiming = new DateTime();
+        //    while(IsStart)
+        //    {
+        //        OnStartTiming = OnStartTiming.AddSeconds(1);
+        //        var logger = MessagerCore.GetLogger();
+        //        CountMessage = logger.CountMessage;
+        //        CountProfile = logger.CountProfile;
+        //        SpeedInternet = new Random().Next(30, 70);
+
+        //        if (Connectivity.Current.NetworkAccess == NetworkAccess.Internet)
+        //        {
+        //            if(!IsInternetConnection)
+        //            {
+        //                await MessagerCore.OnStartRestart();
+        //                IsInternetConnection = true;
+        //            }
+        //        }
+        //        else
+        //            IsInternetConnection = false;
+
+        //        if (OnStartTiming.Minute % 5 == 0 && OnStartTiming.Second == 0 && OnStartTiming.Minute != 0)
+        //        {
+        //            await MessagerCore.OnStartRestart();
+        //        }
+
+        //        await Task.Delay(1000);
+        //    }            
+        //}
+
+
+        //Кнопка старт/стоп
+
         public async void UpdateInfoTable()
         {
             OnStartTiming = new DateTime();
-            while(IsStart)
+            while (IsStart)
             {
                 await Task.Delay(1000);
                 OnStartTiming = OnStartTiming.AddSeconds(1);
@@ -160,7 +199,7 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
 
                 if (Connectivity.Current.NetworkAccess == NetworkAccess.Internet)
                 {
-                    if(!IsInternetConnection)
+                    if (!IsInternetConnection)
                     {
                         await MessagerCore.OnStartRestart();
                         IsInternetConnection = true;
@@ -173,10 +212,50 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
                 {
                     await MessagerCore.OnStartRestart();
                 }
-            }            
+            }
         }
+        //public ICommand OnStartCommand
+        //{
+        //    get
+        //    {
+        //        return new Command(async () =>
+        //        {
+        //            if (!IsStart)
+        //            {
+        //                _actions = ServiceProvider.GetService<ConstructorViewModel>().ActionBoxes.ToList();
+        //                var resultOnStart = await MessagerCore.UpdateBot(LogicMatrixConverter.GetParentActions(_actions)).OnStart(TelegramToken);
+        //                if (resultOnStart)
+        //                {
+        //                    NamingBot = MessagerCore.GetNamingBot();
+        //                    var _backGround = ServiceProvider.GetService<IServiceDomainBot>();
+        //                    _backGround.Start();                            
+        //                    IsStart = !IsStart;
 
-        //Кнопка старт/стоп
+        //                    await Task.Run(UpdateInfoTable);
+
+        //                    isInternetConnection = true;
+        //                }
+        //                else
+        //                {
+        //                    if (Connectivity.Current.NetworkAccess != NetworkAccess.Internet)
+        //                        await DependencyService.Get<App.IMessageService>().ShowAsync("Ошибка", "Убедитесь в достоверности подключения к интернету");
+        //                    else
+        //                    await DependencyService.Get<App.IMessageService>().ShowAsync("Ошибка", "Убедитесь в достоверности токена");
+        //                }
+        //            }
+        //            else
+        //            {
+        //                MessagerCore.OnStop();
+        //                var _backGround = ServiceProvider.GetService<IServiceDomainBot>();
+        //                _backGround.Stop();
+
+        //                IsStart = !IsStart;
+        //            }
+
+        //        });
+        //    }
+        //}
+
         public ICommand OnStartCommand
         {
             get
@@ -201,7 +280,7 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
                             if (Connectivity.Current.NetworkAccess != NetworkAccess.Internet)
                                 await DependencyService.Get<App.IMessageService>().ShowAsync("Ошибка", "Убедитесь в достоверности подключения к интернету");
                             else
-                            await DependencyService.Get<App.IMessageService>().ShowAsync("Ошибка", "Убедитесь в достоверности токена");
+                                await DependencyService.Get<App.IMessageService>().ShowAsync("Ошибка", "Убедитесь в достоверности токена");
                         }
                     }
                     else
@@ -211,7 +290,6 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
                         _backGround.Stop();
                         IsStart = !IsStart;
                     }
-
                 });
             }
         }
@@ -260,9 +338,33 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
                 {
                     IsPageMain = !IsPageMain;
                     IsPageViewRequest = !IsPageViewRequest;
+
+                    SaveMesseges.Clear();
+                    MessagerCore._handlerMessanger.LogicUsers
+                        .ForEach(x => SaveMesseges.Add(new LogicUser()
+                        {
+                            FirstName = x.FirstName,
+                            LastName = x.LastName,
+                            SaveAnswers = x.SaveMessage,
+                            IsView = true
+                        }));
                 });
             }
         }
+
+        //Открыть подробнее заявку пользователя
+        public ICommand ViewSaveMessage
+        {
+            get
+            {
+                return new Command((object sender) =>
+                {
+                    (sender as StackLayout).IsVisible = !(sender as StackLayout).IsVisible;
+                    //(sender as LogicUser).IsView = !(sender as LogicUser).IsView;
+                });
+            }
+        }
+
 
         //Кнопка сохранения токена для бота
         public ICommand SaveOptionsTokenCommand

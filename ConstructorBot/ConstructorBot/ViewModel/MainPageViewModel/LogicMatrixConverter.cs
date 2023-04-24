@@ -184,6 +184,8 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
 
             GetMedia(actionBox, ref domainChild);
 
+            domainChild.SaveName = actionBox.NameSaveMessage;
+
             return domainChild;
         }
         public static List<DomainParentAction> GetParentActions(List<ActionBox> _actions)

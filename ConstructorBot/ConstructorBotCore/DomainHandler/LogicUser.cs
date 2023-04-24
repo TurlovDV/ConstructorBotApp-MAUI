@@ -10,5 +10,13 @@ namespace ConstructorBotCore.DomainHandler
     {
         public long ChatId { get; set; }
         public int IndexParentAction { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public Dictionary<string, string> SaveMessage { get; set; }
+
+        public LogicUser()
+        {
+            SaveMessage = new ();
+        }
     }
 }

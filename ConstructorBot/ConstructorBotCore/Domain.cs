@@ -12,7 +12,7 @@ namespace ConstructorBotCore
 {
     public class Domain
     {
-        private Handler? _handlerMessanger;
+        public Handler? _handlerMessanger;
         private List<DomainParentAction>? _parentActions;
  
         public Domain UpdateBot(List<DomainParentAction> domainParents)

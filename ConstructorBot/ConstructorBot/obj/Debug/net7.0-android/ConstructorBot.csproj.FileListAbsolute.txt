@@ -1115,3 +1115,4 @@ C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-android\
 C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-android\resizetizer\r\drawable-xxxhdpi\icone_notes.png
 C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-android\android\assets\AutoMapper.dll
 C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-android\resizetizer\r\drawable\keyboard_black.png
+C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-android\resizetizer\r\drawable\view.png

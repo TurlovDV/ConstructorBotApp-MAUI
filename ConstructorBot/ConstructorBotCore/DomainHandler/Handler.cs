@@ -15,7 +15,7 @@ namespace ConstructorBotCore.DomainHandler
 {
     public class Handler
     {
-        private List<LogicUser> LogicUsers { get; set; } 
+        public List<LogicUser> LogicUsers { get; set; } 
         public List<DomainParentAction> BotLogic { get; set; }
         public TelegramApi MessengerApi { get; set; } 
         private DomainChildAction BackChild { get; set; } = null!;
@@ -113,7 +113,9 @@ namespace ConstructorBotCore.DomainHandler
                 logicUser = new LogicUser()
                 {
                     ChatId = telegramMessage.ChatId,
-                    IndexParentAction = 0
+                    IndexParentAction = 0,
+                    FirstName = telegramMessage.FirstName!,
+                    LastName = telegramMessage.UserName!
                 };
                 LogicUsers.Add(logicUser);
             }
@@ -142,6 +144,13 @@ namespace ConstructorBotCore.DomainHandler
                             {
                                 BackChild = childAction;
                                 SetIndexParentAction(logicUser.ChatId, childAction.ForwardAction);
+
+                                if (telegramMessage.Text != null)
+                                    if (childAction.SaveName != null)
+                                        if (logicUser.SaveMessage.ContainsKey(childAction.SaveName))
+                                            logicUser.SaveMessage[childAction.SaveName] = telegramMessage.Text;
+                                        else
+                                            logicUser.SaveMessage.Add(childAction.SaveName, telegramMessage.Text!);    
 
                                 return childAction.MessageAnswer;
                             }
