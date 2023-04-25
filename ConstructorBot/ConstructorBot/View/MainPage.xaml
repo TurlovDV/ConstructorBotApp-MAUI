@@ -37,6 +37,8 @@
             </Border.StrokeShape>
         </Border>
 
+        <Image Source="rectangle_back.png" HorizontalOptions="FillAndExpand" VerticalOptions="End" Grid.Row="2" Grid.RowSpan="2"></Image>
+        
         <Frame Padding="0" Grid.Row="2" Grid.RowSpan="2" IsVisible="{Binding IsPageMain}" BackgroundColor="Transparent" CornerRadius="0" BorderColor="Transparent">
             <Grid Padding="10" RowDefinitions="*,*" ColumnDefinitions="*,*" ColumnSpacing="20">
                 <Frame Padding="10, 60, 0, 20" BorderColor="Transparent" BackgroundColor="Transparent" Grid.Row="0" Grid.Column="0">
@@ -167,20 +169,15 @@
                                                         <Label Text="{Binding LastName}" TextColor="White"></Label>
                                                     </StackLayout>
                                                 </StackLayout>
-                                                <!--<StackLayout Grid.ColumnSpan="2" IsVisible="{Binding IsView}" BindableLayout.ItemsSource="{Binding SaveAnswers}">
-                                                <BindableLayout.ItemTemplate>
-                                                    <DataTemplate>
-                                                        <StackLayout Orientation="Horizontal" Spacing="15">
-                                                            <Label Text="{Binding SaveAnswers.Keys}"></Label>
-                                                            <Label Text="{Binding SaveAnswers.Values}"></Label>
-                                                        </StackLayout>
-                                                    </DataTemplate>
-                                                </BindableLayout.ItemTemplate>
-                                            </StackLayout>-->
-                                                <StackLayout Grid.ColumnSpan="2" IsVisible="false" x:Name="viewSaveMessage">
-                                                    <Frame BackgroundColor="Red"></Frame>
-                                                    <Frame BackgroundColor="Blue"></Frame>
-                                                    <Frame BackgroundColor="Yellow"></Frame>
+                                                <StackLayout x:Name="viewSaveMessage" Grid.ColumnSpan="2" IsVisible="false" BindableLayout.ItemsSource="{Binding SaveAnswers}">
+                                                    <BindableLayout.ItemTemplate>
+                                                        <DataTemplate>
+                                                            <StackLayout x:DataType="vm:SaveMessageItem" Orientation="Horizontal" Spacing="15">
+                                                                <Label Text="{Binding Naming}" TextColor="Gray"></Label>
+                                                                <Label Text="{Binding Answer}" TextColor="White"></Label>
+                                                            </StackLayout>
+                                                        </DataTemplate>
+                                                    </BindableLayout.ItemTemplate>
                                                 </StackLayout>
                                             </StackLayout>
                                             <!--<ImageButton x:DataType="vm:MainViewModel" Command="{Binding Path=BindingContext.ViewSaveMessage, Source={RelativeSource Mode=FindAncestor, AncestorType={x:Type ContentPage}}}" CommandParameter="{Binding .}" Grid.Column="1" Source="view.png" HorizontalOptions="End" VerticalOptions="Center" HeightRequest="25" WidthRequest="25"></ImageButton>-->
@@ -190,6 +187,16 @@
                                     </Frame>
                                 </DataTemplate>
                             </BindableLayout.ItemTemplate>
+                            <BindableLayout.EmptyViewTemplate>
+                                <DataTemplate>
+                                    <Grid HorizontalOptions="FillAndExpand" RowDefinitions="*, 1.5*" VerticalOptions="FillAndExpand">
+                                        <StackLayout HorizontalOptions="Center" VerticalOptions="End" Spacing="5">
+                                            <Image Source="empty.png" WidthRequest="50" HeightRequest="50" HorizontalOptions="Center"></Image>
+                                            <Label Text="Список зявок пуст" FontAttributes="Bold" HorizontalOptions="Center" TextColor="Gray" FontSize="Small"></Label>
+                                        </StackLayout>
+                                    </Grid>
+                                </DataTemplate>
+                            </BindableLayout.EmptyViewTemplate>
                         </StackLayout>
                     </ScrollView>
                 </StackLayout>

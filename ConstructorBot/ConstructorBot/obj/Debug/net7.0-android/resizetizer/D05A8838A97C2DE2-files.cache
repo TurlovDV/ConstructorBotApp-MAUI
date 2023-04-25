@@ -9,6 +9,7 @@ obj\Debug\net7.0-android\resizetizer\r\drawable\constructor.png
 obj\Debug\net7.0-android\resizetizer\r\drawable\cross.png
 obj\Debug\net7.0-android\resizetizer\r\drawable\cross2.png
 obj\Debug\net7.0-android\resizetizer\r\drawable\document_icon.png
+obj\Debug\net7.0-android\resizetizer\r\drawable\empty.png
 obj\Debug\net7.0-android\resizetizer\r\drawable\info.png
 obj\Debug\net7.0-android\resizetizer\r\drawable\keyboard.png
 obj\Debug\net7.0-android\resizetizer\r\drawable\keyboard1.png
@@ -23,6 +24,7 @@ obj\Debug\net7.0-android\resizetizer\r\drawable\plus.png
 obj\Debug\net7.0-android\resizetizer\r\drawable\plus_black.png
 obj\Debug\net7.0-android\resizetizer\r\drawable\question.png
 obj\Debug\net7.0-android\resizetizer\r\drawable\question2.png
+obj\Debug\net7.0-android\resizetizer\r\drawable\rectangle_back.png
 obj\Debug\net7.0-android\resizetizer\r\drawable\settings.png
 obj\Debug\net7.0-android\resizetizer\r\drawable\vector2.png
 obj\Debug\net7.0-android\resizetizer\r\drawable\vector3.png

@@ -22,7 +22,7 @@ namespace ConstructorBotCore.DomainHandler
 
         public Logger Logger { get; set; }
         
-        public Handler(List<DomainParentAction> domainParents, string token)
+        public Handler(List<DomainParentAction> domainParents = null!, string token = null!)
         {
             Logger = new Logger();
             BotLogic = domainParents;

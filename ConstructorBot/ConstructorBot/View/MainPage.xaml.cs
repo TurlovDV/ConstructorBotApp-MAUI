@@ -33,14 +33,7 @@ public partial class MainPage : ContentPage
                 elipse_loading.Rotation = 0;
             }
         });
-
-        //this.Loaded += Loading;
     }
-
-
-    //public void Loading(object sender, EventArgs e)
-    //{        
-    //}
 
     private async void Button_PushToConstructor(object sender, EventArgs e)
     {

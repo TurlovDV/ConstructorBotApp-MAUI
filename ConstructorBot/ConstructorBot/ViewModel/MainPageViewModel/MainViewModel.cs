@@ -340,13 +340,14 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
                     IsPageViewRequest = !IsPageViewRequest;
 
                     SaveMesseges.Clear();
+                    if(MessagerCore._handlerMessanger != null)
                     MessagerCore._handlerMessanger.LogicUsers
                         .ForEach(x => SaveMesseges.Add(new LogicUser()
                         {
                             FirstName = x.FirstName,
                             LastName = x.LastName,
-                            SaveAnswers = x.SaveMessage,
-                            IsView = true
+                            SaveAnswers = new ObservableCollection<SaveMessageItem>(x.SaveMessage.ToList()
+                                .Select(y => new SaveMessageItem() {  Answer = y.Value, Naming = y.Key }).ToList())
                         }));
                 });
             }
