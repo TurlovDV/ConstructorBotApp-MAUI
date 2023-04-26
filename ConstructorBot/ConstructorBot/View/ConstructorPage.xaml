@@ -108,6 +108,11 @@
         <!--<ImageButton Grid.RowSpan="2" HorizontalOptions="Start" VerticalOptions="Start" Margin="15" WidthRequest="30" Command="{Binding AddActionCommand}" HeightRequest="30" Source="back_icon.png"></ImageButton>
         <ImageButton Grid.RowSpan="2" HorizontalOptions="Start" VerticalOptions="End" Margin="15" WidthRequest="50" Command="{Binding AddActionCommand}" HeightRequest="50" Source="plus.png"></ImageButton>-->
 
+        <!--Кнопка возрата-->
+        
+        <ImageButton Opacity="0.75" BorderColor="White" Padding="7" Margin="0, 0, 5, 500" Source="go_main.svg" WidthRequest="60" HeightRequest="60" HorizontalOptions="End" Command="{Binding GoToMainBox}" Grid.Row="0" Grid.RowSpan="2" CornerRadius="20" VerticalOptions="Center" BackgroundColor="#465BA4"></ImageButton>
+
+        
         <Frame IsVisible="{Binding IsPutBoxAction}" Grid.RowSpan="2" BackgroundColor="Transparent" CornerRadius="0" BorderColor="Transparent"></Frame>
 
 

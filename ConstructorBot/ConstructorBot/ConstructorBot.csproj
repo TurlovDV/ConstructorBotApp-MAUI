@@ -61,6 +61,7 @@
 	  <None Remove="Resources\Images\document_icon.png" />
 	  <None Remove="Resources\Images\elipse_loading.svg" />
 	  <None Remove="Resources\Images\empty.png" />
+	  <None Remove="Resources\Images\go_main.svg" />
 	  <None Remove="Resources\Images\grid_lines.svg" />
 	  <None Remove="Resources\Images\icone_notes.svg" />
 	  <None Remove="Resources\Images\info.svg" />

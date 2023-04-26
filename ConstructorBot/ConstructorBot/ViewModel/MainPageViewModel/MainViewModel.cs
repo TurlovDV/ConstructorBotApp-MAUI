@@ -12,6 +12,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using System.Xml.Linq;
@@ -185,7 +186,7 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
 
         //Кнопка старт/стоп
 
-        public async void UpdateInfoTable()
+        public async Task UpdateInfoTable()
         {
             OnStartTiming = new DateTime();
             while (IsStart)
@@ -214,47 +215,11 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
                 }
             }
         }
-        //public ICommand OnStartCommand
-        //{
-        //    get
-        //    {
-        //        return new Command(async () =>
-        //        {
-        //            if (!IsStart)
-        //            {
-        //                _actions = ServiceProvider.GetService<ConstructorViewModel>().ActionBoxes.ToList();
-        //                var resultOnStart = await MessagerCore.UpdateBot(LogicMatrixConverter.GetParentActions(_actions)).OnStart(TelegramToken);
-        //                if (resultOnStart)
-        //                {
-        //                    NamingBot = MessagerCore.GetNamingBot();
-        //                    var _backGround = ServiceProvider.GetService<IServiceDomainBot>();
-        //                    _backGround.Start();                            
-        //                    IsStart = !IsStart;
 
-        //                    await Task.Run(UpdateInfoTable);
 
-        //                    isInternetConnection = true;
-        //                }
-        //                else
-        //                {
-        //                    if (Connectivity.Current.NetworkAccess != NetworkAccess.Internet)
-        //                        await DependencyService.Get<App.IMessageService>().ShowAsync("Ошибка", "Убедитесь в достоверности подключения к интернету");
-        //                    else
-        //                    await DependencyService.Get<App.IMessageService>().ShowAsync("Ошибка", "Убедитесь в достоверности токена");
-        //                }
-        //            }
-        //            else
-        //            {
-        //                MessagerCore.OnStop();
-        //                var _backGround = ServiceProvider.GetService<IServiceDomainBot>();
-        //                _backGround.Stop();
-
-        //                IsStart = !IsStart;
-        //            }
-
-        //        });
-        //    }
-        //}
+        private Task updateTableTask;
+        private CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
+        private CancellationToken cancellationToken;
 
         public ICommand OnStartCommand
         {
@@ -272,7 +237,10 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
                             var _backGround = ServiceProvider.GetService<IServiceDomainBot>();
                             _backGround.Start();
                             IsStart = !IsStart;
-                            await Task.Run(UpdateInfoTable);
+                            
+                            if (updateTableTask == null || updateTableTask.Status == TaskStatus.RanToCompletion)
+                                updateTableTask = UpdateInfoTable();
+                            
                             isInternetConnection = true;
                         }
                         else
@@ -341,14 +309,14 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
 
                     SaveMesseges.Clear();
                     if(MessagerCore._handlerMessanger != null)
-                    MessagerCore._handlerMessanger.LogicUsers
-                        .ForEach(x => SaveMesseges.Add(new LogicUser()
-                        {
-                            FirstName = x.FirstName,
-                            LastName = x.LastName,
-                            SaveAnswers = new ObservableCollection<SaveMessageItem>(x.SaveMessage.ToList()
-                                .Select(y => new SaveMessageItem() {  Answer = y.Value, Naming = y.Key }).ToList())
-                        }));
+                        MessagerCore._handlerMessanger.LogicUsers
+                            .ForEach(x => SaveMesseges.Add(new LogicUser()
+                            {
+                                FirstName = x.FirstName,
+                                LastName = x.LastName,
+                                SaveAnswers = new ObservableCollection<SaveMessageItem>(x.SaveMessage.ToList()
+                                    .Select(y => new SaveMessageItem() { Answer = y.Value, Naming = y.Key }).ToList())
+                            }));                    
                 });
             }
         }

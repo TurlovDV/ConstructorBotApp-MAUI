@@ -1118,3 +1118,9 @@ C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-android\
 C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-android\android\assets\System.Xml.dll
 C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-android\resizetizer\r\drawable\rectangle_back.png
 C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-android\resizetizer\r\drawable\empty.png
+C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-android\resizetizer\r\drawable\go_main.png
+C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-android\resizetizer\r\drawable-hdpi\go_main.png
+C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-android\resizetizer\r\drawable-mdpi\go_main.png
+C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-android\resizetizer\r\drawable-xhdpi\go_main.png
+C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-android\resizetizer\r\drawable-xxhdpi\go_main.png
+C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-android\resizetizer\r\drawable-xxxhdpi\go_main.png

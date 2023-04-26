@@ -100,7 +100,32 @@ namespace ConstructorBot.ViewModel.ConstructorPageViewModel
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
         }
-       
+
+
+        //Вернуться к главному блоку
+        public ICommand GoToMainBox
+        {
+            get
+            {
+                return new Command(() =>
+                {
+                    double X = ActionBoxes[0].TranslationX;
+                    double Y = ActionBoxes[0].TranslationY;
+                    ActionBoxes.ToList().ForEach(x =>
+                    {
+                        x.TranslationX -= X;
+                        x.TranslationY -= Y;
+                    });
+                    ActionBoxes.ToList().ForEach(x => x.ConnectionActions.ToList()
+                        .ForEach(y =>
+                        {
+                            y.UpdateConnectionLine();
+                        })
+                    );
+                });
+            }
+        }
+
         //Закрыть окно редактирования блока
         public ICommand ClosePutActionBox
         {
