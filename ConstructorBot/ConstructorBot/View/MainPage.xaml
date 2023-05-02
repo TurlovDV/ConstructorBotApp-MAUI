@@ -37,7 +37,6 @@
             </Border.StrokeShape>
         </Border>
 
-        <Image Source="rectangle_back.png" HorizontalOptions="FillAndExpand" VerticalOptions="End" Grid.Row="2" Grid.RowSpan="2"></Image>
         
         <Frame Padding="0" Grid.Row="2" Grid.RowSpan="2" IsVisible="{Binding IsPageMain}" BackgroundColor="Transparent" CornerRadius="0" BorderColor="Transparent">
             <Grid Padding="10" RowDefinitions="*,*" ColumnDefinitions="*,*" ColumnSpacing="20">

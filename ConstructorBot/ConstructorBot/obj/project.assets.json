@@ -2024,17 +2024,17 @@
           "buildTransitive/net6.0-android31.0/Xamarin.KotlinX.Coroutines.Core.Jvm.targets": {}
         }
       },
-      "ConstructorBotCore/1.0.0": {
+      "MessengerBotApi/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Telegram.Bot": "18.0.0"
         },
         "compile": {
-          "bin/placeholder/ConstructorBotCore.dll": {}
+          "bin/placeholder/MessengerBotApi.dll": {}
         },
         "runtime": {
-          "bin/placeholder/ConstructorBotCore.dll": {}
+          "bin/placeholder/MessengerBotApi.dll": {}
         }
       }
     },
@@ -4061,17 +4061,17 @@
           "buildTransitive/net6.0-android31.0/Xamarin.KotlinX.Coroutines.Core.Jvm.targets": {}
         }
       },
-      "ConstructorBotCore/1.0.0": {
+      "MessengerBotApi/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Telegram.Bot": "18.0.0"
         },
         "compile": {
-          "bin/placeholder/ConstructorBotCore.dll": {}
+          "bin/placeholder/MessengerBotApi.dll": {}
         },
         "runtime": {
-          "bin/placeholder/ConstructorBotCore.dll": {}
+          "bin/placeholder/MessengerBotApi.dll": {}
         }
       }
     },
@@ -6098,17 +6098,17 @@
           "buildTransitive/net6.0-android31.0/Xamarin.KotlinX.Coroutines.Core.Jvm.targets": {}
         }
       },
-      "ConstructorBotCore/1.0.0": {
+      "MessengerBotApi/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Telegram.Bot": "18.0.0"
         },
         "compile": {
-          "bin/placeholder/ConstructorBotCore.dll": {}
+          "bin/placeholder/MessengerBotApi.dll": {}
         },
         "runtime": {
-          "bin/placeholder/ConstructorBotCore.dll": {}
+          "bin/placeholder/MessengerBotApi.dll": {}
         }
       }
     },
@@ -8135,17 +8135,17 @@
           "buildTransitive/net6.0-android31.0/Xamarin.KotlinX.Coroutines.Core.Jvm.targets": {}
         }
       },
-      "ConstructorBotCore/1.0.0": {
+      "MessengerBotApi/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Telegram.Bot": "18.0.0"
         },
         "compile": {
-          "bin/placeholder/ConstructorBotCore.dll": {}
+          "bin/placeholder/MessengerBotApi.dll": {}
         },
         "runtime": {
-          "bin/placeholder/ConstructorBotCore.dll": {}
+          "bin/placeholder/MessengerBotApi.dll": {}
         }
       }
     },
@@ -10172,17 +10172,17 @@
           "buildTransitive/net6.0-android31.0/Xamarin.KotlinX.Coroutines.Core.Jvm.targets": {}
         }
       },
-      "ConstructorBotCore/1.0.0": {
+      "MessengerBotApi/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Telegram.Bot": "18.0.0"
         },
         "compile": {
-          "bin/placeholder/ConstructorBotCore.dll": {}
+          "bin/placeholder/MessengerBotApi.dll": {}
         },
         "runtime": {
-          "bin/placeholder/ConstructorBotCore.dll": {}
+          "bin/placeholder/MessengerBotApi.dll": {}
         }
       }
     },
@@ -12209,17 +12209,17 @@
           "buildTransitive/net6.0-android31.0/Xamarin.KotlinX.Coroutines.Core.Jvm.targets": {}
         }
       },
-      "ConstructorBotCore/1.0.0": {
+      "MessengerBotApi/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Telegram.Bot": "18.0.0"
         },
         "compile": {
-          "bin/placeholder/ConstructorBotCore.dll": {}
+          "bin/placeholder/MessengerBotApi.dll": {}
         },
         "runtime": {
-          "bin/placeholder/ConstructorBotCore.dll": {}
+          "bin/placeholder/MessengerBotApi.dll": {}
         }
       }
     },
@@ -14246,17 +14246,17 @@
           "buildTransitive/net6.0-android31.0/Xamarin.KotlinX.Coroutines.Core.Jvm.targets": {}
         }
       },
-      "ConstructorBotCore/1.0.0": {
+      "MessengerBotApi/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Telegram.Bot": "18.0.0"
         },
         "compile": {
-          "bin/placeholder/ConstructorBotCore.dll": {}
+          "bin/placeholder/MessengerBotApi.dll": {}
         },
         "runtime": {
-          "bin/placeholder/ConstructorBotCore.dll": {}
+          "bin/placeholder/MessengerBotApi.dll": {}
         }
       }
     },
@@ -16283,17 +16283,17 @@
           "buildTransitive/net6.0-android31.0/Xamarin.KotlinX.Coroutines.Core.Jvm.targets": {}
         }
       },
-      "ConstructorBotCore/1.0.0": {
+      "MessengerBotApi/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Telegram.Bot": "18.0.0"
         },
         "compile": {
-          "bin/placeholder/ConstructorBotCore.dll": {}
+          "bin/placeholder/MessengerBotApi.dll": {}
         },
         "runtime": {
-          "bin/placeholder/ConstructorBotCore.dll": {}
+          "bin/placeholder/MessengerBotApi.dll": {}
         }
       }
     },
@@ -16579,17 +16579,17 @@
           }
         }
       },
-      "ConstructorBotCore/1.0.0": {
+      "MessengerBotApi/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Telegram.Bot": "18.0.0"
         },
         "compile": {
-          "bin/placeholder/ConstructorBotCore.dll": {}
+          "bin/placeholder/MessengerBotApi.dll": {}
         },
         "runtime": {
-          "bin/placeholder/ConstructorBotCore.dll": {}
+          "bin/placeholder/MessengerBotApi.dll": {}
         }
       }
     },
@@ -16875,17 +16875,17 @@
           }
         }
       },
-      "ConstructorBotCore/1.0.0": {
+      "MessengerBotApi/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Telegram.Bot": "18.0.0"
         },
         "compile": {
-          "bin/placeholder/ConstructorBotCore.dll": {}
+          "bin/placeholder/MessengerBotApi.dll": {}
         },
         "runtime": {
-          "bin/placeholder/ConstructorBotCore.dll": {}
+          "bin/placeholder/MessengerBotApi.dll": {}
         }
       }
     },
@@ -17171,17 +17171,17 @@
           }
         }
       },
-      "ConstructorBotCore/1.0.0": {
+      "MessengerBotApi/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Telegram.Bot": "18.0.0"
         },
         "compile": {
-          "bin/placeholder/ConstructorBotCore.dll": {}
+          "bin/placeholder/MessengerBotApi.dll": {}
         },
         "runtime": {
-          "bin/placeholder/ConstructorBotCore.dll": {}
+          "bin/placeholder/MessengerBotApi.dll": {}
         }
       }
     },
@@ -17467,17 +17467,17 @@
           }
         }
       },
-      "ConstructorBotCore/1.0.0": {
+      "MessengerBotApi/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Telegram.Bot": "18.0.0"
         },
         "compile": {
-          "bin/placeholder/ConstructorBotCore.dll": {}
+          "bin/placeholder/MessengerBotApi.dll": {}
         },
         "runtime": {
-          "bin/placeholder/ConstructorBotCore.dll": {}
+          "bin/placeholder/MessengerBotApi.dll": {}
         }
       }
     },
@@ -17763,17 +17763,17 @@
           }
         }
       },
-      "ConstructorBotCore/1.0.0": {
+      "MessengerBotApi/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Telegram.Bot": "18.0.0"
         },
         "compile": {
-          "bin/placeholder/ConstructorBotCore.dll": {}
+          "bin/placeholder/MessengerBotApi.dll": {}
         },
         "runtime": {
-          "bin/placeholder/ConstructorBotCore.dll": {}
+          "bin/placeholder/MessengerBotApi.dll": {}
         }
       }
     },
@@ -18059,17 +18059,17 @@
           }
         }
       },
-      "ConstructorBotCore/1.0.0": {
+      "MessengerBotApi/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Telegram.Bot": "18.0.0"
         },
         "compile": {
-          "bin/placeholder/ConstructorBotCore.dll": {}
+          "bin/placeholder/MessengerBotApi.dll": {}
         },
         "runtime": {
-          "bin/placeholder/ConstructorBotCore.dll": {}
+          "bin/placeholder/MessengerBotApi.dll": {}
         }
       }
     },
@@ -18355,17 +18355,17 @@
           }
         }
       },
-      "ConstructorBotCore/1.0.0": {
+      "MessengerBotApi/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Telegram.Bot": "18.0.0"
         },
         "compile": {
-          "bin/placeholder/ConstructorBotCore.dll": {}
+          "bin/placeholder/MessengerBotApi.dll": {}
         },
         "runtime": {
-          "bin/placeholder/ConstructorBotCore.dll": {}
+          "bin/placeholder/MessengerBotApi.dll": {}
         }
       }
     },
@@ -18651,17 +18651,17 @@
           }
         }
       },
-      "ConstructorBotCore/1.0.0": {
+      "MessengerBotApi/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Telegram.Bot": "18.0.0"
         },
         "compile": {
-          "bin/placeholder/ConstructorBotCore.dll": {}
+          "bin/placeholder/MessengerBotApi.dll": {}
         },
         "runtime": {
-          "bin/placeholder/ConstructorBotCore.dll": {}
+          "bin/placeholder/MessengerBotApi.dll": {}
         }
       }
     },
@@ -18947,17 +18947,17 @@
           }
         }
       },
-      "ConstructorBotCore/1.0.0": {
+      "MessengerBotApi/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Telegram.Bot": "18.0.0"
         },
         "compile": {
-          "bin/placeholder/ConstructorBotCore.dll": {}
+          "bin/placeholder/MessengerBotApi.dll": {}
         },
         "runtime": {
-          "bin/placeholder/ConstructorBotCore.dll": {}
+          "bin/placeholder/MessengerBotApi.dll": {}
         }
       }
     },
@@ -19243,17 +19243,17 @@
           }
         }
       },
-      "ConstructorBotCore/1.0.0": {
+      "MessengerBotApi/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Telegram.Bot": "18.0.0"
         },
         "compile": {
-          "bin/placeholder/ConstructorBotCore.dll": {}
+          "bin/placeholder/MessengerBotApi.dll": {}
         },
         "runtime": {
-          "bin/placeholder/ConstructorBotCore.dll": {}
+          "bin/placeholder/MessengerBotApi.dll": {}
         }
       }
     },
@@ -19539,17 +19539,17 @@
           }
         }
       },
-      "ConstructorBotCore/1.0.0": {
+      "MessengerBotApi/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Telegram.Bot": "18.0.0"
         },
         "compile": {
-          "bin/placeholder/ConstructorBotCore.dll": {}
+          "bin/placeholder/MessengerBotApi.dll": {}
         },
         "runtime": {
-          "bin/placeholder/ConstructorBotCore.dll": {}
+          "bin/placeholder/MessengerBotApi.dll": {}
         }
       }
     },
@@ -19835,17 +19835,17 @@
           }
         }
       },
-      "ConstructorBotCore/1.0.0": {
+      "MessengerBotApi/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Telegram.Bot": "18.0.0"
         },
         "compile": {
-          "bin/placeholder/ConstructorBotCore.dll": {}
+          "bin/placeholder/MessengerBotApi.dll": {}
         },
         "runtime": {
-          "bin/placeholder/ConstructorBotCore.dll": {}
+          "bin/placeholder/MessengerBotApi.dll": {}
         }
       }
     },
@@ -20131,17 +20131,17 @@
           }
         }
       },
-      "ConstructorBotCore/1.0.0": {
+      "MessengerBotApi/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Telegram.Bot": "18.0.0"
         },
         "compile": {
-          "bin/placeholder/ConstructorBotCore.dll": {}
+          "bin/placeholder/MessengerBotApi.dll": {}
         },
         "runtime": {
-          "bin/placeholder/ConstructorBotCore.dll": {}
+          "bin/placeholder/MessengerBotApi.dll": {}
         }
       }
     },
@@ -20427,17 +20427,17 @@
           }
         }
       },
-      "ConstructorBotCore/1.0.0": {
+      "MessengerBotApi/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Telegram.Bot": "18.0.0"
         },
         "compile": {
-          "bin/placeholder/ConstructorBotCore.dll": {}
+          "bin/placeholder/MessengerBotApi.dll": {}
         },
         "runtime": {
-          "bin/placeholder/ConstructorBotCore.dll": {}
+          "bin/placeholder/MessengerBotApi.dll": {}
         }
       }
     },
@@ -20723,17 +20723,17 @@
           }
         }
       },
-      "ConstructorBotCore/1.0.0": {
+      "MessengerBotApi/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Telegram.Bot": "18.0.0"
         },
         "compile": {
-          "bin/placeholder/ConstructorBotCore.dll": {}
+          "bin/placeholder/MessengerBotApi.dll": {}
         },
         "runtime": {
-          "bin/placeholder/ConstructorBotCore.dll": {}
+          "bin/placeholder/MessengerBotApi.dll": {}
         }
       }
     },
@@ -21019,17 +21019,17 @@
           }
         }
       },
-      "ConstructorBotCore/1.0.0": {
+      "MessengerBotApi/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Telegram.Bot": "18.0.0"
         },
         "compile": {
-          "bin/placeholder/ConstructorBotCore.dll": {}
+          "bin/placeholder/MessengerBotApi.dll": {}
         },
         "runtime": {
-          "bin/placeholder/ConstructorBotCore.dll": {}
+          "bin/placeholder/MessengerBotApi.dll": {}
         }
       }
     },
@@ -21453,17 +21453,17 @@
           }
         }
       },
-      "ConstructorBotCore/1.0.0": {
+      "MessengerBotApi/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Telegram.Bot": "18.0.0"
         },
         "compile": {
-          "bin/placeholder/ConstructorBotCore.dll": {}
+          "bin/placeholder/MessengerBotApi.dll": {}
         },
         "runtime": {
-          "bin/placeholder/ConstructorBotCore.dll": {}
+          "bin/placeholder/MessengerBotApi.dll": {}
         }
       }
     },
@@ -21859,17 +21859,17 @@
           }
         }
       },
-      "ConstructorBotCore/1.0.0": {
+      "MessengerBotApi/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Telegram.Bot": "18.0.0"
         },
         "compile": {
-          "bin/placeholder/ConstructorBotCore.dll": {}
+          "bin/placeholder/MessengerBotApi.dll": {}
         },
         "runtime": {
-          "bin/placeholder/ConstructorBotCore.dll": {}
+          "bin/placeholder/MessengerBotApi.dll": {}
         }
       }
     },
@@ -22265,17 +22265,17 @@
           }
         }
       },
-      "ConstructorBotCore/1.0.0": {
+      "MessengerBotApi/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Telegram.Bot": "18.0.0"
         },
         "compile": {
-          "bin/placeholder/ConstructorBotCore.dll": {}
+          "bin/placeholder/MessengerBotApi.dll": {}
         },
         "runtime": {
-          "bin/placeholder/ConstructorBotCore.dll": {}
+          "bin/placeholder/MessengerBotApi.dll": {}
         }
       }
     },
@@ -22671,17 +22671,17 @@
           }
         }
       },
-      "ConstructorBotCore/1.0.0": {
+      "MessengerBotApi/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Telegram.Bot": "18.0.0"
         },
         "compile": {
-          "bin/placeholder/ConstructorBotCore.dll": {}
+          "bin/placeholder/MessengerBotApi.dll": {}
         },
         "runtime": {
-          "bin/placeholder/ConstructorBotCore.dll": {}
+          "bin/placeholder/MessengerBotApi.dll": {}
         }
       }
     },
@@ -23077,17 +23077,17 @@
           }
         }
       },
-      "ConstructorBotCore/1.0.0": {
+      "MessengerBotApi/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Telegram.Bot": "18.0.0"
         },
         "compile": {
-          "bin/placeholder/ConstructorBotCore.dll": {}
+          "bin/placeholder/MessengerBotApi.dll": {}
         },
         "runtime": {
-          "bin/placeholder/ConstructorBotCore.dll": {}
+          "bin/placeholder/MessengerBotApi.dll": {}
         }
       }
     },
@@ -23483,17 +23483,17 @@
           }
         }
       },
-      "ConstructorBotCore/1.0.0": {
+      "MessengerBotApi/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Telegram.Bot": "18.0.0"
         },
         "compile": {
-          "bin/placeholder/ConstructorBotCore.dll": {}
+          "bin/placeholder/MessengerBotApi.dll": {}
         },
         "runtime": {
-          "bin/placeholder/ConstructorBotCore.dll": {}
+          "bin/placeholder/MessengerBotApi.dll": {}
         }
       }
     },
@@ -23889,17 +23889,17 @@
           }
         }
       },
-      "ConstructorBotCore/1.0.0": {
+      "MessengerBotApi/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Telegram.Bot": "18.0.0"
         },
         "compile": {
-          "bin/placeholder/ConstructorBotCore.dll": {}
+          "bin/placeholder/MessengerBotApi.dll": {}
         },
         "runtime": {
-          "bin/placeholder/ConstructorBotCore.dll": {}
+          "bin/placeholder/MessengerBotApi.dll": {}
         }
       }
     },
@@ -24301,17 +24301,17 @@
           }
         }
       },
-      "ConstructorBotCore/1.0.0": {
+      "MessengerBotApi/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Telegram.Bot": "18.0.0"
         },
         "compile": {
-          "bin/placeholder/ConstructorBotCore.dll": {}
+          "bin/placeholder/MessengerBotApi.dll": {}
         },
         "runtime": {
-          "bin/placeholder/ConstructorBotCore.dll": {}
+          "bin/placeholder/MessengerBotApi.dll": {}
         }
       }
     }
@@ -27759,10 +27759,10 @@
         "xamarin.kotlinx.coroutines.core.jvm.nuspec"
       ]
     },
-    "ConstructorBotCore/1.0.0": {
+    "MessengerBotApi/1.0.0": {
       "type": "project",
-      "path": "../ConstructorBotCore/ConstructorBotCore.csproj",
-      "msbuildProject": "../ConstructorBotCore/ConstructorBotCore.csproj"
+      "path": "../MessengerBotApi/MessengerBotApi.csproj",
+      "msbuildProject": "../MessengerBotApi/MessengerBotApi.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -27770,7 +27770,7 @@
       "AutoMapper >= 12.0.1",
       "CommunityToolkit.Maui >= 4.0.0",
       "CommunityToolkit.Mvvm >= 8.1.0",
-      "ConstructorBotCore >= 1.0.0",
+      "MessengerBotApi >= 1.0.0",
       "Microsoft.Extensions.Configuration >= 7.0.0",
       "Microsoft.Extensions.DependencyInjection >= 7.0.0",
       "Microsoft.Extensions.Logging >= 7.0.0",
@@ -27794,7 +27794,7 @@
       "AutoMapper >= 12.0.1",
       "CommunityToolkit.Maui >= 4.0.0",
       "CommunityToolkit.Mvvm >= 8.1.0",
-      "ConstructorBotCore >= 1.0.0",
+      "MessengerBotApi >= 1.0.0",
       "Microsoft.Extensions.Configuration >= 7.0.0",
       "Microsoft.Extensions.DependencyInjection >= 7.0.0",
       "Microsoft.Extensions.Logging >= 7.0.0",
@@ -27807,7 +27807,7 @@
       "AutoMapper >= 12.0.1",
       "CommunityToolkit.Maui >= 4.0.0",
       "CommunityToolkit.Mvvm >= 8.1.0",
-      "ConstructorBotCore >= 1.0.0",
+      "MessengerBotApi >= 1.0.0",
       "Microsoft.Extensions.Configuration >= 7.0.0",
       "Microsoft.Extensions.DependencyInjection >= 7.0.0",
       "Microsoft.Extensions.Logging >= 7.0.0",
@@ -27820,7 +27820,7 @@
       "AutoMapper >= 12.0.1",
       "CommunityToolkit.Maui >= 4.0.0",
       "CommunityToolkit.Mvvm >= 8.1.0",
-      "ConstructorBotCore >= 1.0.0",
+      "MessengerBotApi >= 1.0.0",
       "Microsoft.Extensions.Configuration >= 7.0.0",
       "Microsoft.Extensions.DependencyInjection >= 7.0.0",
       "Microsoft.Extensions.Logging >= 7.0.0",
@@ -27870,32 +27870,32 @@
         "net7.0-android33.0": {
           "targetAlias": "net7.0-android",
           "projectReferences": {
-            "C:\\ConstructorBotProject\\ConstructorBot\\ConstructorBotCore\\ConstructorBotCore.csproj": {
-              "projectPath": "C:\\ConstructorBotProject\\ConstructorBot\\ConstructorBotCore\\ConstructorBotCore.csproj"
+            "C:\\ConstructorBotProject\\ConstructorBot\\MessengerBotApi\\MessengerBotApi.csproj": {
+              "projectPath": "C:\\ConstructorBotProject\\ConstructorBot\\MessengerBotApi\\MessengerBotApi.csproj"
             }
           }
         },
         "net7.0-ios16.1": {
           "targetAlias": "net7.0-ios",
           "projectReferences": {
-            "C:\\ConstructorBotProject\\ConstructorBot\\ConstructorBotCore\\ConstructorBotCore.csproj": {
-              "projectPath": "C:\\ConstructorBotProject\\ConstructorBot\\ConstructorBotCore\\ConstructorBotCore.csproj"
+            "C:\\ConstructorBotProject\\ConstructorBot\\MessengerBotApi\\MessengerBotApi.csproj": {
+              "projectPath": "C:\\ConstructorBotProject\\ConstructorBot\\MessengerBotApi\\MessengerBotApi.csproj"
             }
           }
         },
         "net7.0-maccatalyst16.1": {
           "targetAlias": "net7.0-maccatalyst",
           "projectReferences": {
-            "C:\\ConstructorBotProject\\ConstructorBot\\ConstructorBotCore\\ConstructorBotCore.csproj": {
-              "projectPath": "C:\\ConstructorBotProject\\ConstructorBot\\ConstructorBotCore\\ConstructorBotCore.csproj"
+            "C:\\ConstructorBotProject\\ConstructorBot\\MessengerBotApi\\MessengerBotApi.csproj": {
+              "projectPath": "C:\\ConstructorBotProject\\ConstructorBot\\MessengerBotApi\\MessengerBotApi.csproj"
             }
           }
         },
         "net7.0-windows10.0.19041": {
           "targetAlias": "net7.0-windows10.0.19041.0",
           "projectReferences": {
-            "C:\\ConstructorBotProject\\ConstructorBot\\ConstructorBotCore\\ConstructorBotCore.csproj": {
-              "projectPath": "C:\\ConstructorBotProject\\ConstructorBot\\ConstructorBotCore\\ConstructorBotCore.csproj"
+            "C:\\ConstructorBotProject\\ConstructorBot\\MessengerBotApi\\MessengerBotApi.csproj": {
+              "projectPath": "C:\\ConstructorBotProject\\ConstructorBot\\MessengerBotApi\\MessengerBotApi.csproj"
             }
           }
         }

@@ -65,6 +65,11 @@
 	  <None Remove="Resources\Images\grid_lines.svg" />
 	  <None Remove="Resources\Images\icone_notes.svg" />
 	  <None Remove="Resources\Images\info.svg" />
+	  <None Remove="Resources\Images\info1.svg" />
+	  <None Remove="Resources\Images\info2.svg" />
+	  <None Remove="Resources\Images\info3.svg" />
+	  <None Remove="Resources\Images\info4.svg" />
+	  <None Remove="Resources\Images\info5.svg" />
 	  <None Remove="Resources\Images\keyboard1.png" />
 	  <None Remove="Resources\Images\keyboard_black.png" />
 	  <None Remove="Resources\Images\menu.png" />
@@ -75,7 +80,6 @@
 	  <None Remove="Resources\Images\plus_black.png" />
 	  <None Remove="Resources\Images\question.png" />
 	  <None Remove="Resources\Images\question2.png" />
-	  <None Remove="Resources\Images\rectangle_back.png" />
 	  <None Remove="Resources\Images\settings.png" />
 	  <None Remove="Resources\Images\Subtract.svg" />
 	  <None Remove="Resources\Images\Subtract1.svg" />
@@ -97,7 +101,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\ConstructorBotCore\ConstructorBotCore.csproj" />
+	  <ProjectReference Include="..\MessengerBotApi\MessengerBotApi.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

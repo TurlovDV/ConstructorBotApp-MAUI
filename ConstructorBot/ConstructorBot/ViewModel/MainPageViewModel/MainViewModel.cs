@@ -4,6 +4,7 @@ using ConstructorBot.ViewModel.ConstructorPageViewModel.Action;
 using ConstructorBotCore;
 using ConstructorBotCore.DomainMessagModel.ElementMessage;
 using ConstructorBotCore.UserModel.Action;
+using MessengerBotApi;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -35,9 +36,6 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
         private string telegramToken;
 
         private List<ActionBox> _actions;
-
-        //public ScoreboardMessagerInfo MessagerInfo { get; set; }
-
 
         public ObservableCollection<LogicUser> SaveMesseges { get; set; }        
 
@@ -145,55 +143,17 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
         public MainViewModel()
         {
             SaveMesseges = new ObservableCollection<LogicUser>();
-
-            MessagerCore = new Domain();
             //MessagerInfo = new ScoreboardMessagerInfo();
             TelegramToken = Storage.GetKey();
         }
 
-        //Запуск бара с инфо о боте в 1_сек
-        //public async void UpdateInfoTable()
-        //{
-        //    OnStartTiming = new DateTime();
-        //    while(IsStart)
-        //    {
-        //        OnStartTiming = OnStartTiming.AddSeconds(1);
-        //        var logger = MessagerCore.GetLogger();
-        //        CountMessage = logger.CountMessage;
-        //        CountProfile = logger.CountProfile;
-        //        SpeedInternet = new Random().Next(30, 70);
-
-        //        if (Connectivity.Current.NetworkAccess == NetworkAccess.Internet)
-        //        {
-        //            if(!IsInternetConnection)
-        //            {
-        //                await MessagerCore.OnStartRestart();
-        //                IsInternetConnection = true;
-        //            }
-        //        }
-        //        else
-        //            IsInternetConnection = false;
-
-        //        if (OnStartTiming.Minute % 5 == 0 && OnStartTiming.Second == 0 && OnStartTiming.Minute != 0)
-        //        {
-        //            await MessagerCore.OnStartRestart();
-        //        }
-
-        //        await Task.Delay(1000);
-        //    }            
-        //}
-
-
-        //Кнопка старт/стоп
-
         public async Task UpdateInfoTable()
         {
-            OnStartTiming = new DateTime();
             while (IsStart)
             {
                 await Task.Delay(1000);
                 OnStartTiming = OnStartTiming.AddSeconds(1);
-                var logger = MessagerCore.GetLogger();
+                var logger = MessagerCore.GetMessengerInfo();
                 CountMessage = logger.CountMessage;
                 CountProfile = logger.CountProfile;
                 SpeedInternet = new Random().Next(30, 70);
@@ -202,7 +162,8 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
                 {
                     if (!IsInternetConnection)
                     {
-                        await MessagerCore.OnStartRestart();
+                        MessagerCore.Stop();
+                        await MessagerCore.Start();
                         IsInternetConnection = true;
                     }
                 }
@@ -211,15 +172,14 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
 
                 if (OnStartTiming.Minute % 5 == 0 && OnStartTiming.Second == 0 && OnStartTiming.Minute != 0)
                 {
-                    await MessagerCore.OnStartRestart();
+                    MessagerCore.Stop();
+                    await MessagerCore.Start();
                 }
             }
         }
 
 
         private Task updateTableTask;
-        private CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
-        private CancellationToken cancellationToken;
 
         public ICommand OnStartCommand
         {
@@ -230,14 +190,16 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
                     if (!IsStart)
                     {
                         _actions = ServiceProvider.GetService<ConstructorViewModel>().ActionBoxes.ToList();
-                        var resultOnStart = await MessagerCore.UpdateBot(LogicMatrixConverter.GetParentActions(_actions)).OnStart(TelegramToken);
-                        if (resultOnStart)
+                        MessagerCore = new Domain(LogicMatrixConverter.GetParentActions(_actions), TelegramToken);
+                        var resultOnStart = await MessagerCore.Start();
+                        if (resultOnStart != null)
                         {
-                            NamingBot = MessagerCore.GetNamingBot();
+                            NamingBot = resultOnStart.Name;
                             var _backGround = ServiceProvider.GetService<IServiceDomainBot>();
                             _backGround.Start();
                             IsStart = !IsStart;
-                            
+
+                            OnStartTiming = new DateTime();
                             if (updateTableTask == null || updateTableTask.Status == TaskStatus.RanToCompletion)
                                 updateTableTask = UpdateInfoTable();
                             
@@ -253,7 +215,7 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
                     }
                     else
                     {
-                        MessagerCore.OnStop();
+                        MessagerCore.Stop();
                         var _backGround = ServiceProvider.GetService<IServiceDomainBot>();
                         _backGround.Stop();
                         IsStart = !IsStart;
@@ -296,7 +258,6 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
             }
         }
 
-
         //Открыть / закрыть окно просмотра сохраненных заявок
         public ICommand OpenOrExitPageViewRequest
         {
@@ -308,8 +269,8 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
                     IsPageViewRequest = !IsPageViewRequest;
 
                     SaveMesseges.Clear();
-                    if(MessagerCore._handlerMessanger != null)
-                        MessagerCore._handlerMessanger.LogicUsers
+                    if(MessagerCore != null)
+                        MessagerCore.GetMessengerInfo().LogicUsers
                             .ForEach(x => SaveMesseges.Add(new LogicUser()
                             {
                                 FirstName = x.FirstName,
@@ -333,7 +294,6 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
                 });
             }
         }
-
 
         //Кнопка сохранения токена для бота
         public ICommand SaveOptionsTokenCommand

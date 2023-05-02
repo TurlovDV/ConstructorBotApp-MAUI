@@ -2,69 +2,51 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ConstructorBot.View.InfoPage"
+             xmlns:models="clr-namespace:ConstructorBot.ViewModel.InfoPageViewModel"
              Title=""
-             BackgroundColor="#1D2733">
+             BackgroundColor="#1D2733"
+             Shell.NavBarIsVisible="False">
 
-    <Shell.NavBarIsVisible>
-        <x:Boolean>False</x:Boolean>
-    </Shell.NavBarIsVisible>
+    <Grid RowDefinitions="*,Auto">
+        <CarouselView Grid.RowSpan="2" Position="{Binding Position}"
+                      IndicatorView="indicatorView"                       
+                      HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" 
+                      ItemsSource="{Binding IntroScreens}">
+            <CarouselView.ItemTemplate>
+                <DataTemplate x:DataType="models:IntroScreenModel">
+                    <Image Source="{Binding IntroImage}" Margin="0" Aspect="AspectFill" HorizontalOptions="Fill" VerticalOptions="Fill"/>
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
+        <StackLayout  Orientation="Horizontal"  
+                      Grid.Row="1" >
+            <IndicatorView x:Name="indicatorView" 
+                           VerticalOptions="Center"
+                           Margin="10"
+                           IndicatorSize="10"
+                           IndicatorColor="LightGray"  
+                           SelectedIndicatorColor="#3A547B" />
 
-    <Grid RowDefinitions="Auto, *, Auto">
-        <Image Source="background_vector.svg" HorizontalOptions="FillAndExpand" VerticalOptions="Start"></Image>
-        <StackLayout Orientation="Horizontal" Spacing="7" HorizontalOptions="Start" VerticalOptions="Center" Margin="15,0,0,40">
-            <Image Source="info.png" WidthRequest="40" HeightRequest="40" VerticalOptions="Start"></Image>
-            <StackLayout Spacing="5" HorizontalOptions="Center">
-                <Label TextColor="White" Text="Помощь" FontSize="Small" FontAttributes="Bold"></Label>
-                <Label Text="Туториал в эксплуатации&#10;приложения" HorizontalTextAlignment="Start" FontSize="Micro"></Label>
-            </StackLayout>
+
+            <Frame 
+                HorizontalOptions="EndAndExpand"
+                Padding="3"
+                Margin="35"
+                CornerRadius="100"
+                HeightRequest="80" 
+                WidthRequest="80"
+                BorderColor="#0d111a"
+                BackgroundColor="#3A547B">
+                <Label Text="{Binding ButtonText}" TextColor="White" 
+                       FontSize="14"
+                       FontAttributes="Bold"
+                       HorizontalTextAlignment="Center" 
+                       VerticalTextAlignment="Center" />
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding NextCommand}" />
+                </Frame.GestureRecognizers>
+            </Frame>
         </StackLayout>
-
-        <ScrollView Grid.Row="1" Padding="10, 0, 0, 10" VerticalOptions="Center">
-        <StackLayout Spacing="7" VerticalOptions="Center">
-            <Label>
-                <Label.FormattedText>
-                    <FormattedString>
-                        <Span TextColor="White" Text="1. Создайте нового бота в "></Span>
-                        <Span TextColor="White" Text="BotFather" FontAttributes="Bold"></Span>
-                        <Span TextColor="White" Text="&#10;и получите токен подключения"></Span>
-                    </FormattedString>
-                </Label.FormattedText>
-            </Label>
-            <Label>
-                <Label.FormattedText>
-                    <FormattedString>
-                        <Span TextColor="White" Text="2. Введите токен в приложение в разделе"></Span>
-                        <Span TextColor="White" Text="&#10;в разделе "></Span>
-                        <Span TextColor="White" Text="Настройки" FontAttributes="Bold"></Span>
-                    </FormattedString>
-                </Label.FormattedText>
-            </Label>
-            <Label>
-                <Label.FormattedText>
-                    <FormattedString>
-                        <Span TextColor="White" Text="3. Для редактирования бота нужно"></Span>
-                        <Span TextColor="White" Text="&#10;перейти в раздел "></Span>
-                        <Span TextColor="White" Text="Конструктор" FontAttributes="Bold"></Span>
-                    </FormattedString>
-                </Label.FormattedText>
-            </Label>
-            <Label Margin="5,0,0,0" Text="3.1 Помощь в создании бота" FontAttributes="Bold" TextColor="White"></Label>
-
-            <Label Margin="10,0,0,0" Text="3.1.1. Логика строится на основе&#10;созданных блоков, чтобы их соединить&#10;нажмите (1 раз) на 1-ый, от которого будет &#10;ветка сообщений, а потом на 2-ой." TextColor="White"></Label>
-            <Label Margin="10,0,0,0" Text="3.1.2. Для того чтобы создать новый блок,&#10;нажмите на кнопку “плюс” в верхней панели" TextColor="White"></Label>
-            <Label Margin="10,0,0,0" Text="3.1.3. Для редактирования сообщения&#10;нажмите на блок 2 раза" TextColor="White"></Label>
-
-            <Label Margin="5,0,0,0" Text="3.2. Кнопки" FontAttributes="Bold" TextColor="White"></Label>
-            <Label Margin="10,0,0,0" Text="3.2.1 Чтобы включить кнопку в сообщение&#10;нажмите на нее 1 раз" TextColor="White"></Label>
-            <Label Margin="10,0,0,0" Text="3.2.2 Чтобы редактировать кнопку&#10;нажмите на нее 2 раза" TextColor="White"></Label>
-
-
-            <Label Text="4. Кнопка включения бота расположена&#10;на главной странице" TextColor="White"></Label>
-
-            <Label Text="5. В случае багов, ошибок работы приложения&#10;писать в телеграмм @addqwe1244" TextColor="White"></Label>
-        </StackLayout>
-        </ScrollView>
-
-        <Button Clicked="Button_Clicked" BackgroundColor="#2B3A62" Text="Понятно" TextColor="White" Grid.Row="2" Margin="15, 0, 15, 25"></Button>
     </Grid>
+    
 </ContentPage>

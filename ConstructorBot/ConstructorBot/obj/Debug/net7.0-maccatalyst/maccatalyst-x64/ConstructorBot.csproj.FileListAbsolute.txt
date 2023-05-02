@@ -316,3 +316,14 @@ C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-maccatal
 C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-maccatalyst\maccatalyst-x64\ConstructorBot.pdb
 C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-maccatalyst\maccatalyst-x64\ConstructorBot.genruntimeconfig.cache
 C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-maccatalyst\maccatalyst-x64\ref\ConstructorBot.dll
+C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-maccatalyst\maccatalyst-x64\resizetizer\r\go_main.png
+C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-maccatalyst\maccatalyst-x64\resizetizer\r\go_main@2x.png
+C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-maccatalyst\maccatalyst-x64\resizetizer\r\go_main@3x.png
+C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-maccatalyst\maccatalyst-x64\resizetizer\r\icone_notes.png
+C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-maccatalyst\maccatalyst-x64\resizetizer\r\icone_notes@2x.png
+C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-maccatalyst\maccatalyst-x64\resizetizer\r\icone_notes@3x.png
+C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-maccatalyst\maccatalyst-x64\resizetizer\r\Resources\addmedia.png
+C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-maccatalyst\maccatalyst-x64\resizetizer\r\Resources\empty.png
+C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-maccatalyst\maccatalyst-x64\resizetizer\r\Resources\keyboard_black.png
+C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-maccatalyst\maccatalyst-x64\resizetizer\r\Resources\rectangle_back.png
+C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-maccatalyst\maccatalyst-x64\resizetizer\r\Resources\view.png

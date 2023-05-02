@@ -67,6 +67,7 @@ namespace ConstructorBotCore.MessengerModel.TelegramBot
             //Start();
         }
 
+        public CancellationTokenSource cts = new CancellationTokenSource();
         public async Task<bool> Start()
         {
             try
@@ -75,7 +76,7 @@ namespace ConstructorBotCore.MessengerModel.TelegramBot
                 NamingBot = name.FirstName + " " + name.LastName;
                 //Console.WriteLine("\tBot start: " + Name, ConsoleColor.Red);
 
-                var cts = new CancellationTokenSource();
+                //var cts = new CancellationTokenSource();
                 CancellationToken = cts.Token;
                 var receiverOptions = new ReceiverOptions
                 {

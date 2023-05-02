@@ -107,6 +107,15 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
                 new System.Collections.ObjectModel.ObservableCollection<MediaItem>(
                     actionBox.MediaItems.ToList().Where(x => File.Exists(x.PathMediaSource)));
 
+            //for i in range(len(strings)):
+            //    for j in range(len(i)):
+
+            //            List<string> strings = new();
+            //for(int i = 0; i < strings.Count; i++)
+            //    for(int j = 0; j < strings[i].Length; j++)
+            //        strings[i][j]
+
+
             if (actionBox.MediaItems.Count == 0)
                 return;
             if (actionBox.MediaItems.Count == 1)

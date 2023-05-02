@@ -1,0 +1,12 @@
+C:\ConstructorBotProject\ConstructorBot\MessengerBotApi\bin\Debug\net7.0\MessengerBotApi.deps.json
+C:\ConstructorBotProject\ConstructorBot\MessengerBotApi\bin\Debug\net7.0\MessengerBotApi.dll
+C:\ConstructorBotProject\ConstructorBot\MessengerBotApi\bin\Debug\net7.0\MessengerBotApi.pdb
+C:\ConstructorBotProject\ConstructorBot\MessengerBotApi\obj\Debug\net7.0\MessengerBotApi.csproj.AssemblyReference.cache
+C:\ConstructorBotProject\ConstructorBot\MessengerBotApi\obj\Debug\net7.0\MessengerBotApi.GeneratedMSBuildEditorConfig.editorconfig
+C:\ConstructorBotProject\ConstructorBot\MessengerBotApi\obj\Debug\net7.0\MessengerBotApi.AssemblyInfoInputs.cache
+C:\ConstructorBotProject\ConstructorBot\MessengerBotApi\obj\Debug\net7.0\MessengerBotApi.AssemblyInfo.cs
+C:\ConstructorBotProject\ConstructorBot\MessengerBotApi\obj\Debug\net7.0\MessengerBotApi.csproj.CoreCompileInputs.cache
+C:\ConstructorBotProject\ConstructorBot\MessengerBotApi\obj\Debug\net7.0\MessengerBotApi.dll
+C:\ConstructorBotProject\ConstructorBot\MessengerBotApi\obj\Debug\net7.0\refint\MessengerBotApi.dll
+C:\ConstructorBotProject\ConstructorBot\MessengerBotApi\obj\Debug\net7.0\MessengerBotApi.pdb
+C:\ConstructorBotProject\ConstructorBot\MessengerBotApi\obj\Debug\net7.0\ref\MessengerBotApi.dll
