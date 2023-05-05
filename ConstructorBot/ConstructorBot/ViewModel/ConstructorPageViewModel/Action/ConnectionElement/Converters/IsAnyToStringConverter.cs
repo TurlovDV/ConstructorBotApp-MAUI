@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConstructorBot.Language;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -21,7 +22,7 @@ namespace ConstructorBot.ViewModel.ConstructorPageViewModel.Action.ConnectionEle
             //    return value;
 
             if (value.ToString() == "")
-                return "Любая фраза";
+                return LocalizationResourceManager.Instance["AnyPhrase"];
             else
                 return value;
 

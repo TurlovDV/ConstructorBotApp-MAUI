@@ -61,6 +61,33 @@ namespace ConstructorBot.Language {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Add to the application.
+        /// </summary>
+        internal static string AddToTheApplication {
+            get {
+                return ResourceManager.GetString("AddToTheApplication", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Answer.
+        /// </summary>
+        internal static string Answer {
+            get {
+                return ResourceManager.GetString("Answer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Any phrase.
+        /// </summary>
+        internal static string AnyPhrase {
+            get {
+                return ResourceManager.GetString("AnyPhrase", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Applications.
         /// </summary>
         internal static string Applications {
@@ -75,6 +102,24 @@ namespace ConstructorBot.Language {
         internal static string BuildingABotUsingBlocks {
             get {
                 return ResourceManager.GetString("BuildingABotUsingBlocks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Button.
+        /// </summary>
+        internal static string Button {
+            get {
+                return ResourceManager.GetString("Button", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Button message.
+        /// </summary>
+        internal static string ButtonMessage {
+            get {
+                return ResourceManager.GetString("ButtonMessage", resourceCulture);
             }
         }
         
@@ -97,6 +142,24 @@ namespace ConstructorBot.Language {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Create.
+        /// </summary>
+        internal static string Create {
+            get {
+                return ResourceManager.GetString("Create", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Do not add.
+        /// </summary>
+        internal static string DoNotAdd {
+            get {
+                return ResourceManager.GetString("DoNotAdd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на To work with the application, enter the bot connection token.
         /// </summary>
         internal static string EnterTheBotConnectionToken {
@@ -115,11 +178,56 @@ namespace ConstructorBot.Language {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Inline.
+        /// </summary>
+        internal static string Inline {
+            get {
+                return ResourceManager.GetString("Inline", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Keyboard Setup.
+        /// </summary>
+        internal static string KeyboardSetup {
+            get {
+                return ResourceManager.GetString("KeyboardSetup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Message.
+        /// </summary>
+        internal static string Message {
+            get {
+                return ResourceManager.GetString("Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Options.
         /// </summary>
         internal static string Options {
             get {
                 return ResourceManager.GetString("Options", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Reply message.
+        /// </summary>
+        internal static string ReplyMessage {
+            get {
+                return ResourceManager.GetString("ReplyMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Response condition.
+        /// </summary>
+        internal static string ResponseCondition {
+            get {
+                return ResourceManager.GetString("ResponseCondition", resourceCulture);
             }
         }
         
@@ -160,11 +268,29 @@ namespace ConstructorBot.Language {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на The name of the Box.
+        /// </summary>
+        internal static string TheNameOfTheBox {
+            get {
+                return ResourceManager.GetString("TheNameOfTheBox", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Tutorial in the operation of the application.
         /// </summary>
         internal static string TutorialInTheOperationOfTheApplication {
             get {
                 return ResourceManager.GetString("TutorialInTheOperationOfTheApplication", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Url link.
+        /// </summary>
+        internal static string UrlLink {
+            get {
+                return ResourceManager.GetString("UrlLink", resourceCulture);
             }
         }
         

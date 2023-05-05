@@ -20,6 +20,21 @@
               обращений к ресурсу с помощью этого класса ресурса со строгой типизацией.
             </summary>
         </member>
+        <member name="P:ConstructorBot.Language.AppResources.AddToTheApplication">
+            <summary>
+              Ищет локализованную строку, похожую на Add to the application.
+            </summary>
+        </member>
+        <member name="P:ConstructorBot.Language.AppResources.Answer">
+            <summary>
+              Ищет локализованную строку, похожую на Answer.
+            </summary>
+        </member>
+        <member name="P:ConstructorBot.Language.AppResources.AnyPhrase">
+            <summary>
+              Ищет локализованную строку, похожую на Any phrase.
+            </summary>
+        </member>
         <member name="P:ConstructorBot.Language.AppResources.Applications">
             <summary>
               Ищет локализованную строку, похожую на Applications.
@@ -28,6 +43,16 @@
         <member name="P:ConstructorBot.Language.AppResources.BuildingABotUsingBlocks">
             <summary>
               Ищет локализованную строку, похожую на Building a bot using blocks.
+            </summary>
+        </member>
+        <member name="P:ConstructorBot.Language.AppResources.Button">
+            <summary>
+              Ищет локализованную строку, похожую на Button.
+            </summary>
+        </member>
+        <member name="P:ConstructorBot.Language.AppResources.ButtonMessage">
+            <summary>
+              Ищет локализованную строку, похожую на Button message.
             </summary>
         </member>
         <member name="P:ConstructorBot.Language.AppResources.ConnectionSettings">
@@ -40,6 +65,16 @@
               Ищет локализованную строку, похожую на Constructor.
             </summary>
         </member>
+        <member name="P:ConstructorBot.Language.AppResources.Create">
+            <summary>
+              Ищет локализованную строку, похожую на Create.
+            </summary>
+        </member>
+        <member name="P:ConstructorBot.Language.AppResources.DoNotAdd">
+            <summary>
+              Ищет локализованную строку, похожую на Do not add.
+            </summary>
+        </member>
         <member name="P:ConstructorBot.Language.AppResources.EnterTheBotConnectionToken">
             <summary>
               Ищет локализованную строку, похожую на To work with the application, enter the bot connection token.
@@ -50,9 +85,34 @@
               Ищет локализованную строку, похожую на Help.
             </summary>
         </member>
+        <member name="P:ConstructorBot.Language.AppResources.Inline">
+            <summary>
+              Ищет локализованную строку, похожую на Inline.
+            </summary>
+        </member>
+        <member name="P:ConstructorBot.Language.AppResources.KeyboardSetup">
+            <summary>
+              Ищет локализованную строку, похожую на Keyboard Setup.
+            </summary>
+        </member>
+        <member name="P:ConstructorBot.Language.AppResources.Message">
+            <summary>
+              Ищет локализованную строку, похожую на Message.
+            </summary>
+        </member>
         <member name="P:ConstructorBot.Language.AppResources.Options">
             <summary>
               Ищет локализованную строку, похожую на Options.
+            </summary>
+        </member>
+        <member name="P:ConstructorBot.Language.AppResources.ReplyMessage">
+            <summary>
+              Ищет локализованную строку, похожую на Reply message.
+            </summary>
+        </member>
+        <member name="P:ConstructorBot.Language.AppResources.ResponseCondition">
+            <summary>
+              Ищет локализованную строку, похожую на Response condition.
             </summary>
         </member>
         <member name="P:ConstructorBot.Language.AppResources.Save">
@@ -75,9 +135,19 @@
               Ищет локализованную строку, похожую на The list of applications is empty.
             </summary>
         </member>
+        <member name="P:ConstructorBot.Language.AppResources.TheNameOfTheBox">
+            <summary>
+              Ищет локализованную строку, похожую на The name of the Box.
+            </summary>
+        </member>
         <member name="P:ConstructorBot.Language.AppResources.TutorialInTheOperationOfTheApplication">
             <summary>
               Ищет локализованную строку, похожую на Tutorial in the operation of the application.
+            </summary>
+        </member>
+        <member name="P:ConstructorBot.Language.AppResources.UrlLink">
+            <summary>
+              Ищет локализованную строку, похожую на Url link.
             </summary>
         </member>
         <member name="P:ConstructorBot.Language.AppResources.ViewingSavedApplications">

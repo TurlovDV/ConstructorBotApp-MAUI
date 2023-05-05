@@ -29,14 +29,17 @@ namespace ConstructorBot.ViewModel.InfoPageViewModel
         public int Position
         {
             get => _position;
-            set
+            set 
             {
                 _position = value;
 
                 OnPropertyChanged();
 
-                if (value == IntroScreens.Count - 1)
+                if (value == IntroScreens.Count)
+                { 
+                    AppShell.Current.GoToAsync($"..");
                     ButtonText = "Старт";
+                }
                 else
                     ButtonText = "Далее";
             }

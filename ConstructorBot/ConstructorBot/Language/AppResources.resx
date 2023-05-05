@@ -117,11 +117,26 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AddToTheApplication" xml:space="preserve">
+    <value>Add to the application</value>
+  </data>
+  <data name="Answer" xml:space="preserve">
+    <value>Answer</value>
+  </data>
+  <data name="AnyPhrase" xml:space="preserve">
+    <value>Any phrase</value>
+  </data>
   <data name="Applications" xml:space="preserve">
     <value>Applications</value>
   </data>
   <data name="BuildingABotUsingBlocks" xml:space="preserve">
     <value>Building a bot using blocks</value>
+  </data>
+  <data name="Button" xml:space="preserve">
+    <value>Button</value>
+  </data>
+  <data name="ButtonMessage" xml:space="preserve">
+    <value>Button message</value>
   </data>
   <data name="ConnectionSettings" xml:space="preserve">
     <value>Connection Settings</value>
@@ -129,14 +144,35 @@
   <data name="Constructor" xml:space="preserve">
     <value>Constructor</value>
   </data>
+  <data name="Create" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="DoNotAdd" xml:space="preserve">
+    <value>Do not add</value>
+  </data>
   <data name="EnterTheBotConnectionToken" xml:space="preserve">
     <value>To work with the application, enter the bot connection token</value>
   </data>
   <data name="Help" xml:space="preserve">
     <value>Help</value>
   </data>
+  <data name="Inline" xml:space="preserve">
+    <value>Inline</value>
+  </data>
+  <data name="KeyboardSetup" xml:space="preserve">
+    <value>Keyboard Setup</value>
+  </data>
+  <data name="Message" xml:space="preserve">
+    <value>Message</value>
+  </data>
   <data name="Options" xml:space="preserve">
     <value>Options</value>
+  </data>
+  <data name="ReplyMessage" xml:space="preserve">
+    <value>Reply message</value>
+  </data>
+  <data name="ResponseCondition" xml:space="preserve">
+    <value>Response condition</value>
   </data>
   <data name="Save" xml:space="preserve">
     <value>Save</value>
@@ -150,8 +186,14 @@
   <data name="TheListOfApplicationsIsEmpty" xml:space="preserve">
     <value>The list of applications is empty</value>
   </data>
+  <data name="TheNameOfTheBox" xml:space="preserve">
+    <value>The name of the Box</value>
+  </data>
   <data name="TutorialInTheOperationOfTheApplication" xml:space="preserve">
     <value>Tutorial in the operation of the application</value>
+  </data>
+  <data name="UrlLink" xml:space="preserve">
+    <value>Url link</value>
   </data>
   <data name="ViewingSavedApplications" xml:space="preserve">
     <value>Viewing saved applications</value>

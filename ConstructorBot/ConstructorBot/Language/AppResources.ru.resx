@@ -117,11 +117,26 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AddToTheApplication" xml:space="preserve">
+    <value>Добавить в заявку</value>
+  </data>
+  <data name="Answer" xml:space="preserve">
+    <value>Ответ</value>
+  </data>
+  <data name="AnyPhrase" xml:space="preserve">
+    <value>Любая фраза</value>
+  </data>
   <data name="Applications" xml:space="preserve">
     <value>Заявки</value>
   </data>
   <data name="BuildingABotUsingBlocks" xml:space="preserve">
     <value>Сборка бота с помощью блоков</value>
+  </data>
+  <data name="Button" xml:space="preserve">
+    <value>Кнопка</value>
+  </data>
+  <data name="ButtonMessage" xml:space="preserve">
+    <value>Сообщение кнопки</value>
   </data>
   <data name="ConnectionSettings" xml:space="preserve">
     <value>Настройки подключения</value>
@@ -129,14 +144,35 @@
   <data name="Constructor" xml:space="preserve">
     <value>Конструктор</value>
   </data>
+  <data name="Create" xml:space="preserve">
+    <value>Создать</value>
+  </data>
+  <data name="DoNotAdd" xml:space="preserve">
+    <value>Не добавлять</value>
+  </data>
   <data name="EnterTheBotConnectionToken" xml:space="preserve">
     <value>Для работы с приложением введите токен подключения бота</value>
   </data>
   <data name="Help" xml:space="preserve">
     <value>Помощь</value>
   </data>
+  <data name="Inline" xml:space="preserve">
+    <value>Встроенные</value>
+  </data>
+  <data name="KeyboardSetup" xml:space="preserve">
+    <value>Настройка клавиатуры</value>
+  </data>
+  <data name="Message" xml:space="preserve">
+    <value>Сообщение</value>
+  </data>
   <data name="Options" xml:space="preserve">
     <value>Настройки</value>
+  </data>
+  <data name="ReplyMessage" xml:space="preserve">
+    <value>Ответное сообщение</value>
+  </data>
+  <data name="ResponseCondition" xml:space="preserve">
+    <value>Условие ответа</value>
   </data>
   <data name="Save" xml:space="preserve">
     <value>Сохранить</value>
@@ -150,8 +186,14 @@
   <data name="TheListOfApplicationsIsEmpty" xml:space="preserve">
     <value>Список заявок пуст</value>
   </data>
+  <data name="TheNameOfTheBox" xml:space="preserve">
+    <value>Название бокса</value>
+  </data>
   <data name="TutorialInTheOperationOfTheApplication" xml:space="preserve">
     <value>Туториал в эксплуатации приложения</value>
+  </data>
+  <data name="UrlLink" xml:space="preserve">
+    <value>Url ссылка</value>
   </data>
   <data name="ViewingSavedApplications" xml:space="preserve">
     <value>Просмотр сохраненных заявок</value>

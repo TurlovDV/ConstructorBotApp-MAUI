@@ -11,7 +11,7 @@ using System.Xml.Serialization;
 
 namespace ConstructorBot.SaveData
 {
-    public class Storage // : IStorage
+    public class Storage
     {
         private static MapperConfiguration mapperConfiguration = new MapperConfiguration(cfg => 
         {

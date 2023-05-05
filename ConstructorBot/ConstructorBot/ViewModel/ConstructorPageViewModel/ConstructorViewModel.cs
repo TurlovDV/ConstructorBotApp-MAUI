@@ -13,6 +13,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using static ConstructorBot.App;
 using System.Reflection.Metadata.Ecma335;
+using ConstructorBot.Language;
 
 namespace ConstructorBot.ViewModel.ConstructorPageViewModel
 {
@@ -161,9 +162,9 @@ namespace ConstructorBot.ViewModel.ConstructorPageViewModel
                 {
                     var nam = (sender as Entry).Text;
                     if (nam == "" || nam == null)
-                        nam = $"Сообщение {ActionBoxes.Count}";
+                        nam = LocalizationResourceManager.Instance["Message"] + $" {ActionBoxes.Count}";
                     ActionBoxes.Add(ActionBoxBuilder
-                        .BuildMessageText("Сообщение")
+                        .BuildMessageText(LocalizationResourceManager.Instance["Message"].ToString())
                         .BuildQuestion("")
                         .BuildNaming(nam)
                         .GetActionBox());

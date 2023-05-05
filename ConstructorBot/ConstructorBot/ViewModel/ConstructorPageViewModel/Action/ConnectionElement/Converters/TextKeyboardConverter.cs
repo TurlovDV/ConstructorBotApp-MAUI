@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConstructorBot.Language;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -12,7 +13,7 @@ namespace ConstructorBot.ViewModel.ConstructorPageViewModel.Action.ConnectionEle
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (value.ToString() == "")
-                return "Кнопка";
+                return LocalizationResourceManager.Instance["Button"];
             return value;
         }
 

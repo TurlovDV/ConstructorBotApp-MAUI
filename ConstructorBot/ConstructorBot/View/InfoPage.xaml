@@ -8,7 +8,7 @@
              Shell.NavBarIsVisible="False">
 
     <Grid RowDefinitions="*,Auto">
-        <CarouselView Grid.RowSpan="2" Position="{Binding Position}"
+        <CarouselView Grid.RowSpan="2" Loop="False" Position="{Binding Position}"
                       IndicatorView="indicatorView"                       
                       HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" 
                       ItemsSource="{Binding IntroScreens}">
@@ -18,24 +18,16 @@
                 </DataTemplate>
             </CarouselView.ItemTemplate>
         </CarouselView>
-        <StackLayout  Orientation="Horizontal"  
-                      Grid.Row="1" >
-            <IndicatorView x:Name="indicatorView" 
-                           VerticalOptions="Center"
-                           Margin="10"
-                           IndicatorSize="10"
-                           IndicatorColor="LightGray"  
-                           SelectedIndicatorColor="#3A547B" />
-
-
-            <Frame 
+        <!--<StackLayout  Orientation="Horizontal" Grid.Row="1" >-->
+            <IndicatorView Grid.Row="1" x:Name="indicatorView" VerticalOptions="Center" HorizontalOptions="Center" Margin="10, 10, 10, 30" IndicatorSize="12" IndicatorColor="LightGray" SelectedIndicatorColor="#3A547B" />
+            <!--<Frame IsVisible="False" 
                 HorizontalOptions="EndAndExpand"
                 Padding="3"
                 Margin="35"
                 CornerRadius="100"
                 HeightRequest="80" 
                 WidthRequest="80"
-                BorderColor="#0d111a"
+                BorderColor="Transparent"
                 BackgroundColor="#3A547B">
                 <Label Text="{Binding ButtonText}" TextColor="White" 
                        FontSize="14"
@@ -45,8 +37,8 @@
                 <Frame.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding NextCommand}" />
                 </Frame.GestureRecognizers>
-            </Frame>
-        </StackLayout>
+            </Frame>-->
+        <!--</StackLayout>-->
     </Grid>
     
 </ContentPage>
