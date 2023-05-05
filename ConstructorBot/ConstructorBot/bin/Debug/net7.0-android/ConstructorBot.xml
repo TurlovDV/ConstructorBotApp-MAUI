@@ -4,6 +4,87 @@
         <name>ConstructorBot</name>
     </assembly>
     <members>
+        <member name="T:ConstructorBot.Language.AppResources">
+            <summary>
+              Класс ресурса со строгой типизацией для поиска локализованных строк и т.д.
+            </summary>
+        </member>
+        <member name="P:ConstructorBot.Language.AppResources.ResourceManager">
+            <summary>
+              Возвращает кэшированный экземпляр ResourceManager, использованный этим классом.
+            </summary>
+        </member>
+        <member name="P:ConstructorBot.Language.AppResources.Culture">
+            <summary>
+              Перезаписывает свойство CurrentUICulture текущего потока для всех
+              обращений к ресурсу с помощью этого класса ресурса со строгой типизацией.
+            </summary>
+        </member>
+        <member name="P:ConstructorBot.Language.AppResources.Applications">
+            <summary>
+              Ищет локализованную строку, похожую на Applications.
+            </summary>
+        </member>
+        <member name="P:ConstructorBot.Language.AppResources.BuildingABotUsingBlocks">
+            <summary>
+              Ищет локализованную строку, похожую на Building a bot using blocks.
+            </summary>
+        </member>
+        <member name="P:ConstructorBot.Language.AppResources.ConnectionSettings">
+            <summary>
+              Ищет локализованную строку, похожую на Connection Settings.
+            </summary>
+        </member>
+        <member name="P:ConstructorBot.Language.AppResources.Constructor">
+            <summary>
+              Ищет локализованную строку, похожую на Constructor.
+            </summary>
+        </member>
+        <member name="P:ConstructorBot.Language.AppResources.EnterTheBotConnectionToken">
+            <summary>
+              Ищет локализованную строку, похожую на To work with the application, enter the bot connection token.
+            </summary>
+        </member>
+        <member name="P:ConstructorBot.Language.AppResources.Help">
+            <summary>
+              Ищет локализованную строку, похожую на Help.
+            </summary>
+        </member>
+        <member name="P:ConstructorBot.Language.AppResources.Options">
+            <summary>
+              Ищет локализованную строку, похожую на Options.
+            </summary>
+        </member>
+        <member name="P:ConstructorBot.Language.AppResources.Save">
+            <summary>
+              Ищет локализованную строку, похожую на Save.
+            </summary>
+        </member>
+        <member name="P:ConstructorBot.Language.AppResources.Start">
+            <summary>
+              Ищет локализованную строку, похожую на Start.
+            </summary>
+        </member>
+        <member name="P:ConstructorBot.Language.AppResources.Stop">
+            <summary>
+              Ищет локализованную строку, похожую на Stop.
+            </summary>
+        </member>
+        <member name="P:ConstructorBot.Language.AppResources.TheListOfApplicationsIsEmpty">
+            <summary>
+              Ищет локализованную строку, похожую на The list of applications is empty.
+            </summary>
+        </member>
+        <member name="P:ConstructorBot.Language.AppResources.TutorialInTheOperationOfTheApplication">
+            <summary>
+              Ищет локализованную строку, похожую на Tutorial in the operation of the application.
+            </summary>
+        </member>
+        <member name="P:ConstructorBot.Language.AppResources.ViewingSavedApplications">
+            <summary>
+              Ищет локализованную строку, похожую на Viewing saved applications.
+            </summary>
+        </member>
         <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Button.TextColorTo(Microsoft.Maui.Controls.Button,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing)">
             <summary>
             Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color

@@ -5,6 +5,7 @@
              xmlns:vm="clr-namespace:ConstructorBot.ViewModel.MainPageViewModel"
              xmlns:vmConstructorCoverter="clr-namespace:ConstructorBot.ViewModel.ConstructorPageViewModel.Action.ConnectionElement.Converters"
              x:DataType="vm:MainViewModel"
+             xmlns:language="clr-namespace:ConstructorBot.Language"
              x:Class="ConstructorBot.MainPage"
              Title=""
              xmlns:ctm="clr-namespace:CommunityToolkit.Maui.Behaviors;assembly=CommunityToolkit.Maui"             
@@ -49,8 +50,8 @@
                                 </Frame>
                                 <Frame CornerRadius="0" Padding="0" Grid.Row="1" BackgroundColor="#E8E8E8" BorderColor="#E8E8E8">
                                     <StackLayout Margin="0, 5, 0, 0" Spacing="2">
-                                        <Label Margin="7,0,0,0" TextColor="Black" FontAttributes="Bold" Text="Конструктор"></Label>
-                                        <Label Margin="7,0,0,0" TextColor="Gray" FontSize="Micro" Text="Сборка бота с&#10;помощью блоков"></Label>
+                                        <Label Margin="7,0,0,0" TextColor="Black" FontAttributes="Bold" Text="{language:Translate Constructor}"></Label>
+                                        <Label Margin="7,0,0,0" TextColor="Gray" FontSize="Micro" Text="{language:Translate BuildingABotUsingBlocks}"></Label>
                                     </StackLayout>
                                 </Frame>
                             </Grid>
@@ -67,8 +68,8 @@
                                 </Frame>
                                 <Frame CornerRadius="0" Padding="0" Grid.Row="1" BackgroundColor="#E8E8E8" BorderColor="#E8E8E8">
                                     <StackLayout Margin="0, 5, 0, 0" Spacing="2">
-                                        <Label Margin="7,0,0,0" TextColor="Black" FontAttributes="Bold" Text="Настройки"></Label>
-                                        <Label Margin="7,0,0,0" TextColor="Gray" FontSize="Micro" Text="Настройки&#10;подключения"></Label>
+                                        <Label Margin="7,0,0,0" TextColor="Black" FontAttributes="Bold" Text="{language:Translate Options}"></Label>
+                                        <Label Margin="7,0,0,0" TextColor="Gray" FontSize="Micro" Text="{language:Translate ConnectionSettings}"></Label>
                                     </StackLayout>
                                 </Frame>
                             </Grid>
@@ -85,8 +86,8 @@
                                 </Frame>
                                 <Frame CornerRadius="0" Padding="0" Grid.Row="1" BackgroundColor="#E8E8E8" BorderColor="#E8E8E8">
                                     <StackLayout Margin="0, 5, 0, 0" Spacing="2">
-                                        <Label Margin="7,0,0,0" TextColor="Black" FontAttributes="Bold" Text="Помощь"></Label>
-                                        <Label Margin="7,0,0,0" TextColor="Gray" FontSize="Micro" Text="Туториал в эксплуатации&#10;приложения"></Label>
+                                        <Label Margin="7,0,0,0" TextColor="Black" FontAttributes="Bold" Text="{language:Translate Help}"></Label>
+                                        <Label Margin="7,0,0,0" TextColor="Gray" FontSize="Micro" Text="{language:Translate TutorialInTheOperationOfTheApplication}"></Label>
                                     </StackLayout>
                                 </Frame>
                             </Grid>
@@ -103,8 +104,8 @@
                                 </Frame>
                                 <Frame CornerRadius="0" Padding="0" Grid.Row="1" BackgroundColor="#E8E8E8" BorderColor="#E8E8E8">
                                     <StackLayout Margin="0, 5, 0, 0" Spacing="2">
-                                        <Label Margin="7,0,0,0" TextColor="Black" FontAttributes="Bold" Text="Заявки"></Label>
-                                        <Label Margin="7,0,0,0" TextColor="Gray" FontSize="Micro" Text="Просмотр сохраненных&#10;заявок"></Label>
+                                        <Label Margin="7,0,0,0" TextColor="Black" FontAttributes="Bold" Text="{language:Translate Applications}"></Label>
+                                        <Label Margin="7,0,0,0" TextColor="Gray" FontSize="Micro" Text="{language:Translate ViewingSavedApplications}"></Label>
                                     </StackLayout>
                                 </Frame>
                             </Grid>
@@ -121,13 +122,13 @@
                 <StackLayout HorizontalOptions="Start" VerticalOptions="Start" Spacing="10" Orientation="Horizontal">
                     <Image Source="options.svg" VerticalOptions="Center" WidthRequest="40" HeightRequest="40" BackgroundColor="Transparent"></Image>
                     <StackLayout Spacing="2" VerticalOptions="Center">
-                        <Label FontAttributes="Bold" Text="Настройки" FontSize="Small" TextColor="White"></Label>
-                        <Label Text="Настройки&#10;подключения" FontSize="Micro" TextColor="Gray"></Label>
+                        <Label FontAttributes="Bold" Text="{language:Translate Options}" FontSize="Small" TextColor="White"></Label>
+                        <Label Text="{language:Translate ConnectionSettings}" FontSize="Micro" TextColor="Gray"></Label>
                     </StackLayout>
                 </StackLayout>
 
                 <StackLayout Spacing="15">
-                    <Label Text="Для работы с приложений введите&#10;токен подключения бота" FontSize="Small" TextColor="White"></Label>
+                    <Label Text="{language:Translate EnterTheBotConnectionToken}" FontSize="Small" TextColor="White"></Label>
                     <!--Вылет фонового приложения из-за Entry во Frame-->
                     <Border BackgroundColor="Transparent" Stroke="Gray">
                         <Border.StrokeShape>
@@ -136,7 +137,7 @@
                         <Entry Text="{Binding TelegramToken, Mode=TwoWay}" Placeholder="Токен" HorizontalOptions="FillAndExpand" Margin="10,0,10,0"></Entry>
                     </Border>
 
-                    <Button Command="{Binding SaveOptionsTokenCommand}" HorizontalOptions="FillAndExpand" Text="Сохранить" TextColor="White" BackgroundColor="#2B3A62"></Button>
+                    <Button Command="{Binding SaveOptionsTokenCommand}" HorizontalOptions="FillAndExpand" Text="{language:Translate Save}" TextColor="White" BackgroundColor="#2B3A62"></Button>
                 </StackLayout>
 
             </StackLayout>
@@ -150,8 +151,8 @@
                     <StackLayout HorizontalOptions="Start" VerticalOptions="Start" Spacing="10" Orientation="Horizontal">
                         <Image Source="icone_notes.svg" VerticalOptions="Center" WidthRequest="45" HeightRequest="45" BackgroundColor="Transparent"></Image>
                         <StackLayout Spacing="2" VerticalOptions="Center">
-                            <Label FontAttributes="Bold" Text="Заявки" FontSize="Small" TextColor="White"></Label>
-                            <Label Text="Просмотр сохраненных&#10;заявок" FontSize="Micro" TextColor="Gray"></Label>
+                            <Label FontAttributes="Bold" Text="{language:Translate Applications}" FontSize="Small" TextColor="White"></Label>
+                            <Label Text="{language:Translate ViewingSavedApplications}" FontSize="Micro" TextColor="Gray"></Label>
                         </StackLayout>
                     </StackLayout>
                     <ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand">
@@ -191,7 +192,7 @@
                                     <Grid HorizontalOptions="FillAndExpand" RowDefinitions="*, 1.5*" VerticalOptions="FillAndExpand">
                                         <StackLayout HorizontalOptions="Center" VerticalOptions="End" Spacing="5">
                                             <Image Source="empty.png" WidthRequest="50" HeightRequest="50" HorizontalOptions="Center"></Image>
-                                            <Label Text="Список зявок пуст" FontAttributes="Bold" HorizontalOptions="Center" TextColor="Gray" FontSize="Small"></Label>
+                                            <Label Text="{language:Translate TheListOfApplicationsIsEmpty}" FontAttributes="Bold" HorizontalOptions="Center" TextColor="Gray" FontSize="Small"></Label>
                                         </StackLayout>
                                     </Grid>
                                 </DataTemplate>

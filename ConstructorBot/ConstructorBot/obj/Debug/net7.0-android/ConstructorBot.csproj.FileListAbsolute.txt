@@ -1154,3 +1154,8 @@ C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-android\
 C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-android\resizetizer\r\drawable-xxxhdpi\info3.png
 C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-android\resizetizer\r\drawable-xxxhdpi\info4.png
 C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-android\resizetizer\r\drawable-xxxhdpi\info5.png
+C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-android\ConstructorBot.Language.AppResources.resources
+C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-android\ConstructorBot.csproj.GenerateResource.cache
+C:\ConstructorBotProject\ConstructorBot\ConstructorBot\bin\Debug\net7.0-android\ru\ConstructorBot.resources.dll
+C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-android\ConstructorBot.Language.AppResources.ru.resources
+C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-android\ru\ConstructorBot.resources.dll

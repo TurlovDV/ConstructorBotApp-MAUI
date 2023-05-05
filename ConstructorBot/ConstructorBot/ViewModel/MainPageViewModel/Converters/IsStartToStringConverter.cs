@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConstructorBot.Language;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -12,8 +13,8 @@ namespace ConstructorBot.ViewModel.MainPageViewModel.Converters
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if ((bool)value)
-                return "Стоп";
-            return "Старт";
+                return LocalizationResourceManager.Instance["Stop"];
+            return LocalizationResourceManager.Instance["Start"];
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
