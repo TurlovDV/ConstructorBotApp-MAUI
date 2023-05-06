@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConstructorBot.Language;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -52,36 +53,41 @@ namespace ConstructorBot.ViewModel.InfoPageViewModel
         {
             IntroScreens.Add(new IntroScreenModel
             {
-                IntroTitle = "Order Your Food",
-                IntroDescription = "Now you can order food anytime right from mobile",
-                IntroImage = "info1"
+                IntroTitle = LocalizationResourceManager.Instance["info1"].ToString(),
+                IntroImage = "info1",
+                GridRow = 1,
+                LayoutOptions = LayoutOptions.Center
             });
 
             IntroScreens.Add(new IntroScreenModel
             {
-                IntroTitle = "Cooking Safe Food",
-                IntroDescription = "We are maintain safty and we keep clean while making food",
-                IntroImage = "info2"
+                IntroTitle = LocalizationResourceManager.Instance["info2"].ToString(),
+                IntroImage = "info2",
+                GridRow = 1,
+                LayoutOptions = LayoutOptions.Center
             });
 
             IntroScreens.Add(new IntroScreenModel
             {
-                IntroTitle = "Quick Delivery",
-                IntroDescription = "Orders your favorite meals will be immediately deliver.",
-                IntroImage = "info3"
+                IntroTitle = LocalizationResourceManager.Instance["info3"].ToString(),
+                IntroImage = "info3",
+                GridRow = 3,
+                LayoutOptions = LayoutOptions.Start
             });
             IntroScreens.Add(new IntroScreenModel
             {
-                IntroTitle = "Order Your Food",
-                IntroDescription = "Now you can order food anytime right from mobile",
-                IntroImage = "info4"
+                IntroTitle = LocalizationResourceManager.Instance["info4"].ToString(),
+                IntroImage = "info4",
+                GridRow = 3,
+                LayoutOptions = LayoutOptions.Start
             });
 
             IntroScreens.Add(new IntroScreenModel
             {
-                IntroTitle = "Cooking Safe Food",
-                IntroDescription = "We are maintain safty and we keep clean while making food",
-                IntroImage = "info5"
+                IntroTitle = LocalizationResourceManager.Instance["info5"].ToString(),
+                IntroImage = "info5",
+                GridRow = 1,
+                LayoutOptions = LayoutOptions.Center
             });
         }
 

@@ -159,6 +159,21 @@
   <data name="Help" xml:space="preserve">
     <value>Help</value>
   </data>
+  <data name="info1" xml:space="preserve">
+    <value>To get started, enter the telegram token</value>
+  </data>
+  <data name="info2" xml:space="preserve">
+    <value>To edit the bot, click on the attachment</value>
+  </data>
+  <data name="info3" xml:space="preserve">
+    <value>To connect the blocks tap on the first then on the second</value>
+  </data>
+  <data name="info4" xml:space="preserve">
+    <value>To edit a message tap on the block twice</value>
+  </data>
+  <data name="info5" xml:space="preserve">
+    <value>To turn on the bot, click start</value>
+  </data>
   <data name="Inline" xml:space="preserve">
     <value>Inline</value>
   </data>

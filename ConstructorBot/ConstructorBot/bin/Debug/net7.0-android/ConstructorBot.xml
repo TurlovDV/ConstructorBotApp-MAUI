@@ -90,6 +90,31 @@
               Ищет локализованную строку, похожую на Help.
             </summary>
         </member>
+        <member name="P:ConstructorBot.Language.AppResources.info1">
+            <summary>
+              Ищет локализованную строку, похожую на To get started, enter the telegram token.
+            </summary>
+        </member>
+        <member name="P:ConstructorBot.Language.AppResources.info2">
+            <summary>
+              Ищет локализованную строку, похожую на To edit the bot, click on the attachment.
+            </summary>
+        </member>
+        <member name="P:ConstructorBot.Language.AppResources.info3">
+            <summary>
+              Ищет локализованную строку, похожую на To connect the blocks tap on the first then on the second.
+            </summary>
+        </member>
+        <member name="P:ConstructorBot.Language.AppResources.info4">
+            <summary>
+              Ищет локализованную строку, похожую на To edit a message tap on the block twice.
+            </summary>
+        </member>
+        <member name="P:ConstructorBot.Language.AppResources.info5">
+            <summary>
+              Ищет локализованную строку, похожую на To turn on the bot, click start.
+            </summary>
+        </member>
         <member name="P:ConstructorBot.Language.AppResources.Inline">
             <summary>
               Ищет локализованную строку, похожую на Inline.

@@ -163,7 +163,7 @@
                             <Border.StrokeShape>
                                 <RoundRectangle CornerRadius="5,5,5,5" />
                             </Border.StrokeShape>
-                            <Picker x:Name="pickerLanguage" Title = "{language:Translate Language}" SelectedIndexChanged="Picker_SelectedIndexChanged">
+                            <Picker Margin="5, 0, 5, 0" x:Name="pickerLanguage" Title = "{language:Translate Language}" SelectedIndexChanged="Picker_SelectedIndexChanged">
                                 <Picker.Items>
                                     <x:String>Russian</x:String>
                                     <x:String>English</x:String>
@@ -247,7 +247,7 @@
                 <Frame BorderColor="White" BackgroundColor="Transparent" CornerRadius="100" Padding="0" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="115" HeightRequest="115">
                     <Grid>
                         <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-                            <Label Text="{Binding IsStart, Converter={StaticResource isStartToStringConverter}}" HorizontalOptions="Center" TextColor="White" FontAttributes="Bold" FontSize="Medium" ></Label>
+                            <Label x:Name="labelIsStart" Text="{Binding IsStart, Converter={StaticResource isStartToStringConverter}}" HorizontalOptions="Center" TextColor="White" FontAttributes="Bold" FontSize="Medium" ></Label>
                             <Label IsVisible="{Binding IsStart}" Text="{Binding NamingBot}" TextColor="Gray" FontSize="Small" HorizontalOptions="Center"></Label>
                         </StackLayout>
                         <Button Command="{Binding OnStartCommand}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Transparent"></Button>

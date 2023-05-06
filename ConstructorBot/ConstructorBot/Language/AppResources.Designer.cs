@@ -187,6 +187,51 @@ namespace ConstructorBot.Language {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на To get started, enter the telegram token.
+        /// </summary>
+        internal static string info1 {
+            get {
+                return ResourceManager.GetString("info1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на To edit the bot, click on the attachment.
+        /// </summary>
+        internal static string info2 {
+            get {
+                return ResourceManager.GetString("info2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на To connect the blocks tap on the first then on the second.
+        /// </summary>
+        internal static string info3 {
+            get {
+                return ResourceManager.GetString("info3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на To edit a message tap on the block twice.
+        /// </summary>
+        internal static string info4 {
+            get {
+                return ResourceManager.GetString("info4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на To turn on the bot, click start.
+        /// </summary>
+        internal static string info5 {
+            get {
+                return ResourceManager.GetString("info5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Inline.
         /// </summary>
         internal static string Inline {

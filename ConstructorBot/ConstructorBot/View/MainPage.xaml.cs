@@ -69,7 +69,12 @@ public partial class MainPage : ContentPage
     {
         if(pickerLanguage.SelectedItem.ToString() == "Russian")
             LocalizationResourceManager.Instance.SetCulture(new System.Globalization.CultureInfo("ru"));
-        if (pickerLanguage.SelectedItem.ToString() == "English")
+        if(pickerLanguage.SelectedItem.ToString() == "English")
             LocalizationResourceManager.Instance.SetCulture(new System.Globalization.CultureInfo("en"));
+
+        if(MainViewModel.IsStart)
+            labelIsStart.Text = LocalizationResourceManager.Instance["Stop"].ToString();
+        else
+            labelIsStart.Text = LocalizationResourceManager.Instance["Start"].ToString();
     }
 }

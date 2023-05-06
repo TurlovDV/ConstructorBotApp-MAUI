@@ -159,6 +159,27 @@
   <data name="Help" xml:space="preserve">
     <value>Помощь</value>
   </data>
+  <data name="info1" xml:space="preserve">
+    <value>Для начала работы введи
+ телеграмм токен</value>
+  </data>
+  <data name="info2" xml:space="preserve">
+    <value>Чтобы редактировать бота
+ перейди по вложению</value>
+  </data>
+  <data name="info3" xml:space="preserve">
+    <value>Чтобы соединить блоки
+ тапни на первый
+ потом на второй</value>
+  </data>
+  <data name="info4" xml:space="preserve">
+    <value>Чтобы редактировать сообщение тапни на блок
+ два раза</value>
+  </data>
+  <data name="info5" xml:space="preserve">
+    <value>Чтобы включить бота
+ нажмите старт</value>
+  </data>
   <data name="Inline" xml:space="preserve">
     <value>Встроенные</value>
   </data>

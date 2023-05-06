@@ -10,6 +10,7 @@ namespace ConstructorBot.ViewModel.InfoPageViewModel
     {
         public string IntroTitle { get; set; }
         public string IntroImage { get; set; }
-        public string IntroDescription { get; set; }
+        public LayoutOptions LayoutOptions { get; set; }
+        public int GridRow { get; set; }
     }
 }

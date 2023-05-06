@@ -7,19 +7,19 @@
              BackgroundColor="#1D2733"
              Shell.NavBarIsVisible="False">
 
-    <Grid RowDefinitions="*,Auto">
-        <CarouselView Grid.RowSpan="2" Loop="False" Position="{Binding Position}"
-                      IndicatorView="indicatorView"                       
-                      HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" 
-                      ItemsSource="{Binding IntroScreens}">
+    <Grid>
+        <CarouselView Grid.RowSpan="2" Loop="False" Position="{Binding Position}" IndicatorView="indicatorView" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" ItemsSource="{Binding IntroScreens}">
             <CarouselView.ItemTemplate>
                 <DataTemplate x:DataType="models:IntroScreenModel">
-                    <Image Source="{Binding IntroImage}" Margin="0" Aspect="AspectFill" HorizontalOptions="Fill" VerticalOptions="Fill"/>
+                    <Grid RowDefinitions="*, *, *, *">
+                        <Image Grid.RowSpan="4" Source="{Binding IntroImage}" Margin="0" Aspect="AspectFill" HorizontalOptions="Fill" VerticalOptions="Fill"/>
+                        <Label Margin="15, 0, 15, 0" HorizontalTextAlignment="Center" FontAttributes="Bold" Text="{Binding IntroTitle}" Grid.Row="{Binding GridRow}" FontSize="Large" HorizontalOptions="Center" VerticalOptions="{Binding LayoutOptions}"></Label>
+                    </Grid>
                 </DataTemplate>
             </CarouselView.ItemTemplate>
         </CarouselView>
         <!--<StackLayout  Orientation="Horizontal" Grid.Row="1" >-->
-         <IndicatorView Grid.Row="1" x:Name="indicatorView" VerticalOptions="Center" HorizontalOptions="Center" Margin="10, 10, 10, 30" IndicatorSize="12" IndicatorColor="LightGray" SelectedIndicatorColor="#3A547B" />
+         <IndicatorView Grid.Row="1" x:Name="indicatorView" VerticalOptions="End" HorizontalOptions="Center" Margin="10, 10, 10, 30" IndicatorSize="12" IndicatorColor="LightGray" SelectedIndicatorColor="#3A547B" />
             <!--<Frame IsVisible="False" 
                 HorizontalOptions="EndAndExpand"
                 Padding="3"
