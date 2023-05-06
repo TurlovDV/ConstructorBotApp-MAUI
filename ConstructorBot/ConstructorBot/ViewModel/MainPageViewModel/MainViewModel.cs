@@ -34,6 +34,7 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
         private bool isPageMain = true;
         private bool isInternetConnection = true;
         private string telegramToken;
+        private bool isPageSettingsApplaction;
 
         private List<ActionBox> _actions;
 
@@ -45,6 +46,16 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
             set
             {
                 isPageOptionsToken = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public bool IsPageSettingsApplaction
+        {
+            get => isPageSettingsApplaction;
+            set
+            {
+                isPageSettingsApplaction = value;
                 OnPropertyChanged();
             }
         }
@@ -208,7 +219,7 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
                         else
                         {
                             if (Connectivity.Current.NetworkAccess != NetworkAccess.Internet)
-                                await DependencyService.Get<App.IMessageService>().ShowAsync("Ошибка", "Убедитесь в достоверности подключения к интернету");
+                                await DependencyService.Get<App.IMessageService>().ShowAsync("Ошибка", "Нет подключения к интернету");
                             else
                                 await DependencyService.Get<App.IMessageService>().ShowAsync("Ошибка", "Убедитесь в достоверности токена");
                         }
@@ -244,6 +255,33 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
                 });
             }
         }
+
+
+        //Открыть/закрыть настройки приложения
+        public ICommand OpenSettingApplication
+        {
+            get
+            {
+                return new Command(() =>
+                {
+                    IsPageMain = !IsPageMain;
+                    IsPageSettingsApplaction = !IsPageSettingsApplaction;
+                });
+            }
+        }
+
+        ////Сохранить настройки приложения
+        //public ICommand SaveSettingApplication
+        //{
+        //    get
+        //    {
+        //        return new Command((object sender, EventArgs e) =>
+        //        {
+        //            IsPageMain = !IsPageMain;
+        //            IsPageSettingsApplaction = !IsPageSettingsApplaction;
+        //        });
+        //    }
+        //}
 
         //Открыть настройки воода токена
         public ICommand OpenOptionsTokenCommand

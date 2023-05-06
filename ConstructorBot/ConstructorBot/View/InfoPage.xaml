@@ -19,7 +19,7 @@
             </CarouselView.ItemTemplate>
         </CarouselView>
         <!--<StackLayout  Orientation="Horizontal" Grid.Row="1" >-->
-            <IndicatorView Grid.Row="1" x:Name="indicatorView" VerticalOptions="Center" HorizontalOptions="Center" Margin="10, 10, 10, 30" IndicatorSize="12" IndicatorColor="LightGray" SelectedIndicatorColor="#3A547B" />
+         <IndicatorView Grid.Row="1" x:Name="indicatorView" VerticalOptions="Center" HorizontalOptions="Center" Margin="10, 10, 10, 30" IndicatorSize="12" IndicatorColor="LightGray" SelectedIndicatorColor="#3A547B" />
             <!--<Frame IsVisible="False" 
                 HorizontalOptions="EndAndExpand"
                 Padding="3"

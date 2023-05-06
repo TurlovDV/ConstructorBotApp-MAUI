@@ -129,6 +129,9 @@
   <data name="Applications" xml:space="preserve">
     <value>Applications</value>
   </data>
+  <data name="ApplicationSettings" xml:space="preserve">
+    <value>Application settings</value>
+  </data>
   <data name="BuildingABotUsingBlocks" xml:space="preserve">
     <value>Building a bot using blocks</value>
   </data>
@@ -161,6 +164,9 @@
   </data>
   <data name="KeyboardSetup" xml:space="preserve">
     <value>Keyboard Setup</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Language</value>
   </data>
   <data name="Message" xml:space="preserve">
     <value>Message</value>

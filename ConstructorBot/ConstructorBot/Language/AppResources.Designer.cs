@@ -97,6 +97,15 @@ namespace ConstructorBot.Language {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Application settings.
+        /// </summary>
+        internal static string ApplicationSettings {
+            get {
+                return ResourceManager.GetString("ApplicationSettings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Building a bot using blocks.
         /// </summary>
         internal static string BuildingABotUsingBlocks {
@@ -192,6 +201,15 @@ namespace ConstructorBot.Language {
         internal static string KeyboardSetup {
             get {
                 return ResourceManager.GetString("KeyboardSetup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Language.
+        /// </summary>
+        internal static string Language {
+            get {
+                return ResourceManager.GetString("Language", resourceCulture);
             }
         }
         

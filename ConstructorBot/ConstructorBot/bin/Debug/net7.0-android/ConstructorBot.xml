@@ -40,6 +40,11 @@
               Ищет локализованную строку, похожую на Applications.
             </summary>
         </member>
+        <member name="P:ConstructorBot.Language.AppResources.ApplicationSettings">
+            <summary>
+              Ищет локализованную строку, похожую на Application settings.
+            </summary>
+        </member>
         <member name="P:ConstructorBot.Language.AppResources.BuildingABotUsingBlocks">
             <summary>
               Ищет локализованную строку, похожую на Building a bot using blocks.
@@ -93,6 +98,11 @@
         <member name="P:ConstructorBot.Language.AppResources.KeyboardSetup">
             <summary>
               Ищет локализованную строку, похожую на Keyboard Setup.
+            </summary>
+        </member>
+        <member name="P:ConstructorBot.Language.AppResources.Language">
+            <summary>
+              Ищет локализованную строку, похожую на Language.
             </summary>
         </member>
         <member name="P:ConstructorBot.Language.AppResources.Message">

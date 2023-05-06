@@ -115,7 +115,7 @@
                 </Frame>
             </Grid>
         </Frame>
-
+               
         <!--Изменение ключа подключения телеграм-->
         <Frame Grid.Row="2" Padding="20, 50, 20, 20" Grid.RowSpan="2" IsVisible="{Binding IsPageOptionsToken}" BackgroundColor="Transparent" BorderColor="Transparent" CornerRadius="0">
             <StackLayout Spacing="35" VerticalOptions="Start">
@@ -143,6 +143,40 @@
             </StackLayout>
         </Frame>
 
+        <!--Настройки приложения-->
+        <Frame Grid.Row="2" Padding="20, 50, 20, 20" Grid.RowSpan="2" IsVisible="{Binding IsPageSettingsApplaction}" BackgroundColor="Transparent" BorderColor="Transparent" CornerRadius="0">
+            <Grid>
+                <ImageButton Command="{Binding OpenSettingApplication}" HorizontalOptions="End" VerticalOptions="Start" HeightRequest="30" WidthRequest="30" Source="cross2.png"></ImageButton>
+                <StackLayout Spacing="35" VerticalOptions="Start">
+                    <StackLayout HorizontalOptions="Start" VerticalOptions="Start" Spacing="10" Orientation="Horizontal">
+                        <Image Source="settings.svg" VerticalOptions="Center" WidthRequest="40" HeightRequest="40" BackgroundColor="Transparent"></Image>
+                        <StackLayout Spacing="2" VerticalOptions="Center">
+                            <Label FontAttributes="Bold" Text="{language:Translate Options}" FontSize="Small" TextColor="White"></Label>
+                            <Label Text="{language:Translate ApplicationSettings}" FontSize="Micro" TextColor="Gray"></Label>
+                        </StackLayout>
+                    </StackLayout>
+
+                    <StackLayout Spacing="10">
+                        <Label Margin="5, 0, 0, 0" Text="{language:Translate Language}" FontSize="Small" TextColor="White"></Label>
+                        <!--Вылет фонового приложения из-за Entry во Frame-->
+                        <Border BackgroundColor="Transparent" Stroke="Gray">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="5,5,5,5" />
+                            </Border.StrokeShape>
+                            <Picker x:Name="pickerLanguage" Title = "{language:Translate Language}" SelectedIndexChanged="Picker_SelectedIndexChanged">
+                                <Picker.Items>
+                                    <x:String>Russian</x:String>
+                                    <x:String>English</x:String>
+                                </Picker.Items>
+                            </Picker>
+                        </Border>
+
+                        <!--<Button Command="{Binding SaveSettingApplication}" HorizontalOptions="FillAndExpand" Text="{language:Translate Save}" TextColor="White" BackgroundColor="#2B3A62"></Button>-->
+                    </StackLayout>
+                </StackLayout>
+            </Grid>
+        </Frame>
+        
         <!--Просмотр схраненных заявок-->
         <Frame Grid.Row="2" Padding="20, 50, 20, 20" Grid.RowSpan="2" IsVisible="{Binding IsPageViewRequest}" BackgroundColor="Transparent" BorderColor="Transparent" CornerRadius="0">
             <Grid>
@@ -258,6 +292,10 @@
                 <Image Source="subtract.svg" HorizontalOptions="FillAndExpand"></Image>
             </StackLayout>
         </Frame>
+
+        <!--кнокпка настройки приложения-->
+        <ImageButton Source="settings.svg" Grid.RowSpan="4" Padding="3" Command="{Binding OpenSettingApplication}" HeightRequest="45" WidthRequest="45" Margin="15" VerticalOptions="Start" HorizontalOptions="End"></ImageButton>
+
     </Grid>
 
 </ContentPage>

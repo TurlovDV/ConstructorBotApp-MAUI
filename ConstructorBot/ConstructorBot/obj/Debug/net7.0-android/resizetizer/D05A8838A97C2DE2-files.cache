@@ -60,6 +60,7 @@ obj\Debug\net7.0-android\resizetizer\r\drawable-hdpi\message_icone.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-hdpi\notes_icone.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-hdpi\options.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-hdpi\qwer.png
+obj\Debug\net7.0-android\resizetizer\r\drawable-hdpi\settings.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-hdpi\splash.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-hdpi\subtract.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-hdpi\subtract1.png
@@ -84,6 +85,7 @@ obj\Debug\net7.0-android\resizetizer\r\drawable-mdpi\message_icone.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-mdpi\notes_icone.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-mdpi\options.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-mdpi\qwer.png
+obj\Debug\net7.0-android\resizetizer\r\drawable-mdpi\settings.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-mdpi\splash.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-mdpi\subtract.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-mdpi\subtract1.png
@@ -108,6 +110,7 @@ obj\Debug\net7.0-android\resizetizer\r\drawable-xhdpi\message_icone.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xhdpi\notes_icone.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xhdpi\options.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xhdpi\qwer.png
+obj\Debug\net7.0-android\resizetizer\r\drawable-xhdpi\settings.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xhdpi\splash.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xhdpi\subtract.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xhdpi\subtract1.png
@@ -132,6 +135,7 @@ obj\Debug\net7.0-android\resizetizer\r\drawable-xxhdpi\message_icone.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xxhdpi\notes_icone.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xxhdpi\options.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xxhdpi\qwer.png
+obj\Debug\net7.0-android\resizetizer\r\drawable-xxhdpi\settings.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xxhdpi\splash.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xxhdpi\subtract.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xxhdpi\subtract1.png
@@ -156,6 +160,7 @@ obj\Debug\net7.0-android\resizetizer\r\drawable-xxxhdpi\message_icone.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xxxhdpi\notes_icone.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xxxhdpi\options.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xxxhdpi\qwer.png
+obj\Debug\net7.0-android\resizetizer\r\drawable-xxxhdpi\settings.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xxxhdpi\splash.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xxxhdpi\subtract.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xxxhdpi\subtract1.png

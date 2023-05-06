@@ -1,9 +1,11 @@
 using CommunityToolkit.Maui.Behaviors;
 using CommunityToolkit.Maui.Core.Platform;
+using ConstructorBot.Language;
 using ConstructorBot.ViewModel.ConstructorPageViewModel;
 using ConstructorBot.ViewModel.ConstructorPageViewModel.Action;
 using ConstructorBot.ViewModel.MainPageViewModel;
 using System.Collections.ObjectModel;
+using System.Globalization;
 
 namespace ConstructorBot;
 
@@ -33,6 +35,11 @@ public partial class MainPage : ContentPage
                 elipse_loading.Rotation = 0;
             }
         });
+
+        if (CultureInfo.CurrentCulture.ToString() == "ru-RU")
+            pickerLanguage.SelectedIndex = 0;
+        else
+            pickerLanguage.SelectedIndex = 1;
     }
 
 
@@ -58,8 +65,11 @@ public partial class MainPage : ContentPage
         return true;
     }
 
-    //private void ImageButton_Clicked(object sender, EventArgs e)
-    //{
-    //    ((sender as ImageButton).CommandParameter as StackLayout).IsVisible = !((sender as ImageButton).CommandParameter as StackLayout).IsVisible;
-    //}
+    private void Picker_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        if(pickerLanguage.SelectedItem.ToString() == "Russian")
+            LocalizationResourceManager.Instance.SetCulture(new System.Globalization.CultureInfo("ru"));
+        if (pickerLanguage.SelectedItem.ToString() == "English")
+            LocalizationResourceManager.Instance.SetCulture(new System.Globalization.CultureInfo("en"));
+    }
 }

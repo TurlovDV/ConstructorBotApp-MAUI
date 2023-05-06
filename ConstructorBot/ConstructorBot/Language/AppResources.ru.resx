@@ -129,6 +129,9 @@
   <data name="Applications" xml:space="preserve">
     <value>Заявки</value>
   </data>
+  <data name="ApplicationSettings" xml:space="preserve">
+    <value>Настройки приложения</value>
+  </data>
   <data name="BuildingABotUsingBlocks" xml:space="preserve">
     <value>Сборка бота с помощью блоков</value>
   </data>
@@ -161,6 +164,9 @@
   </data>
   <data name="KeyboardSetup" xml:space="preserve">
     <value>Настройка клавиатуры</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Язык</value>
   </data>
   <data name="Message" xml:space="preserve">
     <value>Сообщение</value>
