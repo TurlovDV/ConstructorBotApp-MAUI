@@ -189,7 +189,6 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
             }
         }
 
-
         private Task updateTableTask;
 
         public ICommand OnStartCommand

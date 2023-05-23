@@ -114,13 +114,14 @@ public partial class ConstructorPage : ContentPage
     double xOffset;
     double yOffset;
     bool IsMove = true;
+
+    private const double MIN_SCALE = 1;
+    private const double MAX_SCALE = 4;
+
     private void ZoomMatrix__PinchUpdated(object sender, PinchGestureUpdatedEventArgs e)
     {
-        //var MainMatrix = sender as Grid;
         if (e.Status == GestureStatus.Started)
         {
-            // Store the current scale factor applied to the wrapped user interface element,
-            // and zero the components for the center point of the translate transform.
             startScale = MainMatrix.Scale;
             MainMatrix.AnchorX = 0;
             MainMatrix.AnchorY = 0;
@@ -132,43 +133,23 @@ public partial class ConstructorPage : ContentPage
         }
         if (e.Status == GestureStatus.Running)
         {
-            //new Task(() =>
-            //{
-            //    IsMove = false;
-            //}).Start();
-            // Calculate the scale factor to be applied.
             currentScale += (e.Scale - 1) * startScale;
+            currentScale = Math.Max(MIN_SCALE, currentScale);
+            currentScale = Math.Min(currentScale, MAX_SCALE);
+            MainMatrix.Scale = currentScale;
 
-            currentScale = Math.Max(1, currentScale);
-
-            currentScale = Math.Min(currentScale, 3);
-
-            // The ScaleOrigin is in relative coordinates to the wrapped user interface element,
-            // so get the X pixel coordinate.
             double renderedX = MainMatrix.X + xOffset;
             double deltaX = renderedX / Width;
             double deltaWidth = Width / (MainMatrix.Width * startScale);
             double originX = (e.ScaleOrigin.X - deltaX) * deltaWidth;
-
-            // The ScaleOrigin is in relative coordinates to the wrapped user interface element,
-            // so get the Y pixel coordinate.
             double renderedY = MainMatrix.Y + yOffset;
             double deltaY = renderedY / Height;
             double deltaHeight = Height / (MainMatrix.Height * startScale);
             double originY = (e.ScaleOrigin.Y - deltaY) * deltaHeight;
-
-            // Calculate the transformed element pixel coordinates.
             double targetX = xOffset - (originX * MainMatrix.Width) * (currentScale - startScale);
             double targetY = yOffset - (originY * MainMatrix.Height) * (currentScale - startScale);
-
-            // Apply translation based on the change in origin.
-
             MainMatrix.TranslationX = double.Clamp(targetX, -Content.Width * (currentScale - 1), 0);
             MainMatrix.TranslationY = double.Clamp(targetY, -Content.Height * (currentScale - 1), 0);
-            
-            // Apply scale factor.
-
-            MainMatrix.Scale = currentScale;
 
         }
         if (e.Status == GestureStatus.Completed)
@@ -178,11 +159,21 @@ public partial class ConstructorPage : ContentPage
                 await Task.Delay(100);
                 IsMove = true;
             }).Start();
-            // Store the translation delta's of the wrapped user interface element.
+
             xOffset = MainMatrix.TranslationX;
             yOffset = MainMatrix.TranslationY;
         }
     }
+   
+    //private T Clamp<T>(T value, T minimum, T maximum) where T : IComparable
+    //{
+    //    if (value.CompareTo(minimum) < 0)
+    //        return minimum;
+    //    else if (value.CompareTo(maximum) > 0)
+    //        return maximum;
+    //    else
+    //        return value;
+    //}
 
     private async void ToolbarItem_Clicked(object sender, EventArgs e)
     {
@@ -195,6 +186,7 @@ public partial class ConstructorPage : ContentPage
     {
         return true;
     }
+
     protected override void OnNavigatedTo(NavigatedToEventArgs args)
     {
         base.OnNavigatedTo(args);
