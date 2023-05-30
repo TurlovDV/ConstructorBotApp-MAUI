@@ -1,4 +1,4 @@
-﻿using ConstructorBot.ViewModel.ConstructorPageViewModel.Action;
+﻿using ConstructorBot.Model.Action;
 using System;
 using System.Collections.Generic;
 using System.Linq;

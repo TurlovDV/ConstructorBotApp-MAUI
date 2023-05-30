@@ -8,6 +8,7 @@ public class MonoPackageManager_Resources {
 		"Microsoft.Maui.Controls.Xaml.dll",
 		"Microsoft.Maui.Controls.dll",
 		"Microsoft.Maui.Essentials.dll",
+		"AsyncAwaitBestPractices.dll",
 		"AutoMapper.dll",
 		"CommunityToolkit.Maui.dll",
 		"CommunityToolkit.Maui.Core.dll",
@@ -23,6 +24,7 @@ public class MonoPackageManager_Resources {
 		"Microsoft.Extensions.Options.dll",
 		"Microsoft.Extensions.Primitives.dll",
 		"Microsoft.Maui.Graphics.dll",
+		"Mopups.dll",
 		"Newtonsoft.Json.dll",
 		"Telegram.Bot.dll",
 		"Xamarin.Android.Glide.dll",
@@ -106,7 +108,7 @@ public class MonoPackageManager_Resources {
 		"Xamarin.Kotlin.StdLib.Jdk8.dll",
 		"Xamarin.KotlinX.Coroutines.Android.dll",
 		"Xamarin.KotlinX.Coroutines.Core.Jvm.dll",
-		"MessengerBotApi.dll",
+		"ConstructorBotMessengerApi.dll",
 	};
 	public static String[] Dependencies = new String[]{
 	};

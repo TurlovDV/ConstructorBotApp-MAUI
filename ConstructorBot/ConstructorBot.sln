@@ -5,7 +5,7 @@ VisualStudioVersion = 17.0.31611.283
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConstructorBot", "ConstructorBot\ConstructorBot.csproj", "{760E0C27-6F35-4C16-8128-71B6D2BF0A0D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessengerBotApi", "MessengerBotApi\MessengerBotApi.csproj", "{AEE78CD5-5501-4D92-9FEB-B24C2FFC05EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConstructorBotMessengerApi", "..\..\ConstructorBotTelegramApi\ConstructorBotMessengerApi\ConstructorBotMessengerApi.csproj", "{373EB23E-8552-4C3D-BE40-BB5FC6A04698}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,10 +19,10 @@ Global
 		{760E0C27-6F35-4C16-8128-71B6D2BF0A0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{760E0C27-6F35-4C16-8128-71B6D2BF0A0D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{760E0C27-6F35-4C16-8128-71B6D2BF0A0D}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{AEE78CD5-5501-4D92-9FEB-B24C2FFC05EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AEE78CD5-5501-4D92-9FEB-B24C2FFC05EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AEE78CD5-5501-4D92-9FEB-B24C2FFC05EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AEE78CD5-5501-4D92-9FEB-B24C2FFC05EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{373EB23E-8552-4C3D-BE40-BB5FC6A04698}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{373EB23E-8552-4C3D-BE40-BB5FC6A04698}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{373EB23E-8552-4C3D-BE40-BB5FC6A04698}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{373EB23E-8552-4C3D-BE40-BB5FC6A04698}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

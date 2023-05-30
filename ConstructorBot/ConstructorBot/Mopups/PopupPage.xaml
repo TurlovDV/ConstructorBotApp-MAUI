@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<mopups:PopupPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ConstructorBot.Mopups.PopupPage"
+             xmlns:mopups="clr-namespace:Mopups.Pages;assembly=Mopups"
+             BackgroundColor="Transparent"
+             xmlns:mopupsanim="clr-namespace:Mopups.Animations;assembly=Mopups">
+
+    <mopups:PopupPage.Animation>
+        <mopupsanim:ScaleAnimation
+            DurationIn="700"
+            EasingIn="BounceOut"
+            PositionIn="Bottom"
+            PositionOut="Center"
+            ScaleIn="1"
+            ScaleOut="0.7" />
+    </mopups:PopupPage.Animation>
+
+
+    <Border TranslationY="-30" StrokeShape="RoundRectangle 15, 15, 15, 15" WidthRequest="260" HeightRequest="180" BackgroundColor="Transparent" Stroke="Transparent">
+        <Grid RowDefinitions="Auto, *">
+            <Frame BackgroundColor="#4B80AC" Padding="0" HeightRequest="85" HorizontalOptions="FillAndExpand" CornerRadius="0" BorderColor="#4B80AC">
+                <Grid ColumnDefinitions="*, *">
+                    <Image Source="bot1.svg" VerticalOptions="End"></Image>
+                    <Label Margin="10, 0, 0, 0" x:Name="title" TextColor="White" Grid.Column="1" FontAttributes="Bold" VerticalOptions="Center" FontSize="Medium"></Label>
+                </Grid> 
+            </Frame>
+            <Frame BackgroundColor="#344B6D" Grid.Row="1" Padding="0" BorderColor="#344B6D" CornerRadius="0">
+                <Label Margin="10" FontAttributes="Bold" x:Name="message" HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="Center" TextColor="White" FontSize="Small"></Label>
+            </Frame>
+        </Grid>
+    </Border>
+    
+</mopups:PopupPage>

@@ -1,22 +1,20 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:vmConverter="clr-namespace:ConstructorBot.ViewModel.MainPageViewModel.Converters"
              xmlns:vm="clr-namespace:ConstructorBot.ViewModel.MainPageViewModel"
-             xmlns:vmConstructorCoverter="clr-namespace:ConstructorBot.ViewModel.ConstructorPageViewModel.Action.ConnectionElement.Converters"
+             xmlns:converter="clr-namespace:ConstructorBot.Converter"
              x:DataType="vm:MainViewModel"
              xmlns:language="clr-namespace:ConstructorBot.Language"
              x:Class="ConstructorBot.MainPage"
              Title=""
              xmlns:ctm="clr-namespace:CommunityToolkit.Maui.Behaviors;assembly=CommunityToolkit.Maui"             
-             xmlns:um="clr-namespace:ConstructorBotCore.UserModel;assembly=ConstructorBotCore"
              BackgroundColor="#3A547B">
 
     <ContentPage.Resources>
         <ResourceDictionary>
-            <vmConverter:DateTimeToStringConverter x:Key="dateTimeToStringConverter"></vmConverter:DateTimeToStringConverter>
-            <vmConverter:IsStartToStringConverter x:Key="isStartToStringConverter"></vmConverter:IsStartToStringConverter>
-            <vmConstructorCoverter:BoolInversionConverter x:Key="boolInversionConverter"></vmConstructorCoverter:BoolInversionConverter>
+            <converter:DateTimeToStringConverter x:Key="dateTimeToStringConverter"></converter:DateTimeToStringConverter>
+            <converter:IsStartToStringConverter x:Key="isStartToStringConverter"></converter:IsStartToStringConverter>
+            <converter:BoolInversionConverter x:Key="boolInversionConverter"></converter:BoolInversionConverter>
         </ResourceDictionary>
     </ContentPage.Resources>
 
@@ -56,7 +54,7 @@
                                 </Frame>
                             </Grid>
                         </Frame>
-                        <Button Grid.RowSpan="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Transparent" Clicked="Button_PushToConstructor"></Button>
+                        <Button Grid.RowSpan="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Transparent" IsEnabled="{Binding IsOneTap}" Command="{Binding GoToConstructorPage}"></Button>
                     </Grid>
                 </Frame>
                 <Frame Padding="0, 60, 10, 20" BorderColor="Transparent" BackgroundColor="Transparent" Grid.Row="0" Grid.Column="1">
@@ -82,17 +80,17 @@
                         <Frame Grid.RowSpan="2" Padding="0" CornerRadius="10" BackgroundColor="Transparent">
                             <Grid RowDefinitions="*, *">
                                 <Frame CornerRadius="00" Padding="20" Grid.Row="0" BackgroundColor="#4074A0" BorderColor="#4074A0">
-                                    <Image Source="info.svg" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="35" HeightRequest="35"></Image>
+                                    <Image Source="settings.svg" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="35" HeightRequest="35"></Image>
                                 </Frame>
                                 <Frame CornerRadius="0" Padding="0" Grid.Row="1" BackgroundColor="#E8E8E8" BorderColor="#E8E8E8">
                                     <StackLayout Margin="0, 5, 0, 0" Spacing="2">
-                                        <Label Margin="7,0,0,0" TextColor="Black" FontAttributes="Bold" Text="{language:Translate Help}"></Label>
-                                        <Label Margin="7,0,0,0" TextColor="Gray" FontSize="Micro" Text="{language:Translate TutorialInTheOperationOfTheApplication}"></Label>
+                                        <Label Margin="7,0,0,0" TextColor="Black" FontAttributes="Bold" Text="{language:Translate Settings}"></Label>
+                                        <Label Margin="7,0,0,0" TextColor="Gray" FontSize="Micro" Text="{language:Translate ApplicationSettings}"></Label>
                                     </StackLayout>
                                 </Frame>
                             </Grid>
                         </Frame>
-                        <Button Grid.RowSpan="2" Clicked="Button_PushToInfo" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Transparent"></Button>
+                        <Button Grid.RowSpan="2"  Command="{Binding OpenSettingApplication}"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Transparent"></Button>
                     </Grid>
                 </Frame>
                 <Frame Padding="0, 0, 10, 80" BorderColor="Transparent" BackgroundColor="Transparent" Grid.Row="1" Grid.Column="1">
@@ -110,6 +108,7 @@
                                 </Frame>
                             </Grid>
                         </Frame>
+                        <Frame IsVisible="{Binding IsNewNotification}" BorderColor="Transparent" WidthRequest="23" HeightRequest="23" CornerRadius="100" BackgroundColor="#F6FF92" HorizontalOptions="End" VerticalOptions="Start" Margin="5"></Frame>
                         <Button Grid.RowSpan="2" Command="{Binding OpenOrExitPageViewRequest}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Transparent"></Button>
                     </Grid>
                 </Frame>
@@ -134,7 +133,7 @@
                         <Border.StrokeShape>
                             <RoundRectangle CornerRadius="5,5,5,5" />
                         </Border.StrokeShape>
-                        <Entry Text="{Binding TelegramToken, Mode=TwoWay}" Placeholder="Токен" HorizontalOptions="FillAndExpand" Margin="10,0,10,0"></Entry>
+                        <Entry Text="{Binding ConnectionToken, Mode=TwoWay}" Placeholder="Токен" HorizontalOptions="FillAndExpand" Margin="10,0,10,0"></Entry>
                     </Border>
 
                     <Button Command="{Binding SaveOptionsTokenCommand}" HorizontalOptions="FillAndExpand" Text="{language:Translate Save}" TextColor="White" BackgroundColor="#2B3A62"></Button>
@@ -151,7 +150,7 @@
                     <StackLayout HorizontalOptions="Start" VerticalOptions="Start" Spacing="10" Orientation="Horizontal">
                         <Image Source="settings.svg" VerticalOptions="Center" WidthRequest="40" HeightRequest="40" BackgroundColor="Transparent"></Image>
                         <StackLayout Spacing="2" VerticalOptions="Center">
-                            <Label FontAttributes="Bold" Text="{language:Translate Options}" FontSize="Small" TextColor="White"></Label>
+                            <Label FontAttributes="Bold" Text="{language:Translate Settings}" FontSize="Small" TextColor="White"></Label>
                             <Label Text="{language:Translate ApplicationSettings}" FontSize="Micro" TextColor="Gray"></Label>
                         </StackLayout>
                     </StackLayout>
@@ -206,8 +205,9 @@
                                                 <StackLayout x:Name="viewSaveMessage" Grid.ColumnSpan="2" IsVisible="false" BindableLayout.ItemsSource="{Binding SaveAnswers}">
                                                     <BindableLayout.ItemTemplate>
                                                         <DataTemplate>
-                                                            <StackLayout x:DataType="vm:SaveMessageItem" Orientation="Horizontal" Spacing="15">
+                                                            <StackLayout x:DataType="vm:SaveMessageItem" Orientation="Horizontal" Spacing="5">
                                                                 <Label Text="{Binding Naming}" TextColor="Gray"></Label>
+                                                                <Label Text=":" TextColor="Gray"></Label>
                                                                 <Label Text="{Binding Answer}" TextColor="White"></Label>
                                                             </StackLayout>
                                                         </DataTemplate>
@@ -240,15 +240,16 @@
         <Frame Grid.Row="0" BackgroundColor="Transparent" Padding="0" BorderColor="Transparent">
             <Grid>
                 <Image Source="background_vector.svg" HorizontalOptions="FillAndExpand" VerticalOptions="Start"></Image>
-                <Image IsVisible="{Binding IsStart}" x:Name="elipse_loading" Source="elipse_loading.svg" WidthRequest="145" HeightRequest="145" HorizontalOptions="Center" VerticalOptions="Center"></Image>
+                <Image IsVisible="{Binding IsStart}" x:Name="elipse_loading" Source="elipse_loading.svg" WidthRequest="155" HeightRequest="155" HorizontalOptions="Center" VerticalOptions="Center"></Image>
 
-                <Frame BorderColor="White" BackgroundColor="Transparent" CornerRadius="100" Padding="0" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="117" HeightRequest="117"></Frame>
-                <Frame BorderColor="White" BackgroundColor="Transparent" CornerRadius="100" Padding="0" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="116" HeightRequest="116"></Frame>
-                <Frame BorderColor="White" BackgroundColor="Transparent" CornerRadius="100" Padding="0" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="115" HeightRequest="115">
+                <Frame BorderColor="White" BackgroundColor="Transparent" CornerRadius="100" Padding="0" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="127" HeightRequest="127"></Frame>
+                <Frame BorderColor="White" BackgroundColor="Transparent" CornerRadius="100" Padding="0" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="126" HeightRequest="126"></Frame>
+                <Frame BorderColor="White" BackgroundColor="Transparent" CornerRadius="100" Padding="0" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="125" HeightRequest="125">
                     <Grid>
                         <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                            <!--<Image Source="bot.png" WidthRequest="50" HeightRequest="50" HorizontalOptions="Center"></Image>-->
                             <Label x:Name="labelIsStart" Text="{Binding IsStart, Converter={StaticResource isStartToStringConverter}}" HorizontalOptions="Center" TextColor="White" FontAttributes="Bold" FontSize="Medium" ></Label>
-                            <Label IsVisible="{Binding IsStart}" Text="{Binding NamingBot}" TextColor="Gray" FontSize="Small" HorizontalOptions="Center"></Label>
+                            <Label IsVisible="{Binding IsStart}" Text="{Binding InfoTable.NamingBot}" TextColor="Gray" FontSize="Small" HorizontalOptions="Center"></Label>
                         </StackLayout>
                         <Button Command="{Binding OnStartCommand}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Transparent"></Button>
                     </Grid>
@@ -262,24 +263,24 @@
                 <StackLayout>
                     <StackLayout Orientation="Horizontal" Spacing="5">
                         <Image VerticalOptions="Center" Source="watch.png" WidthRequest="16" HeightRequest="16"></Image>
-                        <Label VerticalOptions="Center" Text="{Binding OnStartTiming, Converter={StaticResource dateTimeToStringConverter}}" FontAttributes="Bold"></Label>
+                        <Label VerticalOptions="Center" Text="{Binding InfoTable.OnStartTiming, Converter={StaticResource dateTimeToStringConverter}}" FontAttributes="Bold"></Label>
                     </StackLayout>
                     <BoxView HorizontalOptions="FillAndExpand" Margin="0,5,0,5" HeightRequest="1" Color="White"></BoxView>
                     <StackLayout Orientation="Horizontal" Spacing="5">
                         <Image VerticalOptions="Center" Source="chat.png" WidthRequest="16" HeightRequest="16"></Image>
-                        <Label VerticalOptions="Center" Text="{Binding CountMessage}" FontAttributes="Bold"></Label>
+                        <Label VerticalOptions="Center" Text="{Binding InfoTable.CountMessage}" FontAttributes="Bold"></Label>
                     </StackLayout>
                 </StackLayout>
                 <StackLayout>
                     <StackLayout Orientation="Horizontal" Spacing="5">
                         <Image VerticalOptions="Center" Source="wifi.png" WidthRequest="16" HeightRequest="16"></Image>
                         <Label VerticalOptions="Center" Text="0" IsVisible="{Binding IsInternetConnection, Converter={StaticResource boolInversionConverter}}" FontAttributes="Bold"></Label>
-                        <Label VerticalOptions="Center" Text="{Binding SpeedInternet}" IsVisible="{Binding IsInternetConnection}" FontAttributes="Bold"></Label>
+                        <Label VerticalOptions="Center" Text="{Binding InfoTable.PingInternet}" IsVisible="{Binding IsInternetConnection}" FontAttributes="Bold"></Label>
                     </StackLayout>
                     <BoxView HorizontalOptions="FillAndExpand" Margin="0,5,0,5" HeightRequest="1" Color="White"></BoxView>
                     <StackLayout Orientation="Horizontal" Spacing="5">
                         <Image VerticalOptions="Center" Source="account.png" WidthRequest="16" HeightRequest="16"></Image>
-                        <Label VerticalOptions="Center" Text="{Binding CountProfile}" FontAttributes="Bold"></Label>
+                        <Label VerticalOptions="Center" Text="{Binding InfoTable.CountUsers}" FontAttributes="Bold"></Label>
                     </StackLayout>
                 </StackLayout>
             </StackLayout>
@@ -293,9 +294,18 @@
             </StackLayout>
         </Frame>
 
-        <!--кнокпка настройки приложения-->
-        <ImageButton Source="settings.svg" Grid.RowSpan="4" Padding="3" Command="{Binding OpenSettingApplication}" HeightRequest="45" WidthRequest="45" Margin="15" VerticalOptions="Start" HorizontalOptions="End"></ImageButton>
 
+        <!--кнокпка настройки приложения-->
+        <Image Source="background_info.svg" HorizontalOptions="End" VerticalOptions="Start" HeightRequest="60"></Image>
+        <ImageButton Source="info.svg" Grid.RowSpan="4" Padding="4" Clicked="Button_PushToInfo" HeightRequest="45" WidthRequest="45" Margin="5" VerticalOptions="Start" HorizontalOptions="End"></ImageButton>
+
+        <Grid Grid.RowSpan="4" IsVisible="{Binding IsPageLoading}">
+            <Border Grid.RowSpan="4" HorizontalOptions="FillAndExpand" Margin="0" VerticalOptions="FillAndExpand" Scale="1.1" BackgroundColor="Black" Opacity="0.8"></Border>
+            <Frame HorizontalOptions="Center" BorderColor="Transparent" VerticalOptions="Center" WidthRequest="120" HeightRequest="120" CornerRadius="30" BackgroundColor="#1D2733">
+                <Image HorizontalOptions="Center" VerticalOptions="Center" Source="loader.gif" IsAnimationPlaying="True" x:Name="preloader"></Image>
+            </Frame>
+        </Grid>
+        
     </Grid>
 
 </ContentPage>

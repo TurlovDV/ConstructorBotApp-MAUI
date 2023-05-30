@@ -1,10 +1,10 @@
-﻿using ConstructorBot.SaveData;
+﻿using ConstructorBot.Model.Action;
+using ConstructorBot.Services;
+using ConstructorBot.Services.PopupService;
+using ConstructorBot.Services.ServiceStorage;
 using ConstructorBot.ViewModel.ConstructorPageViewModel;
-using ConstructorBot.ViewModel.ConstructorPageViewModel.Action;
-using ConstructorBotCore;
-using ConstructorBotCore.DomainMessagModel.ElementMessage;
-using ConstructorBotCore.UserModel.Action;
-using MessengerBotApi;
+using ConstructorBotMessengerApi;
+using ConstructorBotMessengerApi.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -21,24 +21,43 @@ using static ConstructorBot.App;
 
 namespace ConstructorBot.ViewModel.MainPageViewModel
 {
-    public class MainViewModel : INotifyPropertyChanged
+    public class MainViewModel : BaseViewModel
     {
         private bool isStart;
-        private DateTime onStartTiming;
-        private string namingBot;
-        private int countMessage;
-        private int countProfile;
-        private int speedInternet;
         private bool isPageOptionsToken;
         private bool isPageViewRequest;
         private bool isPageMain = true;
         private bool isInternetConnection = true;
-        private string telegramToken;
         private bool isPageSettingsApplaction;
+        private IStorageService storageService;
+        private IMessageService messageService;
+        private IBuildMessengerService buildMessengerService;
+        private Services.IControlMessengerService controlMessengerService;
+        private ConstructorBotMessengerApi.IMessengerService messengerCoreService;
+        private string connectionToken;
+        private bool isPageLoading;
+        public InfoTable InfoTable { get; set; } = new();
+        public ObservableCollection<LogicUser> SaveMesseges { get; set; }
 
-        private List<ActionBox> _actions;
+        public bool IsPageLoading
+        {
+            get => isPageLoading;
+            set
+            {
+                isPageLoading = value;
+                OnPropertyChanged();
+            }
+        }
 
-        public ObservableCollection<LogicUser> SaveMesseges { get; set; }        
+        public bool IsStart
+        {
+            get => isStart;
+            set
+            {
+                isStart = value;
+                OnPropertyChanged();
+            }
+        }
 
         public bool IsPageOptionsToken
         { 
@@ -70,8 +89,6 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
             }
         }
 
-        public Domain MessagerCore { get; set; }
-
         public bool IsPageViewRequest
         {
             get => isPageViewRequest;
@@ -92,105 +109,61 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
             }
         }
 
-        public int CountMessage
-        { 
-            get => countMessage; 
-            set
-            {
-                countMessage = value;
-                OnPropertyChanged();
-            }
-        }
-
-        public int CountProfile
+        public string ConnectionToken
         {
-            get => countProfile;
+            get => connectionToken;
             set
             {
-                countProfile = value;
+                connectionToken = value;
                 OnPropertyChanged();
             }
         }
-
-        public int SpeedInternet
-        {
-            get => speedInternet;
-            set
-            {
-                speedInternet = value;
-                OnPropertyChanged();
-            }
-        }
-
-        public string TelegramToken
-        { 
-            get => telegramToken; 
-            set
-            {
-                telegramToken = value;
-            }
-        }
-
-        public DateTime OnStartTiming
-        {
-            get => onStartTiming;
-            set
-            {
-                onStartTiming = value;
-                OnPropertyChanged();
-            }
-        }
-
-        public string NamingBot 
-        {
-            get => namingBot; 
-            set
-            {
-                namingBot = value;
-                OnPropertyChanged();
-            }
-        }
-
-        public MainViewModel()
+        
+        public MainViewModel(IStorageService storageService,  
+            IMessageService messageService,
+            IBuildMessengerService buildMessengerService,
+            ConstructorBotMessengerApi.IMessengerService messengerCoreService)
         {
             SaveMesseges = new ObservableCollection<LogicUser>();
-            //MessagerInfo = new ScoreboardMessagerInfo();
-            TelegramToken = Storage.GetKey();
+            this.storageService = storageService;
+            this.messageService = messageService;
+            this.buildMessengerService = buildMessengerService;
+            this.messengerCoreService = messengerCoreService;
+            messengerCoreService.OnNewLogger += NewNotification;
         }
+
+        private Task updateTableTask;
 
         public async Task UpdateInfoTable()
         {
             while (IsStart)
             {
                 await Task.Delay(1000);
-                OnStartTiming = OnStartTiming.AddSeconds(1);
-                var logger = MessagerCore.GetMessengerInfo();
-                CountMessage = logger.CountMessage;
-                CountProfile = logger.CountProfile;
-                SpeedInternet = new Random().Next(30, 70);
+                InfoTable.OnStartTiming = InfoTable.OnStartTiming.AddSeconds(1);
+                var logger = controlMessengerService.GetLogger();
+                InfoTable.CountMessage = logger.CountMessage;
+                InfoTable.CountUsers = logger.CountUsers;
+                InfoTable.PingInternet = new Random().Next(30, 70);
 
                 if (Connectivity.Current.NetworkAccess == NetworkAccess.Internet)
                 {
                     if (!IsInternetConnection)
                     {
-                        MessagerCore.Stop();
-                        await MessagerCore.Start();
+                        await controlMessengerService.Restart();
                         IsInternetConnection = true;
                     }
                 }
                 else
                     IsInternetConnection = false;
 
-                if (OnStartTiming.Minute % 5 == 0 && OnStartTiming.Second == 0 && OnStartTiming.Minute != 0)
+                if (InfoTable.OnStartTiming.Minute % 5 == 0 && InfoTable.OnStartTiming.Second == 0 && InfoTable.OnStartTiming.Minute != 0)
                 {
-                    MessagerCore.Stop();
-                    await MessagerCore.Start();
+                    await controlMessengerService.Restart();
                 }
             }
         }
-
-        private Task updateTableTask;
-
+        
+        //Начало работы
         public ICommand OnStartCommand
         {
             get
@@ -199,17 +172,17 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
                 {
                     if (!IsStart)
                     {
-                        _actions = ServiceProvider.GetService<ConstructorViewModel>().ActionBoxes.ToList();
-                        MessagerCore = new Domain(LogicMatrixConverter.GetParentActions(_actions), TelegramToken);
-                        var resultOnStart = await MessagerCore.Start();
+                        controlMessengerService = buildMessengerService.Initialization(LogicMatrixConverter.GetParentActions(
+                            storageService.GetActions()), storageService.GetConnectionToken());
+
+                        var resultOnStart = await controlMessengerService.Start();
                         if (resultOnStart != null)
                         {
-                            NamingBot = resultOnStart.Name;
-                            var _backGround = ServiceProvider.GetService<IServiceDomainBot>();
-                            _backGround.Start();
+                            
+                            InfoTable.NamingBot = resultOnStart.Name;
                             IsStart = !IsStart;
 
-                            OnStartTiming = new DateTime();
+                            InfoTable.OnStartTiming = new DateTime();
                             if (updateTableTask == null || updateTableTask.Status == TaskStatus.RanToCompletion)
                                 updateTableTask = UpdateInfoTable();
                             
@@ -218,43 +191,47 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
                         else
                         {
                             if (Connectivity.Current.NetworkAccess != NetworkAccess.Internet)
-                                await DependencyService.Get<App.IMessageService>().ShowAsync("Ошибка", "Нет подключения к интернету");
+                                await messageService.ShowAsync("Ошибка", "Нет подключения к интернету");
                             else
-                                await DependencyService.Get<App.IMessageService>().ShowAsync("Ошибка", "Убедитесь в достоверности токена");
+                                await messageService.ShowAsync("Ошибка", "Убедитесь в достоверности токена");
                         }
                     }
                     else
                     {
-                        MessagerCore.Stop();
-                        var _backGround = ServiceProvider.GetService<IServiceDomainBot>();
-                        _backGround.Stop();
+                        controlMessengerService.Stop();
                         IsStart = !IsStart;
                     }
                 });
             }
         }
 
-        public bool IsStart
-        { 
-            get => isStart;
-            set
+        //Для отслеживания одного нажатия для прехода на страницу ConstructorPage
+        bool isOneTap = false;
+        public bool IsOneTap
+        {
+            get => isOneTap;
+            set 
             {
-                isStart = value;
+                isOneTap = value;
                 OnPropertyChanged();
             }
         }
-
-        public ICommand PushConstructorPage
+        
+        //Перейти к странице коснтсруктора
+        public ICommand GoToConstructorPage
         {
             get
             {
-                return new Command(() =>
+                return new Command(async () =>
                 {
-                                
+                    IsOneTap = false;
+                    IsPageLoading = true;
+                    await Shell.Current.GoToAsync("ConstructorPage");
+                    IsPageLoading = false;
+                    IsOneTap = true;
                 });
             }
         }
-
 
         //Открыть/закрыть настройки приложения
         public ICommand OpenSettingApplication
@@ -269,19 +246,6 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
             }
         }
 
-        ////Сохранить настройки приложения
-        //public ICommand SaveSettingApplication
-        //{
-        //    get
-        //    {
-        //        return new Command((object sender, EventArgs e) =>
-        //        {
-        //            IsPageMain = !IsPageMain;
-        //            IsPageSettingsApplaction = !IsPageSettingsApplaction;
-        //        });
-        //    }
-        //}
-
         //Открыть настройки воода токена
         public ICommand OpenOptionsTokenCommand
         {
@@ -289,10 +253,29 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
             {
                 return new Command(() =>
                 {
+                    ConnectionToken = storageService.GetConnectionToken();
                     IsPageMain = false;
                     IsPageOptionsToken = true;
                 });
             }
+        }
+
+
+        private bool isNewNotification;
+        public bool IsNewNotification
+        {
+            get => isNewNotification;
+            set
+            {
+                isNewNotification = value;
+                OnPropertyChanged();
+            }
+        }
+
+        //Новое сохраенное сообщение
+        public void NewNotification(Logger logger)
+        {            
+             IsNewNotification = true;            
         }
 
         //Открыть / закрыть окно просмотра сохраненных заявок
@@ -302,19 +285,27 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
             {
                 return new Command(() =>
                 {
+                    IsNewNotification = false;
                     IsPageMain = !IsPageMain;
                     IsPageViewRequest = !IsPageViewRequest;
 
-                    SaveMesseges.Clear();
-                    if(MessagerCore != null)
-                        MessagerCore.GetMessengerInfo().LogicUsers
-                            .ForEach(x => SaveMesseges.Add(new LogicUser()
-                            {
-                                FirstName = x.FirstName,
-                                LastName = x.LastName,
-                                SaveAnswers = new ObservableCollection<SaveMessageItem>(x.SaveMessage.ToList()
-                                    .Select(y => new SaveMessageItem() { Answer = y.Value, Naming = y.Key }).ToList())
-                            }));                    
+                    if (IsPageViewRequest)
+                    {
+                        SaveMesseges.Clear();
+                        if (controlMessengerService is not null)
+                        {
+                            var actions = controlMessengerService.GetLogger();
+                            if (actions is not null)
+                                actions.LogicUsers
+                                    .ForEach(x => SaveMesseges.Add(new LogicUser()
+                                    {
+                                        FirstName = x.FirstName,
+                                        LastName = x.LastName,
+                                        SaveAnswers = new ObservableCollection<SaveMessageItem>(x.SaveMessage.ToList()
+                                            .Select(y => new SaveMessageItem() { Answer = y.Value, Naming = y.Key }).ToList())
+                                    }));
+                        }
+                    }
                 });
             }
         }
@@ -327,7 +318,6 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
                 return new Command((object sender) =>
                 {
                     (sender as StackLayout).IsVisible = !(sender as StackLayout).IsVisible;
-                    //(sender as LogicUser).IsView = !(sender as LogicUser).IsView;
                 });
             }
         }
@@ -339,19 +329,12 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
             {
                 return new Command(() =>
                 {
-                    if(TelegramToken.Trim() != "" || TelegramToken.Trim() != null)
-                        Storage.SetKey(TelegramToken.Trim());
+                    if(ConnectionToken.Trim() != "" || ConnectionToken.Trim() != null)
+                        storageService.SetConnectionToken(ConnectionToken.Trim());
                     IsPageMain = true;
                     IsPageOptionsToken = false;
                 });
             }
-        }
-     
-        public event PropertyChangedEventHandler PropertyChanged;
-        
-        public void OnPropertyChanged([CallerMemberName] string prop = "")
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
-        }
+        }     
     }
 }

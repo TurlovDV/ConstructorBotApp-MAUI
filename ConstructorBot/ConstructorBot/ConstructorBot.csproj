@@ -48,12 +48,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Fonts\Shentox-Regular.ttf" />
+	  <None Remove="Resources\Fonts\Srbija-Sans.otf" />
 	  <None Remove="Resources\Images\account.png" />
 	  <None Remove="Resources\Images\addMedia.png" />
 	  <None Remove="Resources\Images\back.svg" />
+	  <None Remove="Resources\Images\background_info.svg" />
 	  <None Remove="Resources\Images\background_vector.svg" />
 	  <None Remove="Resources\Images\back_icon.png" />
 	  <None Remove="Resources\Images\back_icon_black.png" />
+	  <None Remove="Resources\Images\bot1.svg" />
 	  <None Remove="Resources\Images\chat.png" />
 	  <None Remove="Resources\Images\constructor.svg" />
 	  <None Remove="Resources\Images\cross.png" />
@@ -72,6 +76,7 @@
 	  <None Remove="Resources\Images\info5.svg" />
 	  <None Remove="Resources\Images\keyboard1.png" />
 	  <None Remove="Resources\Images\keyboard_black.png" />
+	  <None Remove="Resources\Images\loader.gif" />
 	  <None Remove="Resources\Images\menu.png" />
 	  <None Remove="Resources\Images\message_icone.svg" />
 	  <None Remove="Resources\Images\music_icon.png" />
@@ -97,11 +102,8 @@
 		<PackageReference Include="CommunityToolkit.Maui" Version="4.0.0" />
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.1.0" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
+		<PackageReference Include="Mopups" Version="1.1.1" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <ProjectReference Include="..\MessengerBotApi\MessengerBotApi.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -120,6 +122,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="Mopups\PopupPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="View\ConstructorPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -129,6 +134,14 @@
 	  <MauiXaml Update="View\MainPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="View\PreloaderView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	</ItemGroup>
 
+	<ItemGroup>
+	  <ProjectReference Include="..\..\..\ConstructorBotTelegramApi\ConstructorBotMessengerApi\ConstructorBotMessengerApi.csproj" />
+	</ItemGroup>
+
+	
 </Project>

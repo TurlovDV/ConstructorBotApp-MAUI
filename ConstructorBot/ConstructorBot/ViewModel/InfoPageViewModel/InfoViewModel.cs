@@ -1,4 +1,5 @@
 ﻿using ConstructorBot.Language;
+using ConstructorBot.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -15,37 +16,18 @@ namespace ConstructorBot.ViewModel.InfoPageViewModel
     {
         #region Properties
 
-        private string _buttonText = "Далее";
-        public string ButtonText
+        private int position;
+        private bool isViewButton;
+        public bool IsViewButton
         {
-            get => _buttonText;
+            get => isViewButton;
             set
             {
-                _buttonText = value;
+                isViewButton = value;
                 OnPropertyChanged();
             }
         }
-
-        private int _position;
-        public int Position
-        {
-            get => _position;
-            set 
-            {
-                _position = value;
-
-                OnPropertyChanged();
-
-                if (value == IntroScreens.Count)
-                { 
-                    AppShell.Current.GoToAsync($"..");
-                    ButtonText = "Старт";
-                }
-                else
-                    ButtonText = "Далее";
-            }
-        }
-
+        
         public ObservableCollection<IntroScreenModel> IntroScreens { get; set; } = new ObservableCollection<IntroScreenModel>();
         #endregion
 
@@ -91,20 +73,18 @@ namespace ConstructorBot.ViewModel.InfoPageViewModel
             });
         }
 
-
-
         public ICommand NextCommand => new Command(async () =>
         {
-            if (Position >= IntroScreens.Count - 1)
-            {
-                await AppShell.Current.GoToAsync($"//{nameof(MainPage)}");
-            }
-            else
-            {
-                Position += 1;
-            }
+              await AppShell.Current.GoToAsync($"..");
         });
-        
+
+        public ICommand PositionChangedCommand => new Command(() =>
+        {
+            position++;
+            if (position >= IntroScreens.Count - 1)
+                IsViewButton = true;
+        });
+
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string prop = "")
         {

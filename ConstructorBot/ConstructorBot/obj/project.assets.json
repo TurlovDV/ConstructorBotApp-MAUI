@@ -2,6 +2,19 @@
   "version": 3,
   "targets": {
     "net7.0-android33.0": {
+      "AsyncAwaitBestPractices/6.0.4": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/AsyncAwaitBestPractices.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AsyncAwaitBestPractices.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "AutoMapper/12.0.1": {
         "type": "package",
         "dependencies": {
@@ -264,6 +277,22 @@
         "runtime": {
           "lib/net7.0-android33.0/Microsoft.Maui.Graphics.dll": {
             "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Mopups/1.1.1": {
+        "type": "package",
+        "dependencies": {
+          "AsyncAwaitBestPractices": "6.0.4"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/Mopups.dll": {
+            "related": ".aar;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/Mopups.dll": {
+            "related": ".aar;.xml"
           }
         }
       },
@@ -2024,21 +2053,34 @@
           "buildTransitive/net6.0-android31.0/Xamarin.KotlinX.Coroutines.Core.Jvm.targets": {}
         }
       },
-      "MessengerBotApi/1.0.0": {
+      "ConstructorBotMessengerApi/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Telegram.Bot": "18.0.0"
         },
         "compile": {
-          "bin/placeholder/MessengerBotApi.dll": {}
+          "bin/placeholder/ConstructorBotMessengerApi.dll": {}
         },
         "runtime": {
-          "bin/placeholder/MessengerBotApi.dll": {}
+          "bin/placeholder/ConstructorBotMessengerApi.dll": {}
         }
       }
     },
     "net7.0-android33.0/android-arm": {
+      "AsyncAwaitBestPractices/6.0.4": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/AsyncAwaitBestPractices.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AsyncAwaitBestPractices.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "AutoMapper/12.0.1": {
         "type": "package",
         "dependencies": {
@@ -2301,6 +2343,22 @@
         "runtime": {
           "lib/net7.0-android33.0/Microsoft.Maui.Graphics.dll": {
             "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Mopups/1.1.1": {
+        "type": "package",
+        "dependencies": {
+          "AsyncAwaitBestPractices": "6.0.4"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/Mopups.dll": {
+            "related": ".aar;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/Mopups.dll": {
+            "related": ".aar;.xml"
           }
         }
       },
@@ -4061,21 +4119,34 @@
           "buildTransitive/net6.0-android31.0/Xamarin.KotlinX.Coroutines.Core.Jvm.targets": {}
         }
       },
-      "MessengerBotApi/1.0.0": {
+      "ConstructorBotMessengerApi/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Telegram.Bot": "18.0.0"
         },
         "compile": {
-          "bin/placeholder/MessengerBotApi.dll": {}
+          "bin/placeholder/ConstructorBotMessengerApi.dll": {}
         },
         "runtime": {
-          "bin/placeholder/MessengerBotApi.dll": {}
+          "bin/placeholder/ConstructorBotMessengerApi.dll": {}
         }
       }
     },
     "net7.0-android33.0/android-arm64": {
+      "AsyncAwaitBestPractices/6.0.4": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/AsyncAwaitBestPractices.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AsyncAwaitBestPractices.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "AutoMapper/12.0.1": {
         "type": "package",
         "dependencies": {
@@ -4338,6 +4409,22 @@
         "runtime": {
           "lib/net7.0-android33.0/Microsoft.Maui.Graphics.dll": {
             "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Mopups/1.1.1": {
+        "type": "package",
+        "dependencies": {
+          "AsyncAwaitBestPractices": "6.0.4"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/Mopups.dll": {
+            "related": ".aar;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/Mopups.dll": {
+            "related": ".aar;.xml"
           }
         }
       },
@@ -6098,21 +6185,34 @@
           "buildTransitive/net6.0-android31.0/Xamarin.KotlinX.Coroutines.Core.Jvm.targets": {}
         }
       },
-      "MessengerBotApi/1.0.0": {
+      "ConstructorBotMessengerApi/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Telegram.Bot": "18.0.0"
         },
         "compile": {
-          "bin/placeholder/MessengerBotApi.dll": {}
+          "bin/placeholder/ConstructorBotMessengerApi.dll": {}
         },
         "runtime": {
-          "bin/placeholder/MessengerBotApi.dll": {}
+          "bin/placeholder/ConstructorBotMessengerApi.dll": {}
         }
       }
     },
     "net7.0-android33.0/android-x64": {
+      "AsyncAwaitBestPractices/6.0.4": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/AsyncAwaitBestPractices.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AsyncAwaitBestPractices.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "AutoMapper/12.0.1": {
         "type": "package",
         "dependencies": {
@@ -6375,6 +6475,22 @@
         "runtime": {
           "lib/net7.0-android33.0/Microsoft.Maui.Graphics.dll": {
             "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Mopups/1.1.1": {
+        "type": "package",
+        "dependencies": {
+          "AsyncAwaitBestPractices": "6.0.4"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/Mopups.dll": {
+            "related": ".aar;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/Mopups.dll": {
+            "related": ".aar;.xml"
           }
         }
       },
@@ -8135,21 +8251,34 @@
           "buildTransitive/net6.0-android31.0/Xamarin.KotlinX.Coroutines.Core.Jvm.targets": {}
         }
       },
-      "MessengerBotApi/1.0.0": {
+      "ConstructorBotMessengerApi/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Telegram.Bot": "18.0.0"
         },
         "compile": {
-          "bin/placeholder/MessengerBotApi.dll": {}
+          "bin/placeholder/ConstructorBotMessengerApi.dll": {}
         },
         "runtime": {
-          "bin/placeholder/MessengerBotApi.dll": {}
+          "bin/placeholder/ConstructorBotMessengerApi.dll": {}
         }
       }
     },
     "net7.0-android33.0/android-x86": {
+      "AsyncAwaitBestPractices/6.0.4": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/AsyncAwaitBestPractices.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AsyncAwaitBestPractices.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "AutoMapper/12.0.1": {
         "type": "package",
         "dependencies": {
@@ -8412,6 +8541,22 @@
         "runtime": {
           "lib/net7.0-android33.0/Microsoft.Maui.Graphics.dll": {
             "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Mopups/1.1.1": {
+        "type": "package",
+        "dependencies": {
+          "AsyncAwaitBestPractices": "6.0.4"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/Mopups.dll": {
+            "related": ".aar;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/Mopups.dll": {
+            "related": ".aar;.xml"
           }
         }
       },
@@ -10172,21 +10317,34 @@
           "buildTransitive/net6.0-android31.0/Xamarin.KotlinX.Coroutines.Core.Jvm.targets": {}
         }
       },
-      "MessengerBotApi/1.0.0": {
+      "ConstructorBotMessengerApi/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Telegram.Bot": "18.0.0"
         },
         "compile": {
-          "bin/placeholder/MessengerBotApi.dll": {}
+          "bin/placeholder/ConstructorBotMessengerApi.dll": {}
         },
         "runtime": {
-          "bin/placeholder/MessengerBotApi.dll": {}
+          "bin/placeholder/ConstructorBotMessengerApi.dll": {}
         }
       }
     },
     "net7.0-android33.0/iossimulator-x64": {
+      "AsyncAwaitBestPractices/6.0.4": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/AsyncAwaitBestPractices.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AsyncAwaitBestPractices.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "AutoMapper/12.0.1": {
         "type": "package",
         "dependencies": {
@@ -10449,6 +10607,22 @@
         "runtime": {
           "lib/net7.0-android33.0/Microsoft.Maui.Graphics.dll": {
             "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Mopups/1.1.1": {
+        "type": "package",
+        "dependencies": {
+          "AsyncAwaitBestPractices": "6.0.4"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/Mopups.dll": {
+            "related": ".aar;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/Mopups.dll": {
+            "related": ".aar;.xml"
           }
         }
       },
@@ -12209,21 +12383,34 @@
           "buildTransitive/net6.0-android31.0/Xamarin.KotlinX.Coroutines.Core.Jvm.targets": {}
         }
       },
-      "MessengerBotApi/1.0.0": {
+      "ConstructorBotMessengerApi/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Telegram.Bot": "18.0.0"
         },
         "compile": {
-          "bin/placeholder/MessengerBotApi.dll": {}
+          "bin/placeholder/ConstructorBotMessengerApi.dll": {}
         },
         "runtime": {
-          "bin/placeholder/MessengerBotApi.dll": {}
+          "bin/placeholder/ConstructorBotMessengerApi.dll": {}
         }
       }
     },
     "net7.0-android33.0/maccatalyst-x64": {
+      "AsyncAwaitBestPractices/6.0.4": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/AsyncAwaitBestPractices.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AsyncAwaitBestPractices.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "AutoMapper/12.0.1": {
         "type": "package",
         "dependencies": {
@@ -12486,6 +12673,22 @@
         "runtime": {
           "lib/net7.0-android33.0/Microsoft.Maui.Graphics.dll": {
             "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Mopups/1.1.1": {
+        "type": "package",
+        "dependencies": {
+          "AsyncAwaitBestPractices": "6.0.4"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/Mopups.dll": {
+            "related": ".aar;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/Mopups.dll": {
+            "related": ".aar;.xml"
           }
         }
       },
@@ -14246,21 +14449,34 @@
           "buildTransitive/net6.0-android31.0/Xamarin.KotlinX.Coroutines.Core.Jvm.targets": {}
         }
       },
-      "MessengerBotApi/1.0.0": {
+      "ConstructorBotMessengerApi/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Telegram.Bot": "18.0.0"
         },
         "compile": {
-          "bin/placeholder/MessengerBotApi.dll": {}
+          "bin/placeholder/ConstructorBotMessengerApi.dll": {}
         },
         "runtime": {
-          "bin/placeholder/MessengerBotApi.dll": {}
+          "bin/placeholder/ConstructorBotMessengerApi.dll": {}
         }
       }
     },
     "net7.0-android33.0/win10-x64": {
+      "AsyncAwaitBestPractices/6.0.4": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/AsyncAwaitBestPractices.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AsyncAwaitBestPractices.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "AutoMapper/12.0.1": {
         "type": "package",
         "dependencies": {
@@ -14523,6 +14739,22 @@
         "runtime": {
           "lib/net7.0-android33.0/Microsoft.Maui.Graphics.dll": {
             "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Mopups/1.1.1": {
+        "type": "package",
+        "dependencies": {
+          "AsyncAwaitBestPractices": "6.0.4"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/Mopups.dll": {
+            "related": ".aar;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/Mopups.dll": {
+            "related": ".aar;.xml"
           }
         }
       },
@@ -16283,21 +16515,34 @@
           "buildTransitive/net6.0-android31.0/Xamarin.KotlinX.Coroutines.Core.Jvm.targets": {}
         }
       },
-      "MessengerBotApi/1.0.0": {
+      "ConstructorBotMessengerApi/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Telegram.Bot": "18.0.0"
         },
         "compile": {
-          "bin/placeholder/MessengerBotApi.dll": {}
+          "bin/placeholder/ConstructorBotMessengerApi.dll": {}
         },
         "runtime": {
-          "bin/placeholder/MessengerBotApi.dll": {}
+          "bin/placeholder/ConstructorBotMessengerApi.dll": {}
         }
       }
     },
     "net7.0-ios16.1": {
+      "AsyncAwaitBestPractices/6.0.4": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/AsyncAwaitBestPractices.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AsyncAwaitBestPractices.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "AutoMapper/12.0.1": {
         "type": "package",
         "dependencies": {
@@ -16550,6 +16795,22 @@
           }
         }
       },
+      "Mopups/1.1.1": {
+        "type": "package",
+        "dependencies": {
+          "AsyncAwaitBestPractices": "6.0.4"
+        },
+        "compile": {
+          "lib/net7.0-ios16.1/Mopups.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-ios16.1/Mopups.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Newtonsoft.Json/13.0.2": {
         "type": "package",
         "compile": {
@@ -16579,21 +16840,34 @@
           }
         }
       },
-      "MessengerBotApi/1.0.0": {
+      "ConstructorBotMessengerApi/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Telegram.Bot": "18.0.0"
         },
         "compile": {
-          "bin/placeholder/MessengerBotApi.dll": {}
+          "bin/placeholder/ConstructorBotMessengerApi.dll": {}
         },
         "runtime": {
-          "bin/placeholder/MessengerBotApi.dll": {}
+          "bin/placeholder/ConstructorBotMessengerApi.dll": {}
         }
       }
     },
     "net7.0-ios16.1/android-arm": {
+      "AsyncAwaitBestPractices/6.0.4": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/AsyncAwaitBestPractices.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AsyncAwaitBestPractices.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "AutoMapper/12.0.1": {
         "type": "package",
         "dependencies": {
@@ -16846,6 +17120,22 @@
           }
         }
       },
+      "Mopups/1.1.1": {
+        "type": "package",
+        "dependencies": {
+          "AsyncAwaitBestPractices": "6.0.4"
+        },
+        "compile": {
+          "lib/net7.0-ios16.1/Mopups.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-ios16.1/Mopups.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Newtonsoft.Json/13.0.2": {
         "type": "package",
         "compile": {
@@ -16875,21 +17165,34 @@
           }
         }
       },
-      "MessengerBotApi/1.0.0": {
+      "ConstructorBotMessengerApi/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Telegram.Bot": "18.0.0"
         },
         "compile": {
-          "bin/placeholder/MessengerBotApi.dll": {}
+          "bin/placeholder/ConstructorBotMessengerApi.dll": {}
         },
         "runtime": {
-          "bin/placeholder/MessengerBotApi.dll": {}
+          "bin/placeholder/ConstructorBotMessengerApi.dll": {}
         }
       }
     },
     "net7.0-ios16.1/android-arm64": {
+      "AsyncAwaitBestPractices/6.0.4": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/AsyncAwaitBestPractices.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AsyncAwaitBestPractices.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "AutoMapper/12.0.1": {
         "type": "package",
         "dependencies": {
@@ -17142,6 +17445,22 @@
           }
         }
       },
+      "Mopups/1.1.1": {
+        "type": "package",
+        "dependencies": {
+          "AsyncAwaitBestPractices": "6.0.4"
+        },
+        "compile": {
+          "lib/net7.0-ios16.1/Mopups.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-ios16.1/Mopups.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Newtonsoft.Json/13.0.2": {
         "type": "package",
         "compile": {
@@ -17171,21 +17490,34 @@
           }
         }
       },
-      "MessengerBotApi/1.0.0": {
+      "ConstructorBotMessengerApi/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Telegram.Bot": "18.0.0"
         },
         "compile": {
-          "bin/placeholder/MessengerBotApi.dll": {}
+          "bin/placeholder/ConstructorBotMessengerApi.dll": {}
         },
         "runtime": {
-          "bin/placeholder/MessengerBotApi.dll": {}
+          "bin/placeholder/ConstructorBotMessengerApi.dll": {}
         }
       }
     },
     "net7.0-ios16.1/android-x64": {
+      "AsyncAwaitBestPractices/6.0.4": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/AsyncAwaitBestPractices.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AsyncAwaitBestPractices.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "AutoMapper/12.0.1": {
         "type": "package",
         "dependencies": {
@@ -17438,6 +17770,22 @@
           }
         }
       },
+      "Mopups/1.1.1": {
+        "type": "package",
+        "dependencies": {
+          "AsyncAwaitBestPractices": "6.0.4"
+        },
+        "compile": {
+          "lib/net7.0-ios16.1/Mopups.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-ios16.1/Mopups.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Newtonsoft.Json/13.0.2": {
         "type": "package",
         "compile": {
@@ -17467,21 +17815,34 @@
           }
         }
       },
-      "MessengerBotApi/1.0.0": {
+      "ConstructorBotMessengerApi/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Telegram.Bot": "18.0.0"
         },
         "compile": {
-          "bin/placeholder/MessengerBotApi.dll": {}
+          "bin/placeholder/ConstructorBotMessengerApi.dll": {}
         },
         "runtime": {
-          "bin/placeholder/MessengerBotApi.dll": {}
+          "bin/placeholder/ConstructorBotMessengerApi.dll": {}
         }
       }
     },
     "net7.0-ios16.1/android-x86": {
+      "AsyncAwaitBestPractices/6.0.4": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/AsyncAwaitBestPractices.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AsyncAwaitBestPractices.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "AutoMapper/12.0.1": {
         "type": "package",
         "dependencies": {
@@ -17734,6 +18095,22 @@
           }
         }
       },
+      "Mopups/1.1.1": {
+        "type": "package",
+        "dependencies": {
+          "AsyncAwaitBestPractices": "6.0.4"
+        },
+        "compile": {
+          "lib/net7.0-ios16.1/Mopups.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-ios16.1/Mopups.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Newtonsoft.Json/13.0.2": {
         "type": "package",
         "compile": {
@@ -17763,21 +18140,34 @@
           }
         }
       },
-      "MessengerBotApi/1.0.0": {
+      "ConstructorBotMessengerApi/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Telegram.Bot": "18.0.0"
         },
         "compile": {
-          "bin/placeholder/MessengerBotApi.dll": {}
+          "bin/placeholder/ConstructorBotMessengerApi.dll": {}
         },
         "runtime": {
-          "bin/placeholder/MessengerBotApi.dll": {}
+          "bin/placeholder/ConstructorBotMessengerApi.dll": {}
         }
       }
     },
     "net7.0-ios16.1/iossimulator-x64": {
+      "AsyncAwaitBestPractices/6.0.4": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/AsyncAwaitBestPractices.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AsyncAwaitBestPractices.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "AutoMapper/12.0.1": {
         "type": "package",
         "dependencies": {
@@ -18030,6 +18420,22 @@
           }
         }
       },
+      "Mopups/1.1.1": {
+        "type": "package",
+        "dependencies": {
+          "AsyncAwaitBestPractices": "6.0.4"
+        },
+        "compile": {
+          "lib/net7.0-ios16.1/Mopups.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-ios16.1/Mopups.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Newtonsoft.Json/13.0.2": {
         "type": "package",
         "compile": {
@@ -18059,21 +18465,34 @@
           }
         }
       },
-      "MessengerBotApi/1.0.0": {
+      "ConstructorBotMessengerApi/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Telegram.Bot": "18.0.0"
         },
         "compile": {
-          "bin/placeholder/MessengerBotApi.dll": {}
+          "bin/placeholder/ConstructorBotMessengerApi.dll": {}
         },
         "runtime": {
-          "bin/placeholder/MessengerBotApi.dll": {}
+          "bin/placeholder/ConstructorBotMessengerApi.dll": {}
         }
       }
     },
     "net7.0-ios16.1/maccatalyst-x64": {
+      "AsyncAwaitBestPractices/6.0.4": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/AsyncAwaitBestPractices.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AsyncAwaitBestPractices.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "AutoMapper/12.0.1": {
         "type": "package",
         "dependencies": {
@@ -18326,6 +18745,22 @@
           }
         }
       },
+      "Mopups/1.1.1": {
+        "type": "package",
+        "dependencies": {
+          "AsyncAwaitBestPractices": "6.0.4"
+        },
+        "compile": {
+          "lib/net7.0-ios16.1/Mopups.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-ios16.1/Mopups.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Newtonsoft.Json/13.0.2": {
         "type": "package",
         "compile": {
@@ -18355,21 +18790,34 @@
           }
         }
       },
-      "MessengerBotApi/1.0.0": {
+      "ConstructorBotMessengerApi/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Telegram.Bot": "18.0.0"
         },
         "compile": {
-          "bin/placeholder/MessengerBotApi.dll": {}
+          "bin/placeholder/ConstructorBotMessengerApi.dll": {}
         },
         "runtime": {
-          "bin/placeholder/MessengerBotApi.dll": {}
+          "bin/placeholder/ConstructorBotMessengerApi.dll": {}
         }
       }
     },
     "net7.0-ios16.1/win10-x64": {
+      "AsyncAwaitBestPractices/6.0.4": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/AsyncAwaitBestPractices.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AsyncAwaitBestPractices.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "AutoMapper/12.0.1": {
         "type": "package",
         "dependencies": {
@@ -18622,6 +19070,22 @@
           }
         }
       },
+      "Mopups/1.1.1": {
+        "type": "package",
+        "dependencies": {
+          "AsyncAwaitBestPractices": "6.0.4"
+        },
+        "compile": {
+          "lib/net7.0-ios16.1/Mopups.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-ios16.1/Mopups.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Newtonsoft.Json/13.0.2": {
         "type": "package",
         "compile": {
@@ -18651,21 +19115,34 @@
           }
         }
       },
-      "MessengerBotApi/1.0.0": {
+      "ConstructorBotMessengerApi/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Telegram.Bot": "18.0.0"
         },
         "compile": {
-          "bin/placeholder/MessengerBotApi.dll": {}
+          "bin/placeholder/ConstructorBotMessengerApi.dll": {}
         },
         "runtime": {
-          "bin/placeholder/MessengerBotApi.dll": {}
+          "bin/placeholder/ConstructorBotMessengerApi.dll": {}
         }
       }
     },
     "net7.0-maccatalyst16.1": {
+      "AsyncAwaitBestPractices/6.0.4": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/AsyncAwaitBestPractices.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AsyncAwaitBestPractices.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "AutoMapper/12.0.1": {
         "type": "package",
         "dependencies": {
@@ -18918,6 +19395,22 @@
           }
         }
       },
+      "Mopups/1.1.1": {
+        "type": "package",
+        "dependencies": {
+          "AsyncAwaitBestPractices": "6.0.4"
+        },
+        "compile": {
+          "lib/net7.0-maccatalyst16.1/Mopups.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-maccatalyst16.1/Mopups.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Newtonsoft.Json/13.0.2": {
         "type": "package",
         "compile": {
@@ -18947,21 +19440,34 @@
           }
         }
       },
-      "MessengerBotApi/1.0.0": {
+      "ConstructorBotMessengerApi/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Telegram.Bot": "18.0.0"
         },
         "compile": {
-          "bin/placeholder/MessengerBotApi.dll": {}
+          "bin/placeholder/ConstructorBotMessengerApi.dll": {}
         },
         "runtime": {
-          "bin/placeholder/MessengerBotApi.dll": {}
+          "bin/placeholder/ConstructorBotMessengerApi.dll": {}
         }
       }
     },
     "net7.0-maccatalyst16.1/android-arm": {
+      "AsyncAwaitBestPractices/6.0.4": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/AsyncAwaitBestPractices.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AsyncAwaitBestPractices.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "AutoMapper/12.0.1": {
         "type": "package",
         "dependencies": {
@@ -19214,6 +19720,22 @@
           }
         }
       },
+      "Mopups/1.1.1": {
+        "type": "package",
+        "dependencies": {
+          "AsyncAwaitBestPractices": "6.0.4"
+        },
+        "compile": {
+          "lib/net7.0-maccatalyst16.1/Mopups.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-maccatalyst16.1/Mopups.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Newtonsoft.Json/13.0.2": {
         "type": "package",
         "compile": {
@@ -19243,21 +19765,34 @@
           }
         }
       },
-      "MessengerBotApi/1.0.0": {
+      "ConstructorBotMessengerApi/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Telegram.Bot": "18.0.0"
         },
         "compile": {
-          "bin/placeholder/MessengerBotApi.dll": {}
+          "bin/placeholder/ConstructorBotMessengerApi.dll": {}
         },
         "runtime": {
-          "bin/placeholder/MessengerBotApi.dll": {}
+          "bin/placeholder/ConstructorBotMessengerApi.dll": {}
         }
       }
     },
     "net7.0-maccatalyst16.1/android-arm64": {
+      "AsyncAwaitBestPractices/6.0.4": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/AsyncAwaitBestPractices.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AsyncAwaitBestPractices.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "AutoMapper/12.0.1": {
         "type": "package",
         "dependencies": {
@@ -19510,6 +20045,22 @@
           }
         }
       },
+      "Mopups/1.1.1": {
+        "type": "package",
+        "dependencies": {
+          "AsyncAwaitBestPractices": "6.0.4"
+        },
+        "compile": {
+          "lib/net7.0-maccatalyst16.1/Mopups.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-maccatalyst16.1/Mopups.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Newtonsoft.Json/13.0.2": {
         "type": "package",
         "compile": {
@@ -19539,21 +20090,34 @@
           }
         }
       },
-      "MessengerBotApi/1.0.0": {
+      "ConstructorBotMessengerApi/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Telegram.Bot": "18.0.0"
         },
         "compile": {
-          "bin/placeholder/MessengerBotApi.dll": {}
+          "bin/placeholder/ConstructorBotMessengerApi.dll": {}
         },
         "runtime": {
-          "bin/placeholder/MessengerBotApi.dll": {}
+          "bin/placeholder/ConstructorBotMessengerApi.dll": {}
         }
       }
     },
     "net7.0-maccatalyst16.1/android-x64": {
+      "AsyncAwaitBestPractices/6.0.4": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/AsyncAwaitBestPractices.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AsyncAwaitBestPractices.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "AutoMapper/12.0.1": {
         "type": "package",
         "dependencies": {
@@ -19806,6 +20370,22 @@
           }
         }
       },
+      "Mopups/1.1.1": {
+        "type": "package",
+        "dependencies": {
+          "AsyncAwaitBestPractices": "6.0.4"
+        },
+        "compile": {
+          "lib/net7.0-maccatalyst16.1/Mopups.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-maccatalyst16.1/Mopups.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Newtonsoft.Json/13.0.2": {
         "type": "package",
         "compile": {
@@ -19835,21 +20415,34 @@
           }
         }
       },
-      "MessengerBotApi/1.0.0": {
+      "ConstructorBotMessengerApi/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Telegram.Bot": "18.0.0"
         },
         "compile": {
-          "bin/placeholder/MessengerBotApi.dll": {}
+          "bin/placeholder/ConstructorBotMessengerApi.dll": {}
         },
         "runtime": {
-          "bin/placeholder/MessengerBotApi.dll": {}
+          "bin/placeholder/ConstructorBotMessengerApi.dll": {}
         }
       }
     },
     "net7.0-maccatalyst16.1/android-x86": {
+      "AsyncAwaitBestPractices/6.0.4": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/AsyncAwaitBestPractices.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AsyncAwaitBestPractices.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "AutoMapper/12.0.1": {
         "type": "package",
         "dependencies": {
@@ -20102,6 +20695,22 @@
           }
         }
       },
+      "Mopups/1.1.1": {
+        "type": "package",
+        "dependencies": {
+          "AsyncAwaitBestPractices": "6.0.4"
+        },
+        "compile": {
+          "lib/net7.0-maccatalyst16.1/Mopups.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-maccatalyst16.1/Mopups.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Newtonsoft.Json/13.0.2": {
         "type": "package",
         "compile": {
@@ -20131,21 +20740,34 @@
           }
         }
       },
-      "MessengerBotApi/1.0.0": {
+      "ConstructorBotMessengerApi/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Telegram.Bot": "18.0.0"
         },
         "compile": {
-          "bin/placeholder/MessengerBotApi.dll": {}
+          "bin/placeholder/ConstructorBotMessengerApi.dll": {}
         },
         "runtime": {
-          "bin/placeholder/MessengerBotApi.dll": {}
+          "bin/placeholder/ConstructorBotMessengerApi.dll": {}
         }
       }
     },
     "net7.0-maccatalyst16.1/iossimulator-x64": {
+      "AsyncAwaitBestPractices/6.0.4": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/AsyncAwaitBestPractices.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AsyncAwaitBestPractices.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "AutoMapper/12.0.1": {
         "type": "package",
         "dependencies": {
@@ -20398,6 +21020,22 @@
           }
         }
       },
+      "Mopups/1.1.1": {
+        "type": "package",
+        "dependencies": {
+          "AsyncAwaitBestPractices": "6.0.4"
+        },
+        "compile": {
+          "lib/net7.0-maccatalyst16.1/Mopups.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-maccatalyst16.1/Mopups.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Newtonsoft.Json/13.0.2": {
         "type": "package",
         "compile": {
@@ -20427,21 +21065,34 @@
           }
         }
       },
-      "MessengerBotApi/1.0.0": {
+      "ConstructorBotMessengerApi/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Telegram.Bot": "18.0.0"
         },
         "compile": {
-          "bin/placeholder/MessengerBotApi.dll": {}
+          "bin/placeholder/ConstructorBotMessengerApi.dll": {}
         },
         "runtime": {
-          "bin/placeholder/MessengerBotApi.dll": {}
+          "bin/placeholder/ConstructorBotMessengerApi.dll": {}
         }
       }
     },
     "net7.0-maccatalyst16.1/maccatalyst-x64": {
+      "AsyncAwaitBestPractices/6.0.4": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/AsyncAwaitBestPractices.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AsyncAwaitBestPractices.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "AutoMapper/12.0.1": {
         "type": "package",
         "dependencies": {
@@ -20694,6 +21345,22 @@
           }
         }
       },
+      "Mopups/1.1.1": {
+        "type": "package",
+        "dependencies": {
+          "AsyncAwaitBestPractices": "6.0.4"
+        },
+        "compile": {
+          "lib/net7.0-maccatalyst16.1/Mopups.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-maccatalyst16.1/Mopups.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Newtonsoft.Json/13.0.2": {
         "type": "package",
         "compile": {
@@ -20723,21 +21390,34 @@
           }
         }
       },
-      "MessengerBotApi/1.0.0": {
+      "ConstructorBotMessengerApi/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Telegram.Bot": "18.0.0"
         },
         "compile": {
-          "bin/placeholder/MessengerBotApi.dll": {}
+          "bin/placeholder/ConstructorBotMessengerApi.dll": {}
         },
         "runtime": {
-          "bin/placeholder/MessengerBotApi.dll": {}
+          "bin/placeholder/ConstructorBotMessengerApi.dll": {}
         }
       }
     },
     "net7.0-maccatalyst16.1/win10-x64": {
+      "AsyncAwaitBestPractices/6.0.4": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/AsyncAwaitBestPractices.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AsyncAwaitBestPractices.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "AutoMapper/12.0.1": {
         "type": "package",
         "dependencies": {
@@ -20990,6 +21670,22 @@
           }
         }
       },
+      "Mopups/1.1.1": {
+        "type": "package",
+        "dependencies": {
+          "AsyncAwaitBestPractices": "6.0.4"
+        },
+        "compile": {
+          "lib/net7.0-maccatalyst16.1/Mopups.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-maccatalyst16.1/Mopups.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Newtonsoft.Json/13.0.2": {
         "type": "package",
         "compile": {
@@ -21019,21 +21715,34 @@
           }
         }
       },
-      "MessengerBotApi/1.0.0": {
+      "ConstructorBotMessengerApi/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Telegram.Bot": "18.0.0"
         },
         "compile": {
-          "bin/placeholder/MessengerBotApi.dll": {}
+          "bin/placeholder/ConstructorBotMessengerApi.dll": {}
         },
         "runtime": {
-          "bin/placeholder/MessengerBotApi.dll": {}
+          "bin/placeholder/ConstructorBotMessengerApi.dll": {}
         }
       }
     },
     "net7.0-windows10.0.19041": {
+      "AsyncAwaitBestPractices/6.0.4": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/AsyncAwaitBestPractices.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AsyncAwaitBestPractices.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "AutoMapper/12.0.1": {
         "type": "package",
         "dependencies": {
@@ -21424,6 +22133,22 @@
           }
         }
       },
+      "Mopups/1.1.1": {
+        "type": "package",
+        "dependencies": {
+          "AsyncAwaitBestPractices": "6.0.4"
+        },
+        "compile": {
+          "lib/net7.0/Mopups.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Mopups.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Newtonsoft.Json/13.0.2": {
         "type": "package",
         "compile": {
@@ -21453,21 +22178,34 @@
           }
         }
       },
-      "MessengerBotApi/1.0.0": {
+      "ConstructorBotMessengerApi/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Telegram.Bot": "18.0.0"
         },
         "compile": {
-          "bin/placeholder/MessengerBotApi.dll": {}
+          "bin/placeholder/ConstructorBotMessengerApi.dll": {}
         },
         "runtime": {
-          "bin/placeholder/MessengerBotApi.dll": {}
+          "bin/placeholder/ConstructorBotMessengerApi.dll": {}
         }
       }
     },
     "net7.0-windows10.0.19041/android-arm": {
+      "AsyncAwaitBestPractices/6.0.4": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/AsyncAwaitBestPractices.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AsyncAwaitBestPractices.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "AutoMapper/12.0.1": {
         "type": "package",
         "dependencies": {
@@ -21830,6 +22568,22 @@
           "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
         }
       },
+      "Mopups/1.1.1": {
+        "type": "package",
+        "dependencies": {
+          "AsyncAwaitBestPractices": "6.0.4"
+        },
+        "compile": {
+          "lib/net7.0/Mopups.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Mopups.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Newtonsoft.Json/13.0.2": {
         "type": "package",
         "compile": {
@@ -21859,21 +22613,34 @@
           }
         }
       },
-      "MessengerBotApi/1.0.0": {
+      "ConstructorBotMessengerApi/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Telegram.Bot": "18.0.0"
         },
         "compile": {
-          "bin/placeholder/MessengerBotApi.dll": {}
+          "bin/placeholder/ConstructorBotMessengerApi.dll": {}
         },
         "runtime": {
-          "bin/placeholder/MessengerBotApi.dll": {}
+          "bin/placeholder/ConstructorBotMessengerApi.dll": {}
         }
       }
     },
     "net7.0-windows10.0.19041/android-arm64": {
+      "AsyncAwaitBestPractices/6.0.4": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/AsyncAwaitBestPractices.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AsyncAwaitBestPractices.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "AutoMapper/12.0.1": {
         "type": "package",
         "dependencies": {
@@ -22236,6 +23003,22 @@
           "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
         }
       },
+      "Mopups/1.1.1": {
+        "type": "package",
+        "dependencies": {
+          "AsyncAwaitBestPractices": "6.0.4"
+        },
+        "compile": {
+          "lib/net7.0/Mopups.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Mopups.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Newtonsoft.Json/13.0.2": {
         "type": "package",
         "compile": {
@@ -22265,21 +23048,34 @@
           }
         }
       },
-      "MessengerBotApi/1.0.0": {
+      "ConstructorBotMessengerApi/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Telegram.Bot": "18.0.0"
         },
         "compile": {
-          "bin/placeholder/MessengerBotApi.dll": {}
+          "bin/placeholder/ConstructorBotMessengerApi.dll": {}
         },
         "runtime": {
-          "bin/placeholder/MessengerBotApi.dll": {}
+          "bin/placeholder/ConstructorBotMessengerApi.dll": {}
         }
       }
     },
     "net7.0-windows10.0.19041/android-x64": {
+      "AsyncAwaitBestPractices/6.0.4": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/AsyncAwaitBestPractices.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AsyncAwaitBestPractices.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "AutoMapper/12.0.1": {
         "type": "package",
         "dependencies": {
@@ -22642,6 +23438,22 @@
           "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
         }
       },
+      "Mopups/1.1.1": {
+        "type": "package",
+        "dependencies": {
+          "AsyncAwaitBestPractices": "6.0.4"
+        },
+        "compile": {
+          "lib/net7.0/Mopups.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Mopups.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Newtonsoft.Json/13.0.2": {
         "type": "package",
         "compile": {
@@ -22671,21 +23483,34 @@
           }
         }
       },
-      "MessengerBotApi/1.0.0": {
+      "ConstructorBotMessengerApi/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Telegram.Bot": "18.0.0"
         },
         "compile": {
-          "bin/placeholder/MessengerBotApi.dll": {}
+          "bin/placeholder/ConstructorBotMessengerApi.dll": {}
         },
         "runtime": {
-          "bin/placeholder/MessengerBotApi.dll": {}
+          "bin/placeholder/ConstructorBotMessengerApi.dll": {}
         }
       }
     },
     "net7.0-windows10.0.19041/android-x86": {
+      "AsyncAwaitBestPractices/6.0.4": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/AsyncAwaitBestPractices.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AsyncAwaitBestPractices.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "AutoMapper/12.0.1": {
         "type": "package",
         "dependencies": {
@@ -23048,6 +23873,22 @@
           "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
         }
       },
+      "Mopups/1.1.1": {
+        "type": "package",
+        "dependencies": {
+          "AsyncAwaitBestPractices": "6.0.4"
+        },
+        "compile": {
+          "lib/net7.0/Mopups.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Mopups.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Newtonsoft.Json/13.0.2": {
         "type": "package",
         "compile": {
@@ -23077,21 +23918,34 @@
           }
         }
       },
-      "MessengerBotApi/1.0.0": {
+      "ConstructorBotMessengerApi/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Telegram.Bot": "18.0.0"
         },
         "compile": {
-          "bin/placeholder/MessengerBotApi.dll": {}
+          "bin/placeholder/ConstructorBotMessengerApi.dll": {}
         },
         "runtime": {
-          "bin/placeholder/MessengerBotApi.dll": {}
+          "bin/placeholder/ConstructorBotMessengerApi.dll": {}
         }
       }
     },
     "net7.0-windows10.0.19041/iossimulator-x64": {
+      "AsyncAwaitBestPractices/6.0.4": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/AsyncAwaitBestPractices.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AsyncAwaitBestPractices.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "AutoMapper/12.0.1": {
         "type": "package",
         "dependencies": {
@@ -23454,6 +24308,22 @@
           "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
         }
       },
+      "Mopups/1.1.1": {
+        "type": "package",
+        "dependencies": {
+          "AsyncAwaitBestPractices": "6.0.4"
+        },
+        "compile": {
+          "lib/net7.0/Mopups.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Mopups.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Newtonsoft.Json/13.0.2": {
         "type": "package",
         "compile": {
@@ -23483,21 +24353,34 @@
           }
         }
       },
-      "MessengerBotApi/1.0.0": {
+      "ConstructorBotMessengerApi/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Telegram.Bot": "18.0.0"
         },
         "compile": {
-          "bin/placeholder/MessengerBotApi.dll": {}
+          "bin/placeholder/ConstructorBotMessengerApi.dll": {}
         },
         "runtime": {
-          "bin/placeholder/MessengerBotApi.dll": {}
+          "bin/placeholder/ConstructorBotMessengerApi.dll": {}
         }
       }
     },
     "net7.0-windows10.0.19041/maccatalyst-x64": {
+      "AsyncAwaitBestPractices/6.0.4": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/AsyncAwaitBestPractices.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AsyncAwaitBestPractices.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "AutoMapper/12.0.1": {
         "type": "package",
         "dependencies": {
@@ -23860,6 +24743,22 @@
           "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
         }
       },
+      "Mopups/1.1.1": {
+        "type": "package",
+        "dependencies": {
+          "AsyncAwaitBestPractices": "6.0.4"
+        },
+        "compile": {
+          "lib/net7.0/Mopups.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Mopups.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Newtonsoft.Json/13.0.2": {
         "type": "package",
         "compile": {
@@ -23889,21 +24788,34 @@
           }
         }
       },
-      "MessengerBotApi/1.0.0": {
+      "ConstructorBotMessengerApi/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Telegram.Bot": "18.0.0"
         },
         "compile": {
-          "bin/placeholder/MessengerBotApi.dll": {}
+          "bin/placeholder/ConstructorBotMessengerApi.dll": {}
         },
         "runtime": {
-          "bin/placeholder/MessengerBotApi.dll": {}
+          "bin/placeholder/ConstructorBotMessengerApi.dll": {}
         }
       }
     },
     "net7.0-windows10.0.19041/win10-x64": {
+      "AsyncAwaitBestPractices/6.0.4": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/AsyncAwaitBestPractices.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AsyncAwaitBestPractices.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "AutoMapper/12.0.1": {
         "type": "package",
         "dependencies": {
@@ -24272,6 +25184,22 @@
           "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
         }
       },
+      "Mopups/1.1.1": {
+        "type": "package",
+        "dependencies": {
+          "AsyncAwaitBestPractices": "6.0.4"
+        },
+        "compile": {
+          "lib/net7.0/Mopups.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Mopups.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Newtonsoft.Json/13.0.2": {
         "type": "package",
         "compile": {
@@ -24301,22 +25229,40 @@
           }
         }
       },
-      "MessengerBotApi/1.0.0": {
+      "ConstructorBotMessengerApi/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Telegram.Bot": "18.0.0"
         },
         "compile": {
-          "bin/placeholder/MessengerBotApi.dll": {}
+          "bin/placeholder/ConstructorBotMessengerApi.dll": {}
         },
         "runtime": {
-          "bin/placeholder/MessengerBotApi.dll": {}
+          "bin/placeholder/ConstructorBotMessengerApi.dll": {}
         }
       }
     }
   },
   "libraries": {
+    "AsyncAwaitBestPractices/6.0.4": {
+      "sha512": "dO/ZfaT+5DMMnYUCmxAk2s1jEXUTDcgethroMj1kcmedO0MAu6WgvPP4gPYem/0kJASrnBcem+kr5ju3LaNdMw==",
+      "type": "package",
+      "path": "asyncawaitbestpractices/6.0.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "asyncawaitbestpractices.6.0.4.nupkg.sha512",
+        "asyncawaitbestpractices.nuspec",
+        "lib/netstandard1.0/AsyncAwaitBestPractices.dll",
+        "lib/netstandard1.0/AsyncAwaitBestPractices.xml",
+        "lib/netstandard2.0/AsyncAwaitBestPractices.dll",
+        "lib/netstandard2.0/AsyncAwaitBestPractices.xml",
+        "lib/netstandard2.1/AsyncAwaitBestPractices.dll",
+        "lib/netstandard2.1/AsyncAwaitBestPractices.xml"
+      ]
+    },
     "AutoMapper/12.0.1": {
       "sha512": "hvV62vl6Hp/WfQ24yzo3Co9+OPl8wH8hApwVtgWpiAynVJkUcs7xvehnSftawL8Pe8FrPffBRM3hwzLQqWDNjA==",
       "type": "package",
@@ -25712,6 +26658,26 @@
         "tools/net5.0/zh-TW/Microsoft.Build.Msix.resources.dll",
         "tools/x64/GenXbf.dll",
         "tools/x86/GenXbf.dll"
+      ]
+    },
+    "Mopups/1.1.1": {
+      "sha512": "3hyQVRJbPJNZImlDxlV5GwbYGDyDvI6OWJpz/ifGANu1znd9eyCy0FDP9QTFp6pOP97nuMJHOd/wpVFb4nppvA==",
+      "type": "package",
+      "path": "mopups/1.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net7.0-android33.0/Mopups.aar",
+        "lib/net7.0-android33.0/Mopups.dll",
+        "lib/net7.0-android33.0/Mopups.xml",
+        "lib/net7.0-ios16.1/Mopups.dll",
+        "lib/net7.0-ios16.1/Mopups.xml",
+        "lib/net7.0-maccatalyst16.1/Mopups.dll",
+        "lib/net7.0-maccatalyst16.1/Mopups.xml",
+        "lib/net7.0/Mopups.dll",
+        "lib/net7.0/Mopups.xml",
+        "mopups.1.1.1.nupkg.sha512",
+        "mopups.nuspec"
       ]
     },
     "Newtonsoft.Json/13.0.2": {
@@ -27759,10 +28725,10 @@
         "xamarin.kotlinx.coroutines.core.jvm.nuspec"
       ]
     },
-    "MessengerBotApi/1.0.0": {
+    "ConstructorBotMessengerApi/1.0.0": {
       "type": "project",
-      "path": "../MessengerBotApi/MessengerBotApi.csproj",
-      "msbuildProject": "../MessengerBotApi/MessengerBotApi.csproj"
+      "path": "../../../ConstructorBotTelegramApi/ConstructorBotMessengerApi/ConstructorBotMessengerApi.csproj",
+      "msbuildProject": "../../../ConstructorBotTelegramApi/ConstructorBotMessengerApi/ConstructorBotMessengerApi.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -27770,13 +28736,14 @@
       "AutoMapper >= 12.0.1",
       "CommunityToolkit.Maui >= 4.0.0",
       "CommunityToolkit.Mvvm >= 8.1.0",
-      "MessengerBotApi >= 1.0.0",
+      "ConstructorBotMessengerApi >= 1.0.0",
       "Microsoft.Extensions.Configuration >= 7.0.0",
       "Microsoft.Extensions.DependencyInjection >= 7.0.0",
       "Microsoft.Extensions.Logging >= 7.0.0",
       "Microsoft.Extensions.Logging.Abstractions >= 7.0.0",
       "Microsoft.Extensions.Logging.Debug >= 7.0.0",
       "Microsoft.Maui.Graphics >= 7.0.52",
+      "Mopups >= 1.1.1",
       "Newtonsoft.Json >= 13.0.2",
       "Xamarin.Android.Glide >= 4.13.2.2",
       "Xamarin.AndroidX.Browser >= 1.4.0.3",
@@ -27794,33 +28761,35 @@
       "AutoMapper >= 12.0.1",
       "CommunityToolkit.Maui >= 4.0.0",
       "CommunityToolkit.Mvvm >= 8.1.0",
-      "MessengerBotApi >= 1.0.0",
+      "ConstructorBotMessengerApi >= 1.0.0",
       "Microsoft.Extensions.Configuration >= 7.0.0",
       "Microsoft.Extensions.DependencyInjection >= 7.0.0",
       "Microsoft.Extensions.Logging >= 7.0.0",
       "Microsoft.Extensions.Logging.Abstractions >= 7.0.0",
       "Microsoft.Extensions.Logging.Debug >= 7.0.0",
       "Microsoft.Maui.Graphics >= 7.0.52",
+      "Mopups >= 1.1.1",
       "Newtonsoft.Json >= 13.0.2"
     ],
     "net7.0-maccatalyst16.1": [
       "AutoMapper >= 12.0.1",
       "CommunityToolkit.Maui >= 4.0.0",
       "CommunityToolkit.Mvvm >= 8.1.0",
-      "MessengerBotApi >= 1.0.0",
+      "ConstructorBotMessengerApi >= 1.0.0",
       "Microsoft.Extensions.Configuration >= 7.0.0",
       "Microsoft.Extensions.DependencyInjection >= 7.0.0",
       "Microsoft.Extensions.Logging >= 7.0.0",
       "Microsoft.Extensions.Logging.Abstractions >= 7.0.0",
       "Microsoft.Extensions.Logging.Debug >= 7.0.0",
       "Microsoft.Maui.Graphics >= 7.0.52",
+      "Mopups >= 1.1.1",
       "Newtonsoft.Json >= 13.0.2"
     ],
     "net7.0-windows10.0.19041": [
       "AutoMapper >= 12.0.1",
       "CommunityToolkit.Maui >= 4.0.0",
       "CommunityToolkit.Mvvm >= 8.1.0",
-      "MessengerBotApi >= 1.0.0",
+      "ConstructorBotMessengerApi >= 1.0.0",
       "Microsoft.Extensions.Configuration >= 7.0.0",
       "Microsoft.Extensions.DependencyInjection >= 7.0.0",
       "Microsoft.Extensions.Logging >= 7.0.0",
@@ -27830,6 +28799,7 @@
       "Microsoft.Maui.Graphics.Win2D.WinUI.Desktop >= 7.0.52",
       "Microsoft.Windows.SDK.BuildTools >= 10.0.22621.755",
       "Microsoft.WindowsAppSDK >= 1.2.221109.1",
+      "Mopups >= 1.1.1",
       "Newtonsoft.Json >= 13.0.2"
     ]
   },
@@ -27870,32 +28840,32 @@
         "net7.0-android33.0": {
           "targetAlias": "net7.0-android",
           "projectReferences": {
-            "C:\\ConstructorBotProject\\ConstructorBot\\MessengerBotApi\\MessengerBotApi.csproj": {
-              "projectPath": "C:\\ConstructorBotProject\\ConstructorBot\\MessengerBotApi\\MessengerBotApi.csproj"
+            "C:\\ConstructorBotTelegramApi\\ConstructorBotMessengerApi\\ConstructorBotMessengerApi.csproj": {
+              "projectPath": "C:\\ConstructorBotTelegramApi\\ConstructorBotMessengerApi\\ConstructorBotMessengerApi.csproj"
             }
           }
         },
         "net7.0-ios16.1": {
           "targetAlias": "net7.0-ios",
           "projectReferences": {
-            "C:\\ConstructorBotProject\\ConstructorBot\\MessengerBotApi\\MessengerBotApi.csproj": {
-              "projectPath": "C:\\ConstructorBotProject\\ConstructorBot\\MessengerBotApi\\MessengerBotApi.csproj"
+            "C:\\ConstructorBotTelegramApi\\ConstructorBotMessengerApi\\ConstructorBotMessengerApi.csproj": {
+              "projectPath": "C:\\ConstructorBotTelegramApi\\ConstructorBotMessengerApi\\ConstructorBotMessengerApi.csproj"
             }
           }
         },
         "net7.0-maccatalyst16.1": {
           "targetAlias": "net7.0-maccatalyst",
           "projectReferences": {
-            "C:\\ConstructorBotProject\\ConstructorBot\\MessengerBotApi\\MessengerBotApi.csproj": {
-              "projectPath": "C:\\ConstructorBotProject\\ConstructorBot\\MessengerBotApi\\MessengerBotApi.csproj"
+            "C:\\ConstructorBotTelegramApi\\ConstructorBotMessengerApi\\ConstructorBotMessengerApi.csproj": {
+              "projectPath": "C:\\ConstructorBotTelegramApi\\ConstructorBotMessengerApi\\ConstructorBotMessengerApi.csproj"
             }
           }
         },
         "net7.0-windows10.0.19041": {
           "targetAlias": "net7.0-windows10.0.19041.0",
           "projectReferences": {
-            "C:\\ConstructorBotProject\\ConstructorBot\\MessengerBotApi\\MessengerBotApi.csproj": {
-              "projectPath": "C:\\ConstructorBotProject\\ConstructorBot\\MessengerBotApi\\MessengerBotApi.csproj"
+            "C:\\ConstructorBotTelegramApi\\ConstructorBotMessengerApi\\ConstructorBotMessengerApi.csproj": {
+              "projectPath": "C:\\ConstructorBotTelegramApi\\ConstructorBotMessengerApi\\ConstructorBotMessengerApi.csproj"
             }
           }
         }
@@ -27950,6 +28920,10 @@
             "target": "Package",
             "version": "[7.0.52, )",
             "autoReferenced": true
+          },
+          "Mopups": {
+            "target": "Package",
+            "version": "[1.1.1, )"
           },
           "Newtonsoft.Json": {
             "target": "Package",
@@ -28085,6 +29059,10 @@
             "version": "[7.0.52, )",
             "autoReferenced": true
           },
+          "Mopups": {
+            "target": "Package",
+            "version": "[1.1.1, )"
+          },
           "Newtonsoft.Json": {
             "target": "Package",
             "version": "[13.0.2, )"
@@ -28163,6 +29141,10 @@
             "target": "Package",
             "version": "[7.0.52, )",
             "autoReferenced": true
+          },
+          "Mopups": {
+            "target": "Package",
+            "version": "[1.1.1, )"
           },
           "Newtonsoft.Json": {
             "target": "Package",
@@ -28259,6 +29241,10 @@
             "target": "Package",
             "version": "[1.2.221109.1, )",
             "autoReferenced": true
+          },
+          "Mopups": {
+            "target": "Package",
+            "version": "[1.1.1, )"
           },
           "Newtonsoft.Json": {
             "target": "Package",

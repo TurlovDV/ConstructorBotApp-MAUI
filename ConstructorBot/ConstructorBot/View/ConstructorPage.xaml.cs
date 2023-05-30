@@ -1,6 +1,6 @@
-using ConstructorBot.SaveData;
+using ConstructorBot.Model.Action;
+using ConstructorBot.Services.ServiceStorage;
 using ConstructorBot.ViewModel.ConstructorPageViewModel;
-using ConstructorBot.ViewModel.ConstructorPageViewModel.Action;
 using ConstructorBot.ViewModel.MainPageViewModel;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -14,29 +14,15 @@ public partial class ConstructorPage : ContentPage
 
     public ConstructorPage()
 	{
-        ConstructorViewModel = new ConstructorViewModel();//ServiceProvider.GetService<ConstructorViewModel>();
-
-        //ConstructorViewModel = ServiceProvider.GetService<ConstructorViewModel>();
-
-        ConstructorViewModel.ActionBoxes = new ObservableCollection<ActionBox>();
-
-        ServiceProvider.GetService<ConstructorViewModel>().ActionBoxes.ToList()
-            .ForEach(x => ConstructorViewModel.ActionBoxes.Add(x));
-
-        //ConstructorViewModel.ActionBoxes = new ObservableCollection<ActionBox>();
+        ConstructorViewModel = ServiceProvider.GetService<ConstructorViewModel>();
 
         InitializeComponent();
-
+        
         BindingContext = ConstructorViewModel;
 
-        MainMatrix.IsVisible = false;
-
-        Disappearing += async (object sender, EventArgs e) =>
-        {
-            Storage.SaveActions(ConstructorViewModel.ActionBoxes.ToList());
-            //SaveSettingOrActionBoxes.Save(ConstructorViewModel.ActionBoxes.ToList());
-        };
-
+        Disappearing += (object sender, EventArgs e) =>        
+            ServiceProvider.GetService<IStorageService>().SaveActions(ConstructorViewModel.ActionBoxes.ToList());
+        
         this.Loaded += Loading;
     }
 
@@ -48,13 +34,9 @@ public partial class ConstructorPage : ContentPage
         switch (e.StatusType)
         {
             case GestureStatus.Running:
+                actionBox.SetStatusActionType(ActionStatusType.Move);
                 actionBox.TranslationX += e.TotalX;
                 actionBox.TranslationY += e.TotalY;
-
-                //actionBox.OutConnect.ToList()
-                //    .ForEach(x =>
-                //        x.ConnectionActions.ToList()
-                //        .ForEach(y => y.UpdateConnectionLine()));
 
                 ConstructorViewModel.ActionBoxes.ToList()
                     .ForEach(x => x.ConnectionActions.ToList()
@@ -63,6 +45,12 @@ public partial class ConstructorPage : ContentPage
                          if (y.Connect.Id == actionBox.Id)
                              y.UpdateConnectionLine();
                      }));
+                break;
+            case GestureStatus.Completed:
+                if (actionBox == ConstructorViewModel.TapLastAction)
+                    actionBox.SetStatusActionType(ActionStatusType.Tap);
+                else
+                    actionBox.SetStatusActionType(ActionStatusType.None);
                 break;
         }
     }
@@ -102,8 +90,6 @@ public partial class ConstructorPage : ContentPage
                             x.Line.TranslationY = x.Line._moveY + e.TotalY;
                         });
                         x.BaseTranslation(x._moveX + e.TotalX, x._moveY + e.TotalY);
-                        //x.TranslationX = x._moveX + e.TotalX;
-                        //x.TranslationY = x._moveY + e.TotalY;
                     });
                 break;
         }
@@ -114,7 +100,6 @@ public partial class ConstructorPage : ContentPage
     double xOffset;
     double yOffset;
     bool IsMove = true;
-
     private const double MIN_SCALE = 1;
     private const double MAX_SCALE = 4;
 
@@ -164,22 +149,10 @@ public partial class ConstructorPage : ContentPage
             yOffset = MainMatrix.TranslationY;
         }
     }
-   
-    //private T Clamp<T>(T value, T minimum, T maximum) where T : IComparable
-    //{
-    //    if (value.CompareTo(minimum) < 0)
-    //        return minimum;
-    //    else if (value.CompareTo(maximum) > 0)
-    //        return maximum;
-    //    else
-    //        return value;
-    //}
 
     private async void ToolbarItem_Clicked(object sender, EventArgs e)
     {
-        ServiceProvider.GetService<ConstructorViewModel>().ActionBoxes = ConstructorViewModel.ActionBoxes;
         await Shell.Current.GoToAsync("..");
-        //await Navigation.PopAsync();
     }
 
     protected override bool OnBackButtonPressed()
@@ -187,24 +160,12 @@ public partial class ConstructorPage : ContentPage
         return true;
     }
 
-    protected override void OnNavigatedTo(NavigatedToEventArgs args)
-    {
-        base.OnNavigatedTo(args);
-    }
-
     public void Loading(object sender, EventArgs e)
     {
-        //var list = SaveSettingOrActionBoxes.Get();
-
         CommunityToolkit.Maui.Core.Platform.StatusBar.SetColor(Color.FromArgb("344B6D"));
         CommunityToolkit.Maui.Core.Platform.StatusBar.SetStyle(CommunityToolkit.Maui.Core.StatusBarStyle.LightContent);
 
-        //ConstructorViewModel.ActionBoxes.Clear();
-        //list.ToList().ForEach(x => ConstructorViewModel.ActionBoxes.Add(x));
-        //ConstructorViewModel.ActionBoxes = ServiceProvider.GetService<ConstructorViewModel>().ActionBoxes;
-
         LoadingIndicator.IsRunning = false;
-        MainMatrix.IsVisible = true;
 
         ConstructorViewModel.ActionBoxes.ToList().ForEach(x =>
         {

@@ -4,8 +4,11 @@
 <dict>
   <key>UIAppFonts</key>
   <array>
+	<string>MauiInfo.plist</string>
 	<string>OpenSans-Regular.ttf</string>
 	<string>OpenSans-Semibold.ttf</string>
+	<string>Shentox-Regular.ttf</string>
+	<string>Srbija-Sans.otf</string>
   </array>
 
 </dict>

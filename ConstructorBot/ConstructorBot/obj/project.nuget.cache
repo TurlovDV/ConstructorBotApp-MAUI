@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "1M/0xGlVpr+meQAOeHLGOBjks3bsPGrpajPxkO2yQfEdtbp8FUrTI1GX75kKsEbb1Y/22py9qRlk4/5apVFJRg==",
+  "dgSpecHash": "ZwrcFB2Ruup3sBjRbQySPdpsoiKvApoeIs0IcMDNlAJ58TAH0sOB/mXHECyhl2v1kcdcWXm2QM5GlQ527RAPzw==",
   "success": true,
   "projectFilePath": "C:\\ConstructorBotProject\\ConstructorBot\\ConstructorBot\\ConstructorBot.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Даня\\.nuget\\packages\\asyncawaitbestpractices\\6.0.4\\asyncawaitbestpractices.6.0.4.nupkg.sha512",
     "C:\\Users\\Даня\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Даня\\.nuget\\packages\\communitytoolkit.maui\\4.0.0\\communitytoolkit.maui.4.0.0.nupkg.sha512",
     "C:\\Users\\Даня\\.nuget\\packages\\communitytoolkit.maui.core\\4.0.0\\communitytoolkit.maui.core.4.0.0.nupkg.sha512",
@@ -24,6 +25,7 @@
     "C:\\Users\\Даня\\.nuget\\packages\\microsoft.maui.graphics.win2d.winui.desktop\\7.0.52\\microsoft.maui.graphics.win2d.winui.desktop.7.0.52.nupkg.sha512",
     "C:\\Users\\Даня\\.nuget\\packages\\microsoft.windows.sdk.buildtools\\10.0.22621.755\\microsoft.windows.sdk.buildtools.10.0.22621.755.nupkg.sha512",
     "C:\\Users\\Даня\\.nuget\\packages\\microsoft.windowsappsdk\\1.2.221109.1\\microsoft.windowsappsdk.1.2.221109.1.nupkg.sha512",
+    "C:\\Users\\Даня\\.nuget\\packages\\mopups\\1.1.1\\mopups.1.1.1.nupkg.sha512",
     "C:\\Users\\Даня\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512",
     "C:\\Users\\Даня\\.nuget\\packages\\telegram.bot\\18.0.0\\telegram.bot.18.0.0.nupkg.sha512",
     "C:\\Users\\Даня\\.nuget\\packages\\xamarin.android.glide\\4.13.2.2\\xamarin.android.glide.4.13.2.2.nupkg.sha512",

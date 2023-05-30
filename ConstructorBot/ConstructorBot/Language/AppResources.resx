@@ -156,9 +156,6 @@
   <data name="EnterTheBotConnectionToken" xml:space="preserve">
     <value>To work with the application, enter the bot connection token</value>
   </data>
-  <data name="Help" xml:space="preserve">
-    <value>Help</value>
-  </data>
   <data name="info1" xml:space="preserve">
     <value>To get started, enter the telegram token</value>
   </data>
@@ -197,6 +194,9 @@
   </data>
   <data name="Save" xml:space="preserve">
     <value>Save</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Settings</value>
   </data>
   <data name="Start" xml:space="preserve">
     <value>Start</value>

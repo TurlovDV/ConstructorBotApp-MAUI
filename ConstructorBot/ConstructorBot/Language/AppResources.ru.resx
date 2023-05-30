@@ -156,9 +156,6 @@
   <data name="EnterTheBotConnectionToken" xml:space="preserve">
     <value>Для работы с приложением введите токен подключения бота</value>
   </data>
-  <data name="Help" xml:space="preserve">
-    <value>Помощь</value>
-  </data>
   <data name="info1" xml:space="preserve">
     <value>Для начала работы введи
  телеграмм токен</value>
@@ -193,7 +190,7 @@
     <value>Сообщение</value>
   </data>
   <data name="Options" xml:space="preserve">
-    <value>Настройки</value>
+    <value>Опции</value>
   </data>
   <data name="ReplyMessage" xml:space="preserve">
     <value>Ответное сообщение</value>
@@ -203,6 +200,9 @@
   </data>
   <data name="Save" xml:space="preserve">
     <value>Сохранить</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Настройки</value>
   </data>
   <data name="Start" xml:space="preserve">
     <value>Старт</value>
@@ -215,9 +215,6 @@
   </data>
   <data name="TheNameOfTheBox" xml:space="preserve">
     <value>Название бокса</value>
-  </data>
-  <data name="TutorialInTheOperationOfTheApplication" xml:space="preserve">
-    <value>Туториал в эксплуатации приложения</value>
   </data>
   <data name="UrlLink" xml:space="preserve">
     <value>Url ссылка</value>

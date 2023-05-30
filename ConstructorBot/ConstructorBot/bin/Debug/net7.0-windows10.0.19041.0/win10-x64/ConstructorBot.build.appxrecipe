@@ -37,6 +37,9 @@
     <AppxPackagedFile Include="C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>ConstructorBot.exe</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\ru\ConstructorBot.resources.dll">
+      <PackagePath>ru\ConstructorBot.resources.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Даня\.nuget\packages\microsoft.netcore.app.runtime.win-x64\7.0.2\runtimes\win-x64\lib\net7.0\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
     </AppxPackagedFile>
@@ -604,6 +607,9 @@
     <AppxPackagedFile Include="C:\Users\Даня\.nuget\packages\microsoft.windows.sdk.net.ref\10.0.19041.28\lib\net6.0\WinRT.Runtime.dll">
       <PackagePath>WinRT.Runtime.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Даня\.nuget\packages\asyncawaitbestpractices\6.0.4\lib\netstandard2.1\AsyncAwaitBestPractices.dll">
+      <PackagePath>AsyncAwaitBestPractices.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Даня\.nuget\packages\automapper\12.0.1\lib\netstandard2.1\AutoMapper.dll">
       <PackagePath>AutoMapper.dll</PackagePath>
     </AppxPackagedFile>
@@ -694,6 +700,9 @@
     <AppxPackagedFile Include="C:\Users\Даня\.nuget\packages\microsoft.windowsappsdk\1.2.221109.1\lib\net6.0-windows10.0.18362.0\Microsoft.WindowsAppRuntime.Bootstrap.Net.dll">
       <PackagePath>Microsoft.WindowsAppRuntime.Bootstrap.Net.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Даня\.nuget\packages\mopups\1.1.1\lib\net7.0\Mopups.dll">
+      <PackagePath>Mopups.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Даня\.nuget\packages\newtonsoft.json\13.0.2\lib\net6.0\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
     </AppxPackagedFile>
@@ -706,8 +715,8 @@
     <AppxPackagedFile Include="C:\Users\Даня\.nuget\packages\microsoft.windowsappsdk\1.2.221109.1\runtimes\win10-x64\native\Microsoft.WindowsAppRuntime.Bootstrap.dll">
       <PackagePath>Microsoft.WindowsAppRuntime.Bootstrap.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\ConstructorBotProject\ConstructorBot\ConstructorBotCore\bin\Debug\net7.0\ConstructorBotCore.dll">
-      <PackagePath>ConstructorBotCore.dll</PackagePath>
+    <AppxPackagedFile Include="C:\ConstructorBotTelegramApi\ConstructorBotMessengerApi\bin\Debug\net7.0\ConstructorBotMessengerApi.dll">
+      <PackagePath>ConstructorBotMessengerApi.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\ConstructorBot.deps.json">
       <PackagePath>ConstructorBot.deps.json</PackagePath>
@@ -744,6 +753,12 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\f\OpenSans-Semibold.ttf">
       <PackagePath>OpenSans-Semibold.ttf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\f\Shentox-Regular.ttf">
+      <PackagePath>Shentox-Regular.ttf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\f\Srbija-Sans.otf">
+      <PackagePath>Srbija-Sans.otf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\account.scale-100.png">
       <PackagePath>account.scale-100.png</PackagePath>
@@ -925,6 +940,24 @@
     <AppxPackagedFile Include="C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\back_icon_black.scale-100.png">
       <PackagePath>back_icon_black.scale-100.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\bot.scale-100.png">
+      <PackagePath>bot.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\bot1.scale-100.png">
+      <PackagePath>bot1.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\bot1.scale-125.png">
+      <PackagePath>bot1.scale-125.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\bot1.scale-150.png">
+      <PackagePath>bot1.scale-150.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\bot1.scale-200.png">
+      <PackagePath>bot1.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\bot1.scale-400.png">
+      <PackagePath>bot1.scale-400.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\chat.scale-100.png">
       <PackagePath>chat.scale-100.png</PackagePath>
     </AppxPackagedFile>
@@ -1030,11 +1063,89 @@
     <AppxPackagedFile Include="C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\info.scale-400.png">
       <PackagePath>info.scale-400.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\info1.scale-100.png">
+      <PackagePath>info1.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\info1.scale-125.png">
+      <PackagePath>info1.scale-125.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\info1.scale-150.png">
+      <PackagePath>info1.scale-150.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\info1.scale-200.png">
+      <PackagePath>info1.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\info1.scale-400.png">
+      <PackagePath>info1.scale-400.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\info2.scale-100.png">
+      <PackagePath>info2.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\info2.scale-125.png">
+      <PackagePath>info2.scale-125.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\info2.scale-150.png">
+      <PackagePath>info2.scale-150.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\info2.scale-200.png">
+      <PackagePath>info2.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\info2.scale-400.png">
+      <PackagePath>info2.scale-400.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\info3.scale-100.png">
+      <PackagePath>info3.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\info3.scale-125.png">
+      <PackagePath>info3.scale-125.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\info3.scale-150.png">
+      <PackagePath>info3.scale-150.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\info3.scale-200.png">
+      <PackagePath>info3.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\info3.scale-400.png">
+      <PackagePath>info3.scale-400.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\info4.scale-100.png">
+      <PackagePath>info4.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\info4.scale-125.png">
+      <PackagePath>info4.scale-125.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\info4.scale-150.png">
+      <PackagePath>info4.scale-150.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\info4.scale-200.png">
+      <PackagePath>info4.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\info4.scale-400.png">
+      <PackagePath>info4.scale-400.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\info5.scale-100.png">
+      <PackagePath>info5.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\info5.scale-125.png">
+      <PackagePath>info5.scale-125.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\info5.scale-150.png">
+      <PackagePath>info5.scale-150.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\info5.scale-200.png">
+      <PackagePath>info5.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\info5.scale-400.png">
+      <PackagePath>info5.scale-400.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\keyboard1.scale-100.png">
       <PackagePath>keyboard1.scale-100.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\keyboard_black.scale-100.png">
       <PackagePath>keyboard_black.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\loader.scale-100.gif">
+      <PackagePath>loader.scale-100.gif</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\menu.scale-100.png">
       <PackagePath>menu.scale-100.png</PackagePath>
@@ -1107,6 +1218,18 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\settings.scale-100.png">
       <PackagePath>settings.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\settings.scale-125.png">
+      <PackagePath>settings.scale-125.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\settings.scale-150.png">
+      <PackagePath>settings.scale-150.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\settings.scale-200.png">
+      <PackagePath>settings.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\settings.scale-400.png">
+      <PackagePath>settings.scale-400.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\subtract.scale-100.png">
       <PackagePath>subtract.scale-100.png</PackagePath>

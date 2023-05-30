@@ -13,13 +13,13 @@
   <permission android:name="com.companyname.constructorbot.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" android:protectionLevel="signature" />
   <uses-permission android:name="com.companyname.constructorbot.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
   <application android:name="crc64207e330895b7e594.MainApplication" android:allowBackup="true" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:debuggable="true" android:extractNativeLibs="true" android:icon="@mipmap/appicon" android:label="ConstructorBot" android:roundIcon="@mipmap/appicon_round" android:supportsRtl="true">
+    <service android:name="crc64207e330895b7e594.BackgroundWorkService" android:foregroundServiceType="dataSync" />
     <activity android:name="crc64207e330895b7e594.MainActivity" android:configChanges="density|orientation|smallestScreenSize|screenLayout|screenSize|uiMode" android:exported="true" android:theme="@style/Maui.SplashTheme">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>
-    <service android:name="crc64207e330895b7e594.ServiceDomainBot" android:foregroundServiceType="dataSync" />
     <activity android:name="crc6468b6408a11370c2f.WebAuthenticatorIntermediateActivity" android:configChanges="orientation|screenSize" android:exported="true" />
     <provider android:name="microsoft.maui.essentials.fileProvider" android:authorities="com.companyname.constructorbot.fileProvider" android:exported="false" android:grantUriPermissions="true">
       <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/microsoft_maui_essentials_fileprovider_file_paths" />

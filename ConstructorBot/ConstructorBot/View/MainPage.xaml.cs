@@ -1,8 +1,9 @@
 using CommunityToolkit.Maui.Behaviors;
 using CommunityToolkit.Maui.Core.Platform;
 using ConstructorBot.Language;
+using ConstructorBot.Model.Action;
+using ConstructorBot.Services.ServiceStorage;
 using ConstructorBot.ViewModel.ConstructorPageViewModel;
-using ConstructorBot.ViewModel.ConstructorPageViewModel.Action;
 using ConstructorBot.ViewModel.MainPageViewModel;
 using System.Collections.ObjectModel;
 using System.Globalization;
@@ -16,15 +17,9 @@ public partial class MainPage : ContentPage
 	{
         MainViewModel = ServiceProvider.GetService<MainViewModel>();
 
-        InitializeComponent();
-        
+        InitializeComponent();        
+
         BindingContext = MainViewModel;
-
-        ////Получение сохраненных actionBoxes
-        //ServiceProvider.GetService<ConstructorViewModel>().ActionBoxes
-        //    = new ObservableCollection<ActionBox>(SaveSettingOrActionBoxes.Get());
-
-        //Анимация работы elipse_loading 
 
         Task.Run(async () =>
         {
@@ -40,8 +35,23 @@ public partial class MainPage : ContentPage
             pickerLanguage.SelectedIndex = 0;
         else
             pickerLanguage.SelectedIndex = 1;
-    }
 
+        this.Loaded += Loading;
+    }
+    
+    public async void Loading(object sender, EventArgs e)
+    {
+        //Инициализация боксов при загрузке приложения
+        var actions = ServiceProvider.GetService<IStorageService>().GetActions();
+        ServiceProvider.GetService<ConstructorViewModel>().ActionBoxes
+            = new ObservableCollection<ActionBox>(actions);
+
+        await Task.Delay(50);
+        preloader.IsAnimationPlaying = false;
+        await Task.Delay(50);
+        preloader.IsAnimationPlaying = true;
+
+    }
 
     private async void Button_PushToConstructor(object sender, EventArgs e)
     {
@@ -72,9 +82,7 @@ public partial class MainPage : ContentPage
         if(pickerLanguage.SelectedItem.ToString() == "English")
             LocalizationResourceManager.Instance.SetCulture(new System.Globalization.CultureInfo("en"));
 
-        if(MainViewModel.IsStart)
-            labelIsStart.Text = LocalizationResourceManager.Instance["Stop"].ToString();
-        else
-            labelIsStart.Text = LocalizationResourceManager.Instance["Start"].ToString();
+        //Для того чтобы обновить язык кнопки старт
+        MainViewModel.IsStart = MainViewModel.IsStart;
     }
 }

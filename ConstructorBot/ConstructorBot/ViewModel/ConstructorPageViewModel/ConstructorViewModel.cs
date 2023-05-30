@@ -1,5 +1,4 @@
-﻿using ConstructorBot.ViewModel.ConstructorPageViewModel.Action;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -8,23 +7,39 @@ using System.Threading.Tasks;
 using CommunityToolkit.Mvvm;
 using CommunityToolkit.Mvvm.ComponentModel;
 using System.Windows.Input;
-using ConstructorBot.ViewModel.ConstructorPageViewModel.Action.ConnectionElement;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using static ConstructorBot.App;
 using System.Reflection.Metadata.Ecma335;
 using ConstructorBot.Language;
+using ConstructorBot.Model.Action;
+using ConstructorBot.Model.Action.ConnectionElement;
+using ConstructorBot.Services.PopupService;
+using ConstructorBot.Services.ServiceStorage;
 
 namespace ConstructorBot.ViewModel.ConstructorPageViewModel
 {
-    public partial class ConstructorViewModel : INotifyPropertyChanged
+    public partial class ConstructorViewModel : BaseViewModel
     {
-        private bool isPutBoxAction = false;
-        private bool isAddButtons = false;
-        private bool isPutButton = false;
-        private bool isAddAction = false;
-        private bool isAddRequest = false;
-        public IMessageService messageService { get; set; }
+        private bool isPutBoxAction;
+        private bool isAddButtons;
+        private bool isPutButton;
+        private bool isAddAction;
+        private bool isAddRequest;
+        private ActionBox tapLastAction;
+        private IMessageService messageService;
+        private IStorageService storageService;
+        private KeyboardItem keyboardItem;
+
+        public KeyboardItem KeyboardItem
+        {
+            get => keyboardItem;
+            set
+            {
+                keyboardItem = value;
+                OnPropertyChanged();
+            }
+        }
 
         public bool IsPutBoxAction
         {
@@ -76,9 +91,6 @@ namespace ConstructorBot.ViewModel.ConstructorPageViewModel
             }
         }
 
-        private ActionBox tapLastAction;
-
-        //public MatrixGrid MatrixGridLines { get; set; } 
         public ActionBox TapLastAction
         {
             get => tapLastAction; 
@@ -93,15 +105,7 @@ namespace ConstructorBot.ViewModel.ConstructorPageViewModel
         public ActionBoxBuilder ActionBoxBuilder;
         
         public ObservableCollection<ActionBox> ActionBoxes { get; set; }
-
-        
-        public event PropertyChangedEventHandler PropertyChanged;
-        
-        public void OnPropertyChanged([CallerMemberName] string prop = "")
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
-        }
-
+               
 
         //Вернуться к главному блоку
         public ICommand GoToMainBox
@@ -271,18 +275,6 @@ namespace ConstructorBot.ViewModel.ConstructorPageViewModel
             }
         }
 
-        //Кнопка назат в главное меню
-        public ICommand PushMainPageCommand
-        {
-            get
-            {
-                return new Command((object sender) =>
-                {
-                    
-                });
-            }
-        }
-
         //Добавить медиа к сообщению
         public ICommand AddMediaCommand
         {
@@ -290,7 +282,7 @@ namespace ConstructorBot.ViewModel.ConstructorPageViewModel
             {
                 return new Command(async () =>
                 {
-                    var file = await FilePicker.PickAsync();
+                    var file = await FilePicker.PickAsync(PickOptions.Images);
 
                     if (file == null)
                         return;
@@ -300,77 +292,19 @@ namespace ConstructorBot.ViewModel.ConstructorPageViewModel
                         await messageService.ShowAsync("Ограничение", "Файлы более 10МБ добавить невозможно");
                         return;
                     }
-                    //var stream = await file.OpenReadAsync();                    
+                    if (TapLastAction.MediaItems.Count > 5)
+                    {
+                        await messageService.ShowAsync("Ограничение", "Более 5 файлов добавить нельзя");
+                        return;
+                    }
 
                     if (file.ContentType.Split('/')[0] == "image")
                     {
-                        if (TapLastAction.MediaItems
-                        .Where(x => x.Type == MediaType.Document || x.Type == MediaType.Audio).ToList().Count != 0)
-                        {
-                            await messageService.ShowAsync("Ограничение", "Чередовать фото с документами и аудио невозможно");
-                            return;
-                        }
                         TapLastAction.MediaItems.Add(new MediaItem()
                         {
-                            //Bytes = stream.ReadFully(),
                             Name = file.FileName,
                             Type = MediaType.Photo,
                             Source = file.FullPath,
-                            PathMediaSource = file.FullPath,
-                        });
-                    }
-                    else if (file.ContentType.Split('/')[0] == "video")
-                    {
-                        if (TapLastAction.MediaItems
-                        .Where(x => x.Type == MediaType.Document || x.Type == MediaType.Audio).ToList().Count != 0)
-                        {
-                            await messageService.ShowAsync("Ограничение", "Чередовать видео с документами и аудио невозможно");
-                            return;
-                        }
-                        TapLastAction.MediaItems.Add(new MediaItem()
-                        {
-                            //Bytes = stream.ReadFully(),
-                            Name = file.FileName,
-                            Type = MediaType.Video,
-                            Source = "video_icon.png",
-                            PathMediaSource = file.FullPath,
-                        });
-                    }
-                    else if (file.ContentType.Split('/')[0] == "application")
-                    {
-                        if (TapLastAction.MediaItems
-                        .Where(x => x.Type == MediaType.Photo ||
-                            x.Type == MediaType.Video ||
-                            x.Type == MediaType.Audio).ToList().Count != 0)
-                        {
-                            await messageService.ShowAsync("Ограничение", "Чередовать документы с другими элементами невозможно");
-                            return;
-                        }
-                        TapLastAction.MediaItems.Add(new MediaItem()
-                        {
-                            //Bytes = stream.ReadFully(),
-                            Name = file.FileName,
-                            Type = MediaType.Document,
-                            Source = "document_icon.png",
-                            PathMediaSource = file.FullPath,
-                        });
-                    }
-                    else if (file.ContentType.Split('/')[0] == "audio")
-                    {
-                        if (TapLastAction.MediaItems
-                        .Where(x => x.Type == MediaType.Document ||
-                            x.Type == MediaType.Photo ||
-                            x.Type == MediaType.Video).ToList().Count != 0)
-                        {
-                            await messageService.ShowAsync("Ограничение", "Чередовать аудио с другими элементами невозможно");
-                            return;
-                        }
-                        TapLastAction.MediaItems.Add(new MediaItem()
-                        {
-                            //Bytes = stream.ReadFully(),
-                            Name = file.FileName,
-                            Type = MediaType.Audio,
-                            Source = "music_icon.png",
                             PathMediaSource = file.FullPath,
                         });
                     }
@@ -403,17 +337,6 @@ namespace ConstructorBot.ViewModel.ConstructorPageViewModel
             }
         }
 
-        private KeyboardItem keyboardItem { get; set; }
-
-        public KeyboardItem KeyboardItem
-        {
-            get => keyboardItem;
-            set
-            {
-                keyboardItem = value;
-                OnPropertyChanged();
-            }
-        }
         //Редактировать item клавиатуры
         public ICommand PutKeyboardCommand
         {
@@ -475,11 +398,52 @@ namespace ConstructorBot.ViewModel.ConstructorPageViewModel
             }
         }
 
-        public ConstructorViewModel()
+
+        string pathOpenPhoto;
+        public string PathOpenPhoto 
+        { 
+            get => pathOpenPhoto; 
+            set
+            {
+                pathOpenPhoto = value;
+                OnPropertyChanged();
+            }
+        }
+
+        bool isOpenPhoto;
+        public bool IsOpenPhoto
+        {
+            get => isOpenPhoto;
+            set
+            {
+                isOpenPhoto = value;
+                OnPropertyChanged();
+            }
+        }
+
+        //Открыть фото
+        public ICommand OpenPhotoCommand
+        {
+            get
+            {
+                return new Command((object image) =>
+                {
+                    if (image is not null)
+                    {
+                        var pathImage = (image as Image).Source;
+                        PathOpenPhoto = pathImage.ToString().Split(' ')[1];                        
+                    }
+                    IsOpenPhoto = !isOpenPhoto;
+                });
+            }
+        }
+
+
+        public ConstructorViewModel(IMessageService messageService, IStorageService storageService)
         {
             ActionBoxBuilder = new ActionBoxBuilder();
-
-            this.messageService = DependencyService.Get<App.IMessageService>();
+            this.messageService = messageService;
+            this.storageService = storageService;
         }
     }
 }

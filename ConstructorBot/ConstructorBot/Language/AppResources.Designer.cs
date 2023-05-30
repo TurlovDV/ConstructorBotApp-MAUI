@@ -178,15 +178,6 @@ namespace ConstructorBot.Language {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Help.
-        /// </summary>
-        internal static string Help {
-            get {
-                return ResourceManager.GetString("Help", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Ищет локализованную строку, похожую на To get started, enter the telegram token.
         /// </summary>
         internal static string info1 {
@@ -300,6 +291,15 @@ namespace ConstructorBot.Language {
         internal static string Save {
             get {
                 return ResourceManager.GetString("Save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Settings.
+        /// </summary>
+        internal static string Settings {
+            get {
+                return ResourceManager.GetString("Settings", resourceCulture);
             }
         }
         

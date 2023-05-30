@@ -37,32 +37,32 @@
           "net7.0-android33.0": {
             "targetAlias": "net7.0-android",
             "projectReferences": {
-              "C:\\ConstructorBotProject\\ConstructorBot\\MessengerBotApi\\MessengerBotApi.csproj": {
-                "projectPath": "C:\\ConstructorBotProject\\ConstructorBot\\MessengerBotApi\\MessengerBotApi.csproj"
+              "C:\\ConstructorBotTelegramApi\\ConstructorBotMessengerApi\\ConstructorBotMessengerApi.csproj": {
+                "projectPath": "C:\\ConstructorBotTelegramApi\\ConstructorBotMessengerApi\\ConstructorBotMessengerApi.csproj"
               }
             }
           },
           "net7.0-ios16.1": {
             "targetAlias": "net7.0-ios",
             "projectReferences": {
-              "C:\\ConstructorBotProject\\ConstructorBot\\MessengerBotApi\\MessengerBotApi.csproj": {
-                "projectPath": "C:\\ConstructorBotProject\\ConstructorBot\\MessengerBotApi\\MessengerBotApi.csproj"
+              "C:\\ConstructorBotTelegramApi\\ConstructorBotMessengerApi\\ConstructorBotMessengerApi.csproj": {
+                "projectPath": "C:\\ConstructorBotTelegramApi\\ConstructorBotMessengerApi\\ConstructorBotMessengerApi.csproj"
               }
             }
           },
           "net7.0-maccatalyst16.1": {
             "targetAlias": "net7.0-maccatalyst",
             "projectReferences": {
-              "C:\\ConstructorBotProject\\ConstructorBot\\MessengerBotApi\\MessengerBotApi.csproj": {
-                "projectPath": "C:\\ConstructorBotProject\\ConstructorBot\\MessengerBotApi\\MessengerBotApi.csproj"
+              "C:\\ConstructorBotTelegramApi\\ConstructorBotMessengerApi\\ConstructorBotMessengerApi.csproj": {
+                "projectPath": "C:\\ConstructorBotTelegramApi\\ConstructorBotMessengerApi\\ConstructorBotMessengerApi.csproj"
               }
             }
           },
           "net7.0-windows10.0.19041": {
             "targetAlias": "net7.0-windows10.0.19041.0",
             "projectReferences": {
-              "C:\\ConstructorBotProject\\ConstructorBot\\MessengerBotApi\\MessengerBotApi.csproj": {
-                "projectPath": "C:\\ConstructorBotProject\\ConstructorBot\\MessengerBotApi\\MessengerBotApi.csproj"
+              "C:\\ConstructorBotTelegramApi\\ConstructorBotMessengerApi\\ConstructorBotMessengerApi.csproj": {
+                "projectPath": "C:\\ConstructorBotTelegramApi\\ConstructorBotMessengerApi\\ConstructorBotMessengerApi.csproj"
               }
             }
           }
@@ -117,6 +117,10 @@
               "target": "Package",
               "version": "[7.0.52, )",
               "autoReferenced": true
+            },
+            "Mopups": {
+              "target": "Package",
+              "version": "[1.1.1, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",
@@ -252,6 +256,10 @@
               "version": "[7.0.52, )",
               "autoReferenced": true
             },
+            "Mopups": {
+              "target": "Package",
+              "version": "[1.1.1, )"
+            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.2, )"
@@ -330,6 +338,10 @@
               "target": "Package",
               "version": "[7.0.52, )",
               "autoReferenced": true
+            },
+            "Mopups": {
+              "target": "Package",
+              "version": "[1.1.1, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",
@@ -427,6 +439,10 @@
               "version": "[1.2.221109.1, )",
               "autoReferenced": true
             },
+            "Mopups": {
+              "target": "Package",
+              "version": "[1.1.1, )"
+            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.2, )"
@@ -505,14 +521,14 @@
         }
       }
     },
-    "C:\\ConstructorBotProject\\ConstructorBot\\MessengerBotApi\\MessengerBotApi.csproj": {
+    "C:\\ConstructorBotTelegramApi\\ConstructorBotMessengerApi\\ConstructorBotMessengerApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\ConstructorBotProject\\ConstructorBot\\MessengerBotApi\\MessengerBotApi.csproj",
-        "projectName": "MessengerBotApi",
-        "projectPath": "C:\\ConstructorBotProject\\ConstructorBot\\MessengerBotApi\\MessengerBotApi.csproj",
+        "projectUniqueName": "C:\\ConstructorBotTelegramApi\\ConstructorBotMessengerApi\\ConstructorBotMessengerApi.csproj",
+        "projectName": "ConstructorBotMessengerApi",
+        "projectPath": "C:\\ConstructorBotTelegramApi\\ConstructorBotMessengerApi\\ConstructorBotMessengerApi.csproj",
         "packagesPath": "C:\\Users\\Даня\\.nuget\\packages\\",
-        "outputPath": "C:\\ConstructorBotProject\\ConstructorBot\\MessengerBotApi\\obj\\",
+        "outputPath": "C:\\ConstructorBotTelegramApi\\ConstructorBotMessengerApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

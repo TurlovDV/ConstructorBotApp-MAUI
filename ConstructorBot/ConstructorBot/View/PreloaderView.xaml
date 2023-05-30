@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ConstructorBot.View.PreloaderView"
+             Title=""
+             xmlns:ctm="clr-namespace:CommunityToolkit.Maui.Behaviors;assembly=CommunityToolkit.Maui"             
+             BackgroundColor="#2A3D5A">
+    
+    <ContentPage.Behaviors>
+        <ctm:StatusBarBehavior StatusBarColor="#2A3D5A" StatusBarStyle="LightContent"></ctm:StatusBarBehavior>
+    </ContentPage.Behaviors>
+
+    <Shell.NavBarIsVisible>
+        <x:Boolean>False</x:Boolean>
+    </Shell.NavBarIsVisible>
+
+    <Grid>
+        <Image Source="grid_lines.svg" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></Image>
+        <Frame HorizontalOptions="Center" BorderColor="Transparent" VerticalOptions="Center" WidthRequest="120" HeightRequest="120" CornerRadius="30" BackgroundColor="#1D2733">
+            <Image HorizontalOptions="Center" VerticalOptions="Center" Source="loader.gif" IsAnimationPlaying="True" x:Name="preloader"></Image>
+        </Frame>
+    </Grid>
+</ContentPage>
