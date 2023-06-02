@@ -30,6 +30,8 @@ namespace ConstructorBot.ViewModel.ConstructorPageViewModel
         private IMessageService messageService;
         private IStorageService storageService;
         private KeyboardItem keyboardItem;
+        public ActionBoxBuilder ActionBoxBuilder;
+        public ObservableCollection<ActionBox> ActionBoxes { get; set; } 
 
         public KeyboardItem KeyboardItem
         {
@@ -101,11 +103,6 @@ namespace ConstructorBot.ViewModel.ConstructorPageViewModel
             }
         }
 
-        
-        public ActionBoxBuilder ActionBoxBuilder;
-        
-        public ObservableCollection<ActionBox> ActionBoxes { get; set; }
-               
 
         //Вернуться к главному блоку
         public ICommand GoToMainBox

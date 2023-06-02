@@ -36,11 +36,7 @@ namespace ConstructorBot.Model.Action
         public Keyboard()
         {
             KeyboardItems = new ObservableCollection<KeyboardItem>();
-            //keyboardItems = new KeyboardItem[2,3];
-            //for (int i = 0; i < keyboardItems.Length; i++)
-            //    for (int j = 0; j < 3; j++)
-            //        keyboardItems[i,j] = new KeyboardItem();
-
+            
             for (int i = 0; i < 3; i++)
                 for (int j = 0; j < 3; j++)
                     KeyboardItems.Add(new KeyboardItem()
@@ -48,29 +44,6 @@ namespace ConstructorBot.Model.Action
                         Row = i,
                         Column = j                        
                     });
-
-
-            //keyboardItems = new List<List<KeyboardItem>>()
-            //{
-            //    new List<KeyboardItem>()
-            //    {
-            //        new (),
-            //        new (),
-            //        new ()
-            //    },
-            //    new List<KeyboardItem>()
-            //    {
-            //        new (),
-            //        new (),
-            //        new ()
-            //    },
-            //    new List<KeyboardItem>()
-            //    {
-            //        new (),
-            //        new (),
-            //        new ()
-            //    }
-            //};
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

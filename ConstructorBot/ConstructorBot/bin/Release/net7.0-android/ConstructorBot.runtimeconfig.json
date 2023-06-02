@@ -24,9 +24,8 @@
       }
     ],
     "configProperties": {
-      "Microsoft.Extensions.DependencyInjection.VerifyOpenGenericServiceTrimmability": false,
+      "Microsoft.Extensions.DependencyInjection.VerifyOpenGenericServiceTrimmability": true,
       "System.AggressiveAttributeTrimming": true,
-      "System.ComponentModel.TypeConverter.EnableUnsafeBinaryFormatterInDesigntimeLicenseContextSerialization": false,
       "System.Diagnostics.Debugger.IsSupported": false,
       "System.Diagnostics.Tracing.EventSource.IsSupported": false,
       "System.Globalization.Invariant": false,
@@ -34,14 +33,9 @@
       "System.Net.Http.UseNativeHttpHandler": true,
       "System.Reflection.Metadata.MetadataUpdater.IsSupported": false,
       "System.Reflection.NullabilityInfoContext.IsSupported": false,
-      "System.Resources.ResourceManager.AllowCustomResourceTypes": false,
-      "System.Resources.UseSystemResourceKeys": true,
       "System.Runtime.InteropServices.BuiltInComInterop.IsSupported": false,
-      "System.Runtime.InteropServices.EnableConsumingManagedCodeFromNativeHosting": false,
-      "System.Runtime.InteropServices.EnableCppCLIHostActivation": false,
       "System.Runtime.Serialization.EnableUnsafeBinaryFormatterSerialization": false,
       "System.StartupHookProvider.IsSupported": false,
-      "System.Threading.Thread.EnableAutoreleasePool": false,
       "System.Text.Encoding.EnableUnsafeUTF7Encoding": false,
       "Xamarin.Android.Net.UseNegotiateAuthentication": false
     }

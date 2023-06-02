@@ -76,6 +76,7 @@
 	  <None Remove="Resources\Images\info5.svg" />
 	  <None Remove="Resources\Images\keyboard1.png" />
 	  <None Remove="Resources\Images\keyboard_black.png" />
+	  <None Remove="Resources\Images\link_image.svg" />
 	  <None Remove="Resources\Images\loader.gif" />
 	  <None Remove="Resources\Images\menu.png" />
 	  <None Remove="Resources\Images\message_icone.svg" />
@@ -104,6 +105,8 @@
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
 		<PackageReference Include="Mopups" Version="1.1.1" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+		<PackageReference Include="Plugin.LocalNotification" Version="10.1.5" />
+		<PackageReference Include="Sentry.Maui" Version="3.33.0" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -122,6 +125,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="Mopups\PopupNotificationPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Mopups\PopupPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -143,5 +149,13 @@
 	  <ProjectReference Include="..\..\..\ConstructorBotTelegramApi\ConstructorBotMessengerApi\ConstructorBotMessengerApi.csproj" />
 	</ItemGroup>
 
+	<PropertyGroup Condition="$(TargetFramework.Contains('-android')) and '$(Configuration)' == 'Release'">
+		<AndroidSigningKeyStore>key.keystore</AndroidSigningKeyStore>
+		<AndroidSigningKeyAlias>key</AndroidSigningKeyAlias>
+		
+		<PublishTrimmed>False</PublishTrimmed>
+		<EnableTrimAnalyzer>False</EnableTrimAnalyzer>
+		<RunAOTCompilation>False</RunAOTCompilation>
+	</PropertyGroup>
 	
 </Project>

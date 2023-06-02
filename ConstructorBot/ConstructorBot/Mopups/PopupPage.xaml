@@ -17,15 +17,15 @@
     </mopups:PopupPage.Animation>
 
 
-    <Border TranslationY="-30" StrokeShape="RoundRectangle 15, 15, 15, 15" WidthRequest="260" HeightRequest="180" BackgroundColor="Transparent" Stroke="Transparent">
+    <Border TranslationY="-30" StrokeShape="RoundRectangle 15, 15, 15, 15" WidthRequest="260" HeightRequest="200" BackgroundColor="Transparent" Stroke="Transparent">
         <Grid RowDefinitions="Auto, *">
-            <Frame BackgroundColor="#4B80AC" Padding="0" HeightRequest="85" HorizontalOptions="FillAndExpand" CornerRadius="0" BorderColor="#4B80AC">
+            <Frame BackgroundColor="#17153C" Padding="0" HeightRequest="95" HorizontalOptions="FillAndExpand" CornerRadius="0" BorderColor="#17153C">
                 <Grid ColumnDefinitions="*, *">
                     <Image Source="bot1.svg" VerticalOptions="End"></Image>
                     <Label Margin="10, 0, 0, 0" x:Name="title" TextColor="White" Grid.Column="1" FontAttributes="Bold" VerticalOptions="Center" FontSize="Medium"></Label>
                 </Grid> 
             </Frame>
-            <Frame BackgroundColor="#344B6D" Grid.Row="1" Padding="0" BorderColor="#344B6D" CornerRadius="0">
+            <Frame BackgroundColor="#1B293E" Grid.Row="1" Padding="0" BorderColor="#1B293E" CornerRadius="0">
                 <Label Margin="10" FontAttributes="Bold" x:Name="message" HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="Center" TextColor="White" FontSize="Small"></Label>
             </Frame>
         </Grid>

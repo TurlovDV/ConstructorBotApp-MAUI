@@ -9,6 +9,5 @@ public partial class PopupPage
 
         this.title.Text = title;
         this.message.Text = message;
-
     }
 }

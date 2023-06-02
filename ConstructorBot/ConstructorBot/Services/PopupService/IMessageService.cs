@@ -10,5 +10,7 @@ namespace ConstructorBot.Services.PopupService
     {
         Task ShowAsync(string title, string message);
         Task<string> ShowOrOkAsync(string title, string message);
+
+        Task ShowNotification(string title, string message, int timeClosePopup);
     }
 }

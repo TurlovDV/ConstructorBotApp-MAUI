@@ -36,7 +36,7 @@
             </Border.StrokeShape>
         </Border>
 
-        
+
         <Frame Padding="0" Grid.Row="2" Grid.RowSpan="2" IsVisible="{Binding IsPageMain}" BackgroundColor="Transparent" CornerRadius="0" BorderColor="Transparent">
             <Grid Padding="10" RowDefinitions="*,*" ColumnDefinitions="*,*" ColumnSpacing="20">
                 <Frame Padding="10, 60, 0, 20" BorderColor="Transparent" BackgroundColor="Transparent" Grid.Row="0" Grid.Column="0">
@@ -114,68 +114,147 @@
                 </Frame>
             </Grid>
         </Frame>
-               
+
         <!--Изменение ключа подключения телеграм-->
         <Frame Grid.Row="2" Padding="20, 50, 20, 20" Grid.RowSpan="2" IsVisible="{Binding IsPageOptionsToken}" BackgroundColor="Transparent" BorderColor="Transparent" CornerRadius="0">
-            <StackLayout Spacing="35" VerticalOptions="Start">
-                <StackLayout HorizontalOptions="Start" VerticalOptions="Start" Spacing="10" Orientation="Horizontal">
-                    <Image Source="options.svg" VerticalOptions="Center" WidthRequest="40" HeightRequest="40" BackgroundColor="Transparent"></Image>
-                    <StackLayout Spacing="2" VerticalOptions="Center">
-                        <Label FontAttributes="Bold" Text="{language:Translate Options}" FontSize="Small" TextColor="White"></Label>
-                        <Label Text="{language:Translate ConnectionSettings}" FontSize="Micro" TextColor="Gray"></Label>
-                    </StackLayout>
-                </StackLayout>
-
-                <StackLayout Spacing="15">
-                    <Label Text="{language:Translate EnterTheBotConnectionToken}" FontSize="Small" TextColor="White"></Label>
-                    <!--Вылет фонового приложения из-за Entry во Frame-->
-                    <Border BackgroundColor="Transparent" Stroke="Gray">
-                        <Border.StrokeShape>
-                            <RoundRectangle CornerRadius="5,5,5,5" />
-                        </Border.StrokeShape>
-                        <Entry Text="{Binding ConnectionToken, Mode=TwoWay}" Placeholder="Токен" HorizontalOptions="FillAndExpand" Margin="10,0,10,0"></Entry>
-                    </Border>
-
-                    <Button Command="{Binding SaveOptionsTokenCommand}" HorizontalOptions="FillAndExpand" Text="{language:Translate Save}" TextColor="White" BackgroundColor="#2B3A62"></Button>
-                </StackLayout>
-
-            </StackLayout>
-        </Frame>
-
-        <!--Настройки приложения-->
-        <Frame Grid.Row="2" Padding="20, 50, 20, 20" Grid.RowSpan="2" IsVisible="{Binding IsPageSettingsApplaction}" BackgroundColor="Transparent" BorderColor="Transparent" CornerRadius="0">
             <Grid>
-                <ImageButton Command="{Binding OpenSettingApplication}" HorizontalOptions="End" VerticalOptions="Start" HeightRequest="30" WidthRequest="30" Source="cross2.png"></ImageButton>
                 <StackLayout Spacing="35" VerticalOptions="Start">
                     <StackLayout HorizontalOptions="Start" VerticalOptions="Start" Spacing="10" Orientation="Horizontal">
-                        <Image Source="settings.svg" VerticalOptions="Center" WidthRequest="40" HeightRequest="40" BackgroundColor="Transparent"></Image>
+                        <Image Source="options.svg" VerticalOptions="Center" WidthRequest="40" HeightRequest="40" BackgroundColor="Transparent"></Image>
                         <StackLayout Spacing="2" VerticalOptions="Center">
-                            <Label FontAttributes="Bold" Text="{language:Translate Settings}" FontSize="Small" TextColor="White"></Label>
-                            <Label Text="{language:Translate ApplicationSettings}" FontSize="Micro" TextColor="Gray"></Label>
+                            <Label FontAttributes="Bold" Text="{language:Translate Options}" FontSize="Small" TextColor="White"></Label>
+                            <Label Text="{language:Translate ConnectionSettings}" FontSize="Micro" TextColor="Gray"></Label>
                         </StackLayout>
                     </StackLayout>
 
-                    <StackLayout Spacing="10">
-                        <Label Margin="5, 0, 0, 0" Text="{language:Translate Language}" FontSize="Small" TextColor="White"></Label>
+                    <StackLayout Spacing="15">
+                        <Label Text="{language:Translate EnterTheBotConnectionToken}" FontSize="Small" TextColor="White"></Label>
                         <!--Вылет фонового приложения из-за Entry во Frame-->
                         <Border BackgroundColor="Transparent" Stroke="Gray">
                             <Border.StrokeShape>
                                 <RoundRectangle CornerRadius="5,5,5,5" />
                             </Border.StrokeShape>
-                            <Picker Margin="5, 0, 5, 0" x:Name="pickerLanguage" Title = "{language:Translate Language}" SelectedIndexChanged="Picker_SelectedIndexChanged">
-                                <Picker.Items>
-                                    <x:String>Russian</x:String>
-                                    <x:String>English</x:String>
-                                </Picker.Items>
-                            </Picker>
+                            <Entry Text="{Binding ConnectionToken, Mode=TwoWay}" Placeholder="Токен" HorizontalOptions="FillAndExpand" Margin="10,0,10,0"></Entry>
                         </Border>
 
-                        <!--<Button Command="{Binding SaveSettingApplication}" HorizontalOptions="FillAndExpand" Text="{language:Translate Save}" TextColor="White" BackgroundColor="#2B3A62"></Button>-->
+                        <Button Command="{Binding SaveOptionsTokenCommand}" HorizontalOptions="FillAndExpand" Text="{language:Translate Save}" TextColor="White" BackgroundColor="#2B3A62"></Button>
                     </StackLayout>
+
+                    <Border HeightRequest="65" WidthRequest="230" Stroke="#7B8B51" BackgroundColor="#3d443a" Padding="0" HorizontalOptions="Start" Margin="20, -5, 0, 0" StrokeShape="RoundRectangle 5, 5, 5, 5">
+                        <Grid>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center" Spacing="10">
+                                <Image Source="link_image.svg" WidthRequest="40" HeightRequest="40" HorizontalOptions="Center"></Image>
+                                <!--#FFEE51 #FFF27E-->
+                                <Label MaximumWidthRequest="140" HorizontalTextAlignment="Center" Text="Получить токен у бота BotFather" TextColor="#FFEE51" VerticalTextAlignment="Center"></Label>
+                            </StackLayout>
+                            <Button HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Transparent" Command="{Binding OpenBotFatherCommand}"></Button>
+                        </Grid>
+                    </Border>
                 </StackLayout>
+
+                <ImageButton Command="{Binding OpenOptionsTokenCommand}" HorizontalOptions="End" VerticalOptions="Start" HeightRequest="30" WidthRequest="30" Source="cross2.png"></ImageButton>
+
             </Grid>
         </Frame>
-        
+
+        <!--Настройки приложения-->
+        <Frame Grid.Row="2" Padding="20, 50, 20, 0" Grid.RowSpan="2" IsVisible="{Binding IsPageSettingsApplaction}" BackgroundColor="Transparent" BorderColor="Transparent" CornerRadius="0">
+            <Grid>
+                <ScrollView>
+                    <StackLayout Spacing="35" VerticalOptions="Start">
+                        <StackLayout HorizontalOptions="Start" VerticalOptions="Start" Spacing="10" Orientation="Horizontal">
+                            <Image Source="settings.svg" VerticalOptions="Center" WidthRequest="40" HeightRequest="40" BackgroundColor="Transparent"></Image>
+                            <StackLayout Spacing="2" VerticalOptions="Center">
+                                <Label FontAttributes="Bold" Text="{language:Translate Settings}" FontSize="Small" TextColor="White"></Label>
+                                <Label Text="{language:Translate ApplicationSettings}" FontSize="Micro" TextColor="Gray"></Label>
+                            </StackLayout>
+                        </StackLayout>
+
+                        <StackLayout Spacing="10">
+                            <Label Margin="5, 0, 0, 0" Text="{language:Translate Language}" FontSize="Small" TextColor="White" FontAttributes="Bold"></Label>
+                            <Border BackgroundColor="Transparent" Stroke="Gray">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="5,5,5,5" />
+                                </Border.StrokeShape>
+                                <Picker Margin="5, 0, 5, 0" x:Name="pickerLanguage" Title = "{language:Translate Language}" SelectedIndexChanged="Picker_SelectedIndexChanged">
+                                    <Picker.Items>
+                                        <x:String>Russian</x:String>
+                                        <x:String>English</x:String>
+                                    </Picker.Items>
+                                </Picker>
+                            </Border>
+
+                            <StackLayout Spacing="2" Margin="0, 10, 0, 0">
+                                <Label Margin="5, 0, 0, 0" Text="Уведомления" FontSize="Small" TextColor="White" FontAttributes="Bold"></Label>
+                                <StackLayout Orientation="Vertical" Spacing="-8">
+                                    <StackLayout Orientation="Horizontal" Spacing="5">
+                                        <Label Margin="5, 0, 0, 0" Text="Новое сообщение" FontSize="Small" TextColor="White" VerticalOptions="Center"></Label>
+                                        <CheckBox IsChecked="{Binding IsNotificationNewMessage}" Color="WhiteSmoke" VerticalOptions="Center"></CheckBox>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal" Spacing="5">
+                                        <Label Margin="5, 0, 0, 0" Text="Новая заявка" FontSize="Small" VerticalOptions="Center" TextColor="White"></Label>
+                                        <CheckBox IsChecked="{Binding IsNotificationNewSaveAnswer}" Color="WhiteSmoke" VerticalOptions="Center"></CheckBox>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal" Spacing="5">
+                                        <Label Margin="5, 0, 0, 0" Text="Новый пользователь" FontSize="Small" TextColor="White" VerticalOptions="Center"></Label>
+                                        <CheckBox IsChecked="{Binding IsNotificationNewUser}" Color="WhiteSmoke" VerticalOptions="Center"></CheckBox>
+                                    </StackLayout>
+                                </StackLayout>
+                            </StackLayout>
+
+                            <StackLayout Spacing="2" Margin="0, 10, 0, 0">
+                                <Label Margin="5, 0, 0, 0" Text="Фоновая работа" FontSize="Small" TextColor="White" FontAttributes="Bold"></Label>
+                                <StackLayout Orientation="Horizontal" Spacing="5">
+                                    <Label Margin="5, 0, 0, 0" Text="Работа в фоновом режиме" FontSize="Small" TextColor="White" VerticalOptions="Center"></Label>
+                                    <CheckBox IsChecked="{Binding IsNotificationNewMessage}" Color="WhiteSmoke" VerticalOptions="Center"></CheckBox>
+                                </StackLayout>
+                            </StackLayout>
+
+                            <Border HeightRequest="65" WidthRequest="230" Stroke="#764541" BackgroundColor="#3d2f3a" Padding="0" HorizontalOptions="Start" Margin="20, 0, 0, 15" StrokeShape="RoundRectangle 5, 5, 5, 5">
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center" Spacing="10">
+                                    <Label Text="!" TextColor="#ff5151" FontSize="44" VerticalTextAlignment="Center"></Label>
+                                    <Label MaximumWidthRequest="140" HorizontalTextAlignment="Center" Text="Отправить отчет в случае не работы" TextColor="#ff5151" VerticalTextAlignment="Center"></Label>
+                                </StackLayout>
+                                <Border.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding OpenPageSendReportCommand}"></TapGestureRecognizer>
+                                </Border.GestureRecognizers>
+                            </Border>
+
+                        </StackLayout>
+                    </StackLayout>
+                </ScrollView>
+                <ImageButton Command="{Binding OpenSettingApplication}" HorizontalOptions="End" VerticalOptions="Start" HeightRequest="30" WidthRequest="30" Source="cross2.png"></ImageButton>
+            </Grid>
+        </Frame>
+
+
+        <!--Отчет разработчикам-->
+        <Frame Grid.Row="2" Padding="20, 50, 20, 0" Grid.RowSpan="2" IsVisible="{Binding IsPageSendReport}" BackgroundColor="Transparent" BorderColor="Transparent" CornerRadius="0">
+            <Grid>
+                <StackLayout Spacing="35" VerticalOptions="Start">
+
+                    <StackLayout HorizontalOptions="Start" VerticalOptions="Start" Spacing="10" Orientation="Horizontal">
+                        <Image Source="settings.svg" VerticalOptions="Center" WidthRequest="40" HeightRequest="40" BackgroundColor="Transparent"></Image>
+                        <StackLayout Spacing="2" VerticalOptions="Center">
+                            <Label FontAttributes="Bold" Text="Проблема" FontSize="Small" TextColor="White"></Label>
+                            <Label Text="Отправить отчет разработчикам" FontSize="Micro" TextColor="Gray"></Label>
+                        </StackLayout>
+                    </StackLayout>
+
+                    <StackLayout Spacing="15">
+                        <Label Margin="5, 0, 0, 0" Text="Опишите проблему" FontSize="Small" TextColor="White" FontAttributes="Bold"></Label>
+                        <Border StrokeShape="RoundRectangle 10, 10, 10, 10" Stroke="Gray" BackgroundColor="Transparent" Padding="5, 0, 5, 0">
+                            <Editor HorizontalOptions="FillAndExpand" HeightRequest="150" Placeholder="Проблема" BackgroundColor="Transparent"></Editor>
+                        </Border>
+                        <Button HorizontalOptions="FillAndExpand" Command="{Binding OpenPageSendReportCommand}" Text="Отправить" TextColor="White" BackgroundColor="#2B3A62"></Button>
+                    </StackLayout>
+                </StackLayout>
+                <ImageButton Command="{Binding OpenPageSendReportCommand}" HorizontalOptions="End" VerticalOptions="Start" HeightRequest="30" WidthRequest="30" Source="cross2.png"></ImageButton>
+            </Grid>
+        </Frame>
+
+
+
         <!--Просмотр схраненных заявок-->
         <Frame Grid.Row="2" Padding="20, 50, 20, 20" Grid.RowSpan="2" IsVisible="{Binding IsPageViewRequest}" BackgroundColor="Transparent" BorderColor="Transparent" CornerRadius="0">
             <Grid>
@@ -223,7 +302,7 @@
                             </BindableLayout.ItemTemplate>
                             <BindableLayout.EmptyViewTemplate>
                                 <DataTemplate>
-                                    <Grid HorizontalOptions="FillAndExpand" RowDefinitions="*, 1.5*" VerticalOptions="FillAndExpand">
+                                    <Grid HorizontalOptions="FillAndExpand" RowDefinitions="*, 1.3*" VerticalOptions="FillAndExpand">
                                         <StackLayout HorizontalOptions="Center" VerticalOptions="End" Spacing="5">
                                             <Image Source="empty.png" WidthRequest="50" HeightRequest="50" HorizontalOptions="Center"></Image>
                                             <Label Text="{language:Translate TheListOfApplicationsIsEmpty}" FontAttributes="Bold" HorizontalOptions="Center" TextColor="Gray" FontSize="Small"></Label>
@@ -299,13 +378,14 @@
         <Image Source="background_info.svg" HorizontalOptions="End" VerticalOptions="Start" HeightRequest="60"></Image>
         <ImageButton Source="info.svg" Grid.RowSpan="4" Padding="4" Clicked="Button_PushToInfo" HeightRequest="45" WidthRequest="45" Margin="5" VerticalOptions="Start" HorizontalOptions="End"></ImageButton>
 
+        <!--Загрузка-->
         <Grid Grid.RowSpan="4" IsVisible="{Binding IsPageLoading}">
             <Border Grid.RowSpan="4" HorizontalOptions="FillAndExpand" Margin="0" VerticalOptions="FillAndExpand" Scale="1.1" BackgroundColor="Black" Opacity="0.8"></Border>
             <Frame HorizontalOptions="Center" BorderColor="Transparent" VerticalOptions="Center" WidthRequest="120" HeightRequest="120" CornerRadius="30" BackgroundColor="#1D2733">
                 <Image HorizontalOptions="Center" VerticalOptions="Center" Source="loader.gif" IsAnimationPlaying="True" x:Name="preloader"></Image>
             </Frame>
         </Grid>
-        
+
     </Grid>
 
 </ContentPage>

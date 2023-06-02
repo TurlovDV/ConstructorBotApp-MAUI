@@ -1,0 +1,3 @@
+C:\ConstructorBotProject\ConstructorBot\ConstructorBot\bin\Release\net7.0-android\publish\com.companyname.constructorbot-Signed.aab
+C:\ConstructorBotProject\ConstructorBot\ConstructorBot\bin\Release\net7.0-android\publish\com.companyname.constructorbot.aab
+C:\ConstructorBotProject\ConstructorBot\ConstructorBot\bin\Release\net7.0-android\publish\com.companyname.constructorbot-Signed.apk

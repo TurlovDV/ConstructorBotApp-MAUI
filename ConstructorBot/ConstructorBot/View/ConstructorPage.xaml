@@ -184,6 +184,8 @@
             </Grid>
         </Frame>
 
+        
+        <!--Клавиатура-->
         <Frame IsVisible="{Binding IsAddButtons}" Grid.RowSpan="2" BackgroundColor="Transparent" CornerRadius="0" BorderColor="Transparent"></Frame>
         <Frame CornerRadius="0" IsVisible="{Binding IsAddButtons}" BorderColor="#253242" Grid.Row="1" BackgroundColor="#253242">
             <StackLayout Spacing="10">
@@ -194,7 +196,7 @@
                 <StackLayout>
                     <StackLayout Orientation="Horizontal" Spacing="0">
                         <Label Text="{language:Translate Inline}" TextColor="White" VerticalOptions="Center"></Label>
-                        <!--Color="#4D8CC1"--> <CheckBox Color="WhiteSmoke" VerticalOptions="Center" IsChecked="{Binding TapLastAction.Keyboard.IsInline, Mode=TwoWay}"></CheckBox>
+                        <CheckBox Color="WhiteSmoke" VerticalOptions="Center" IsChecked="{Binding TapLastAction.Keyboard.IsInline, Mode=TwoWay}"></CheckBox>
                     </StackLayout>
                     <Grid ColumnSpacing="10" RowSpacing="10" Margin="0, 10, 0, 0" RowDefinitions="*,*,*" ColumnDefinitions="*,*,*" BindableLayout.ItemsSource="{Binding TapLastAction.Keyboard.KeyboardItems}">
                         <BindableLayout.ItemTemplate>
@@ -210,12 +212,19 @@
                         </BindableLayout.ItemTemplate>
                     </Grid>
                 </StackLayout>
+
+                <Border HeightRequest="65" WidthRequest="230" Stroke="#7B8B51" BackgroundColor="#3d443a" Padding="0" HorizontalOptions="Start" Margin="20, 10, 0, 0" StrokeShape="RoundRectangle 5, 5, 5, 5">
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center" Spacing="5">
+                        <Label Text="!" HorizontalOptions="Center" TextColor="#FFEE51" FontSize="40"></Label>
+                        <Label MaximumWidthRequest="180" HorizontalTextAlignment="Center" Text="Нажми на кнопку 2 раза для редактирования" TextColor="#FFEE51" VerticalTextAlignment="Center"></Label>
+                    </StackLayout>
+                </Border>
             </StackLayout>
         </Frame>
 
         <Frame IsVisible="{Binding IsPutButton}" Grid.RowSpan="2" BackgroundColor="Transparent" CornerRadius="0" BorderColor="Transparent"></Frame>
         <Frame CornerRadius="0" IsVisible="{Binding IsPutButton}" BorderColor="#253242" Grid.Row="1" BackgroundColor="#253242">
-            <StackLayout Spacing="20">
+            <StackLayout Spacing="20" Padding="0, 0, 0, 20">
                 <StackLayout Spacing="10" Orientation="Horizontal">
                     <ImageButton Command="{Binding PutKeyboardCommand}" HeightRequest="45" WidthRequest="45" Aspect="AspectFit" Source="back.png" VerticalOptions="Start" HorizontalOptions="End"></ImageButton>
                     <Label Text="{language:Translate KeyboardSetup}" TextColor="White" VerticalOptions="Center"></Label>

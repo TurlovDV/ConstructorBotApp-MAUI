@@ -126,6 +126,14 @@
               "target": "Package",
               "version": "[13.0.2, )"
             },
+            "Plugin.LocalNotification": {
+              "target": "Package",
+              "version": "[10.1.5, )"
+            },
+            "Sentry.Maui": {
+              "target": "Package",
+              "version": "[3.33.0, )"
+            },
             "Xamarin.Android.Glide": {
               "target": "Package",
               "version": "[4.13.2.2, )",
@@ -263,6 +271,14 @@
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.2, )"
+            },
+            "Plugin.LocalNotification": {
+              "target": "Package",
+              "version": "[10.1.5, )"
+            },
+            "Sentry.Maui": {
+              "target": "Package",
+              "version": "[3.33.0, )"
             }
           },
           "imports": [
@@ -346,6 +362,14 @@
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.2, )"
+            },
+            "Plugin.LocalNotification": {
+              "target": "Package",
+              "version": "[10.1.5, )"
+            },
+            "Sentry.Maui": {
+              "target": "Package",
+              "version": "[3.33.0, )"
             }
           },
           "imports": [
@@ -446,6 +470,14 @@
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.2, )"
+            },
+            "Plugin.LocalNotification": {
+              "target": "Package",
+              "version": "[10.1.5, )"
+            },
+            "Sentry.Maui": {
+              "target": "Package",
+              "version": "[3.33.0, )"
             }
           },
           "imports": [

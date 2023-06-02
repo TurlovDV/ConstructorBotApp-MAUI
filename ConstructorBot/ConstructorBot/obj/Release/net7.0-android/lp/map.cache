@@ -161,3 +161,9 @@ Microsoft.Maui.aar
 Microsoft.Maui.Essentials.aar
 Mopups.aar
 Xamarin.Google.Crypto.Tink.Android.aar
+Sentry.Bindings.Android.dll
+Sentry.dll
+Sentry.Maui.dll
+sentry-android-core-6.19.1.aar
+sentry-android-ndk-6.19.1.aar
+Sentry.Bindings.Android.aar

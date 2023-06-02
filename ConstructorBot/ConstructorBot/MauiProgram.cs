@@ -10,6 +10,8 @@ using static ConstructorBot.App;
 using ConstructorBot.Services.PopupService;
 using ConstructorBot.Services;
 using Mopups.Hosting;
+using System.Net;
+using Plugin.LocalNotification;
 
 namespace ConstructorBot;
 
@@ -37,6 +39,11 @@ public static class MauiProgram
         builder
             .UseMauiApp<App>()
 			.UseMauiCommunityToolkit()
+			.UseLocalNotification()
+			.UseSentry(options =>
+			{
+				options.Dsn = "https://8536cd6308be41458da7a34b5635d6f2@o4505274608648192.ingest.sentry.io/4505274617364480";
+            })
 			.ConfigureMopups()
 			.ConfigureMauiHandlers(handlers =>
 			{

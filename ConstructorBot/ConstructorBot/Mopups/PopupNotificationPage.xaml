@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<mopups:PopupPage  xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ConstructorBot.Mopups.PopupNotificationPage"
+             Title=""
+             xmlns:mopups="clr-namespace:Mopups.Pages;assembly=Mopups"
+             xmlns:mopupsanim="clr-namespace:Mopups.Animations;assembly=Mopups"
+             BackgroundColor="Transparent"
+             CloseWhenBackgroundIsClicked="True">
+
+    <mopups:PopupPage.Animation>
+        <mopupsanim:ScaleAnimation
+            DurationIn="700"
+            EasingIn="BounceOut"
+            PositionIn="Top"
+            PositionOut="Top"
+            ScaleIn="1"
+            ScaleOut="0.2" />
+    </mopups:PopupPage.Animation>
+    <!--#1F1E48-->
+    <Frame HorizontalOptions="Center" VerticalOptions="Start" Padding="20, 10, 20, 10" BorderColor="Transparent" BackgroundColor="#1D2733">
+        <StackLayout Spacing="3">
+            <Label x:Name="title" FontAttributes="Bold" TextColor="#FFFA85"></Label>
+            <Label x:Name="message" TextColor="White"></Label>
+        </StackLayout>
+    </Frame>
+    
+</mopups:PopupPage>

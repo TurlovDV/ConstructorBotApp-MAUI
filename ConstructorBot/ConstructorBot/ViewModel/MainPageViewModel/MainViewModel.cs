@@ -5,6 +5,9 @@ using ConstructorBot.Services.ServiceStorage;
 using ConstructorBot.ViewModel.ConstructorPageViewModel;
 using ConstructorBotMessengerApi;
 using ConstructorBotMessengerApi.Model;
+using Microsoft.Extensions.Logging;
+using Plugin.LocalNotification;
+using Sentry;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -29,6 +32,7 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
         private bool isPageMain = true;
         private bool isInternetConnection = true;
         private bool isPageSettingsApplaction;
+        private bool isPageSendReport;
         private IStorageService storageService;
         private IMessageService messageService;
         private IBuildMessengerService buildMessengerService;
@@ -36,8 +40,52 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
         private ConstructorBotMessengerApi.IMessengerService messengerCoreService;
         private string connectionToken;
         private bool isPageLoading;
+        private bool isNotificationNewMessage = true;
+        private bool isNotificationNewUser = true;
+        private bool isNotificationNewSaveAnswer = true;
         public InfoTable InfoTable { get; set; } = new();
         public ObservableCollection<LogicUser> SaveMesseges { get; set; }
+
+
+        public bool IsPageSendReport 
+        {
+            get => isPageSendReport; 
+            set
+            {
+                isPageSendReport= value;
+                OnPropertyChanged();
+            }
+        }
+
+        public bool IsNotificationNewMessage
+        {
+            get => isNotificationNewMessage;
+            set
+            {
+                isNotificationNewMessage = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public bool IsNotificationNewUser
+        {
+            get => isNotificationNewUser;
+            set
+            {
+                isNotificationNewUser = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public bool IsNotificationNewSaveAnswer
+        {
+            get => isNotificationNewSaveAnswer;
+            set
+            {
+                isNotificationNewSaveAnswer = value;
+                OnPropertyChanged();
+            }
+        }
 
         public bool IsPageLoading
         {
@@ -60,8 +108,8 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
         }
 
         public bool IsPageOptionsToken
-        { 
-            get => isPageOptionsToken; 
+        {
+            get => isPageOptionsToken;
             set
             {
                 isPageOptionsToken = value;
@@ -118,8 +166,8 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
                 OnPropertyChanged();
             }
         }
-        
-        public MainViewModel(IStorageService storageService,  
+
+        public MainViewModel(IStorageService storageService,
             IMessageService messageService,
             IBuildMessengerService buildMessengerService,
             ConstructorBotMessengerApi.IMessengerService messengerCoreService)
@@ -129,7 +177,7 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
             this.messageService = messageService;
             this.buildMessengerService = buildMessengerService;
             this.messengerCoreService = messengerCoreService;
-            messengerCoreService.OnNewLogger += NewNotification;
+            messengerCoreService.OnNewNotification += NewNotification;
         }
 
         private Task updateTableTask;
@@ -162,7 +210,7 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
                 }
             }
         }
-        
+
         //Начало работы
         public ICommand OnStartCommand
         {
@@ -172,10 +220,15 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
                 {
                     if (!IsStart)
                     {
+                        IsPageLoading = true;
+
                         controlMessengerService = buildMessengerService.Initialization(LogicMatrixConverter.GetParentActions(
                             storageService.GetActions()), storageService.GetConnectionToken());
 
                         var resultOnStart = await controlMessengerService.Start();
+                        
+                        IsPageLoading = false;
+
                         if (resultOnStart != null)
                         {
                             
@@ -185,11 +238,12 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
                             InfoTable.OnStartTiming = new DateTime();
                             if (updateTableTask == null || updateTableTask.Status == TaskStatus.RanToCompletion)
                                 updateTableTask = UpdateInfoTable();
-                            
+
                             isInternetConnection = true;
                         }
                         else
                         {
+
                             if (Connectivity.Current.NetworkAccess != NetworkAccess.Internet)
                                 await messageService.ShowAsync("Ошибка", "Нет подключения к интернету");
                             else
@@ -210,13 +264,13 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
         public bool IsOneTap
         {
             get => isOneTap;
-            set 
+            set
             {
                 isOneTap = value;
                 OnPropertyChanged();
             }
         }
-        
+
         //Перейти к странице коснтсруктора
         public ICommand GoToConstructorPage
         {
@@ -254,8 +308,9 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
                 return new Command(() =>
                 {
                     ConnectionToken = storageService.GetConnectionToken();
-                    IsPageMain = false;
-                    IsPageOptionsToken = true;
+
+                    IsPageMain = !IsPageMain;
+                    IsPageOptionsToken = !IsPageOptionsToken;
                 });
             }
         }
@@ -272,10 +327,80 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
             }
         }
 
+
+
         //Новое сохраенное сообщение
-        public void NewNotification(Logger logger)
-        {            
-             IsNewNotification = true;            
+        bool isTimeNewNotification;
+        public void NewNotification(Notification notification)
+        {
+            NotificationRequest notificationRequest = null!;
+            
+
+            switch (notification.NotificationType)
+            {
+                case NotificationType.NewSaveAnswer:
+                    if (IsNotificationNewSaveAnswer)
+                    {
+                        notificationRequest = new NotificationRequest()
+                        {
+                            Title = "Новая заявка",
+                            Description = notification.Message.FirstName + " заполнил заявку",
+                            BadgeNumber = 42,
+                            CategoryType = NotificationCategoryType.Event
+                        };
+
+                        if (!isTimeNewNotification
+                            && Shell.Current.CurrentPage.ToString() == "ConstructorBot.MainPage")
+                            messageService.ShowNotification("Новая заявка", notification.Message.FirstName + " заполнил заявку", 700);
+                    }
+                    IsNewNotification = true;
+                    break;
+                case NotificationType.NewUser:
+                    if (IsNotificationNewUser)
+                    {
+                        notificationRequest = new NotificationRequest()
+                        {
+                            Title = "Новый пользователь",
+                            Description = notification.Message.FirstName + " написал боту",
+                            BadgeNumber = 42,
+                            CategoryType = NotificationCategoryType.Event
+                        };
+
+                        if (!isTimeNewNotification
+                            && Shell.Current.CurrentPage.ToString() == "ConstructorBot.MainPage")
+                            messageService.ShowNotification("Новый пользователь", notification.Message.FirstName + " написал боту", 700);
+                    }
+                    break;
+                case NotificationType.NewMessage:
+                    if (IsNotificationNewMessage)
+                    {
+                        notificationRequest = new NotificationRequest()
+                        {
+                            Title = "Новое сообщение",
+                            Description = notification.Message.FirstName + " написал боту",
+                            BadgeNumber = 42,
+                            CategoryType = NotificationCategoryType.Event
+                        };
+
+                        if (!isTimeNewNotification
+                            && Shell.Current.CurrentPage.ToString() == "ConstructorBot.MainPage")
+                            messageService.ShowNotification("Новое сообщение", notification.Message.FirstName + " написал боту", 700);
+                        
+                    }
+                    break;
+            }
+            if (notificationRequest is not null)
+                LocalNotificationCenter.Current.Show(notificationRequest);
+
+            if (!isTimeNewNotification)
+            {
+                isTimeNewNotification = true;
+                new Task(async () =>
+                {
+                    await Task.Delay(1000);
+                    isTimeNewNotification = false;
+                }).Start();
+            }
         }
 
         //Открыть / закрыть окно просмотра сохраненных заявок
@@ -329,12 +454,38 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
             {
                 return new Command(() =>
                 {
-                    if(ConnectionToken.Trim() != "" || ConnectionToken.Trim() != null)
+                    if (ConnectionToken.Trim() != "" || ConnectionToken.Trim() != null)
                         storageService.SetConnectionToken(ConnectionToken.Trim());
                     IsPageMain = true;
                     IsPageOptionsToken = false;
                 });
             }
-        }     
+        }
+
+        //Открыть бота BotFather
+        public ICommand OpenBotFatherCommand
+        {
+            get
+            {
+                return new Command(async () =>
+                {
+                    Uri uri = new Uri("https://t.me/BotFather");
+                    await Browser.Default.OpenAsync(uri, BrowserLaunchMode.SystemPreferred);
+                });
+            }
+        }
+
+        //Написать отзыв разрабочткам
+        public ICommand OpenPageSendReportCommand
+        {
+            get
+            {
+                return new Command(() =>
+                {
+                    IsPageSettingsApplaction = !IsPageSettingsApplaction;
+                    IsPageSendReport = !IsPageSendReport;
+                });
+            }
+        }
     }
 }
