@@ -189,15 +189,15 @@
                                 <StackLayout Orientation="Vertical" Spacing="-8">
                                     <StackLayout Orientation="Horizontal" Spacing="5">
                                         <Label Margin="5, 0, 0, 0" Text="Новое сообщение" FontSize="Small" TextColor="White" VerticalOptions="Center"></Label>
-                                        <CheckBox IsChecked="{Binding IsNotificationNewMessage}" Color="WhiteSmoke" VerticalOptions="Center"></CheckBox>
+                                        <CheckBox IsChecked="{Binding IsNotificationNewMessage, Mode=TwoWay}" Color="WhiteSmoke" VerticalOptions="Center"></CheckBox>
                                     </StackLayout>
                                     <StackLayout Orientation="Horizontal" Spacing="5">
                                         <Label Margin="5, 0, 0, 0" Text="Новая заявка" FontSize="Small" VerticalOptions="Center" TextColor="White"></Label>
-                                        <CheckBox IsChecked="{Binding IsNotificationNewSaveAnswer}" Color="WhiteSmoke" VerticalOptions="Center"></CheckBox>
+                                        <CheckBox IsChecked="{Binding IsNotificationNewSaveAnswer, Mode=TwoWay}" Color="WhiteSmoke" VerticalOptions="Center"></CheckBox>
                                     </StackLayout>
                                     <StackLayout Orientation="Horizontal" Spacing="5">
                                         <Label Margin="5, 0, 0, 0" Text="Новый пользователь" FontSize="Small" TextColor="White" VerticalOptions="Center"></Label>
-                                        <CheckBox IsChecked="{Binding IsNotificationNewUser}" Color="WhiteSmoke" VerticalOptions="Center"></CheckBox>
+                                        <CheckBox IsChecked="{Binding IsNotificationNewUser, Mode=TwoWay}" Color="WhiteSmoke" VerticalOptions="Center"></CheckBox>
                                     </StackLayout>
                                 </StackLayout>
                             </StackLayout>
@@ -206,7 +206,7 @@
                                 <Label Margin="5, 0, 0, 0" Text="Фоновая работа" FontSize="Small" TextColor="White" FontAttributes="Bold"></Label>
                                 <StackLayout Orientation="Horizontal" Spacing="5">
                                     <Label Margin="5, 0, 0, 0" Text="Работа в фоновом режиме" FontSize="Small" TextColor="White" VerticalOptions="Center"></Label>
-                                    <CheckBox IsChecked="{Binding IsNotificationNewMessage}" Color="WhiteSmoke" VerticalOptions="Center"></CheckBox>
+                                    <CheckBox IsChecked="{Binding IsBackgroundTask}" Color="WhiteSmoke" VerticalOptions="Center"></CheckBox>
                                 </StackLayout>
                             </StackLayout>
 
@@ -254,7 +254,6 @@
         </Frame>
 
 
-
         <!--Просмотр схраненных заявок-->
         <Frame Grid.Row="2" Padding="20, 50, 20, 20" Grid.RowSpan="2" IsVisible="{Binding IsPageViewRequest}" BackgroundColor="Transparent" BorderColor="Transparent" CornerRadius="0">
             <Grid>
@@ -268,7 +267,7 @@
                         </StackLayout>
                     </StackLayout>
                     <ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand">
-                        <StackLayout BindableLayout.ItemsSource="{Binding SaveMesseges}">
+                        <StackLayout BindableLayout.ItemsSource="{Binding SaveMesseges}" Spacing="5">
                             <BindableLayout.ItemTemplate>
                                 <DataTemplate x:DataType="vm:LogicUser">
                                     <Frame BackgroundColor="#3A547B" BorderColor="Transparent" Padding="10, 10, 7, 10">

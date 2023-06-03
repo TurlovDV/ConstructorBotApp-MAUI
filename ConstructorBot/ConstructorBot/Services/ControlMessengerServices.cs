@@ -25,11 +25,11 @@ namespace ConstructorBot.Services
             this.connectionToken = connectionToken;
         }
 
-        public async Task<MessengerBotInfo> Start()
+        public async Task<MessengerBotInfo> Start(bool isBackgroundWork = true)
         {
             var result = await messengerService.Start(parentActions, connectionToken);
             
-            if (result != null)
+            if (result != null && isBackgroundWork)
                 backgroundWork.Start();
 
             return result;

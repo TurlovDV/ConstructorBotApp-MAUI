@@ -40,49 +40,56 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
         private ConstructorBotMessengerApi.IMessengerService messengerCoreService;
         private string connectionToken;
         private bool isPageLoading;
-        private bool isNotificationNewMessage = true;
-        private bool isNotificationNewUser = true;
-        private bool isNotificationNewSaveAnswer = true;
+
         public InfoTable InfoTable { get; set; } = new();
         public ObservableCollection<LogicUser> SaveMesseges { get; set; }
 
+        public bool IsBackgroundTask
+        {
+            get => storageService.GetOptions(nameof(IsBackgroundTask));
+            set
+            {
+                storageService.SetOptions(nameof(IsBackgroundTask), value);
+                OnPropertyChanged();
+            }
+        }
 
         public bool IsPageSendReport 
         {
             get => isPageSendReport; 
             set
             {
-                isPageSendReport= value;
+                isPageSendReport = value;
                 OnPropertyChanged();
             }
         }
 
         public bool IsNotificationNewMessage
         {
-            get => isNotificationNewMessage;
+            get => storageService.GetOptions(nameof(IsNotificationNewMessage));
             set
             {
-                isNotificationNewMessage = value;
+                storageService.SetOptions(nameof(IsNotificationNewMessage), value);
                 OnPropertyChanged();
             }
         }
 
         public bool IsNotificationNewUser
         {
-            get => isNotificationNewUser;
+            get => storageService.GetOptions(nameof(IsNotificationNewUser));
             set
             {
-                isNotificationNewUser = value;
+                storageService.SetOptions(nameof(IsNotificationNewUser), value);
                 OnPropertyChanged();
             }
         }
 
         public bool IsNotificationNewSaveAnswer
         {
-            get => isNotificationNewSaveAnswer;
+            get => storageService.GetOptions(nameof(IsNotificationNewSaveAnswer));
             set
             {
-                isNotificationNewSaveAnswer = value;
+                storageService.SetOptions(nameof(IsNotificationNewSaveAnswer), value);
                 OnPropertyChanged();
             }
         }
@@ -225,13 +232,12 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
                         controlMessengerService = buildMessengerService.Initialization(LogicMatrixConverter.GetParentActions(
                             storageService.GetActions()), storageService.GetConnectionToken());
 
-                        var resultOnStart = await controlMessengerService.Start();
+                        var resultOnStart = await controlMessengerService.Start(IsBackgroundTask);
                         
                         IsPageLoading = false;
 
                         if (resultOnStart != null)
-                        {
-                            
+                        {                            
                             InfoTable.NamingBot = resultOnStart.Name;
                             IsStart = !IsStart;
 
@@ -315,7 +321,6 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
             }
         }
 
-
         private bool isNewNotification;
         public bool IsNewNotification
         {
@@ -326,8 +331,6 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
                 OnPropertyChanged();
             }
         }
-
-
 
         //Новое сохраенное сообщение
         bool isTimeNewNotification;
@@ -420,15 +423,22 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
                         if (controlMessengerService is not null)
                         {
                             var actions = controlMessengerService.GetLogger();
+
                             if (actions is not null)
                                 actions.LogicUsers
-                                    .ForEach(x => SaveMesseges.Add(new LogicUser()
+                                    .ForEach(x =>
                                     {
-                                        FirstName = x.FirstName,
-                                        LastName = x.LastName,
-                                        SaveAnswers = new ObservableCollection<SaveMessageItem>(x.SaveMessage.ToList()
-                                            .Select(y => new SaveMessageItem() { Answer = y.Value, Naming = y.Key }).ToList())
-                                    }));
+                                        if (x.SaveMessage.Count > 0)
+                                            SaveMesseges.Add(new LogicUser()
+                                            {
+                                                FirstName = x.FirstName,
+                                                LastName = x.LastName,
+                                                SaveAnswers = new ObservableCollection<SaveMessageItem>(x.SaveMessage.ToList()
+                                                    .Select(y => new SaveMessageItem()
+                                                    { Answer = y.Value, Naming = y.Key }).ToList())
+                                            });
+                                    });
+
                         }
                     }
                 });

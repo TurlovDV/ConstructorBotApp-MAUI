@@ -9,7 +9,7 @@ namespace ConstructorBot.Services
 {
     public interface IControlMessengerService
     {
-        Task<MessengerBotInfo> Start();
+        Task<MessengerBotInfo> Start(bool isBackgroundWork = true);
 
         void Stop();
 

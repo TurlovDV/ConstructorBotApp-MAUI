@@ -2,6 +2,7 @@
 using ConstructorBot.Language;
 using ConstructorBot.Model.Action;
 using ConstructorBot.ViewModel.ConstructorPageViewModel;
+using Microsoft.Maui.Layouts;
 using Newtonsoft.Json;
 
 namespace ConstructorBot.Services.ServiceStorage
@@ -95,6 +96,23 @@ namespace ConstructorBot.Services.ServiceStorage
                     y.Connect = actionBoxes.First(f => f.Id == y.ConnectId);
                 });
             });
+        }        
+
+
+        public void SetOptions(string key, bool isOptions)
+        {
+            Preferences.Default.Set<bool>(key, isOptions);
+        }
+
+        public bool GetOptions(string key, bool isNull = true)
+        {
+
+            if (!Preferences.ContainsKey(key))
+                SetOptions(key, isNull);
+            else 
+                return Preferences.Default.Get<bool>(key, isNull);
+
+            return isNull;
         }
 
         public void SetConnectionToken(string token)

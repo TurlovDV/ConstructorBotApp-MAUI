@@ -17,5 +17,9 @@ namespace ConstructorBot.Services.ServiceStorage
         public void SetConnectionToken(string token);
 
         public string GetConnectionToken();
+
+        bool GetOptions(string key, bool isNull = true);
+
+        void SetOptions(string key, bool isOptions);
     }
 }

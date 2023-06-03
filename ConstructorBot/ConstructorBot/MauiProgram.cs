@@ -25,14 +25,8 @@ public static class MauiProgram
         builder.Services.AddSingleton<ConstructorViewModel>();
 		builder.Services.AddSingleton<ConstructorBotMessengerApi.IMessengerService, MessengerService>();
         builder.Services.AddSingleton<IStorageService, FileStorageService>();
-
-        //builder.Services.AddSingleton<IMessageService, MessageService>();
         builder.Services.AddSingleton<IMessageService, MopupsService>();
-
-
         builder.Services.AddSingleton<IBuildMessengerService, BuildMessengerService>();
-
-
 #if ANDROID
 		builder.Services.AddSingleton<IBackgroundWorkService, ConstructorBot.BackgroundWorkService>();
 #endif
