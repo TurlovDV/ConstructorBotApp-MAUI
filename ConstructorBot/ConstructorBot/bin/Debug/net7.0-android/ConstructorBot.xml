@@ -190,6 +190,279 @@
               Ищет локализованную строку, похожую на Viewing saved applications.
             </summary>
         </member>
+        <member name="P:ConstructorBot.ViewModel.MainPageViewModel.InfoTable.OnStartTiming">
+            <inheritdoc cref="F:ConstructorBot.ViewModel.MainPageViewModel.InfoTable.onStartTiming"/>
+        </member>
+        <member name="P:ConstructorBot.ViewModel.MainPageViewModel.InfoTable.NamingBot">
+            <inheritdoc cref="F:ConstructorBot.ViewModel.MainPageViewModel.InfoTable.namingBot"/>
+        </member>
+        <member name="P:ConstructorBot.ViewModel.MainPageViewModel.InfoTable.CountMessage">
+            <inheritdoc cref="F:ConstructorBot.ViewModel.MainPageViewModel.InfoTable.countMessage"/>
+        </member>
+        <member name="P:ConstructorBot.ViewModel.MainPageViewModel.InfoTable.CountUsers">
+            <inheritdoc cref="F:ConstructorBot.ViewModel.MainPageViewModel.InfoTable.countUsers"/>
+        </member>
+        <member name="P:ConstructorBot.ViewModel.MainPageViewModel.InfoTable.PingInternet">
+            <inheritdoc cref="F:ConstructorBot.ViewModel.MainPageViewModel.InfoTable.pingInternet"/>
+        </member>
+        <member name="P:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.IsStart">
+            <inheritdoc cref="F:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.isStart"/>
+        </member>
+        <member name="P:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.IsPageOptionsToken">
+            <inheritdoc cref="F:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.isPageOptionsToken"/>
+        </member>
+        <member name="P:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.IsPageViewRequest">
+            <inheritdoc cref="F:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.isPageViewRequest"/>
+        </member>
+        <member name="P:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.IsPageMain">
+            <inheritdoc cref="F:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.isPageMain"/>
+        </member>
+        <member name="P:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.IsInternetConnection">
+            <inheritdoc cref="F:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.isInternetConnection"/>
+        </member>
+        <member name="P:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.IsPageSettingsApplaction">
+            <inheritdoc cref="F:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.isPageSettingsApplaction"/>
+        </member>
+        <member name="P:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.IsPageSendReport">
+            <inheritdoc cref="F:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.isPageSendReport"/>
+        </member>
+        <member name="P:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.ConnectionToken">
+            <inheritdoc cref="F:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.connectionToken"/>
+        </member>
+        <member name="P:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.IsPageLoading">
+            <inheritdoc cref="F:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.isPageLoading"/>
+        </member>
+        <member name="P:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.IsNewNotification">
+            <inheritdoc cref="F:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.isNewNotification"/>
+        </member>
+        <member name="P:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.IsOneTap">
+            <inheritdoc cref="F:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.isOneTap"/>
+        </member>
+        <member name="F:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.startBotCommand">
+            <summary>The backing field for <see cref="P:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.StartBotCommand"/>.</summary>
+        </member>
+        <member name="P:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.StartBotCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.StartBot"/>.</summary>
+        </member>
+        <member name="F:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.goToConstructorPageCommand">
+            <summary>The backing field for <see cref="P:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.GoToConstructorPageCommand"/>.</summary>
+        </member>
+        <member name="P:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.GoToConstructorPageCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.GoToConstructorPage"/>.</summary>
+        </member>
+        <member name="F:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.openSettingApplicationCommand">
+            <summary>The backing field for <see cref="P:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.OpenSettingApplicationCommand"/>.</summary>
+        </member>
+        <member name="P:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.OpenSettingApplicationCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.OpenSettingApplication"/>.</summary>
+        </member>
+        <member name="F:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.openOptionsTokenCommand">
+            <summary>The backing field for <see cref="P:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.OpenOptionsTokenCommand"/>.</summary>
+        </member>
+        <member name="P:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.OpenOptionsTokenCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.OpenOptionsToken"/>.</summary>
+        </member>
+        <member name="F:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.openOrExitPageViewRequestCommand">
+            <summary>The backing field for <see cref="P:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.OpenOrExitPageViewRequestCommand"/>.</summary>
+        </member>
+        <member name="P:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.OpenOrExitPageViewRequestCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.OpenOrExitPageViewRequest"/>.</summary>
+        </member>
+        <member name="F:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.viewSaveMessageCommandCommand">
+            <summary>The backing field for <see cref="P:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.ViewSaveMessageCommandCommand"/>.</summary>
+        </member>
+        <member name="P:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.ViewSaveMessageCommandCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.ViewSaveMessageCommand(System.Object)"/>.</summary>
+        </member>
+        <member name="F:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.saveOptionsTokenCommand">
+            <summary>The backing field for <see cref="P:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.SaveOptionsTokenCommand"/>.</summary>
+        </member>
+        <member name="P:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.SaveOptionsTokenCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.SaveOptionsToken"/>.</summary>
+        </member>
+        <member name="F:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.openBotFatherCommand">
+            <summary>The backing field for <see cref="P:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.OpenBotFatherCommand"/>.</summary>
+        </member>
+        <member name="P:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.OpenBotFatherCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.OpenBotFather"/>.</summary>
+        </member>
+        <member name="F:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.openPageSendReportCommand">
+            <summary>The backing field for <see cref="P:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.OpenPageSendReportCommand"/>.</summary>
+        </member>
+        <member name="P:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.OpenPageSendReportCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.OpenPageSendReport"/>.</summary>
+        </member>
+        <member name="F:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.goToPageChatsCommand">
+            <summary>The backing field for <see cref="P:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.GoToPageChatsCommand"/>.</summary>
+        </member>
+        <member name="P:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.GoToPageChatsCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.GoToPageChats"/>.</summary>
+        </member>
+        <member name="P:ConstructorBot.ViewModel.ChatPageViewModel.ChatUserViewModel.LogicUser">
+            <inheritdoc cref="F:ConstructorBot.ViewModel.ChatPageViewModel.ChatUserViewModel.logicUser"/>
+        </member>
+        <member name="F:ConstructorBot.ViewModel.ChatPageViewModel.ChatUserViewModel.backToPageChatsCommand">
+            <summary>The backing field for <see cref="P:ConstructorBot.ViewModel.ChatPageViewModel.ChatUserViewModel.BackToPageChatsCommand"/>.</summary>
+        </member>
+        <member name="P:ConstructorBot.ViewModel.ChatPageViewModel.ChatUserViewModel.BackToPageChatsCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:ConstructorBot.ViewModel.ChatPageViewModel.ChatUserViewModel.BackToPageChats"/>.</summary>
+        </member>
+        <member name="F:ConstructorBot.ViewModel.ChatsViewModel.goToPageChatUserCommand">
+            <summary>The backing field for <see cref="P:ConstructorBot.ViewModel.ChatsViewModel.GoToPageChatUserCommand"/>.</summary>
+        </member>
+        <member name="P:ConstructorBot.ViewModel.ChatsViewModel.GoToPageChatUserCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:ConstructorBot.ViewModel.ChatsViewModel.GoToPageChatUser(System.Object)"/>.</summary>
+        </member>
+        <member name="F:ConstructorBot.ViewModel.ChatsViewModel.backToMainPageCommand">
+            <summary>The backing field for <see cref="P:ConstructorBot.ViewModel.ChatsViewModel.BackToMainPageCommand"/>.</summary>
+        </member>
+        <member name="P:ConstructorBot.ViewModel.ChatsViewModel.BackToMainPageCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:ConstructorBot.ViewModel.ChatsViewModel.BackToMainPage"/>.</summary>
+        </member>
+        <member name="P:ConstructorBot.ViewModel.ConstructorPageViewModel.ConstructorViewModel.TapLastAction">
+            <inheritdoc cref="F:ConstructorBot.ViewModel.ConstructorPageViewModel.ConstructorViewModel.tapLastAction"/>
+        </member>
+        <member name="F:ConstructorBot.ViewModel.ConstructorPageViewModel.ConstructorViewModel.goToMainBoxCommand">
+            <summary>The backing field for <see cref="P:ConstructorBot.ViewModel.ConstructorPageViewModel.ConstructorViewModel.GoToMainBoxCommand"/>.</summary>
+        </member>
+        <member name="P:ConstructorBot.ViewModel.ConstructorPageViewModel.ConstructorViewModel.GoToMainBoxCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:ConstructorBot.ViewModel.ConstructorPageViewModel.ConstructorViewModel.GoToMainBox"/>.</summary>
+        </member>
+        <member name="F:ConstructorBot.ViewModel.ConstructorPageViewModel.ConstructorViewModel.addActionCommand">
+            <summary>The backing field for <see cref="P:ConstructorBot.ViewModel.ConstructorPageViewModel.ConstructorViewModel.AddActionCommand"/>.</summary>
+        </member>
+        <member name="P:ConstructorBot.ViewModel.ConstructorPageViewModel.ConstructorViewModel.AddActionCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:ConstructorBot.ViewModel.ConstructorPageViewModel.ConstructorViewModel.AddAction"/>.</summary>
+        </member>
+        <member name="F:ConstructorBot.ViewModel.ConstructorPageViewModel.ConstructorViewModel.openPopupPutActionBoxCommand">
+            <summary>The backing field for <see cref="P:ConstructorBot.ViewModel.ConstructorPageViewModel.ConstructorViewModel.OpenPopupPutActionBoxCommand"/>.</summary>
+        </member>
+        <member name="P:ConstructorBot.ViewModel.ConstructorPageViewModel.ConstructorViewModel.OpenPopupPutActionBoxCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:ConstructorBot.ViewModel.ConstructorPageViewModel.ConstructorViewModel.OpenPopupPutActionBox(System.Object)"/>.</summary>
+        </member>
+        <member name="F:ConstructorBot.ViewModel.ConstructorPageViewModel.ConstructorViewModel.tapActionCommand">
+            <summary>The backing field for <see cref="P:ConstructorBot.ViewModel.ConstructorPageViewModel.ConstructorViewModel.TapActionCommand"/>.</summary>
+        </member>
+        <member name="P:ConstructorBot.ViewModel.ConstructorPageViewModel.ConstructorViewModel.TapActionCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:ConstructorBot.ViewModel.ConstructorPageViewModel.ConstructorViewModel.TapAction(System.Object)"/>.</summary>
+        </member>
+        <member name="F:ConstructorBot.ViewModel.ConstructorPageViewModel.ConstructorViewModel.removeActionCommand">
+            <summary>The backing field for <see cref="P:ConstructorBot.ViewModel.ConstructorPageViewModel.ConstructorViewModel.RemoveActionCommand"/>.</summary>
+        </member>
+        <member name="P:ConstructorBot.ViewModel.ConstructorPageViewModel.ConstructorViewModel.RemoveActionCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:ConstructorBot.ViewModel.ConstructorPageViewModel.ConstructorViewModel.RemoveAction(System.Object)"/>.</summary>
+        </member>
+        <member name="P:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupAddButtonsViewModel.ActionBoxTap">
+            <inheritdoc cref="F:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupAddButtonsViewModel.actionBoxTap"/>
+        </member>
+        <member name="F:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupAddButtonsViewModel.openPopupPutBoxCommand">
+            <summary>The backing field for <see cref="P:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupAddButtonsViewModel.OpenPopupPutBoxCommand"/>.</summary>
+        </member>
+        <member name="P:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupAddButtonsViewModel.OpenPopupPutBoxCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupAddButtonsViewModel.OpenPopupPutBox"/>.</summary>
+        </member>
+        <member name="F:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupAddButtonsViewModel.addButtonCommand">
+            <summary>The backing field for <see cref="P:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupAddButtonsViewModel.AddButtonCommand"/>.</summary>
+        </member>
+        <member name="P:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupAddButtonsViewModel.AddButtonCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupAddButtonsViewModel.AddButton(System.Object)"/>.</summary>
+        </member>
+        <member name="F:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupAddButtonsViewModel.openPutButtonCommand">
+            <summary>The backing field for <see cref="P:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupAddButtonsViewModel.OpenPutButtonCommand"/>.</summary>
+        </member>
+        <member name="P:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupAddButtonsViewModel.OpenPutButtonCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupAddButtonsViewModel.OpenPutButton(System.Object)"/>.</summary>
+        </member>
+        <member name="F:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupCreateActionViewModel.createActionBoxCommand">
+            <summary>The backing field for <see cref="P:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupCreateActionViewModel.CreateActionBoxCommand"/>.</summary>
+        </member>
+        <member name="P:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupCreateActionViewModel.CreateActionBoxCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupCreateActionViewModel.CreateActionBox(System.Object)"/>.</summary>
+        </member>
+        <member name="F:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupCreateActionViewModel.closeThisPopupCommand">
+            <summary>The backing field for <see cref="P:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupCreateActionViewModel.CloseThisPopupCommand"/>.</summary>
+        </member>
+        <member name="P:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupCreateActionViewModel.CloseThisPopupCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupCreateActionViewModel.CloseThisPopup"/>.</summary>
+        </member>
+        <member name="P:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupImageZoomViewModel.PathImage">
+            <inheritdoc cref="F:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupImageZoomViewModel.pathImage"/>
+        </member>
+        <member name="F:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupImageZoomViewModel.closeThisPopupCommand">
+            <summary>The backing field for <see cref="P:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupImageZoomViewModel.CloseThisPopupCommand"/>.</summary>
+        </member>
+        <member name="P:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupImageZoomViewModel.CloseThisPopupCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupImageZoomViewModel.CloseThisPopup"/>.</summary>
+        </member>
+        <member name="P:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupPutBoxViewModel.ActionBoxTap">
+            <inheritdoc cref="F:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupPutBoxViewModel.actionBoxTap"/>
+        </member>
+        <member name="F:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupPutBoxViewModel.closeThisPopupCommand">
+            <summary>The backing field for <see cref="P:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupPutBoxViewModel.CloseThisPopupCommand"/>.</summary>
+        </member>
+        <member name="P:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupPutBoxViewModel.CloseThisPopupCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupPutBoxViewModel.CloseThisPopup"/>.</summary>
+        </member>
+        <member name="F:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupPutBoxViewModel.addMediaCommand">
+            <summary>The backing field for <see cref="P:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupPutBoxViewModel.AddMediaCommand"/>.</summary>
+        </member>
+        <member name="P:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupPutBoxViewModel.AddMediaCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupPutBoxViewModel.AddMedia"/>.</summary>
+        </member>
+        <member name="F:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupPutBoxViewModel.removeMediaCommand">
+            <summary>The backing field for <see cref="P:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupPutBoxViewModel.RemoveMediaCommand"/>.</summary>
+        </member>
+        <member name="P:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupPutBoxViewModel.RemoveMediaCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupPutBoxViewModel.RemoveMedia(System.Object)"/>.</summary>
+        </member>
+        <member name="F:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupPutBoxViewModel.openPhotoCommand">
+            <summary>The backing field for <see cref="P:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupPutBoxViewModel.OpenPhotoCommand"/>.</summary>
+        </member>
+        <member name="P:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupPutBoxViewModel.OpenPhotoCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupPutBoxViewModel.OpenPhoto(System.Object)"/>.</summary>
+        </member>
+        <member name="F:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupPutBoxViewModel.openPopupAddButtonsCommand">
+            <summary>The backing field for <see cref="P:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupPutBoxViewModel.OpenPopupAddButtonsCommand"/>.</summary>
+        </member>
+        <member name="P:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupPutBoxViewModel.OpenPopupAddButtonsCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupPutBoxViewModel.OpenPopupAddButtons"/>.</summary>
+        </member>
+        <member name="F:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupPutBoxViewModel.openPopupPutRequestCommand">
+            <summary>The backing field for <see cref="P:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupPutBoxViewModel.OpenPopupPutRequestCommand"/>.</summary>
+        </member>
+        <member name="P:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupPutBoxViewModel.OpenPopupPutRequestCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupPutBoxViewModel.OpenPopupPutRequest"/>.</summary>
+        </member>
+        <member name="F:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupPutBoxViewModel.notSaveRequestCommand">
+            <summary>The backing field for <see cref="P:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupPutBoxViewModel.NotSaveRequestCommand"/>.</summary>
+        </member>
+        <member name="P:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupPutBoxViewModel.NotSaveRequestCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupPutBoxViewModel.NotSaveRequest"/>.</summary>
+        </member>
+        <member name="P:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupPutButtonViewModel.KeyboardItem">
+            <inheritdoc cref="F:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupPutButtonViewModel.keyboardItem"/>
+        </member>
+        <member name="F:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupPutButtonViewModel.openPopupAddButtonsCommand">
+            <summary>The backing field for <see cref="P:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupPutButtonViewModel.OpenPopupAddButtonsCommand"/>.</summary>
+        </member>
+        <member name="P:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupPutButtonViewModel.OpenPopupAddButtonsCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupPutButtonViewModel.OpenPopupAddButtons"/>.</summary>
+        </member>
+        <member name="P:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupPutRequestViewModel.ActionBoxTap">
+            <inheritdoc cref="F:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupPutRequestViewModel.actionBoxTap"/>
+        </member>
+        <member name="F:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupPutRequestViewModel.saveRequestCommand">
+            <summary>The backing field for <see cref="P:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupPutRequestViewModel.SaveRequestCommand"/>.</summary>
+        </member>
+        <member name="P:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupPutRequestViewModel.SaveRequestCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupPutRequestViewModel.SaveRequest(System.Object)"/>.</summary>
+        </member>
+        <member name="F:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupPutRequestViewModel.openPopupPutBoxCommand">
+            <summary>The backing field for <see cref="P:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupPutRequestViewModel.OpenPopupPutBoxCommand"/>.</summary>
+        </member>
+        <member name="P:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupPutRequestViewModel.OpenPopupPutBoxCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:ConstructorBot.ViewModel.PopupConstructorViewModel.PopupPutRequestViewModel.OpenPopupPutBox"/>.</summary>
+        </member>
         <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Button.TextColorTo(Microsoft.Maui.Controls.Button,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing)">
             <summary>
             Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color

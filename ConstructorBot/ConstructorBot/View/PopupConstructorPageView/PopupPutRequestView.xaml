@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<mopups:PopupPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ConstructorBot.View.PopupConstructorPageView.PopupPutRequestView"
+             xmlns:mopupsanim="clr-namespace:Mopups.Animations;assembly=Mopups"
+             xmlns:mopups="clr-namespace:Mopups.Pages;assembly=Mopups"
+             xmlns:viewmodel="clr-namespace:ConstructorBot.ViewModel.PopupConstructorViewModel"
+             x:DataType="viewmodel:PopupPutRequestViewModel"
+             xmlns:language="clr-namespace:ConstructorBot.Language"
+             xmlns:modelAction="clr-namespace:ConstructorBot.Model.Action"
+             xmlns:converters="clr-namespace:ConstructorBot.Converter"            
+             BackgroundColor="Transparent"
+             Title="PopupPutRequestView">
+
+    <mopups:PopupPage.Animation>
+        <mopupsanim:ScaleAnimation
+            EasingIn="CubicInOut"
+            DurationIn="100"
+            DurationOut="100"
+            PositionIn="Bottom"
+            PositionOut="Bottom" />
+    </mopups:PopupPage.Animation>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:IsAnyToColorConverter x:Key="isAnyToColorConverter"></converters:IsAnyToColorConverter>
+            <converters:TextKeyboardConverter x:Key="textKeyboardConverter"></converters:TextKeyboardConverter>
+            <converters:IsAnyToStringConverter x:Key="isAnyToStringConverter"></converters:IsAnyToStringConverter>
+            <converters:IsEnabledKeyboardToColorConverter x:Key="IsEnabledKeyboardToColorConverter"></converters:IsEnabledKeyboardToColorConverter>
+            <converters:BoolInversionConverter x:Key="boolInversionConverter"></converters:BoolInversionConverter>
+            <converters:IsNullConverter x:Key="isNullConverter"></converters:IsNullConverter>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Border StrokeShape="RoundRectangle 20, 20, 0, 0" Padding="15" Stroke="#253242" VerticalOptions="End" BackgroundColor="#253242">
+        <Grid>
+            <StackLayout Spacing="15">
+                <Label Margin="5, 0, 0, 0" Text="{language:Translate AddToTheApplication}" TextColor="White" FontSize="Medium"></Label>
+                <Border Padding="6,0,3,0" BackgroundColor="Transparent" Stroke="Gray">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="5,5,5,5" />
+                    </Border.StrokeShape>
+                    <Entry x:Name="entryNameRequest" Text="{Binding ActionBoxTap.NameSaveMessage, Mode=TwoWay}" Placeholder="{language:Translate Answer}" TextColor="White" HorizontalOptions="FillAndExpand"></Entry>
+                </Border>
+                <Button Text="{language:Translate Save}" Command="{Binding SaveRequestCommand}" CommandParameter="{Reference entryNameRequest}" TextColor="White" BackgroundColor="#2B3A62" HorizontalOptions="FillAndExpand"></Button>
+            </StackLayout>
+            <ImageButton HeightRequest="25" Command="{Binding Path=BindingContext.OpenPopupPutBoxCommand, Source={RelativeSource Mode=FindAncestor, AncestorType={x:Type ContentPage}}}" WidthRequest="25" Aspect="AspectFit" Source="cross2.png" VerticalOptions="Start" HorizontalOptions="End"></ImageButton>
+        </Grid>
+    </Border>
+
+</mopups:PopupPage>

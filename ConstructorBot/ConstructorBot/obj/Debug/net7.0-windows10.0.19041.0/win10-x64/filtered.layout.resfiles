@@ -57,6 +57,11 @@ back.scale-200.png
 back.scale-400.png
 back_icon.scale-100.png
 back_icon_black.scale-100.png
+background_info.scale-100.png
+background_info.scale-125.png
+background_info.scale-150.png
+background_info.scale-200.png
+background_info.scale-400.png
 background_vector.scale-100.png
 background_vector.scale-125.png
 background_vector.scale-150.png
@@ -69,6 +74,11 @@ bot1.scale-150.png
 bot1.scale-200.png
 bot1.scale-400.png
 chat.scale-100.png
+chat_image.scale-100.png
+chat_image.scale-125.png
+chat_image.scale-150.png
+chat_image.scale-200.png
+chat_image.scale-400.png
 constructor.scale-100.png
 constructor.scale-125.png
 constructor.scale-150.png
@@ -130,6 +140,11 @@ info5.scale-200.png
 info5.scale-400.png
 keyboard_black.scale-100.png
 keyboard1.scale-100.png
+link_image.scale-100.png
+link_image.scale-125.png
+link_image.scale-150.png
+link_image.scale-200.png
+link_image.scale-400.png
 loader.scale-100.gif
 menu.scale-100.png
 message_icone.scale-100.png

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<mopups:PopupPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ConstructorBot.View.PopupConstructorPageView.PopupPutBoxView"
+             xmlns:mopupsanim="clr-namespace:Mopups.Animations;assembly=Mopups"
+             xmlns:mopups="clr-namespace:Mopups.Pages;assembly=Mopups"
+             xmlns:viewmodel="clr-namespace:ConstructorBot.ViewModel.PopupConstructorViewModel"
+             x:DataType="viewmodel:PopupPutBoxViewModel"
+             xmlns:modelAction="clr-namespace:ConstructorBot.Model.Action"
+             xmlns:language="clr-namespace:ConstructorBot.Language"
+             xmlns:converters="clr-namespace:ConstructorBot.Converter"
+             BackgroundColor="Transparent"    
+             Title="">
+
+    <mopups:PopupPage.Animation>
+        <mopupsanim:ScaleAnimation
+            EasingIn="CubicInOut"
+            DurationIn="150"
+            DurationOut="50"
+            PositionIn="Bottom"
+            PositionOut="Bottom" />
+    </mopups:PopupPage.Animation>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:IsAnyToColorConverter x:Key="isAnyToColorConverter"></converters:IsAnyToColorConverter>
+            <converters:TextKeyboardConverter x:Key="textKeyboardConverter"></converters:TextKeyboardConverter>
+            <converters:IsAnyToStringConverter x:Key="isAnyToStringConverter"></converters:IsAnyToStringConverter>
+            <converters:IsEnabledKeyboardToColorConverter x:Key="IsEnabledKeyboardToColorConverter"></converters:IsEnabledKeyboardToColorConverter>
+            <converters:BoolInversionConverter x:Key="boolInversionConverter"></converters:BoolInversionConverter>
+            <converters:IsNullConverter x:Key="isNullConverter"></converters:IsNullConverter>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Border StrokeShape="RoundRectangle 20, 20, 0, 0" Padding="15" Stroke="#253242" VerticalOptions="End" BackgroundColor="#253242">
+        <Grid>
+            <ImageButton Command="{Binding CloseThisPopupCommand}" HeightRequest="25" WidthRequest="25" Aspect="AspectFit" Source="cross2.png" VerticalOptions="Start" HorizontalOptions="End"></ImageButton>
+            <StackLayout Spacing="20">
+                <Label Text="{language:Translate ReplyMessage}" TextColor="White" FontSize="Medium"></Label>
+                <StackLayout Spacing="10">
+                    <Frame Padding="0" BorderColor="Gray" BackgroundColor="Transparent" CornerRadius="5">
+                        <StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <StackLayout Spacing="0">
+                                    <ImageButton Command="{Binding OpenPopupAddButtonsCommand}" Margin="5,8,5,0" Source="keyboard1" WidthRequest="25" HeightRequest="25" BackgroundColor="Transparent"></ImageButton>
+                                    <ImageButton Command="{Binding AddMediaCommand}" Margin="5" Source="addmedia.png" WidthRequest="20" HeightRequest="20" BackgroundColor="Transparent"></ImageButton>
+                                </StackLayout>
+                                <Editor HorizontalOptions="FillAndExpand" Text="{Binding ActionBoxTap.MessageText}" Placeholder="Сообщение" TextColor="White" HeightRequest="80"></Editor>
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+                    <ScrollView Orientation="Horizontal">
+                        <StackLayout Spacing="10" Orientation="Horizontal" BindableLayout.ItemsSource="{Binding ActionBoxTap.MediaItems}">
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate x:DataType="modelAction:MediaItem">
+                                    <Grid>
+                                        <StackLayout>
+                                            <Image Source="{Binding Source}" x:Name="image" WidthRequest="40" HeightRequest="40" HorizontalOptions="Center">
+                                                <Image.GestureRecognizers>
+                                                    <TapGestureRecognizer x:DataType="viewmodel:PopupPutBoxViewModel" CommandParameter="{Reference image}" NumberOfTapsRequired="1" Command="{Binding Path=BindingContext.OpenPhotoCommand, Source={RelativeSource Mode=FindAncestor, AncestorType={x:Type ContentPage}}}"></TapGestureRecognizer>
+                                                </Image.GestureRecognizers>
+                                            </Image>
+                                            <Label Text="{Binding Name}" MaximumWidthRequest="60" MaximumHeightRequest="30" FontSize="Micro" TextColor="White" HorizontalOptions="Center"></Label>
+                                        </StackLayout>
+                                        <Border Opacity="0.7" BackgroundColor="Transparent" Stroke="White" StrokeShape="RoundRectangle 2, 2, 2, 2" HorizontalOptions="End" VerticalOptions="Start" WidthRequest="20" Margin="0" HeightRequest="20">
+                                            <ImageButton x:DataType="viewmodel:PopupPutBoxViewModel" Source="cross2.png" CommandParameter="{Binding .}" Padding="1" Command="{Binding Path=BindingContext.RemoveMediaCommand, Source={RelativeSource Mode=FindAncestor, AncestorType={x:Type ContentPage}}}" WidthRequest="16" HeightRequest="16"  ></ImageButton>
+                                        </Border>
+                                    </Grid>
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+                        </StackLayout>
+                    </ScrollView>
+                </StackLayout>
+                <StackLayout Spacing="15" IsVisible="{Binding ActionBoxTap.IsMainAction, Converter={StaticResource boolInversionConverter}}">
+                    <Label Text="{language:Translate ResponseCondition}" TextColor="White" FontSize="Medium"></Label>
+                    <StackLayout Spacing="10">
+                        <Border Padding="0" BackgroundColor="Transparent" Stroke="Gray">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="5,5,5,5" />
+                            </Border.StrokeShape>
+                            <Entry Margin="10, 0, 10, 0" Text="{Binding ActionBoxTap.Question}" VerticalOptions="End" Placeholder="{language:Translate AnyPhrase}" TextColor="White"></Entry>
+                        </Border>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout IsVisible="{Binding ActionBoxTap.NameSaveMessage, Converter={StaticResource isNullConverter}, ConverterParameter=1}" Orientation="Horizontal" Spacing="5">
+                    <Button Text="{language:Translate DoNotAdd}" Command="{Binding NotSaveRequestCommand}" TextColor="White" VerticalOptions="Center" HorizontalOptions="FillAndExpand" BackgroundColor="#622B2B"></Button>
+                    <Frame HeightRequest="45" VerticalOptions="Center" Padding="0" BackgroundColor="#2B3A62" BorderColor="#2B3A62">
+                        <Grid>
+                            <Image Source="options.svg" WidthRequest="25" HeightRequest="25"></Image>
+                            <Button Command="{Binding OpenPopupPutRequestCommand}" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent" VerticalOptions="FillAndExpand"></Button>
+                        </Grid>
+                    </Frame>
+                </StackLayout>
+                <Button Text="{language:Translate AddToTheApplication}" IsVisible="{Binding ActionBoxTap.NameSaveMessage, Converter={StaticResource isNullConverter}, ConverterParameter=0}" Command="{Binding OpenPopupPutRequestCommand}" TextColor="White" VerticalOptions="Center" HorizontalOptions="FillAndExpand" BackgroundColor="#2B3A62"></Button>
+            </StackLayout>
+        </Grid>
+    </Border>
+
+</mopups:PopupPage>

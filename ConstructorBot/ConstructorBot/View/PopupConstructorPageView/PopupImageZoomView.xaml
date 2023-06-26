@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<mopups:PopupPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ConstructorBot.View.PopupConstructorPageView.PopupImageZoomView"
+             xmlns:mopupsanim="clr-namespace:Mopups.Animations;assembly=Mopups"
+             xmlns:mopups="clr-namespace:Mopups.Pages;assembly=Mopups"
+             xmlns:viewmodel="clr-namespace:ConstructorBot.ViewModel.PopupConstructorViewModel"
+             xmlns:controls="clr-namespace:ConstructorBot.Controls"
+             x:DataType="viewmodel:PopupImageZoomViewModel"
+             BackgroundColor="Transparent"    
+             Title="PopupImageZoomView">
+
+    <mopups:PopupPage.Animation>
+        <mopupsanim:ScaleAnimation
+            EasingIn="CubicInOut"
+            DurationIn="200"
+            DurationOut="100"
+            PositionIn="Top"
+            PositionOut="Top" />
+    </mopups:PopupPage.Animation>
+
+    <Grid>
+        <controls:PinchZoom>
+            <controls:PinchZoom.Content>
+                <Border Stroke="Transparent" StrokeShape="RoundRectangle 20, 20, 20, 20" Padding="0" HorizontalOptions="Center" VerticalOptions="Center">
+                    <Image Source="{Binding PathImage}" HorizontalOptions="FillAndExpand" WidthRequest="250" VerticalOptions="FillAndExpand"></Image>
+                </Border>
+            </controls:PinchZoom.Content>
+        </controls:PinchZoom>
+        <Border BackgroundColor="Transparent" Opacity="0.7" Stroke="Gray" WidthRequest="50" HeightRequest="50" StrokeShape="RoundRectangle 5, 5, 5, 5" Padding="9" HorizontalOptions="End" VerticalOptions="Start" Margin="0, 170, 20, 0">
+            <ImageButton x:DataType="viewmodel:PopupImageZoomViewModel" Source="cross2.png" Command="{Binding Path=BindingContext.CloseThisPopupCommand, Source={RelativeSource Mode=FindAncestor, AncestorType={x:Type ContentPage}}}"></ImageButton>
+        </Border>
+    </Grid>
+
+</mopups:PopupPage>

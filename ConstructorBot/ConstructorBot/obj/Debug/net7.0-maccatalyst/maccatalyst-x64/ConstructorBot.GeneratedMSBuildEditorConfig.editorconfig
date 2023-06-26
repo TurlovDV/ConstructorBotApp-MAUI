@@ -46,6 +46,18 @@ build_metadata.AdditionalFiles.ManifestResourceName = ConstructorBot.Resources.S
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
 
+[C:/ConstructorBotProject/ConstructorBot/ConstructorBot/View/ChatsView.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = ConstructorBot.View.ChatsView.xaml
+build_metadata.AdditionalFiles.TargetPath = View\ChatsView.xaml
+build_metadata.AdditionalFiles.RelativePath = View\ChatsView.xaml
+
+[C:/ConstructorBotProject/ConstructorBot/ConstructorBot/View/ChatUserView.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = ConstructorBot.View.ChatUserView.xaml
+build_metadata.AdditionalFiles.TargetPath = View\ChatUserView.xaml
+build_metadata.AdditionalFiles.RelativePath = View\ChatUserView.xaml
+
 [C:/ConstructorBotProject/ConstructorBot/ConstructorBot/View/ConstructorPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = ConstructorBot.View.ConstructorPage.xaml
@@ -63,6 +75,42 @@ build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = ConstructorBot.View.MainPage.xaml
 build_metadata.AdditionalFiles.TargetPath = View\MainPage.xaml
 build_metadata.AdditionalFiles.RelativePath = View\MainPage.xaml
+
+[C:/ConstructorBotProject/ConstructorBot/ConstructorBot/View/PopupConstructorPageView/PopupAddButtonsView.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = ConstructorBot.View.PopupConstructorPageView.PopupAddButtonsView.xaml
+build_metadata.AdditionalFiles.TargetPath = View\PopupConstructorPageView\PopupAddButtonsView.xaml
+build_metadata.AdditionalFiles.RelativePath = View\PopupConstructorPageView\PopupAddButtonsView.xaml
+
+[C:/ConstructorBotProject/ConstructorBot/ConstructorBot/View/PopupConstructorPageView/PopupCreateActionView.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = ConstructorBot.View.PopupConstructorPageView.PopupCreateActionView.xaml
+build_metadata.AdditionalFiles.TargetPath = View\PopupConstructorPageView\PopupCreateActionView.xaml
+build_metadata.AdditionalFiles.RelativePath = View\PopupConstructorPageView\PopupCreateActionView.xaml
+
+[C:/ConstructorBotProject/ConstructorBot/ConstructorBot/View/PopupConstructorPageView/PopupImageZoomView.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = ConstructorBot.View.PopupConstructorPageView.PopupImageZoomView.xaml
+build_metadata.AdditionalFiles.TargetPath = View\PopupConstructorPageView\PopupImageZoomView.xaml
+build_metadata.AdditionalFiles.RelativePath = View\PopupConstructorPageView\PopupImageZoomView.xaml
+
+[C:/ConstructorBotProject/ConstructorBot/ConstructorBot/View/PopupConstructorPageView/PopupPutBoxView.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = ConstructorBot.View.PopupConstructorPageView.PopupPutBoxView.xaml
+build_metadata.AdditionalFiles.TargetPath = View\PopupConstructorPageView\PopupPutBoxView.xaml
+build_metadata.AdditionalFiles.RelativePath = View\PopupConstructorPageView\PopupPutBoxView.xaml
+
+[C:/ConstructorBotProject/ConstructorBot/ConstructorBot/View/PopupConstructorPageView/PopupPutButtonView.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = ConstructorBot.View.PopupConstructorPageView.PopupPutButtonView.xaml
+build_metadata.AdditionalFiles.TargetPath = View\PopupConstructorPageView\PopupPutButtonView.xaml
+build_metadata.AdditionalFiles.RelativePath = View\PopupConstructorPageView\PopupPutButtonView.xaml
+
+[C:/ConstructorBotProject/ConstructorBot/ConstructorBot/View/PopupConstructorPageView/PopupPutRequestView.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = ConstructorBot.View.PopupConstructorPageView.PopupPutRequestView.xaml
+build_metadata.AdditionalFiles.TargetPath = View\PopupConstructorPageView\PopupPutRequestView.xaml
+build_metadata.AdditionalFiles.RelativePath = View\PopupConstructorPageView\PopupPutRequestView.xaml
 
 [C:/ConstructorBotProject/ConstructorBot/ConstructorBot/View/PreloaderView.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml

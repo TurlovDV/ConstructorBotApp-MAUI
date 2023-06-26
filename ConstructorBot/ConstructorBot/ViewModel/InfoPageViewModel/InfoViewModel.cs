@@ -36,7 +36,7 @@ namespace ConstructorBot.ViewModel.InfoPageViewModel
             IntroScreens.Add(new IntroScreenModel
             {
                 IntroTitle = LocalizationResourceManager.Instance["info1"].ToString(),
-                IntroImage = "info1",
+                IntroImage = "info1.svg",
                 GridRow = 1,
                 LayoutOptions = LayoutOptions.Center
             });
@@ -44,7 +44,7 @@ namespace ConstructorBot.ViewModel.InfoPageViewModel
             IntroScreens.Add(new IntroScreenModel
             {
                 IntroTitle = LocalizationResourceManager.Instance["info2"].ToString(),
-                IntroImage = "info2",
+                IntroImage = "info2.svg",
                 GridRow = 1,
                 LayoutOptions = LayoutOptions.Center
             });
@@ -52,14 +52,14 @@ namespace ConstructorBot.ViewModel.InfoPageViewModel
             IntroScreens.Add(new IntroScreenModel
             {
                 IntroTitle = LocalizationResourceManager.Instance["info3"].ToString(),
-                IntroImage = "info3",
+                IntroImage = "info3.svg",
                 GridRow = 3,
                 LayoutOptions = LayoutOptions.Start
             });
             IntroScreens.Add(new IntroScreenModel
             {
                 IntroTitle = LocalizationResourceManager.Instance["info4"].ToString(),
-                IntroImage = "info4",
+                IntroImage = "info4.svg",
                 GridRow = 3,
                 LayoutOptions = LayoutOptions.Start
             });
@@ -67,7 +67,7 @@ namespace ConstructorBot.ViewModel.InfoPageViewModel
             IntroScreens.Add(new IntroScreenModel
             {
                 IntroTitle = LocalizationResourceManager.Instance["info5"].ToString(),
-                IntroImage = "info5",
+                IntroImage = "info5.svg",
                 GridRow = 1,
                 LayoutOptions = LayoutOptions.Center
             });

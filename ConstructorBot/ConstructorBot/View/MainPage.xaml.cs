@@ -85,4 +85,12 @@ public partial class MainPage : ContentPage
         //Для того чтобы обновить язык кнопки старт
         MainViewModel.IsStart = MainViewModel.IsStart;
     }
+
+    void OnScrollViewScrolled(object sender, ScrolledEventArgs e)
+    {
+        if(e.ScrollX > 200)
+            scrollMainPage.Position = 1;
+        else
+            scrollMainPage.Position = 0;
+    }
 }

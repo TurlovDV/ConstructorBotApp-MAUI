@@ -59,6 +59,7 @@
 	  <None Remove="Resources\Images\back_icon_black.png" />
 	  <None Remove="Resources\Images\bot1.svg" />
 	  <None Remove="Resources\Images\chat.png" />
+	  <None Remove="Resources\Images\chat_image.svg" />
 	  <None Remove="Resources\Images\constructor.svg" />
 	  <None Remove="Resources\Images\cross.png" />
 	  <None Remove="Resources\Images\cross2.png" />
@@ -115,6 +116,12 @@
 	    <AutoGen>True</AutoGen>
 	    <DependentUpon>AppResources.resx</DependentUpon>
 	  </Compile>
+	  <Compile Update="View\ChatUserView.xaml.cs">
+	    <DependentUpon>ChatUserView.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="View\PopupConstructorPageView\PopupCreateActionView.xaml.cs">
+	    <DependentUpon>PopupCreateActionView.xaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
@@ -131,6 +138,12 @@
 	  <MauiXaml Update="Mopups\PopupPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="View\ChatsView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\ChatUserView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="View\ConstructorPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -138,6 +151,24 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="View\MainPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\PopupConstructorPageView\PopupCreateActionView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\PopupConstructorPageView\PopupAddButtonsView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\PopupConstructorPageView\PopupImageZoomView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\PopupConstructorPageView\PopupPutBoxView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\PopupConstructorPageView\PopupPutButtonView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\PopupConstructorPageView\PopupPutRequestView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="View\PreloaderView.xaml">

@@ -7,6 +7,7 @@
              xmlns:language="clr-namespace:ConstructorBot.Language"
              x:Class="ConstructorBot.MainPage"
              Title=""
+             xmlns:model="clr-namespace:ConstructorBot.Model"
              xmlns:ctm="clr-namespace:CommunityToolkit.Maui.Behaviors;assembly=CommunityToolkit.Maui"             
              BackgroundColor="#3A547B">
 
@@ -38,82 +39,333 @@
 
 
         <Frame Padding="0" Grid.Row="2" Grid.RowSpan="2" IsVisible="{Binding IsPageMain}" BackgroundColor="Transparent" CornerRadius="0" BorderColor="Transparent">
-            <Grid Padding="10" RowDefinitions="*,*" ColumnDefinitions="*,*" ColumnSpacing="20">
-                <Frame Padding="10, 60, 0, 20" BorderColor="Transparent" BackgroundColor="Transparent" Grid.Row="0" Grid.Column="0">
-                    <Grid RowDefinitions="*, *">
-                        <Frame Grid.RowSpan="2" Padding="0" CornerRadius="10" BackgroundColor="Transparent">
+            <StackLayout Orientation="Vertical" VerticalOptions="Center" Spacing="15">
+                <ScrollView Orientation="Horizontal" Scrolled="OnScrollViewScrolled" HorizontalOptions="Center" VerticalOptions="Center" HorizontalScrollBarVisibility="Never" BackgroundColor="Transparent">
+                    <!--<StackLayout Orientation="Horizontal" Spacing="0" HorizontalOptions="FillAndExpand" VerticalOptions="Fill" BackgroundColor="Green">-->
+                    <!--<Grid Padding="10" RowDefinitions="*,*" ColumnDefinitions="*,*" ColumnSpacing="20">
+                        <Frame Padding="10, 60, 0, 20" BorderColor="Transparent" BackgroundColor="Transparent" Grid.Row="0" Grid.Column="0">
                             <Grid RowDefinitions="*, *">
-                                <Frame CornerRadius="00" Padding="15" Grid.Row="0" BackgroundColor="#4074A0" BorderColor="#4074A0">
-                                    <Image Source="constructor.svg" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="35" HeightRequest="35"></Image>
+                                <Frame Grid.RowSpan="2" Padding="0" CornerRadius="10" BackgroundColor="Transparent">
+                                    <Grid RowDefinitions="*, *">
+                                        <Frame CornerRadius="00" Padding="15" Grid.Row="0" BackgroundColor="#4074A0" BorderColor="#4074A0">
+                                            <Image Source="constructor.svg" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="35" HeightRequest="35"></Image>
+                                        </Frame>
+                                        <Frame CornerRadius="0" Padding="0" Grid.Row="1" BackgroundColor="#E8E8E8" BorderColor="#E8E8E8">
+                                            <StackLayout Margin="0, 5, 0, 0" Spacing="2">
+                                                <Label Margin="7,0,0,0" TextColor="Black" FontAttributes="Bold" Text="{language:Translate Constructor}"></Label>
+                                                <Label Margin="7,0,0,0" TextColor="Gray" FontSize="Micro" Text="{language:Translate BuildingABotUsingBlocks}"></Label>
+                                            </StackLayout>
+                                        </Frame>
+                                    </Grid>
                                 </Frame>
-                                <Frame CornerRadius="0" Padding="0" Grid.Row="1" BackgroundColor="#E8E8E8" BorderColor="#E8E8E8">
-                                    <StackLayout Margin="0, 5, 0, 0" Spacing="2">
-                                        <Label Margin="7,0,0,0" TextColor="Black" FontAttributes="Bold" Text="{language:Translate Constructor}"></Label>
-                                        <Label Margin="7,0,0,0" TextColor="Gray" FontSize="Micro" Text="{language:Translate BuildingABotUsingBlocks}"></Label>
-                                    </StackLayout>
-                                </Frame>
+                                <Button Grid.RowSpan="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Transparent" IsEnabled="{Binding IsOneTap}" Command="{Binding GoToConstructorPageCommand}"></Button>
                             </Grid>
                         </Frame>
-                        <Button Grid.RowSpan="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Transparent" IsEnabled="{Binding IsOneTap}" Command="{Binding GoToConstructorPage}"></Button>
-                    </Grid>
-                </Frame>
-                <Frame Padding="0, 60, 10, 20" BorderColor="Transparent" BackgroundColor="Transparent" Grid.Row="0" Grid.Column="1">
-                    <Grid RowDefinitions="*, *">
-                        <Frame Grid.RowSpan="2" Padding="0" CornerRadius="10" BackgroundColor="Transparent">
+                        <Frame Padding="0, 60, 10, 20" BorderColor="Transparent" BackgroundColor="Transparent" Grid.Row="0" Grid.Column="1">
                             <Grid RowDefinitions="*, *">
-                                <Frame CornerRadius="00" Padding="20" Grid.Row="0" BackgroundColor="#4074A0" BorderColor="#4074A0">
-                                    <Image Source="options.svg" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="35" HeightRequest="35"></Image>
+                                <Frame Grid.RowSpan="2" Padding="0" CornerRadius="10" BackgroundColor="Transparent">
+                                    <Grid RowDefinitions="*, *">
+                                        <Frame CornerRadius="00" Padding="20" Grid.Row="0" BackgroundColor="#4074A0" BorderColor="#4074A0">
+                                            <Image Source="options.svg" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="35" HeightRequest="35"></Image>
+                                        </Frame>
+                                        <Frame CornerRadius="0" Padding="0" Grid.Row="1" BackgroundColor="#E8E8E8" BorderColor="#E8E8E8">
+                                            <StackLayout Margin="0, 5, 0, 0" Spacing="2">
+                                                <Label Margin="7,0,0,0" TextColor="Black" FontAttributes="Bold" Text="{language:Translate Options}"></Label>
+                                                <Label Margin="7,0,0,0" TextColor="Gray" FontSize="Micro" Text="{language:Translate ConnectionSettings}"></Label>
+                                            </StackLayout>
+                                        </Frame>
+                                    </Grid>
                                 </Frame>
-                                <Frame CornerRadius="0" Padding="0" Grid.Row="1" BackgroundColor="#E8E8E8" BorderColor="#E8E8E8">
-                                    <StackLayout Margin="0, 5, 0, 0" Spacing="2">
-                                        <Label Margin="7,0,0,0" TextColor="Black" FontAttributes="Bold" Text="{language:Translate Options}"></Label>
-                                        <Label Margin="7,0,0,0" TextColor="Gray" FontSize="Micro" Text="{language:Translate ConnectionSettings}"></Label>
-                                    </StackLayout>
-                                </Frame>
+                                <Button Command="{Binding OpenOptionsTokenCommand}" Grid.RowSpan="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Transparent"></Button>
                             </Grid>
                         </Frame>
-                        <Button Command="{Binding OpenOptionsTokenCommand}" Grid.RowSpan="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Transparent"></Button>
-                    </Grid>
-                </Frame>
-                <Frame Padding="10, 0, 0, 80" BorderColor="Transparent" BackgroundColor="Transparent" Grid.Row="1" Grid.Column="0">
-                    <Grid RowDefinitions="*, *">
-                        <Frame Grid.RowSpan="2" Padding="0" CornerRadius="10" BackgroundColor="Transparent">
+                        <Frame Padding="10, 0, 0, 80" BorderColor="Transparent" BackgroundColor="Transparent" Grid.Row="1" Grid.Column="0">
                             <Grid RowDefinitions="*, *">
-                                <Frame CornerRadius="00" Padding="20" Grid.Row="0" BackgroundColor="#4074A0" BorderColor="#4074A0">
-                                    <Image Source="settings.svg" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="35" HeightRequest="35"></Image>
+                                <Frame Grid.RowSpan="2" Padding="0" CornerRadius="10" BackgroundColor="Transparent">
+                                    <Grid RowDefinitions="*, *">
+                                        <Frame CornerRadius="00" Padding="20" Grid.Row="0" BackgroundColor="#4074A0" BorderColor="#4074A0">
+                                            <Image Source="settings.svg" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="35" HeightRequest="35"></Image>
+                                        </Frame>
+                                        <Frame CornerRadius="0" Padding="0" Grid.Row="1" BackgroundColor="#E8E8E8" BorderColor="#E8E8E8">
+                                            <StackLayout Margin="0, 5, 0, 0" Spacing="2">
+                                                <Label Margin="7,0,0,0" TextColor="Black" FontAttributes="Bold" Text="{language:Translate Settings}"></Label>
+                                                <Label Margin="7,0,0,0" TextColor="Gray" FontSize="Micro" Text="{language:Translate ApplicationSettings}"></Label>
+                                            </StackLayout>
+                                        </Frame>
+                                    </Grid>
                                 </Frame>
-                                <Frame CornerRadius="0" Padding="0" Grid.Row="1" BackgroundColor="#E8E8E8" BorderColor="#E8E8E8">
-                                    <StackLayout Margin="0, 5, 0, 0" Spacing="2">
-                                        <Label Margin="7,0,0,0" TextColor="Black" FontAttributes="Bold" Text="{language:Translate Settings}"></Label>
-                                        <Label Margin="7,0,0,0" TextColor="Gray" FontSize="Micro" Text="{language:Translate ApplicationSettings}"></Label>
-                                    </StackLayout>
-                                </Frame>
+                                <Button Grid.RowSpan="2"  Command="{Binding OpenSettingApplicationCommand}"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Transparent"></Button>
                             </Grid>
                         </Frame>
-                        <Button Grid.RowSpan="2"  Command="{Binding OpenSettingApplication}"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Transparent"></Button>
-                    </Grid>
-                </Frame>
-                <Frame Padding="0, 0, 10, 80" BorderColor="Transparent" BackgroundColor="Transparent" Grid.Row="1" Grid.Column="1">
-                    <Grid RowDefinitions="*, *">
-                        <Frame Grid.RowSpan="2" Padding="0" CornerRadius="10" BackgroundColor="Transparent">
+                        <Frame Padding="0, 0, 10, 80" BorderColor="Transparent" BackgroundColor="Transparent" Grid.Row="1" Grid.Column="1">
                             <Grid RowDefinitions="*, *">
-                                <Frame CornerRadius="0" Padding="0" Grid.Row="0" BackgroundColor="#4074A0" BorderColor="#4074A0">
-                                    <Image Source="icone_notes.svg" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="40" HeightRequest="40"></Image>
+                                <Frame Grid.RowSpan="2" Padding="0" CornerRadius="10" BackgroundColor="Transparent">
+                                    <Grid RowDefinitions="*, *">
+                                        <Frame CornerRadius="0" Padding="0" Grid.Row="0" BackgroundColor="#4074A0" BorderColor="#4074A0">
+                                            <Image Source="icone_notes.svg" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="40" HeightRequest="40"></Image>
+                                        </Frame>
+                                        <Frame CornerRadius="0" Padding="0" Grid.Row="1" BackgroundColor="#E8E8E8" BorderColor="#E8E8E8">
+                                            <StackLayout Margin="0, 5, 0, 0" Spacing="2">
+                                                <Label Margin="7,0,0,0" TextColor="Black" FontAttributes="Bold" Text="{language:Translate Applications}"></Label>
+                                                <Label Margin="7,0,0,0" TextColor="Gray" FontSize="Micro" Text="{language:Translate ViewingSavedApplications}"></Label>
+                                            </StackLayout>
+                                        </Frame>
+                                    </Grid>
                                 </Frame>
-                                <Frame CornerRadius="0" Padding="0" Grid.Row="1" BackgroundColor="#E8E8E8" BorderColor="#E8E8E8">
-                                    <StackLayout Margin="0, 5, 0, 0" Spacing="2">
-                                        <Label Margin="7,0,0,0" TextColor="Black" FontAttributes="Bold" Text="{language:Translate Applications}"></Label>
-                                        <Label Margin="7,0,0,0" TextColor="Gray" FontSize="Micro" Text="{language:Translate ViewingSavedApplications}"></Label>
-                                    </StackLayout>
-                                </Frame>
+                                <Frame IsVisible="{Binding IsNewNotification}" BorderColor="Transparent" WidthRequest="23" HeightRequest="23" CornerRadius="100" BackgroundColor="#F6FF92" HorizontalOptions="End" VerticalOptions="Start" Margin="5"></Frame>
+                                <Button Grid.RowSpan="2" Command="{Binding OpenOrExitPageViewRequestCommand}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Transparent"></Button>
                             </Grid>
                         </Frame>
-                        <Frame IsVisible="{Binding IsNewNotification}" BorderColor="Transparent" WidthRequest="23" HeightRequest="23" CornerRadius="100" BackgroundColor="#F6FF92" HorizontalOptions="End" VerticalOptions="Start" Margin="5"></Frame>
-                        <Button Grid.RowSpan="2" Command="{Binding OpenOrExitPageViewRequest}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Transparent"></Button>
-                    </Grid>
-                </Frame>
-            </Grid>
+                    </Grid>-->
+
+                    <StackLayout HorizontalOptions="Center" Orientation="Horizontal" Spacing="100" Padding="10, 0, 10, 0">
+                        <StackLayout Margin="0" Padding="0" Spacing="20" HorizontalOptions="Fill" VerticalOptions="Fill">
+                            <StackLayout Orientation="Horizontal" Spacing="20">
+                                <Frame WidthRequest="160" HeightRequest="145" Padding="0" BorderColor="Transparent" BackgroundColor="Transparent">
+                                    <Grid RowDefinitions="*, *">
+                                        <Frame Grid.RowSpan="2" Padding="0" CornerRadius="10" BackgroundColor="Transparent">
+                                            <Grid RowDefinitions="*, *">
+                                                <Frame CornerRadius="00" Padding="15" Grid.Row="0" BackgroundColor="#4074A0" BorderColor="#4074A0">
+                                                    <Image Source="constructor.svg" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="35" HeightRequest="35"></Image>
+                                                </Frame>
+                                                <Frame CornerRadius="0" Padding="0" Grid.Row="1" BackgroundColor="#E8E8E8" BorderColor="#E8E8E8">
+                                                    <StackLayout Margin="0, 5, 0, 0" Spacing="2">
+                                                        <Label Margin="7,0,0,0" TextColor="Black" FontAttributes="Bold" Text="{language:Translate Constructor}"></Label>
+                                                        <Label Margin="7,0,0,0" TextColor="Gray" FontSize="Micro" Text="{language:Translate BuildingABotUsingBlocks}"></Label>
+                                                    </StackLayout>
+                                                </Frame>
+                                            </Grid>
+                                        </Frame>
+                                        <Button Grid.RowSpan="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Transparent" IsEnabled="{Binding IsOneTap}" Command="{Binding GoToConstructorPageCommand}"></Button>
+                                    </Grid>
+                                </Frame>
+                                <Frame WidthRequest="160" HeightRequest="145" Padding="0" BorderColor="Transparent" BackgroundColor="Transparent">
+                                    <Grid RowDefinitions="*, *">
+                                        <Frame Grid.RowSpan="2" Padding="0" CornerRadius="10" BackgroundColor="Transparent">
+                                            <Grid RowDefinitions="*, *">
+                                                <Frame CornerRadius="00" Padding="20" Grid.Row="0" BackgroundColor="#4074A0" BorderColor="#4074A0">
+                                                    <Image Source="options.svg" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="35" HeightRequest="35"></Image>
+                                                </Frame>
+                                                <Frame CornerRadius="0" Padding="0" Grid.Row="1" BackgroundColor="#E8E8E8" BorderColor="#E8E8E8">
+                                                    <StackLayout Margin="0, 5, 0, 0" Spacing="2">
+                                                        <Label Margin="7,0,0,0" TextColor="Black" FontAttributes="Bold" Text="{language:Translate Options}"></Label>
+                                                        <Label Margin="7,0,0,0" TextColor="Gray" FontSize="Micro" Text="{language:Translate ConnectionSettings}"></Label>
+                                                    </StackLayout>
+                                                </Frame>
+                                            </Grid>
+                                        </Frame>
+                                        <Button Command="{Binding OpenOptionsTokenCommand}" Grid.RowSpan="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Transparent"></Button>
+                                    </Grid>
+                                </Frame>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Spacing="20">
+                                <Frame WidthRequest="160" HeightRequest="145" Padding="0" BorderColor="Transparent" BackgroundColor="Transparent">
+                                    <Grid RowDefinitions="*, *">
+                                        <Frame Grid.RowSpan="2" Padding="0" CornerRadius="10" BackgroundColor="Transparent">
+                                            <Grid RowDefinitions="*, *">
+                                                <Frame CornerRadius="00" Padding="20" Grid.Row="0" BackgroundColor="#4074A0" BorderColor="#4074A0">
+                                                    <Image Source="settings.svg" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="35" HeightRequest="35"></Image>
+                                                </Frame>
+                                                <Frame CornerRadius="0" Padding="0" Grid.Row="1" BackgroundColor="#E8E8E8" BorderColor="#E8E8E8">
+                                                    <StackLayout Margin="0, 5, 0, 0" Spacing="2">
+                                                        <Label Margin="7,0,0,0" TextColor="Black" FontAttributes="Bold" Text="{language:Translate Settings}"></Label>
+                                                        <Label Margin="7,0,0,0" TextColor="Gray" FontSize="Micro" Text="{language:Translate ApplicationSettings}"></Label>
+                                                    </StackLayout>
+                                                </Frame>
+                                            </Grid>
+                                        </Frame>
+                                        <Button Grid.RowSpan="2"  Command="{Binding OpenSettingApplicationCommand}"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Transparent"></Button>
+                                    </Grid>
+                                </Frame>
+                                <Frame WidthRequest="160" HeightRequest="145" Padding="0" BorderColor="Transparent" BackgroundColor="Transparent">
+                                    <Grid RowDefinitions="*, *">
+                                        <Frame Grid.RowSpan="2" Padding="0" CornerRadius="10" BackgroundColor="Transparent">
+                                            <Grid RowDefinitions="*, *">
+                                                <Frame CornerRadius="0" Padding="0" Grid.Row="0" BackgroundColor="#4074A0" BorderColor="#4074A0">
+                                                    <Image Source="icone_notes.svg" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="40" HeightRequest="40"></Image>
+                                                </Frame>
+                                                <Frame CornerRadius="0" Padding="0" Grid.Row="1" BackgroundColor="#E8E8E8" BorderColor="#E8E8E8">
+                                                    <StackLayout Margin="0, 5, 0, 0" Spacing="2">
+                                                        <Label Margin="7,0,0,0" TextColor="Black" FontAttributes="Bold" Text="{language:Translate Applications}"></Label>
+                                                        <Label Margin="7,0,0,0" TextColor="Gray" FontSize="Micro" Text="{language:Translate ViewingSavedApplications}"></Label>
+                                                    </StackLayout>
+                                                </Frame>
+                                            </Grid>
+                                        </Frame>
+                                        <Frame IsVisible="{Binding IsNewNotification}" BorderColor="Transparent" WidthRequest="23" HeightRequest="23" CornerRadius="100" BackgroundColor="#F6FF92" HorizontalOptions="End" VerticalOptions="Start" Margin="5"></Frame>
+                                        <Button Grid.RowSpan="2" Command="{Binding OpenOrExitPageViewRequestCommand}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Transparent"></Button>
+                                    </Grid>
+                                </Frame>
+                            </StackLayout>
+                        </StackLayout>
+                        <StackLayout Margin="0" Padding="0" Spacing="20" HorizontalOptions="Fill" VerticalOptions="Fill">
+                            <StackLayout Orientation="Horizontal" Spacing="20">
+                                <Frame WidthRequest="160" HeightRequest="145" Padding="0" BorderColor="Transparent" BackgroundColor="Transparent">
+                                    <Grid RowDefinitions="*, *">
+                                        <Frame Grid.RowSpan="2" Padding="0" CornerRadius="10" BackgroundColor="Transparent">
+                                            <Grid RowDefinitions="*, *">
+                                                <Frame CornerRadius="00" Padding="15" Grid.Row="0" BackgroundColor="#4074A0" BorderColor="#4074A0">
+                                                    <Image Source="chat_image.svg" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="50" HeightRequest="50"></Image>
+                                                </Frame>
+                                                <Frame CornerRadius="0" Padding="0" Grid.Row="1" BackgroundColor="#E8E8E8" BorderColor="#E8E8E8">
+                                                    <StackLayout Margin="0, 5, 0, 0" Spacing="2">
+                                                        <Label Margin="7,0,0,0" TextColor="Black" FontAttributes="Bold" Text="Чат"></Label>
+                                                        <Label Margin="7,0,0,0" TextColor="Gray" FontSize="Micro" Text="Просмотр чата бота"></Label>
+                                                    </StackLayout>
+                                                </Frame>
+                                            </Grid>
+                                        </Frame>
+                                        <Button Grid.RowSpan="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Transparent" Command="{Binding GoToPageChatsCommand}"></Button>
+                                    </Grid>
+                                </Frame>
+                                <Frame WidthRequest="160" HeightRequest="145" Padding="0" BorderColor="Transparent" BackgroundColor="Transparent">
+                                    <Grid RowDefinitions="*, *">
+                                        <Frame Grid.RowSpan="2" Padding="0" CornerRadius="10" BackgroundColor="Transparent">
+                                            <Grid RowDefinitions="*, *">
+                                                <Frame CornerRadius="00" Padding="20" Grid.Row="0" BackgroundColor="#4074A0" BorderColor="#4074A0">
+                                                    <Image Source="info.svg" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="35" HeightRequest="35"></Image>
+                                                </Frame>
+                                                <Frame CornerRadius="0" Padding="0" Grid.Row="1" BackgroundColor="#E8E8E8" BorderColor="#E8E8E8">
+                                                    <StackLayout Margin="0, 5, 0, 0" Spacing="2">
+                                                        <Label Margin="7,0,0,0" TextColor="Black" FontAttributes="Bold" Text="Помощь"></Label>
+                                                        <Label Margin="7,0,0,0" TextColor="Gray" FontSize="Micro" Text="Инструкции в разарботке&#10;бота"></Label>
+                                                    </StackLayout>
+                                                </Frame>
+                                            </Grid>
+                                        </Frame>
+                                        <Button Clicked="Button_PushToInfo" Grid.RowSpan="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Transparent"></Button>
+                                    </Grid>
+                                </Frame>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Spacing="20">
+                                <Frame WidthRequest="160" HeightRequest="145" Padding="0" BorderColor="Transparent" BackgroundColor="Transparent">
+                                    <Grid RowDefinitions="*, *">
+                                        <Frame Grid.RowSpan="2" Padding="0" CornerRadius="10" BackgroundColor="Transparent">
+                                            <Grid RowDefinitions="*, *">
+                                                <Frame CornerRadius="00" Padding="15" Grid.Row="0" BackgroundColor="#4074A0" BorderColor="#4074A0">
+                                                    <Image Source="info.svg" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="35" HeightRequest="35"></Image>
+                                                </Frame>
+                                                <Frame CornerRadius="0" Padding="0" Grid.Row="1" BackgroundColor="#E8E8E8" BorderColor="#E8E8E8">
+                                                    <StackLayout Margin="0, 5, 0, 0" Spacing="2">
+                                                        <Label Margin="7,0,0,0" TextColor="Black" FontAttributes="Bold" Text="Проблема"></Label>
+                                                        <Label Margin="7,0,0,0" TextColor="Gray" FontSize="Micro" Text="Отправить отчет в случае не работы"></Label>
+                                                    </StackLayout>
+                                                </Frame>
+                                            </Grid>
+                                        </Frame>
+                                        <Button Grid.RowSpan="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Transparent" Command="{Binding OpenPageSendReportCommand}"></Button>
+                                    </Grid>
+                                </Frame>
+                            </StackLayout>
+                        </StackLayout>
+                        <!--<Grid Padding="10" RowDefinitions="*,*" ColumnDefinitions="*,*" ColumnSpacing="20">
+                        <Frame Padding="10, 60, 0, 20" BorderColor="Transparent" BackgroundColor="Transparent" Grid.Row="0" Grid.Column="0">
+                            <Grid RowDefinitions="*, *">
+                                <Frame Grid.RowSpan="2" Padding="0" CornerRadius="10" BackgroundColor="Transparent">
+                                    <Grid RowDefinitions="*, *">
+                                        <Frame CornerRadius="00" Padding="15" Grid.Row="0" BackgroundColor="#4074A0" BorderColor="#4074A0">
+                                            <Image Source="chat_image.svg" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="35" HeightRequest="35"></Image>
+                                        </Frame>
+                                        <Frame CornerRadius="0" Padding="0" Grid.Row="1" BackgroundColor="#E8E8E8" BorderColor="#E8E8E8">
+                                            <StackLayout Margin="0, 5, 0, 0" Spacing="2">
+                                                <Label Margin="7,0,0,0" TextColor="Black" FontAttributes="Bold" Text="Чат бота"></Label>
+                                                <Label Margin="7,0,0,0" TextColor="Gray" FontSize="Micro" Text="Просмотр сообщений"></Label>
+                                            </StackLayout>
+                                        </Frame>
+                                    </Grid>
+                                </Frame>
+                                <Button Grid.RowSpan="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Transparent" IsEnabled="{Binding IsOneTap}" Command="{Binding GoToConstructorPageCommand}"></Button>
+                            </Grid>
+                        </Frame>
+                        <Frame Padding="0, 60, 10, 20" BorderColor="Transparent" BackgroundColor="Transparent" Grid.Row="0" Grid.Column="1">
+                            <Grid RowDefinitions="*, *">
+                                <Frame Grid.RowSpan="2" Padding="0" CornerRadius="10" BackgroundColor="Transparent">
+                                    <Grid RowDefinitions="*, *">
+                                        <Frame CornerRadius="00" Padding="20" Grid.Row="0" BackgroundColor="#4074A0" BorderColor="#4074A0">
+                                            <Image Source="options.svg" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="35" HeightRequest="35"></Image>
+                                        </Frame>
+                                        <Frame CornerRadius="0" Padding="0" Grid.Row="1" BackgroundColor="#E8E8E8" BorderColor="#E8E8E8">
+                                            <StackLayout Margin="0, 5, 0, 0" Spacing="2">
+                                                <Label Margin="7,0,0,0" TextColor="Black" FontAttributes="Bold" Text="{language:Translate Options}"></Label>
+                                                <Label Margin="7,0,0,0" TextColor="Gray" FontSize="Micro" Text="{language:Translate ConnectionSettings}"></Label>
+                                            </StackLayout>
+                                        </Frame>
+                                    </Grid>
+                                </Frame>
+                                <Button Command="{Binding OpenOptionsTokenCommand}" Grid.RowSpan="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Transparent"></Button>
+                            </Grid>
+                        </Frame>
+                        <Frame Padding="10, 0, 0, 80" BorderColor="Transparent" BackgroundColor="Transparent" Grid.Row="1" Grid.Column="0">
+                            <Grid RowDefinitions="*, *">
+                                <Frame Grid.RowSpan="2" Padding="0" CornerRadius="10" BackgroundColor="Transparent">
+                                    <Grid RowDefinitions="*, *">
+                                        <Frame CornerRadius="00" Padding="20" Grid.Row="0" BackgroundColor="#4074A0" BorderColor="#4074A0">
+                                            <Image Source="settings.svg" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="35" HeightRequest="35"></Image>
+                                        </Frame>
+                                        <Frame CornerRadius="0" Padding="0" Grid.Row="1" BackgroundColor="#E8E8E8" BorderColor="#E8E8E8">
+                                            <StackLayout Margin="0, 5, 0, 0" Spacing="2">
+                                                <Label Margin="7,0,0,0" TextColor="Black" FontAttributes="Bold" Text="{language:Translate Settings}"></Label>
+                                                <Label Margin="7,0,0,0" TextColor="Gray" FontSize="Micro" Text="{language:Translate ApplicationSettings}"></Label>
+                                            </StackLayout>
+                                        </Frame>
+                                    </Grid>
+                                </Frame>
+                                <Button Grid.RowSpan="2"  Command="{Binding OpenSettingApplicationCommand}"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Transparent"></Button>
+                            </Grid>
+                        </Frame>
+                        <Frame Padding="0, 0, 10, 80" BorderColor="Transparent" BackgroundColor="Transparent" Grid.Row="1" Grid.Column="1">
+                            <Grid RowDefinitions="*, *">
+                                <Frame Grid.RowSpan="2" Padding="0" CornerRadius="10" BackgroundColor="Transparent">
+                                    <Grid RowDefinitions="*, *">
+                                        <Frame CornerRadius="0" Padding="0" Grid.Row="0" BackgroundColor="#4074A0" BorderColor="#4074A0">
+                                            <Image Source="icone_notes.svg" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="40" HeightRequest="40"></Image>
+                                        </Frame>
+                                        <Frame CornerRadius="0" Padding="0" Grid.Row="1" BackgroundColor="#E8E8E8" BorderColor="#E8E8E8">
+                                            <StackLayout Margin="0, 5, 0, 0" Spacing="2">
+                                                <Label Margin="7,0,0,0" TextColor="Black" FontAttributes="Bold" Text="{language:Translate Applications}"></Label>
+                                                <Label Margin="7,0,0,0" TextColor="Gray" FontSize="Micro" Text="{language:Translate ViewingSavedApplications}"></Label>
+                                            </StackLayout>
+                                        </Frame>
+                                    </Grid>
+                                </Frame>
+                                <Frame IsVisible="{Binding IsNewNotification}" BorderColor="Transparent" WidthRequest="23" HeightRequest="23" CornerRadius="100" BackgroundColor="#F6FF92" HorizontalOptions="End" VerticalOptions="Start" Margin="5"></Frame>
+                                <Button Grid.RowSpan="2" Command="{Binding OpenOrExitPageViewRequestCommand}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Transparent"></Button>
+                            </Grid>
+                        </Frame>
+                    </Grid>-->
+                    </StackLayout>
+                    <!--</StackLayout>-->
+                </ScrollView>
+                <IndicatorView Count="2" HorizontalOptions="Center" x:Name="scrollMainPage" IndicatorSize="13"></IndicatorView>
+            </StackLayout>
         </Frame>
+
+        <!--<Frame Padding="0" Grid.Row="2" Grid.RowSpan="2" IsVisible="{Binding IsPageMain}" BackgroundColor="Transparent" CornerRadius="0" BorderColor="Transparent">
+            <Grid BindableLayout.ItemsSource="{Binding TabItems}" Padding="10" RowDefinitions="*,*" ColumnDefinitions="*,*" ColumnSpacing="20">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate x:DataType="model:TabItem">
+                        <Frame Padding="10, 60, 0, 20" BorderColor="Transparent" BackgroundColor="Transparent" Grid.Row="0" Grid.Column="0">
+                            <Grid RowDefinitions="*, *">
+                                <Frame Grid.RowSpan="2" Padding="0" CornerRadius="10" BackgroundColor="Transparent">
+                                    <Grid RowDefinitions="*, *">
+                                        <Frame CornerRadius="00" Padding="15" Grid.Row="0" BackgroundColor="#4074A0" BorderColor="#4074A0">
+                                            <Image Source="constructor.svg" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="35" HeightRequest="35"></Image>
+                                        </Frame>
+                                        <Frame CornerRadius="0" Padding="0" Grid.Row="1" BackgroundColor="#E8E8E8" BorderColor="#E8E8E8">
+                                            <StackLayout Margin="0, 5, 0, 0" Spacing="2">
+                                                <Label Margin="7,0,0,0" TextColor="Black" FontAttributes="Bold" Text="{language:Translate Constructor}"></Label>
+                                                <Label Margin="7,0,0,0" TextColor="Gray" FontSize="Micro" Text="{language:Translate BuildingABotUsingBlocks}"></Label>
+                                            </StackLayout>
+                                        </Frame>
+                                    </Grid>
+                                </Frame>
+                                <Button Grid.RowSpan="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Transparent" IsEnabled="{Binding IsOneTap}" Command="{Binding GoToConstructorPageCommand}"></Button>
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </Grid>
+        </Frame>-->
 
         <!--Изменение ключа подключения телеграм-->
         <Frame Grid.Row="2" Padding="20, 50, 20, 20" Grid.RowSpan="2" IsVisible="{Binding IsPageOptionsToken}" BackgroundColor="Transparent" BorderColor="Transparent" CornerRadius="0">
@@ -160,70 +412,57 @@
         <!--Настройки приложения-->
         <Frame Grid.Row="2" Padding="20, 50, 20, 0" Grid.RowSpan="2" IsVisible="{Binding IsPageSettingsApplaction}" BackgroundColor="Transparent" BorderColor="Transparent" CornerRadius="0">
             <Grid>
-                <ScrollView>
-                    <StackLayout Spacing="35" VerticalOptions="Start">
-                        <StackLayout HorizontalOptions="Start" VerticalOptions="Start" Spacing="10" Orientation="Horizontal">
-                            <Image Source="settings.svg" VerticalOptions="Center" WidthRequest="40" HeightRequest="40" BackgroundColor="Transparent"></Image>
-                            <StackLayout Spacing="2" VerticalOptions="Center">
-                                <Label FontAttributes="Bold" Text="{language:Translate Settings}" FontSize="Small" TextColor="White"></Label>
-                                <Label Text="{language:Translate ApplicationSettings}" FontSize="Micro" TextColor="Gray"></Label>
-                            </StackLayout>
-                        </StackLayout>
-
-                        <StackLayout Spacing="10">
-                            <Label Margin="5, 0, 0, 0" Text="{language:Translate Language}" FontSize="Small" TextColor="White" FontAttributes="Bold"></Label>
-                            <Border BackgroundColor="Transparent" Stroke="Gray">
-                                <Border.StrokeShape>
-                                    <RoundRectangle CornerRadius="5,5,5,5" />
-                                </Border.StrokeShape>
-                                <Picker Margin="5, 0, 5, 0" x:Name="pickerLanguage" Title = "{language:Translate Language}" SelectedIndexChanged="Picker_SelectedIndexChanged">
-                                    <Picker.Items>
-                                        <x:String>Russian</x:String>
-                                        <x:String>English</x:String>
-                                    </Picker.Items>
-                                </Picker>
-                            </Border>
-
-                            <StackLayout Spacing="2" Margin="0, 10, 0, 0">
-                                <Label Margin="5, 0, 0, 0" Text="Уведомления" FontSize="Small" TextColor="White" FontAttributes="Bold"></Label>
-                                <StackLayout Orientation="Vertical" Spacing="-8">
-                                    <StackLayout Orientation="Horizontal" Spacing="5">
-                                        <Label Margin="5, 0, 0, 0" Text="Новое сообщение" FontSize="Small" TextColor="White" VerticalOptions="Center"></Label>
-                                        <CheckBox IsChecked="{Binding IsNotificationNewMessage, Mode=TwoWay}" Color="WhiteSmoke" VerticalOptions="Center"></CheckBox>
-                                    </StackLayout>
-                                    <StackLayout Orientation="Horizontal" Spacing="5">
-                                        <Label Margin="5, 0, 0, 0" Text="Новая заявка" FontSize="Small" VerticalOptions="Center" TextColor="White"></Label>
-                                        <CheckBox IsChecked="{Binding IsNotificationNewSaveAnswer, Mode=TwoWay}" Color="WhiteSmoke" VerticalOptions="Center"></CheckBox>
-                                    </StackLayout>
-                                    <StackLayout Orientation="Horizontal" Spacing="5">
-                                        <Label Margin="5, 0, 0, 0" Text="Новый пользователь" FontSize="Small" TextColor="White" VerticalOptions="Center"></Label>
-                                        <CheckBox IsChecked="{Binding IsNotificationNewUser, Mode=TwoWay}" Color="WhiteSmoke" VerticalOptions="Center"></CheckBox>
-                                    </StackLayout>
-                                </StackLayout>
-                            </StackLayout>
-
-                            <StackLayout Spacing="2" Margin="0, 10, 0, 0">
-                                <Label Margin="5, 0, 0, 0" Text="Фоновая работа" FontSize="Small" TextColor="White" FontAttributes="Bold"></Label>
-                                <StackLayout Orientation="Horizontal" Spacing="5">
-                                    <Label Margin="5, 0, 0, 0" Text="Работа в фоновом режиме" FontSize="Small" TextColor="White" VerticalOptions="Center"></Label>
-                                    <CheckBox IsChecked="{Binding IsBackgroundTask}" Color="WhiteSmoke" VerticalOptions="Center"></CheckBox>
-                                </StackLayout>
-                            </StackLayout>
-
-                            <Border HeightRequest="65" WidthRequest="230" Stroke="#764541" BackgroundColor="#3d2f3a" Padding="0" HorizontalOptions="Start" Margin="20, 0, 0, 15" StrokeShape="RoundRectangle 5, 5, 5, 5">
-                                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center" Spacing="10">
-                                    <Label Text="!" TextColor="#ff5151" FontSize="44" VerticalTextAlignment="Center"></Label>
-                                    <Label MaximumWidthRequest="140" HorizontalTextAlignment="Center" Text="Отправить отчет в случае не работы" TextColor="#ff5151" VerticalTextAlignment="Center"></Label>
-                                </StackLayout>
-                                <Border.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding OpenPageSendReportCommand}"></TapGestureRecognizer>
-                                </Border.GestureRecognizers>
-                            </Border>
-
+                <StackLayout Spacing="35" VerticalOptions="Start">
+                    <StackLayout HorizontalOptions="Start" VerticalOptions="Start" Spacing="10" Orientation="Horizontal">
+                        <Image Source="settings.svg" VerticalOptions="Center" WidthRequest="40" HeightRequest="40" BackgroundColor="Transparent"></Image>
+                        <StackLayout Spacing="2" VerticalOptions="Center">
+                            <Label FontAttributes="Bold" Text="{language:Translate Settings}" FontSize="Small" TextColor="White"></Label>
+                            <Label Text="{language:Translate ApplicationSettings}" FontSize="Micro" TextColor="Gray"></Label>
                         </StackLayout>
                     </StackLayout>
-                </ScrollView>
-                <ImageButton Command="{Binding OpenSettingApplication}" HorizontalOptions="End" VerticalOptions="Start" HeightRequest="30" WidthRequest="30" Source="cross2.png"></ImageButton>
+
+                    <StackLayout Spacing="10">
+                        <Label Margin="5, 0, 0, 0" Text="{language:Translate Language}" FontSize="Small" TextColor="White" FontAttributes="Bold"></Label>
+                        <Border BackgroundColor="Transparent" Stroke="Gray">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="5,5,5,5" />
+                            </Border.StrokeShape>
+                            <Picker Margin="5, 0, 5, 0" x:Name="pickerLanguage" Title = "{language:Translate Language}" SelectedIndexChanged="Picker_SelectedIndexChanged">
+                                <Picker.Items>
+                                    <x:String>Russian</x:String>
+                                    <x:String>English</x:String>
+                                </Picker.Items>
+                            </Picker>
+                        </Border>
+
+                        <StackLayout Spacing="2" Margin="0, 10, 0, 0">
+                            <Label Margin="5, 0, 0, 0" Text="Уведомления" FontSize="Small" TextColor="White" FontAttributes="Bold"></Label>
+                            <StackLayout Orientation="Vertical" Spacing="-8">
+                                <StackLayout Orientation="Horizontal" Spacing="5">
+                                    <Label Margin="5, 0, 0, 0" Text="Новое сообщение" FontSize="Small" TextColor="White" VerticalOptions="Center"></Label>
+                                    <CheckBox IsChecked="{Binding IsNotificationNewMessage, Mode=TwoWay}" Color="WhiteSmoke" VerticalOptions="Center"></CheckBox>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Spacing="5">
+                                    <Label Margin="5, 0, 0, 0" Text="Новая заявка" FontSize="Small" VerticalOptions="Center" TextColor="White"></Label>
+                                    <CheckBox IsChecked="{Binding IsNotificationNewSaveAnswer, Mode=TwoWay}" Color="WhiteSmoke" VerticalOptions="Center"></CheckBox>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Spacing="5">
+                                    <Label Margin="5, 0, 0, 0" Text="Новый пользователь" FontSize="Small" TextColor="White" VerticalOptions="Center"></Label>
+                                    <CheckBox IsChecked="{Binding IsNotificationNewUser, Mode=TwoWay}" Color="WhiteSmoke" VerticalOptions="Center"></CheckBox>
+                                </StackLayout>
+                            </StackLayout>
+                        </StackLayout>
+
+                        <StackLayout Spacing="2" Margin="0, 10, 0, 0">
+                            <Label Margin="5, 0, 0, 0" Text="Фоновая работа" FontSize="Small" TextColor="White" FontAttributes="Bold"></Label>
+                            <StackLayout Orientation="Horizontal" Spacing="5">
+                                <Label Margin="5, 0, 0, 0" Text="Работа в фоновом режиме" FontSize="Small" TextColor="White" VerticalOptions="Center"></Label>
+                                <CheckBox IsChecked="{Binding IsBackgroundTask}" Color="WhiteSmoke" VerticalOptions="Center"></CheckBox>
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+                <ImageButton Command="{Binding OpenSettingApplicationCommand}" HorizontalOptions="End" VerticalOptions="Start" HeightRequest="30" WidthRequest="30" Source="cross2.png"></ImageButton>
             </Grid>
         </Frame>
 
@@ -257,7 +496,7 @@
         <!--Просмотр схраненных заявок-->
         <Frame Grid.Row="2" Padding="20, 50, 20, 20" Grid.RowSpan="2" IsVisible="{Binding IsPageViewRequest}" BackgroundColor="Transparent" BorderColor="Transparent" CornerRadius="0">
             <Grid>
-                <ImageButton Command="{Binding OpenOrExitPageViewRequest}" HorizontalOptions="End" VerticalOptions="Start" HeightRequest="30" WidthRequest="30" Source="cross2.png"></ImageButton>
+                <ImageButton Command="{Binding OpenOrExitPageViewRequestCommand}" HorizontalOptions="End" VerticalOptions="Start" HeightRequest="30" WidthRequest="30" Source="cross2.png"></ImageButton>
                 <StackLayout Spacing="35" VerticalOptions="Start">
                     <StackLayout HorizontalOptions="Start" VerticalOptions="Start" Spacing="10" Orientation="Horizontal">
                         <Image Source="icone_notes.svg" VerticalOptions="Center" WidthRequest="45" HeightRequest="45" BackgroundColor="Transparent"></Image>
@@ -269,7 +508,7 @@
                     <ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand">
                         <StackLayout BindableLayout.ItemsSource="{Binding SaveMesseges}" Spacing="5">
                             <BindableLayout.ItemTemplate>
-                                <DataTemplate x:DataType="vm:LogicUser">
+                                <DataTemplate x:DataType="model:LogicUser">
                                     <Frame BackgroundColor="#3A547B" BorderColor="Transparent" Padding="10, 10, 7, 10">
                                         <Grid ColumnDefinitions="*, Auto">
                                             <StackLayout Spacing="15" VerticalOptions="Center">
@@ -283,7 +522,7 @@
                                                 <StackLayout x:Name="viewSaveMessage" Grid.ColumnSpan="2" IsVisible="false" BindableLayout.ItemsSource="{Binding SaveAnswers}">
                                                     <BindableLayout.ItemTemplate>
                                                         <DataTemplate>
-                                                            <StackLayout x:DataType="vm:SaveMessageItem" Orientation="Horizontal" Spacing="5">
+                                                            <StackLayout x:DataType="model:SaveMessageItem" Orientation="Horizontal" Spacing="5">
                                                                 <Label Text="{Binding Naming}" TextColor="Gray"></Label>
                                                                 <Label Text=":" TextColor="Gray"></Label>
                                                                 <Label Text="{Binding Answer}" TextColor="White"></Label>
@@ -293,7 +532,7 @@
                                                 </StackLayout>
                                             </StackLayout>
                                             <!--<ImageButton x:DataType="vm:MainViewModel" Command="{Binding Path=BindingContext.ViewSaveMessage, Source={RelativeSource Mode=FindAncestor, AncestorType={x:Type ContentPage}}}" CommandParameter="{Binding .}" Grid.Column="1" Source="view.png" HorizontalOptions="End" VerticalOptions="Center" HeightRequest="25" WidthRequest="25"></ImageButton>-->
-                                            <ImageButton x:DataType="vm:MainViewModel" Command="{Binding Path=BindingContext.ViewSaveMessage, Source={RelativeSource Mode=FindAncestor, AncestorType={x:Type ContentPage}}}" CommandParameter="{Reference viewSaveMessage}" Grid.Column="1" HorizontalOptions="End" Source="view.png" VerticalOptions="Start" HeightRequest="25" WidthRequest="25"></ImageButton>
+                                            <ImageButton x:DataType="vm:MainViewModel" Command="{Binding Path=BindingContext.ViewSaveMessageCommand, Source={RelativeSource Mode=FindAncestor, AncestorType={x:Type ContentPage}}}" CommandParameter="{Reference viewSaveMessage}" Grid.Column="1" HorizontalOptions="End" Source="view.png" VerticalOptions="Start" HeightRequest="25" WidthRequest="25"></ImageButton>
                                             <!--<ImageButton x:DataType="vm:MainViewModel" CommandParameter="{Reference qwe}" Clicked="ImageButton_Clicked" Grid.Column="1" HorizontalOptions="End" Source="view.png" VerticalOptions="Start" HeightRequest="25" WidthRequest="25"></ImageButton>-->
                                         </Grid>
                                     </Frame>
@@ -329,7 +568,7 @@
                             <Label x:Name="labelIsStart" Text="{Binding IsStart, Converter={StaticResource isStartToStringConverter}}" HorizontalOptions="Center" TextColor="White" FontAttributes="Bold" FontSize="Medium" ></Label>
                             <Label IsVisible="{Binding IsStart}" Text="{Binding InfoTable.NamingBot}" TextColor="Gray" FontSize="Small" HorizontalOptions="Center"></Label>
                         </StackLayout>
-                        <Button Command="{Binding OnStartCommand}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Transparent"></Button>
+                        <Button x:DataType="vm:MainViewModel" Command="{Binding StartBotCommand}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Transparent"></Button>
                     </Grid>
                 </Frame>
             </Grid>
@@ -374,8 +613,8 @@
 
 
         <!--кнокпка настройки приложения-->
-        <Image Source="background_info.svg" HorizontalOptions="End" VerticalOptions="Start" HeightRequest="60"></Image>
-        <ImageButton Source="info.svg" Grid.RowSpan="4" Padding="4" Clicked="Button_PushToInfo" HeightRequest="45" WidthRequest="45" Margin="5" VerticalOptions="Start" HorizontalOptions="End"></ImageButton>
+        <!--<Image Source="background_info.svg" HorizontalOptions="End" VerticalOptions="Start" HeightRequest="60"></Image>
+        <ImageButton Source="info.svg" Grid.RowSpan="4" Padding="4" Clicked="Button_PushToInfo" HeightRequest="45" WidthRequest="45" Margin="5" VerticalOptions="Start" HorizontalOptions="End"></ImageButton>-->
 
         <!--Загрузка-->
         <Grid Grid.RowSpan="4" IsVisible="{Binding IsPageLoading}">

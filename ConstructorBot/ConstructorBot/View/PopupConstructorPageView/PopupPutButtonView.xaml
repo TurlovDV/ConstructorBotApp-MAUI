@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<mopups:PopupPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ConstructorBot.View.PopupConstructorPageView.PopupPutButtonView"
+             xmlns:mopupsanim="clr-namespace:Mopups.Animations;assembly=Mopups"
+             xmlns:mopups="clr-namespace:Mopups.Pages;assembly=Mopups"
+             xmlns:viewmodel="clr-namespace:ConstructorBot.ViewModel.PopupConstructorViewModel"
+             x:DataType="viewmodel:PopupPutButtonViewModel"
+             xmlns:modelAction="clr-namespace:ConstructorBot.Model.Action"
+             xmlns:language="clr-namespace:ConstructorBot.Language"
+             xmlns:converters="clr-namespace:ConstructorBot.Converter"            
+             BackgroundColor="Transparent"
+             Title="PopupPutButtonView">
+
+    <mopups:PopupPage.Animation>
+        <mopupsanim:ScaleAnimation
+            EasingIn="CubicInOut"
+            DurationIn="100"
+            DurationOut="100"
+            PositionIn="Bottom"
+            PositionOut="Bottom" />
+    </mopups:PopupPage.Animation>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:IsAnyToColorConverter x:Key="isAnyToColorConverter"></converters:IsAnyToColorConverter>
+            <converters:TextKeyboardConverter x:Key="textKeyboardConverter"></converters:TextKeyboardConverter>
+            <converters:IsAnyToStringConverter x:Key="isAnyToStringConverter"></converters:IsAnyToStringConverter>
+            <converters:IsEnabledKeyboardToColorConverter x:Key="IsEnabledKeyboardToColorConverter"></converters:IsEnabledKeyboardToColorConverter>
+            <converters:BoolInversionConverter x:Key="boolInversionConverter"></converters:BoolInversionConverter>
+            <converters:IsNullConverter x:Key="isNullConverter"></converters:IsNullConverter>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Border StrokeShape="RoundRectangle 20, 20, 0, 0" Padding="15" Stroke="#253242" VerticalOptions="End" Grid.Row="1" BackgroundColor="#253242">
+        <StackLayout Spacing="20" Padding="0, 0, 0, 20">
+            <StackLayout Spacing="10" Orientation="Horizontal">
+                <ImageButton Command="{Binding OpenPopupAddButtonsCommand}" HeightRequest="45" WidthRequest="45" Aspect="AspectFit" Source="back.png" VerticalOptions="Start" HorizontalOptions="End"></ImageButton>
+                <Label Text="{language:Translate KeyboardSetup}" TextColor="White" VerticalOptions="Center"></Label>
+            </StackLayout>
+            <StackLayout Spacing="20" Margin="0, 0, 0, 0">
+                <StackLayout Spacing="2">
+                    <Label Text="{language:Translate ButtonMessage}" TextColor="White"></Label>
+                    <Border Stroke="Gray" BackgroundColor="Transparent">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="5, 5, 5, 5"></RoundRectangle>
+                        </Border.StrokeShape>
+                        <Entry Placeholder="{language:Translate Button}" Margin="10, 0, 10, 0" Text="{Binding KeyboardItem.Text}"></Entry>
+                    </Border>
+                </StackLayout>
+                <StackLayout Spacing="2">
+                    <Label Text="{language:Translate UrlLink}" TextColor="White"></Label>
+                    <Border Stroke="Gray" BackgroundColor="Transparent">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="5, 5, 5, 5"></RoundRectangle>
+                        </Border.StrokeShape>
+                        <Entry Placeholder="Url" Margin="10, 0, 10, 0" Text="{Binding KeyboardItem.Url}"></Entry>
+                    </Border>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </Border>
+
+</mopups:PopupPage>

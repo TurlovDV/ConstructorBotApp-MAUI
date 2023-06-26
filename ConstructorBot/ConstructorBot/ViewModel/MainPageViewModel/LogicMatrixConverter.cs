@@ -59,7 +59,7 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
             {
                 domainChild.MessageAnswer.Photo = new Photo()
                 {
-                    File = actionBox.MediaItems[0].Bytes                    
+                    File = File.ReadAllBytes(actionBox.MediaItems[0].PathMediaSource)                  
                 };
                 domainChild.MessageAnswer.MessageType = MessageType.Photo;
                 return;

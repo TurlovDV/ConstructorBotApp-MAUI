@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ConstructorBot.View.ChatsView"
+             Title="ChatsView"
+             BackgroundColor="#1D2733"
+             xmlns:ctm="clr-namespace:CommunityToolkit.Maui.Behaviors;assembly=CommunityToolkit.Maui"
+             xmlns:viewmodel="clr-namespace:ConstructorBot.ViewModel"
+             x:DataType="viewmodel:ChatsViewModel"
+             xmlns:model="clr-namespace:ConstructorBot.Model">
+
+    <ContentPage.Behaviors>
+        <ctm:StatusBarBehavior StatusBarColor="#344B6D" StatusBarStyle="LightContent"></ctm:StatusBarBehavior>
+    </ContentPage.Behaviors>
+
+    <Shell.NavBarIsVisible>
+        <x:Boolean>False</x:Boolean>
+    </Shell.NavBarIsVisible>
+
+    <Grid RowDefinitions="Auto, *">
+        <Frame Grid.Row="0" CornerRadius="0" HeightRequest="55" Padding="4" HorizontalOptions="FillAndExpand" BorderColor="#333C48" BackgroundColor="#333C48">
+            <StackLayout Orientation="Horizontal" Spacing="3" Margin="0, 0, 0, 0">
+                <StackLayout Orientation="Horizontal" Spacing="5">
+                    <ImageButton HeightRequest="35" WidthRequest="35" Source="back.svg" VerticalOptions="Center" Command="{Binding BackToMainPageCommand}"></ImageButton>
+                    <Label Text="Чаты" FontSize="Medium" FontAttributes="Bold" TextColor="White" VerticalOptions="Center"></Label>
+                </StackLayout>
+            </StackLayout>
+        </Frame>
+
+        <StackLayout Grid.Row="1" Spacing="10" BindableLayout.ItemsSource="{Binding Users}" Padding="10, 20, 0, 0">
+            <BindableLayout.ItemTemplate>
+                <DataTemplate x:DataType="model:LogicUser">
+                    <StackLayout Orientation="Horizontal" Spacing="15">
+                        <Border StrokeShape="RoundRectangle 100, 100, 100, 100" Stroke="Transparent" VerticalOptions="Center">
+                            <Image Source="account.png" WidthRequest="40" HeightRequest="40"></Image>
+                        </Border>
+                        <Label FontSize="Medium" TextColor="White" VerticalOptions="Center" FontAttributes="Bold">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="{Binding FirstName}"></Span>
+                                    <Span Text=" "></Span>
+                                    <Span Text="{Binding LastName}"></Span>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer x:DataType="viewmodel:ChatsViewModel" CommandParameter="{Binding .}" Command="{Binding Path=BindingContext.GoToPageChatUserCommand, Source={RelativeSource Mode=FindAncestor, AncestorType={x:Type ContentPage}}}"></TapGestureRecognizer>
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+                </DataTemplate>
+            </BindableLayout.ItemTemplate>
+            <BindableLayout.EmptyView>
+                <Label Text="Чат пуст" TextColor="White" FontAttributes="Bold" FontSize="18" HorizontalOptions="Center"></Label>
+            </BindableLayout.EmptyView>
+        </StackLayout>
+        
+    </Grid>
+    
+</ContentPage>
