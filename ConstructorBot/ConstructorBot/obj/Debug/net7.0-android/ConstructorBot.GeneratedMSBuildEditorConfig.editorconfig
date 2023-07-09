@@ -26,6 +26,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = ConstructorBot.AppShell.xa
 build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
 build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
 
+[C:/ConstructorBotProject/ConstructorBot/ConstructorBot/Mopups/PopupLoading.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = ConstructorBot.Mopups.PopupLoading.xaml
+build_metadata.AdditionalFiles.TargetPath = Mopups\PopupLoading.xaml
+build_metadata.AdditionalFiles.RelativePath = Mopups\PopupLoading.xaml
+
 [C:/ConstructorBotProject/ConstructorBot/ConstructorBot/Mopups/PopupNotificationPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = ConstructorBot.Mopups.PopupNotificationPage.xaml

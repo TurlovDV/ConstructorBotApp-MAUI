@@ -35433,7 +35433,8 @@
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "C:\\Program Files\\dotnet\\library-packs": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {},
+        "https://nuget.devexpress.com/hfaX8Olp3Nim1llN1I3cxTe1ETey1cdzSHO4OlCKzMBuo1ZFag/api": {}
       },
       "frameworks": {
         "net7.0-android33.0": {

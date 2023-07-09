@@ -32,7 +32,7 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <Border StrokeShape="RoundRectangle 20, 20, 0, 0" Padding="15" Stroke="#253242" VerticalOptions="End" BackgroundColor="#253242">
+    <Border StrokeShape="RoundRectangle 20, 20, 0, 0" Padding="15" Stroke="#253242" StrokeThickness="-1" VerticalOptions="End" BackgroundColor="#253242">
         <StackLayout Spacing="10">
             <StackLayout Spacing="10" Orientation="Horizontal">
                 <ImageButton Command="{Binding OpenPopupPutBoxCommand}" HeightRequest="45" WidthRequest="45" Aspect="AspectFit" Source="back.svg" VerticalOptions="Center"></ImageButton>

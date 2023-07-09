@@ -63,21 +63,22 @@
             </BindableLayout.ItemTemplate>
         </StackLayout>-->
 
-        <StackLayout Grid.Row="1" Margin="3, 15, 3, 0" BindableLayout.ItemsSource="{Binding ChatMessageModels}">
-            <BindableLayout.ItemTemplate>
-                <DataTemplate x:DataType="model:ChatMessageModel">
-                    <Border MaximumWidthRequest="200" MinimumWidthRequest="100" Stroke="Transparent" BackgroundColor="Transparent" HorizontalOptions="{Binding IsBot, Converter={StaticResource boolToHorizontalOptionsConverter}}">
-                        <StackLayout>
-                            <Border BackgroundColor="{Binding IsBot, Converter={StaticResource boolToColorConverter}}" Stroke="Transparent" 
+        <ScrollView Grid.Row="1">
+            <StackLayout Margin="3, 15, 3, 0" BindableLayout.ItemsSource="{Binding ChatMessageModels}">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate x:DataType="model:ChatMessageModel">
+                        <Border MaximumWidthRequest="200" MinimumWidthRequest="100" Stroke="Transparent" BackgroundColor="Transparent" HorizontalOptions="{Binding IsBot, Converter={StaticResource boolToHorizontalOptionsConverter}}">
+                            <StackLayout>
+                                <Border BackgroundColor="{Binding IsBot, Converter={StaticResource boolToColorConverter}}" Stroke="Transparent" 
                                     StrokeShape="{Binding IsBot, Converter={StaticResource boolToCornerRadiusConverter}}"
                                     Padding="8, 5, 8, 5">
-                                <StackLayout>
-                                    <Label Text="{Binding Message}" TextColor="White"></Label>
-                                    <Label Text="{Binding DateTime, Converter={StaticResource dateTimeToStringConvert}}" TextColor="#7A7A7A" FontSize="11" HorizontalOptions="End"></Label>
-                                </StackLayout>
-                            </Border>
-                            
-                            <!--<StackLayout HorizontalOptions="Center">
+                                    <StackLayout>
+                                        <Label Text="{Binding Message}" TextColor="White"></Label>
+                                        <Label Text="{Binding DateTime, Converter={StaticResource dateTimeToStringConvert}}" TextColor="#7A7A7A" FontSize="11" HorizontalOptions="End"></Label>
+                                    </StackLayout>
+                                </Border>
+
+                                <!--<StackLayout HorizontalOptions="Center">
                                 <StackLayout Orientation="Horizontal">
                                     <Border Stroke="Transparent" StrokeShape="RoundRectangle 5, 5, 5, 5" Padding="5" BackgroundColor="#4B4B52" IsVisible="{Binding Keyboard.KeyboardItems[0].IsEnabled}">
                                         <Label Text="{Binding Keyboard.KeyboardItems[0].Text}"></Label>
@@ -112,12 +113,12 @@
                                     </Border>
                                 </StackLayout>
                             </StackLayout>-->
-                            
-                        </StackLayout>
-                    </Border>
-                </DataTemplate>
-            </BindableLayout.ItemTemplate>
-        </StackLayout>
-                
+
+                            </StackLayout>
+                        </Border>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </StackLayout>
+        </ScrollView>
     </Grid>
 </ContentPage>

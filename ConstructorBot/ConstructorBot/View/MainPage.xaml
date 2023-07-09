@@ -8,7 +8,7 @@
              x:Class="ConstructorBot.MainPage"
              Title=""
              xmlns:model="clr-namespace:ConstructorBot.Model"
-             xmlns:ctm="clr-namespace:CommunityToolkit.Maui.Behaviors;assembly=CommunityToolkit.Maui"             
+             xmlns:ctm="clr-namespace:CommunityToolkit.Maui.Behaviors;assembly=CommunityToolkit.Maui"     
              BackgroundColor="#3A547B">
 
     <ContentPage.Resources>
@@ -136,7 +136,7 @@
                                                 </Frame>
                                             </Grid>
                                         </Frame>
-                                        <Button Grid.RowSpan="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Transparent" IsEnabled="{Binding IsOneTap}" Command="{Binding GoToConstructorPageCommand}"></Button>
+                                        <Button Grid.RowSpan="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Transparent" Command="{Binding GoToConstructorPageCommand}"></Button>
                                     </Grid>
                                 </Frame>
                                 <Frame WidthRequest="160" HeightRequest="145" Padding="0" BorderColor="Transparent" BackgroundColor="Transparent">
@@ -531,10 +531,16 @@
                                                     </BindableLayout.ItemTemplate>
                                                 </StackLayout>
                                             </StackLayout>
-                                            <!--<ImageButton x:DataType="vm:MainViewModel" Command="{Binding Path=BindingContext.ViewSaveMessage, Source={RelativeSource Mode=FindAncestor, AncestorType={x:Type ContentPage}}}" CommandParameter="{Binding .}" Grid.Column="1" Source="view.png" HorizontalOptions="End" VerticalOptions="Center" HeightRequest="25" WidthRequest="25"></ImageButton>-->
-                                            <ImageButton x:DataType="vm:MainViewModel" Command="{Binding Path=BindingContext.ViewSaveMessageCommand, Source={RelativeSource Mode=FindAncestor, AncestorType={x:Type ContentPage}}}" CommandParameter="{Reference viewSaveMessage}" Grid.Column="1" HorizontalOptions="End" Source="view.png" VerticalOptions="Start" HeightRequest="25" WidthRequest="25"></ImageButton>
-                                            <!--<ImageButton x:DataType="vm:MainViewModel" CommandParameter="{Reference qwe}" Clicked="ImageButton_Clicked" Grid.Column="1" HorizontalOptions="End" Source="view.png" VerticalOptions="Start" HeightRequest="25" WidthRequest="25"></ImageButton>-->
+                                            <!--<ImageButton x:DataType="vm:MainViewModel" Command="{Binding Path=BindingContext.ViewSaveMessageCommand, Source={RelativeSource Mode=FindAncestor, AncestorType={x:Type ContentPage}}}" CommandParameter="{Reference viewSaveMessage}" Grid.Column="1" HorizontalOptions="End" Source="view.png" VerticalOptions="Start" HeightRequest="25" WidthRequest="25"></ImageButton>-->
+
+                                            <ImageButton x:DataType="vm:MainViewModel" CommandParameter="{Reference viewSaveMessage}" Clicked="ViewSaveMessageCommand_Clicked" BindingContext="{Reference viewSaveMessage}" Grid.Column="1" HorizontalOptions="End" Source="view.png" VerticalOptions="Start" HeightRequest="25" WidthRequest="25"></ImageButton>
+                                            <!--<Grid.GestureRecognizers>
+                                                <TapGestureRecognizer x:DataType="vm:MainViewModel" Command="{Binding Path=BindingContext.ViewSaveMessageCommand, Source={RelativeSource Mode=FindAncestor, AncestorType={x:Type ContentPage}}}" CommandParameter="{Reference viewSaveMessage}"></TapGestureRecognizer>
+                                            </Grid.GestureRecognizers>-->                                        
                                         </Grid>
+                                        <!--<Frame.GestureRecognizers>
+                                            <TapGestureRecognizer x:DataType="vm:MainViewModel" Command="{Binding Path=BindingContext.ViewSaveMessageCommand, Source={RelativeSource Mode=FindAncestor, AncestorType={x:Type ContentPage}}}" CommandParameter="{Reference viewSaveMessage}"></TapGestureRecognizer>
+                                        </Frame.GestureRecognizers>-->
                                     </Frame>
                                 </DataTemplate>
                             </BindableLayout.ItemTemplate>
@@ -554,26 +560,52 @@
             </Grid>
         </Frame>
 
-        <Frame Grid.Row="0" BackgroundColor="Transparent" Padding="0" BorderColor="Transparent">
+        <!--<Frame Grid.Row="0" BackgroundColor="Transparent" Padding="0" BorderColor="Transparent">
             <Grid>
                 <Image Source="background_vector.svg" HorizontalOptions="FillAndExpand" VerticalOptions="Start"></Image>
                 <Image IsVisible="{Binding IsStart}" x:Name="elipse_loading" Source="elipse_loading.svg" WidthRequest="155" HeightRequest="155" HorizontalOptions="Center" VerticalOptions="Center"></Image>
 
-                <Frame BorderColor="White" BackgroundColor="Transparent" CornerRadius="100" Padding="0" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="127" HeightRequest="127"></Frame>
-                <Frame BorderColor="White" BackgroundColor="Transparent" CornerRadius="100" Padding="0" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="126" HeightRequest="126"></Frame>
-                <Frame BorderColor="White" BackgroundColor="Transparent" CornerRadius="100" Padding="0" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="125" HeightRequest="125">
+                <Image IsVisible="{Binding IsStart, Converter={StaticResource boolInversionConverter}}" Source="start.svg" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="127" HeightRequest="127"></Image>
+
+                <Frame IsVisible="{Binding IsStart}" BorderColor="White" BackgroundColor="Transparent" CornerRadius="100" Padding="0" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="127" HeightRequest="127"></Frame>
+                <Frame IsVisible="{Binding IsStart}" BorderColor="White" BackgroundColor="Transparent" CornerRadius="100" Padding="0" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="126" HeightRequest="126"></Frame>
+                <Frame IsVisible="{Binding IsStart}" BorderColor="White" BackgroundColor="Transparent" CornerRadius="100" Padding="0" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="125" HeightRequest="125">
+                    <Grid>
+                        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                            --><!--<Image Source="bot.png" WidthRequest="50" HeightRequest="50" HorizontalOptions="Center"></Image>--><!--
+                            <Label x:Name="labelIsStart" Text="{Binding IsStart, Converter={StaticResource isStartToStringConverter}}" HorizontalOptions="Center" TextColor="White" FontAttributes="Bold" FontSize="Medium" ></Label>
+                            <Label IsVisible="{Binding IsStart}" Text="{Binding InfoTable.NamingBot}" TextColor="Gray" FontSize="Small" HorizontalOptions="Center"></Label>
+                        </StackLayout>
+                        --><!--<Button x:DataType="vm:MainViewModel" Command="{Binding StartBotCommand}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Transparent"></Button>--><!--
+                    </Grid>
+                </Frame>
+
+                <Button x:DataType="vm:MainViewModel" Command="{Binding StartBotCommand}" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="127" HeightRequest="127" CornerRadius="100" BackgroundColor="Transparent"></Button>
+            </Grid>
+        </Frame>-->
+
+        <Frame Grid.Row="0" BackgroundColor="Transparent" Padding="0" BorderColor="Transparent">
+            <Grid>
+                <Image Source="background_vector.svg" HorizontalOptions="FillAndExpand" VerticalOptions="Start"></Image>
+                <Image IsVisible="{Binding IsStart}" x:Name="elipse_loading" Source="elipse_loading.svg" WidthRequest="165" HeightRequest="165" HorizontalOptions="Center" VerticalOptions="Center"></Image>
+
+                <Image IsVisible="{Binding IsStart, Converter={StaticResource boolInversionConverter}}" Source="start.svg" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="137" HeightRequest="137"></Image>
+                <Image IsVisible="{Binding IsStart}" Source="stop_image.svg" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="137" HeightRequest="137"></Image>
+
+                <Frame IsVisible="{Binding IsStart}" BorderColor="Transparent" BackgroundColor="Transparent" CornerRadius="100" Padding="0" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="135" HeightRequest="135">
                     <Grid>
                         <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
                             <!--<Image Source="bot.png" WidthRequest="50" HeightRequest="50" HorizontalOptions="Center"></Image>-->
                             <Label x:Name="labelIsStart" Text="{Binding IsStart, Converter={StaticResource isStartToStringConverter}}" HorizontalOptions="Center" TextColor="White" FontAttributes="Bold" FontSize="Medium" ></Label>
-                            <Label IsVisible="{Binding IsStart}" Text="{Binding InfoTable.NamingBot}" TextColor="Gray" FontSize="Small" HorizontalOptions="Center"></Label>
+                            <Label IsVisible="{Binding IsStart}" Text="{Binding InfoTable.NamingBot}" FontAttributes="Bold" TextColor="White" FontSize="Small" HorizontalOptions="Center"></Label>
                         </StackLayout>
-                        <Button x:DataType="vm:MainViewModel" Command="{Binding StartBotCommand}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Transparent"></Button>
+                        <!--<Button x:DataType="vm:MainViewModel" Command="{Binding StartBotCommand}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Transparent"></Button>-->
                     </Grid>
                 </Frame>
+
+                <Button x:DataType="vm:MainViewModel" Command="{Binding StartBotCommand}" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="137" HeightRequest="137" CornerRadius="100" BackgroundColor="Transparent"></Button>
             </Grid>
         </Frame>
-
 
         <Frame IsVisible="{Binding IsStart}" Margin="20,0,20,0" Padding="10" Grid.Row="1" Grid.RowSpan="2" BackgroundColor="#2C3B4D" HorizontalOptions="FillAndExpand" VerticalOptions="Start" CornerRadius="20" BorderColor="Transparent">
             <StackLayout Margin="0, 5, 0, 5" Orientation="Horizontal" Spacing="100" HorizontalOptions="Center" VerticalOptions="Center">
@@ -617,12 +649,12 @@
         <ImageButton Source="info.svg" Grid.RowSpan="4" Padding="4" Clicked="Button_PushToInfo" HeightRequest="45" WidthRequest="45" Margin="5" VerticalOptions="Start" HorizontalOptions="End"></ImageButton>-->
 
         <!--Загрузка-->
-        <Grid Grid.RowSpan="4" IsVisible="{Binding IsPageLoading}">
+        <!--<Grid Grid.RowSpan="4" IsVisible="{Binding IsPageLoading}">
             <Border Grid.RowSpan="4" HorizontalOptions="FillAndExpand" Margin="0" VerticalOptions="FillAndExpand" Scale="1.1" BackgroundColor="Black" Opacity="0.8"></Border>
             <Frame HorizontalOptions="Center" BorderColor="Transparent" VerticalOptions="Center" WidthRequest="120" HeightRequest="120" CornerRadius="30" BackgroundColor="#1D2733">
                 <Image HorizontalOptions="Center" VerticalOptions="Center" Source="loader.gif" IsAnimationPlaying="True" x:Name="preloader"></Image>
             </Frame>
-        </Grid>
+        </Grid>-->
 
     </Grid>
 

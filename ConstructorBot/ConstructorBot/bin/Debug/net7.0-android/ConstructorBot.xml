@@ -229,14 +229,8 @@
         <member name="P:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.ConnectionToken">
             <inheritdoc cref="F:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.connectionToken"/>
         </member>
-        <member name="P:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.IsPageLoading">
-            <inheritdoc cref="F:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.isPageLoading"/>
-        </member>
         <member name="P:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.IsNewNotification">
             <inheritdoc cref="F:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.isNewNotification"/>
-        </member>
-        <member name="P:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.IsOneTap">
-            <inheritdoc cref="F:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.isOneTap"/>
         </member>
         <member name="F:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.startBotCommand">
             <summary>The backing field for <see cref="P:ConstructorBot.ViewModel.MainPageViewModel.MainViewModel.StartBotCommand"/>.</summary>

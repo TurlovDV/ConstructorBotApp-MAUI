@@ -39,18 +39,12 @@ public partial class MainPage : ContentPage
         this.Loaded += Loading;
     }
     
-    public async void Loading(object sender, EventArgs e)
+    public void Loading(object sender, EventArgs e)
     {
         //»нициализаци€ боксов при загрузке приложени€
         var actions = ServiceProvider.GetService<IStorageService>().GetActions();
         ServiceProvider.GetService<ConstructorViewModel>().ActionBoxes
             = new ObservableCollection<ActionBox>(actions);
-
-        await Task.Delay(50);
-        preloader.IsAnimationPlaying = false;
-        await Task.Delay(50);
-        preloader.IsAnimationPlaying = true;
-
     }
 
     private async void Button_PushToConstructor(object sender, EventArgs e)
@@ -92,5 +86,10 @@ public partial class MainPage : ContentPage
             scrollMainPage.Position = 1;
         else
             scrollMainPage.Position = 0;
+    }
+
+    private void ViewSaveMessageCommand_Clicked(object sender, EventArgs e)
+    {
+        ((sender as ImageButton).BindingContext as StackLayout).IsVisible = !((sender as ImageButton).BindingContext as StackLayout).IsVisible;
     }
 }

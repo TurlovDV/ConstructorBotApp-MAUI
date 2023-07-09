@@ -2,6 +2,7 @@
 using CommunityToolkit.Mvvm.Input;
 using ConstructorBot.Model;
 using ConstructorBot.Model.Action;
+using ConstructorBot.Mopups;
 using ConstructorBot.Services;
 using ConstructorBot.Services.PopupService;
 using ConstructorBot.Services.ServiceStorage;
@@ -10,6 +11,7 @@ using ConstructorBot.ViewModel.ConstructorPageViewModel;
 using ConstructorBotMessengerApi;
 using ConstructorBotMessengerApi.Model;
 using Microsoft.Extensions.Logging;
+using Mopups.Services;
 using Plugin.LocalNotification;
 using Sentry;
 using System;
@@ -57,15 +59,9 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
         [ObservableProperty]
         private string connectionToken;
         [ObservableProperty]
-        private bool isPageLoading;
-        [ObservableProperty]
         private bool isNewNotification;
         #endregion
 
-        [ObservableProperty]
-        bool isOneTap = false;
-
-        //Новое сохраенное сообщение
         bool isTimeNewNotification;
 
         #region PropertiesSettings
@@ -125,8 +121,6 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
             this.buildMessengerService = buildMessengerService;
             this.messengerCoreService = messengerCoreService;
             messengerCoreService.OnNewNotification += NewNotification;
-
-
         }
 
         private Task updateTableTask;
@@ -141,73 +135,128 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
                 InfoTable.CountUsers = logger.CountUsers;
                 InfoTable.PingInternet = new Random().Next(30, 70);
 
-                if (Connectivity.Current.NetworkAccess == NetworkAccess.Internet)
-                {
-                    if (!IsInternetConnection)
-                    {
-                        await controlMessengerService.Restart();
-                        IsInternetConnection = true;
-                    }
-                }
-                else
-                    IsInternetConnection = false;
+                //if (Connectivity.Current.NetworkAccess == NetworkAccess.Internet)
+                //{
+                //    if (!IsInternetConnection)
+                //    {
+                //        await controlMessengerService.Restart();
+                //        IsInternetConnection = true;
+                //    }
+                //}
+                //else
+                //    IsInternetConnection = false;
 
-                if (InfoTable.OnStartTiming.Minute % 5 == 0 && InfoTable.OnStartTiming.Second == 0 && InfoTable.OnStartTiming.Minute != 0)
-                {
-                    await controlMessengerService.Restart();
-                }
+                //if (InfoTable.OnStartTiming.Minute % 5 == 0 && InfoTable.OnStartTiming.Second == 0 && InfoTable.OnStartTiming.Minute != 0)
+                //{
+                //    await controlMessengerService.Restart();
+                //}
             }
         }
+
+
+        //[RelayCommand]
+        //public async void StartBot()
+        //{
+        //    if (!IsStart)
+        //    {
+        //        //IsPageLoading = true;
+
+        //        var popupLoading = new PopupLoading();
+        //        await MopupService.Instance.PushAsync(popupLoading);
+
+        //        controlMessengerService = buildMessengerService.Initialization(LogicMatrixConverter.GetParentActions(
+        //            storageService.GetActions()), storageService.GetConnectionToken());
+
+        //        var resultOnStart = await controlMessengerService.Start(IsBackgroundTask);
+
+        //        await MopupService.Instance.RemovePageAsync(popupLoading);
+        //        //IsPageLoading = false;
+
+        //        if (resultOnStart != null)
+        //        {
+        //            InfoTable.NamingBot = resultOnStart.Name;
+        //            IsStart = !IsStart;
+
+        //            InfoTable.OnStartTiming = new DateTime();
+        //            if (updateTableTask == null || updateTableTask.Status == TaskStatus.RanToCompletion)
+        //                updateTableTask = UpdateInfoTable();
+
+        //            IsInternetConnection = true;
+        //        }
+        //        else
+        //        {
+
+        //            if (Connectivity.Current.NetworkAccess != NetworkAccess.Internet)
+        //                await messageService.ShowAsync("Ошибка", "Нет подключения к интернету");
+        //            else
+        //                await messageService.ShowAsync("Ошибка", "Убедитесь в достоверности токена");
+        //        }
+        //    }
+        //    else
+        //    {
+        //        controlMessengerService.Stop();
+        //        IsStart = !IsStart;
+        //    }
+        //}
+
 
         [RelayCommand]
         public async void StartBot()
         {
-            if (!IsStart)
+            if (!IsStart)            
+                await StartMessengerBot();            
+            else            
+                StopMessengerBot();            
+        }
+
+        public async Task StartMessengerBot()
+        {
+            var popupLoading = new PopupLoading();
+            await MopupService.Instance.PushAsync(popupLoading);
+
+            controlMessengerService = buildMessengerService.Initialization(LogicMatrixConverter.GetParentActions(
+                storageService.GetActions()), storageService.GetConnectionToken());
+
+            var resultOnStart = await controlMessengerService.Start(IsBackgroundTask);
+
+            await MopupService.Instance.RemovePageAsync(popupLoading);
+            
+            if (resultOnStart != null)
             {
-                IsPageLoading = true;
+                InfoTable.NamingBot = resultOnStart.Name;
+                IsStart = !IsStart;
 
-                controlMessengerService = buildMessengerService.Initialization(LogicMatrixConverter.GetParentActions(
-                    storageService.GetActions()), storageService.GetConnectionToken());
+                InfoTable.OnStartTiming = new DateTime();
+                if (updateTableTask == null || updateTableTask.Status == TaskStatus.RanToCompletion)
+                    updateTableTask = UpdateInfoTable();
 
-                var resultOnStart = await controlMessengerService.Start(IsBackgroundTask);
-
-                IsPageLoading = false;
-
-                if (resultOnStart != null)
-                {
-                    InfoTable.NamingBot = resultOnStart.Name;
-                    IsStart = !IsStart;
-
-                    InfoTable.OnStartTiming = new DateTime();
-                    if (updateTableTask == null || updateTableTask.Status == TaskStatus.RanToCompletion)
-                        updateTableTask = UpdateInfoTable();
-
-                    IsInternetConnection = true;
-                }
-                else
-                {
-
-                    if (Connectivity.Current.NetworkAccess != NetworkAccess.Internet)
-                        await messageService.ShowAsync("Ошибка", "Нет подключения к интернету");
-                    else
-                        await messageService.ShowAsync("Ошибка", "Убедитесь в достоверности токена");
-                }
+                IsInternetConnection = true;
             }
             else
             {
-                controlMessengerService.Stop();
-                IsStart = !IsStart;
+
+                if (Connectivity.Current.NetworkAccess != NetworkAccess.Internet)
+                    await messageService.ShowAsync("Ошибка", "Нет подключения к интернету");
+                else
+                    await messageService.ShowAsync("Ошибка", "Убедитесь в достоверности токена");
             }
+        }
+        
+        public void StopMessengerBot()
+        {
+            controlMessengerService.Stop();
+            IsStart = !IsStart;
         }
 
         [RelayCommand]
         public async void GoToConstructorPage()
         {
-            IsOneTap = false;
-            IsPageLoading = true;
+            var popupLoading = new PopupLoading();
+            await MopupService.Instance.PushAsync(popupLoading);
+
             await Shell.Current.GoToAsync("ConstructorPage");
-            IsPageLoading = false;
-            IsOneTap = true;
+            
+            await MopupService.Instance.RemovePageAsync(popupLoading);
         }
 
         [RelayCommand]
@@ -303,17 +352,6 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
                     };
                     x.ChatMessage.ForEach(y =>
                     {
-                        
-                        //int row = 0;
-                        //foreach (var buttons in y.Keyboard.ArrayButton)
-                        //{
-                        //    int column = 0;
-                        //    foreach (var button in buttons)
-                        //    {
-                        //        keyboard.KeyboardItems.First(x => x.Column == column && x.Row == row).Text = button.
-                        //    }
-                        //}
-
                         logicUser.ChatMessage.Add(new Model.ChatModel.ChatMessageModel()
                         {
                             IsBot = y.FirstName is not null ? false : true,
@@ -323,6 +361,7 @@ namespace ConstructorBot.ViewModel.MainPageViewModel
                     });
                     logicUsers.Add(logicUser);
                 });
+
             await Shell.Current.GoToAsync(nameof(ChatsView), true, new Dictionary<string, object>()
             {
                 ["LogicUsers"] = logicUsers

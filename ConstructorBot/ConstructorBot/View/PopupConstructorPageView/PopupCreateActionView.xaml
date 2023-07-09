@@ -32,7 +32,7 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <Border StrokeShape="RoundRectangle 20, 20, 0, 0" Padding="15" Stroke="#253242" VerticalOptions="End" BackgroundColor="#253242">
+    <Border StrokeShape="RoundRectangle 20, 20, 0, 0" Padding="15" StrokeThickness="-1" Stroke="#253242" VerticalOptions="End" BackgroundColor="#253242">
         <Grid>
             <StackLayout Spacing="15">
                 <Label Margin="5, 0, 0, 0" Text="{language:Translate TheNameOfTheBox}" TextColor="White" FontSize="Medium"></Label>

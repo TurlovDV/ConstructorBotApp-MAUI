@@ -50,6 +50,7 @@ obj\Debug\net7.0-android\resizetizer\r\drawable-hdpi\bot1.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-hdpi\chat_image.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-hdpi\constructor.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-hdpi\constructor_blue.png
+obj\Debug\net7.0-android\resizetizer\r\drawable-hdpi\elipse_black.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-hdpi\elipse_loading.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-hdpi\go_main.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-hdpi\grid_lines.png
@@ -68,6 +69,9 @@ obj\Debug\net7.0-android\resizetizer\r\drawable-hdpi\options.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-hdpi\qwer.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-hdpi\settings.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-hdpi\splash.png
+obj\Debug\net7.0-android\resizetizer\r\drawable-hdpi\start.png
+obj\Debug\net7.0-android\resizetizer\r\drawable-hdpi\start_image.png
+obj\Debug\net7.0-android\resizetizer\r\drawable-hdpi\stop_image.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-hdpi\subtract.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-hdpi\subtract1.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-mdpi\appicon.png
@@ -79,6 +83,7 @@ obj\Debug\net7.0-android\resizetizer\r\drawable-mdpi\bot1.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-mdpi\chat_image.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-mdpi\constructor.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-mdpi\constructor_blue.png
+obj\Debug\net7.0-android\resizetizer\r\drawable-mdpi\elipse_black.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-mdpi\elipse_loading.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-mdpi\go_main.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-mdpi\grid_lines.png
@@ -97,6 +102,9 @@ obj\Debug\net7.0-android\resizetizer\r\drawable-mdpi\options.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-mdpi\qwer.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-mdpi\settings.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-mdpi\splash.png
+obj\Debug\net7.0-android\resizetizer\r\drawable-mdpi\start.png
+obj\Debug\net7.0-android\resizetizer\r\drawable-mdpi\start_image.png
+obj\Debug\net7.0-android\resizetizer\r\drawable-mdpi\stop_image.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-mdpi\subtract.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-mdpi\subtract1.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xhdpi\appicon.png
@@ -108,6 +116,7 @@ obj\Debug\net7.0-android\resizetizer\r\drawable-xhdpi\bot1.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xhdpi\chat_image.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xhdpi\constructor.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xhdpi\constructor_blue.png
+obj\Debug\net7.0-android\resizetizer\r\drawable-xhdpi\elipse_black.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xhdpi\elipse_loading.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xhdpi\go_main.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xhdpi\grid_lines.png
@@ -126,6 +135,9 @@ obj\Debug\net7.0-android\resizetizer\r\drawable-xhdpi\options.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xhdpi\qwer.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xhdpi\settings.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xhdpi\splash.png
+obj\Debug\net7.0-android\resizetizer\r\drawable-xhdpi\start.png
+obj\Debug\net7.0-android\resizetizer\r\drawable-xhdpi\start_image.png
+obj\Debug\net7.0-android\resizetizer\r\drawable-xhdpi\stop_image.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xhdpi\subtract.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xhdpi\subtract1.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xxhdpi\appicon.png
@@ -137,6 +149,7 @@ obj\Debug\net7.0-android\resizetizer\r\drawable-xxhdpi\bot1.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xxhdpi\chat_image.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xxhdpi\constructor.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xxhdpi\constructor_blue.png
+obj\Debug\net7.0-android\resizetizer\r\drawable-xxhdpi\elipse_black.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xxhdpi\elipse_loading.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xxhdpi\go_main.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xxhdpi\grid_lines.png
@@ -155,6 +168,9 @@ obj\Debug\net7.0-android\resizetizer\r\drawable-xxhdpi\options.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xxhdpi\qwer.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xxhdpi\settings.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xxhdpi\splash.png
+obj\Debug\net7.0-android\resizetizer\r\drawable-xxhdpi\start.png
+obj\Debug\net7.0-android\resizetizer\r\drawable-xxhdpi\start_image.png
+obj\Debug\net7.0-android\resizetizer\r\drawable-xxhdpi\stop_image.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xxhdpi\subtract.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xxhdpi\subtract1.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xxxhdpi\appicon.png
@@ -166,6 +182,7 @@ obj\Debug\net7.0-android\resizetizer\r\drawable-xxxhdpi\bot1.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xxxhdpi\chat_image.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xxxhdpi\constructor.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xxxhdpi\constructor_blue.png
+obj\Debug\net7.0-android\resizetizer\r\drawable-xxxhdpi\elipse_black.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xxxhdpi\elipse_loading.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xxxhdpi\go_main.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xxxhdpi\grid_lines.png
@@ -184,6 +201,9 @@ obj\Debug\net7.0-android\resizetizer\r\drawable-xxxhdpi\options.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xxxhdpi\qwer.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xxxhdpi\settings.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xxxhdpi\splash.png
+obj\Debug\net7.0-android\resizetizer\r\drawable-xxxhdpi\start.png
+obj\Debug\net7.0-android\resizetizer\r\drawable-xxxhdpi\start_image.png
+obj\Debug\net7.0-android\resizetizer\r\drawable-xxxhdpi\stop_image.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xxxhdpi\subtract.png
 obj\Debug\net7.0-android\resizetizer\r\drawable-xxxhdpi\subtract1.png
 obj\Debug\net7.0-android\resizetizer\r\mipmap-anydpi-v26\appicon.xml

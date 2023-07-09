@@ -8,20 +8,18 @@
 
     <mopups:PopupPage.Animation>
         <mopupsanim:ScaleAnimation
-            DurationIn="700"
-            EasingIn="BounceOut"
-            PositionIn="Bottom"
+            PositionIn="Center"
             PositionOut="Center"
-            ScaleIn="1"
+            ScaleIn="0.7"
             ScaleOut="0.7" />
     </mopups:PopupPage.Animation>
 
 
-    <Border TranslationY="-30" StrokeShape="RoundRectangle 15, 15, 15, 15" WidthRequest="260" HeightRequest="200" BackgroundColor="Transparent" Stroke="Transparent">
+    <Border TranslationY="-30" StrokeShape="RoundRectangle 15, 15, 15, 15" WidthRequest="280" HeightRequest="200" BackgroundColor="Transparent" Stroke="Transparent">
         <Grid RowDefinitions="Auto, *">
-            <Frame BackgroundColor="#17153C" Padding="0" HeightRequest="95" HorizontalOptions="FillAndExpand" CornerRadius="0" BorderColor="#17153C">
+            <Frame BackgroundColor="#242A3E" Padding="0" HeightRequest="95" HorizontalOptions="FillAndExpand" CornerRadius="0" BorderColor="#242A3E">
                 <Grid ColumnDefinitions="*, *">
-                    <Image Source="bot1.svg" VerticalOptions="End"></Image>
+                    <Image Source="bot1.svg" VerticalOptions="End" Opacity="0.5"></Image>
                     <Label Margin="10, 0, 0, 0" x:Name="title" TextColor="White" Grid.Column="1" FontAttributes="Bold" VerticalOptions="Center" FontSize="Medium"></Label>
                 </Grid> 
             </Frame>

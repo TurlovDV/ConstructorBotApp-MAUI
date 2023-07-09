@@ -2,7 +2,9 @@
 using CommunityToolkit.Mvvm.Input;
 using ConstructorBot.Model;
 using ConstructorBot.Model.ChatModel;
+using ConstructorBot.Mopups;
 using ConstructorBot.View;
+using Mopups.Services;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -37,10 +39,15 @@ namespace ConstructorBot.ViewModel
         [RelayCommand]
         public async void GoToPageChatUser(object sender)
         {
+            var popupLoading = new PopupLoading();
+            await MopupService.Instance.PushAsync(popupLoading);
+
             await Shell.Current.GoToAsync(nameof(ChatUserView), true, new Dictionary<string, object>()
             {
                 ["LogicUser"] = (LogicUser)sender
             });
+
+            await MopupService.Instance.RemovePageAsync(popupLoading);
         }
 
         [RelayCommand]

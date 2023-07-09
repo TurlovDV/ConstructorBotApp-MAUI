@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<mopups:PopupPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ConstructorBot.Mopups.PopupLoading"
+             xmlns:mopups="clr-namespace:Mopups.Pages;assembly=Mopups"
+             xmlns:mopupsanim="clr-namespace:Mopups.Animations;assembly=Mopups"   
+             CloseWhenBackgroundIsClicked="False"
+             BackgroundColor="Transparent"
+             Title="PopupLoading">
+
+    <Grid Grid.RowSpan="4">
+        <!--<Border Grid.RowSpan="4" HorizontalOptions="FillAndExpand" Margin="0" VerticalOptions="FillAndExpand" Scale="1.1" BackgroundColor="Black" Opacity="0.8"></Border> 1D2733-->
+        <Frame HorizontalOptions="Center" BorderColor="Transparent" VerticalOptions="Center" WidthRequest="120" HeightRequest="120" CornerRadius="30" BackgroundColor="#242A3E">
+            <Image HorizontalOptions="Center" VerticalOptions="Center" Source="loader.gif" IsAnimationPlaying="True" x:Name="preloader"></Image>
+        </Frame>
+    </Grid>
+
+</mopups:PopupPage>
