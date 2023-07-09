@@ -1,4 +1,3 @@
-File=Resources\Images\account.png;Link=;BaseSize=;Resize=;TintColor=;Color=;IsAppIcon=;ForegroundScale=;ForegroundFile=
 File=Resources\Images\addmedia.png;Link=;BaseSize=;Resize=;TintColor=;Color=;IsAppIcon=;ForegroundScale=;ForegroundFile=
 File=Resources\Images\back.svg;Link=;BaseSize=;Resize=;TintColor=;Color=;IsAppIcon=;ForegroundScale=;ForegroundFile=
 File=Resources\Images\background_info.svg;Link=;BaseSize=;Resize=;TintColor=;Color=;IsAppIcon=;ForegroundScale=;ForegroundFile=
@@ -35,6 +34,7 @@ File=Resources\Images\music_icon.png;Link=;BaseSize=;Resize=;TintColor=;Color=;I
 File=Resources\Images\options.svg;Link=;BaseSize=;Resize=;TintColor=;Color=;IsAppIcon=;ForegroundScale=;ForegroundFile=
 File=Resources\Images\plus.png;Link=;BaseSize=;Resize=;TintColor=;Color=;IsAppIcon=;ForegroundScale=;ForegroundFile=
 File=Resources\Images\plus_black.png;Link=;BaseSize=;Resize=;TintColor=;Color=;IsAppIcon=;ForegroundScale=;ForegroundFile=
+File=Resources\Images\profile_image.svg;Link=;BaseSize=;Resize=;TintColor=;Color=;IsAppIcon=;ForegroundScale=;ForegroundFile=
 File=Resources\Images\question.png;Link=;BaseSize=;Resize=;TintColor=;Color=;IsAppIcon=;ForegroundScale=;ForegroundFile=
 File=Resources\Images\question2.png;Link=;BaseSize=;Resize=;TintColor=;Color=;IsAppIcon=;ForegroundScale=;ForegroundFile=
 File=Resources\Images\settings.svg;Link=;BaseSize=;Resize=;TintColor=;Color=;IsAppIcon=;ForegroundScale=;ForegroundFile=

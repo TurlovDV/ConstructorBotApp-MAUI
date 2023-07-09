@@ -30,10 +30,9 @@
         <StackLayout Grid.Row="1" Spacing="10" BindableLayout.ItemsSource="{Binding Users}" Padding="10, 20, 0, 0">
             <BindableLayout.ItemTemplate>
                 <DataTemplate x:DataType="model:LogicUser">
-                    <StackLayout Orientation="Horizontal" Spacing="15">
-                        <Border StrokeShape="RoundRectangle 100, 100, 100, 100" Stroke="Transparent" VerticalOptions="Center">
-                            <Image Source="account.png" WidthRequest="40" HeightRequest="40"></Image>
-                        </Border>
+                    <StackLayout Orientation="Horizontal" Spacing="5">
+                        <Image Source="profile_image.svg" WidthRequest="40" VerticalOptions="Center" HeightRequest="40"></Image>
+
                         <Label FontSize="Medium" TextColor="White" VerticalOptions="Center" FontAttributes="Bold">
                             <Label.FormattedText>
                                 <FormattedString>
@@ -53,7 +52,5 @@
                 <Label Text="Чат пуст" TextColor="White" FontAttributes="Bold" FontSize="18" HorizontalOptions="Center"></Label>
             </BindableLayout.EmptyView>
         </StackLayout>
-        
     </Grid>
-    
 </ContentPage>

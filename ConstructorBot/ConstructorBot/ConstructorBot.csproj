@@ -50,7 +50,6 @@
 	<ItemGroup>
 	  <None Remove="Resources\Fonts\Shentox-Regular.ttf" />
 	  <None Remove="Resources\Fonts\Srbija-Sans.otf" />
-	  <None Remove="Resources\Images\account.png" />
 	  <None Remove="Resources\Images\addMedia.png" />
 	  <None Remove="Resources\Images\back.svg" />
 	  <None Remove="Resources\Images\background_info.svg" />
@@ -86,6 +85,7 @@
 	  <None Remove="Resources\Images\options.svg" />
 	  <None Remove="Resources\Images\plus.png" />
 	  <None Remove="Resources\Images\plus_black.png" />
+	  <None Remove="Resources\Images\profile_image.svg" />
 	  <None Remove="Resources\Images\question.png" />
 	  <None Remove="Resources\Images\question2.png" />
 	  <None Remove="Resources\Images\settings.svg" />

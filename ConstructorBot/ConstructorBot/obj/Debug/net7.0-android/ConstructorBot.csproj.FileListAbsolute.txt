@@ -1268,3 +1268,8 @@ C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-android\
 C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-android\resizetizer\r\drawable-xhdpi\elipse_black.png
 C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-android\resizetizer\r\drawable-xxhdpi\elipse_black.png
 C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-android\resizetizer\r\drawable-xxxhdpi\elipse_black.png
+C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-android\resizetizer\r\drawable-hdpi\profile_image.png
+C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-android\resizetizer\r\drawable-mdpi\profile_image.png
+C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-android\resizetizer\r\drawable-xhdpi\profile_image.png
+C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-android\resizetizer\r\drawable-xxhdpi\profile_image.png
+C:\ConstructorBotProject\ConstructorBot\ConstructorBot\obj\Debug\net7.0-android\resizetizer\r\drawable-xxxhdpi\profile_image.png

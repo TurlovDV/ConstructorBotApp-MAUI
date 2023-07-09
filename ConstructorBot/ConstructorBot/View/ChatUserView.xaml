@@ -34,7 +34,7 @@
             <StackLayout Orientation="Horizontal" Spacing="3" Margin="0, 0, 0, 0">
                 <ImageButton Source="back.svg" HeightRequest="35" WidthRequest="35" VerticalOptions="Center" Command="{Binding BackToPageChatsCommand}"></ImageButton>
                 <StackLayout Orientation="Horizontal" Spacing="5">
-                    <Image HeightRequest="35" WidthRequest="35" VerticalOptions="Center"></Image>
+                    <Image HeightRequest="40" WidthRequest="40" Source="profile_image.svg" VerticalOptions="Center"></Image>
                     <Label VerticalOptions="Center">
                         <Label.FormattedText>
                             <FormattedString>
@@ -63,7 +63,7 @@
             </BindableLayout.ItemTemplate>
         </StackLayout>-->
 
-        <ScrollView Grid.Row="1">
+        <!--<ScrollView Grid.Row="1">
             <StackLayout Margin="3, 15, 3, 0" BindableLayout.ItemsSource="{Binding ChatMessageModels}">
                 <BindableLayout.ItemTemplate>
                     <DataTemplate x:DataType="model:ChatMessageModel">
@@ -78,7 +78,7 @@
                                     </StackLayout>
                                 </Border>
 
-                                <!--<StackLayout HorizontalOptions="Center">
+                                --><!--<StackLayout HorizontalOptions="Center">
                                 <StackLayout Orientation="Horizontal">
                                     <Border Stroke="Transparent" StrokeShape="RoundRectangle 5, 5, 5, 5" Padding="5" BackgroundColor="#4B4B52" IsVisible="{Binding Keyboard.KeyboardItems[0].IsEnabled}">
                                         <Label Text="{Binding Keyboard.KeyboardItems[0].Text}"></Label>
@@ -112,13 +112,34 @@
                                         <Label Text="{Binding Keyboard.KeyboardItems[8].Text}"></Label>
                                     </Border>
                                 </StackLayout>
-                            </StackLayout>-->
+                            </StackLayout>--><!--
 
                             </StackLayout>
                         </Border>
                     </DataTemplate>
                 </BindableLayout.ItemTemplate>
             </StackLayout>
-        </ScrollView>
+        </ScrollView>-->
+
+        <!--<ScrollView Grid.Row="1"-->
+            <CollectionView Grid.Row="1" RemainingItemsThreshold="4" VerticalScrollBarVisibility="Always" Margin="3, 15, 3, 0" ItemsSource="{Binding ChatMessageModels}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="model:ChatMessageModel">
+                        <Border MaximumWidthRequest="200" MinimumWidthRequest="100" Stroke="Transparent" BackgroundColor="Transparent" HorizontalOptions="{Binding IsBot, Converter={StaticResource boolToHorizontalOptionsConverter}}">
+                            <StackLayout>
+                                <Border BackgroundColor="{Binding IsBot, Converter={StaticResource boolToColorConverter}}" Stroke="Transparent" 
+                                    StrokeShape="{Binding IsBot, Converter={StaticResource boolToCornerRadiusConverter}}"
+                                    Padding="8, 5, 8, 5">
+                                    <StackLayout>
+                                        <Label Text="{Binding Message}" TextColor="White"></Label>
+                                        <Label Text="{Binding DateTime, Converter={StaticResource dateTimeToStringConvert}}" TextColor="#7A7A7A" FontSize="11" HorizontalOptions="End"></Label>
+                                    </StackLayout>
+                                </Border>
+                            </StackLayout>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        <!--</ScrollView>-->
     </Grid>
 </ContentPage>
